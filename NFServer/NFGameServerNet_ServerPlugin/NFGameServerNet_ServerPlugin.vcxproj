@@ -48,6 +48,8 @@
     <LinkIncremental>true</LinkIncremental>
     <TargetName>$(ProjectName)</TargetName>
     <EmbedManifest>false</EmbedManifest>
+    <IncludePath>$(OCC_ROOT)\inc;$(VC_IncludePath);$(WindowsSDK_IncludePath);</IncludePath>
+    <LibraryPath>$(OCC_ROOT)\win64\vc14\lib;$(VC_LibraryPath_x64);$(WindowsSDK_LibraryPath_x64)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <LinkIncremental>false</LinkIncremental>
@@ -102,6 +104,7 @@
     <ClInclude Include="NFGameServerNet_ServerModule.h" />
     <ClInclude Include="NFGameServerNet_ServerPlugin.h" />
     <ClInclude Include="NFSceneAutoBroadcastModule.h" />
+    <ClInclude Include="OCCProcessor.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="dllmain.cpp">
@@ -117,6 +120,7 @@
     <ClCompile Include="NFGameServerNet_ServerModule.cpp" />
     <ClCompile Include="NFGameServerNet_ServerPlugin.cpp" />
     <ClCompile Include="NFSceneAutoBroadcastModule.cpp" />
+    <ClCompile Include="OCCProcessor.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

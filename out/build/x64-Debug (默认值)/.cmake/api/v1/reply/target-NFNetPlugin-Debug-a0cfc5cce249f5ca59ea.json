@@ -1,0 +1,342 @@
+{
+	"archive" : 
+	{
+		"commandFragments" : 
+		[
+			{
+				"fragment" : "/machine:x64",
+				"role" : "flags"
+			}
+		]
+	},
+	"artifacts" : 
+	[
+		{
+			"path" : "D:/UnityProj/NoahGameFrame/_Out/Debug/NFNetPlugin.lib"
+		}
+	],
+	"backtrace" : 1,
+	"backtraceGraph" : 
+	{
+		"commands" : 
+		[
+			"add_library",
+			"add_dependencies",
+			"add_definitions",
+			"include_directories"
+		],
+		"files" : 
+		[
+			"NFComm/NFNetPlugin/CMakeLists.txt",
+			"CMakeLists.txt"
+		],
+		"nodes" : 
+		[
+			{
+				"file" : 0
+			},
+			{
+				"command" : 0,
+				"file" : 0,
+				"line" : 10,
+				"parent" : 0
+			},
+			{
+				"command" : 1,
+				"file" : 0,
+				"line" : 21,
+				"parent" : 0
+			},
+			{
+				"command" : 2,
+				"file" : 0,
+				"line" : 12,
+				"parent" : 0
+			},
+			{
+				"file" : 1
+			},
+			{
+				"command" : 3,
+				"file" : 1,
+				"line" : 58,
+				"parent" : 4
+			},
+			{
+				"command" : 3,
+				"file" : 1,
+				"line" : 91,
+				"parent" : 4
+			}
+		]
+	},
+	"compileGroups" : 
+	[
+		{
+			"compileCommandFragments" : 
+			[
+				{
+					"fragment" : "-D_X64 -D_WINDOWS /EHsc /MDd /Zi /Ob0 /Od /RTC1"
+				}
+			],
+			"defines" : 
+			[
+				{
+					"backtrace" : 3,
+					"define" : "NF_NONCLIENT_BUILD"
+				}
+			],
+			"includes" : 
+			[
+				{
+					"backtrace" : 5,
+					"path" : "D:/UnityProj/NoahGameFrame"
+				},
+				{
+					"backtrace" : 5,
+					"path" : "D:/UnityProj/NoahGameFrame/Dependencies"
+				},
+				{
+					"backtrace" : 5,
+					"path" : "D:/UnityProj/NoahGameFrame/Dependencies/NFMessageDefine"
+				},
+				{
+					"backtrace" : 5,
+					"path" : "D:/UnityProj/NoahGameFrame/NFComm/NFPluginModule"
+				},
+				{
+					"backtrace" : 5,
+					"path" : "D:/UnityProj/NoahGameFrame/Dependencies/hiredis/hiredis_win"
+				},
+				{
+					"backtrace" : 5,
+					"path" : "D:/UnityProj/NoahGameFrame/Dependencies/vcpkg/installed/x64-windows-static/include"
+				},
+				{
+					"backtrace" : 5,
+					"path" : "D:/UnityProj/NoahGameFrame/Dependencies/vcpkg/installed/x64-windows-static/include/SDL2"
+				},
+				{
+					"backtrace" : 5,
+					"path" : "D:/UnityProj/NoahGameFrame/Dependencies/vcpkg/installed/x64-windows-static/include/google/protobuf"
+				},
+				{
+					"backtrace" : 5,
+					"path" : "D:/UnityProj/NoahGameFrame/Dependencies/vcpkg/installed/x64-windows-static/include/google/protobuf/src"
+				},
+				{
+					"backtrace" : 6,
+					"path" : "D:/UnityProj/NoahGameFrame/Dependencies/libevent/WIN32-Code"
+				}
+			],
+			"language" : "CXX",
+			"sourceIndexes" : 
+			[
+				0,
+				1,
+				2,
+				3,
+				4,
+				5,
+				6,
+				7,
+				8,
+				9,
+				10
+			]
+		}
+	],
+	"dependencies" : 
+	[
+		{
+			"backtrace" : 2,
+			"id" : "NFCore::@5c898e9a86819bf73f38"
+		}
+	],
+	"folder" : 
+	{
+		"name" : "NFComm/NFNetPlugin"
+	},
+	"id" : "NFNetPlugin::@69d0cdd53444f844061c",
+	"name" : "NFNetPlugin",
+	"nameOnDisk" : "NFNetPlugin.lib",
+	"paths" : 
+	{
+		"build" : "NFComm/NFNetPlugin",
+		"source" : "NFComm/NFNetPlugin"
+	},
+	"sourceGroups" : 
+	[
+		{
+			"name" : "Source Files",
+			"sourceIndexes" : 
+			[
+				0,
+				1,
+				2,
+				3,
+				4,
+				5,
+				6,
+				7,
+				8,
+				9,
+				10
+			]
+		},
+		{
+			"name" : "Header Files",
+			"sourceIndexes" : 
+			[
+				11,
+				12,
+				13,
+				14,
+				15,
+				16,
+				17,
+				18,
+				19,
+				20,
+				21,
+				22,
+				23
+			]
+		}
+	],
+	"sources" : 
+	[
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "NFComm/NFNetPlugin/NFHttpClient.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "NFComm/NFNetPlugin/NFHttpClientModule.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "NFComm/NFNetPlugin/NFHttpServer.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "NFComm/NFNetPlugin/NFHttpServerModule.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "NFComm/NFNetPlugin/NFNet.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "NFComm/NFNetPlugin/NFNetClientModule.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "NFComm/NFNetPlugin/NFNetModule.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "NFComm/NFNetPlugin/NFNetPlugin.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "NFComm/NFNetPlugin/NFUDPModule.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "NFComm/NFNetPlugin/NFWSModule.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "NFComm/NFNetPlugin/dllmain.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "NFComm/NFNetPlugin/NFHttpClient.h",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 1,
+			"path" : "NFComm/NFNetPlugin/NFHttpClientModule.h",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 1,
+			"path" : "NFComm/NFNetPlugin/NFHttpServer.h",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 1,
+			"path" : "NFComm/NFNetPlugin/NFHttpServerModule.h",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 1,
+			"path" : "NFComm/NFNetPlugin/NFIHttpClient.h",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 1,
+			"path" : "NFComm/NFNetPlugin/NFIHttpServer.h",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 1,
+			"path" : "NFComm/NFNetPlugin/NFINet.h",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 1,
+			"path" : "NFComm/NFNetPlugin/NFNet.h",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 1,
+			"path" : "NFComm/NFNetPlugin/NFNetClientModule.h",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 1,
+			"path" : "NFComm/NFNetPlugin/NFNetModule.h",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 1,
+			"path" : "NFComm/NFNetPlugin/NFNetPlugin.h",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 1,
+			"path" : "NFComm/NFNetPlugin/NFUDPModule.h",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 1,
+			"path" : "NFComm/NFNetPlugin/NFWSModule.h",
+			"sourceGroupIndex" : 1
+		}
+	],
+	"type" : "STATIC_LIBRARY"
+}

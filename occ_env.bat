@@ -1,0 +1,2 @@
+set OCC_ROOT=D:\Program Files\OpenCASCADE-7.5.0-vc14-64\opencascade-7.5.0
+set path=%path%;D:\Program Files\OpenCASCADE-7.5.0-vc14-64\opencascade-7.5.0\win64\vc14\bin;D:\Program Files\OpenCASCADE-7.5.0-vc14-64\ffmpeg-3.3.4-64\bin;D:\Program Files\OpenCASCADE-7.5.0-vc14-64\freeimage-3.17.0-vc14-64\bin;D:\Program Files\OpenCASCADE-7.5.0-vc14-64\freetype-2.5.5-vc14-64\bin;D:\Program Files\OpenCASCADE-7.5.0-vc14-64\tbb_2017.0.100\bin\intel64\vc14;D:\Program Files\OpenCASCADE-7.5.0-vc14-64\tcltk-86-64\bin;D:\Program Files\OpenCASCADE-7.5.0-vc14-64\vtk-6.1.0-vc14-64\bin

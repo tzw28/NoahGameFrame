@@ -153,6 +153,9 @@ enum EGameMsgID
 	REQ_SKILL_POS							= 402;
 	ACK_SKILL_POS							= 403;
 
+	REQ_MODEL_RAW							= 500;
+	ACK_MODEL_RAW							= 501;
+
 	ACK_ONLINE_NOTIFY						= 600;
 	ACK_OFFLINE_NOTIFY						= 601;
 

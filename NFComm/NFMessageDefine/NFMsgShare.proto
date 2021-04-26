@@ -138,3 +138,23 @@ message ReqAckPlayerChat
 	EGameChatType  chat_type = 4;
 	bytes chat_info = 5;
 }
+
+/////////////////////////////////////////
+
+message ModelSyncUnit
+{	
+    bytes raw = 1;
+}
+
+message ReqAckModelSync
+{
+    int32 sequence = 1;
+	ModelSyncUnit sync_unit = 2;
+}
+
+
+message ReqAckModel
+{
+	Ident	player_id = 1;
+	bytes 	raw = 2;
+}

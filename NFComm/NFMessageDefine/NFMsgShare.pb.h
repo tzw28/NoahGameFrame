@@ -50,7 +50,7 @@ struct TableStruct_NFMsgShare_2eproto {
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::PROTOBUF_NAMESPACE_ID::internal::AuxillaryParseTableField aux[]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
-  static const ::PROTOBUF_NAMESPACE_ID::internal::ParseTable schema[13]
+  static const ::PROTOBUF_NAMESPACE_ID::internal::ParseTable schema[16]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::PROTOBUF_NAMESPACE_ID::internal::FieldMetadata field_metadata[];
   static const ::PROTOBUF_NAMESPACE_ID::internal::SerializationTable serialization_table[];
@@ -67,6 +67,9 @@ extern AckPlayerLeaveListDefaultTypeInternal _AckPlayerLeaveList_default_instanc
 class EffectData;
 class EffectDataDefaultTypeInternal;
 extern EffectDataDefaultTypeInternal _EffectData_default_instance_;
+class ModelSyncUnit;
+class ModelSyncUnitDefaultTypeInternal;
+extern ModelSyncUnitDefaultTypeInternal _ModelSyncUnit_default_instance_;
 class PlayerEntryInfo;
 class PlayerEntryInfoDefaultTypeInternal;
 extern PlayerEntryInfoDefaultTypeInternal _PlayerEntryInfo_default_instance_;
@@ -76,6 +79,12 @@ extern PosSyncUnitDefaultTypeInternal _PosSyncUnit_default_instance_;
 class ReqAckEnterGameSuccess;
 class ReqAckEnterGameSuccessDefaultTypeInternal;
 extern ReqAckEnterGameSuccessDefaultTypeInternal _ReqAckEnterGameSuccess_default_instance_;
+class ReqAckModel;
+class ReqAckModelDefaultTypeInternal;
+extern ReqAckModelDefaultTypeInternal _ReqAckModel_default_instance_;
+class ReqAckModelSync;
+class ReqAckModelSyncDefaultTypeInternal;
+extern ReqAckModelSyncDefaultTypeInternal _ReqAckModelSync_default_instance_;
 class ReqAckPlayerChat;
 class ReqAckPlayerChatDefaultTypeInternal;
 extern ReqAckPlayerChatDefaultTypeInternal _ReqAckPlayerChat_default_instance_;
@@ -102,9 +111,12 @@ PROTOBUF_NAMESPACE_OPEN
 template<> ::NFMsg::AckPlayerEntryList* Arena::CreateMaybeMessage<::NFMsg::AckPlayerEntryList>(Arena*);
 template<> ::NFMsg::AckPlayerLeaveList* Arena::CreateMaybeMessage<::NFMsg::AckPlayerLeaveList>(Arena*);
 template<> ::NFMsg::EffectData* Arena::CreateMaybeMessage<::NFMsg::EffectData>(Arena*);
+template<> ::NFMsg::ModelSyncUnit* Arena::CreateMaybeMessage<::NFMsg::ModelSyncUnit>(Arena*);
 template<> ::NFMsg::PlayerEntryInfo* Arena::CreateMaybeMessage<::NFMsg::PlayerEntryInfo>(Arena*);
 template<> ::NFMsg::PosSyncUnit* Arena::CreateMaybeMessage<::NFMsg::PosSyncUnit>(Arena*);
 template<> ::NFMsg::ReqAckEnterGameSuccess* Arena::CreateMaybeMessage<::NFMsg::ReqAckEnterGameSuccess>(Arena*);
+template<> ::NFMsg::ReqAckModel* Arena::CreateMaybeMessage<::NFMsg::ReqAckModel>(Arena*);
+template<> ::NFMsg::ReqAckModelSync* Arena::CreateMaybeMessage<::NFMsg::ReqAckModelSync>(Arena*);
 template<> ::NFMsg::ReqAckPlayerChat* Arena::CreateMaybeMessage<::NFMsg::ReqAckPlayerChat>(Arena*);
 template<> ::NFMsg::ReqAckPlayerPosSync* Arena::CreateMaybeMessage<::NFMsg::ReqAckPlayerPosSync>(Arena*);
 template<> ::NFMsg::ReqAckSwapScene* Arena::CreateMaybeMessage<::NFMsg::ReqAckSwapScene>(Arena*);
@@ -2515,6 +2527,438 @@ class ReqAckPlayerChat :
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_NFMsgShare_2eproto;
 };
+// -------------------------------------------------------------------
+
+class ModelSyncUnit :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:NFMsg.ModelSyncUnit) */ {
+ public:
+  ModelSyncUnit();
+  virtual ~ModelSyncUnit();
+
+  ModelSyncUnit(const ModelSyncUnit& from);
+  ModelSyncUnit(ModelSyncUnit&& from) noexcept
+    : ModelSyncUnit() {
+    *this = ::std::move(from);
+  }
+
+  inline ModelSyncUnit& operator=(const ModelSyncUnit& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline ModelSyncUnit& operator=(ModelSyncUnit&& from) noexcept {
+    if (GetArenaNoVirtual() == from.GetArenaNoVirtual()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return GetMetadataStatic().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return GetMetadataStatic().reflection;
+  }
+  static const ModelSyncUnit& default_instance();
+
+  static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
+  static inline const ModelSyncUnit* internal_default_instance() {
+    return reinterpret_cast<const ModelSyncUnit*>(
+               &_ModelSyncUnit_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    13;
+
+  friend void swap(ModelSyncUnit& a, ModelSyncUnit& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(ModelSyncUnit* other) {
+    if (other == this) return;
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline ModelSyncUnit* New() const final {
+    return CreateMaybeMessage<ModelSyncUnit>(nullptr);
+  }
+
+  ModelSyncUnit* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
+    return CreateMaybeMessage<ModelSyncUnit>(arena);
+  }
+  void CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void CopyFrom(const ModelSyncUnit& from);
+  void MergeFrom(const ModelSyncUnit& from);
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  ::PROTOBUF_NAMESPACE_ID::uint8* _InternalSerialize(
+      ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  inline void SharedCtor();
+  inline void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(ModelSyncUnit* other);
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "NFMsg.ModelSyncUnit";
+  }
+  private:
+  inline ::PROTOBUF_NAMESPACE_ID::Arena* GetArenaNoVirtual() const {
+    return nullptr;
+  }
+  inline void* MaybeArenaPtr() const {
+    return nullptr;
+  }
+  public:
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+  private:
+  static ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadataStatic() {
+    ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(&::descriptor_table_NFMsgShare_2eproto);
+    return ::descriptor_table_NFMsgShare_2eproto.file_level_metadata[kIndexInFileMessages];
+  }
+
+  public:
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kRawFieldNumber = 1,
+  };
+  // bytes raw = 1;
+  void clear_raw();
+  const std::string& raw() const;
+  void set_raw(const std::string& value);
+  void set_raw(std::string&& value);
+  void set_raw(const char* value);
+  void set_raw(const void* value, size_t size);
+  std::string* mutable_raw();
+  std::string* release_raw();
+  void set_allocated_raw(std::string* raw);
+  private:
+  const std::string& _internal_raw() const;
+  void _internal_set_raw(const std::string& value);
+  std::string* _internal_mutable_raw();
+  public:
+
+  // @@protoc_insertion_point(class_scope:NFMsg.ModelSyncUnit)
+ private:
+  class _Internal;
+
+  ::PROTOBUF_NAMESPACE_ID::internal::InternalMetadataWithArena _internal_metadata_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr raw_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_NFMsgShare_2eproto;
+};
+// -------------------------------------------------------------------
+
+class ReqAckModelSync :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:NFMsg.ReqAckModelSync) */ {
+ public:
+  ReqAckModelSync();
+  virtual ~ReqAckModelSync();
+
+  ReqAckModelSync(const ReqAckModelSync& from);
+  ReqAckModelSync(ReqAckModelSync&& from) noexcept
+    : ReqAckModelSync() {
+    *this = ::std::move(from);
+  }
+
+  inline ReqAckModelSync& operator=(const ReqAckModelSync& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline ReqAckModelSync& operator=(ReqAckModelSync&& from) noexcept {
+    if (GetArenaNoVirtual() == from.GetArenaNoVirtual()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return GetMetadataStatic().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return GetMetadataStatic().reflection;
+  }
+  static const ReqAckModelSync& default_instance();
+
+  static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
+  static inline const ReqAckModelSync* internal_default_instance() {
+    return reinterpret_cast<const ReqAckModelSync*>(
+               &_ReqAckModelSync_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    14;
+
+  friend void swap(ReqAckModelSync& a, ReqAckModelSync& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(ReqAckModelSync* other) {
+    if (other == this) return;
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline ReqAckModelSync* New() const final {
+    return CreateMaybeMessage<ReqAckModelSync>(nullptr);
+  }
+
+  ReqAckModelSync* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
+    return CreateMaybeMessage<ReqAckModelSync>(arena);
+  }
+  void CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void CopyFrom(const ReqAckModelSync& from);
+  void MergeFrom(const ReqAckModelSync& from);
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  ::PROTOBUF_NAMESPACE_ID::uint8* _InternalSerialize(
+      ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  inline void SharedCtor();
+  inline void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(ReqAckModelSync* other);
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "NFMsg.ReqAckModelSync";
+  }
+  private:
+  inline ::PROTOBUF_NAMESPACE_ID::Arena* GetArenaNoVirtual() const {
+    return nullptr;
+  }
+  inline void* MaybeArenaPtr() const {
+    return nullptr;
+  }
+  public:
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+  private:
+  static ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadataStatic() {
+    ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(&::descriptor_table_NFMsgShare_2eproto);
+    return ::descriptor_table_NFMsgShare_2eproto.file_level_metadata[kIndexInFileMessages];
+  }
+
+  public:
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kSyncUnitFieldNumber = 2,
+    kSequenceFieldNumber = 1,
+  };
+  // .NFMsg.ModelSyncUnit sync_unit = 2;
+  bool has_sync_unit() const;
+  private:
+  bool _internal_has_sync_unit() const;
+  public:
+  void clear_sync_unit();
+  const ::NFMsg::ModelSyncUnit& sync_unit() const;
+  ::NFMsg::ModelSyncUnit* release_sync_unit();
+  ::NFMsg::ModelSyncUnit* mutable_sync_unit();
+  void set_allocated_sync_unit(::NFMsg::ModelSyncUnit* sync_unit);
+  private:
+  const ::NFMsg::ModelSyncUnit& _internal_sync_unit() const;
+  ::NFMsg::ModelSyncUnit* _internal_mutable_sync_unit();
+  public:
+
+  // int32 sequence = 1;
+  void clear_sequence();
+  ::PROTOBUF_NAMESPACE_ID::int32 sequence() const;
+  void set_sequence(::PROTOBUF_NAMESPACE_ID::int32 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::int32 _internal_sequence() const;
+  void _internal_set_sequence(::PROTOBUF_NAMESPACE_ID::int32 value);
+  public:
+
+  // @@protoc_insertion_point(class_scope:NFMsg.ReqAckModelSync)
+ private:
+  class _Internal;
+
+  ::PROTOBUF_NAMESPACE_ID::internal::InternalMetadataWithArena _internal_metadata_;
+  ::NFMsg::ModelSyncUnit* sync_unit_;
+  ::PROTOBUF_NAMESPACE_ID::int32 sequence_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_NFMsgShare_2eproto;
+};
+// -------------------------------------------------------------------
+
+class ReqAckModel :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:NFMsg.ReqAckModel) */ {
+ public:
+  ReqAckModel();
+  virtual ~ReqAckModel();
+
+  ReqAckModel(const ReqAckModel& from);
+  ReqAckModel(ReqAckModel&& from) noexcept
+    : ReqAckModel() {
+    *this = ::std::move(from);
+  }
+
+  inline ReqAckModel& operator=(const ReqAckModel& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline ReqAckModel& operator=(ReqAckModel&& from) noexcept {
+    if (GetArenaNoVirtual() == from.GetArenaNoVirtual()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return GetMetadataStatic().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return GetMetadataStatic().reflection;
+  }
+  static const ReqAckModel& default_instance();
+
+  static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
+  static inline const ReqAckModel* internal_default_instance() {
+    return reinterpret_cast<const ReqAckModel*>(
+               &_ReqAckModel_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    15;
+
+  friend void swap(ReqAckModel& a, ReqAckModel& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(ReqAckModel* other) {
+    if (other == this) return;
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline ReqAckModel* New() const final {
+    return CreateMaybeMessage<ReqAckModel>(nullptr);
+  }
+
+  ReqAckModel* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
+    return CreateMaybeMessage<ReqAckModel>(arena);
+  }
+  void CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void CopyFrom(const ReqAckModel& from);
+  void MergeFrom(const ReqAckModel& from);
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  ::PROTOBUF_NAMESPACE_ID::uint8* _InternalSerialize(
+      ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  inline void SharedCtor();
+  inline void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(ReqAckModel* other);
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "NFMsg.ReqAckModel";
+  }
+  private:
+  inline ::PROTOBUF_NAMESPACE_ID::Arena* GetArenaNoVirtual() const {
+    return nullptr;
+  }
+  inline void* MaybeArenaPtr() const {
+    return nullptr;
+  }
+  public:
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+  private:
+  static ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadataStatic() {
+    ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(&::descriptor_table_NFMsgShare_2eproto);
+    return ::descriptor_table_NFMsgShare_2eproto.file_level_metadata[kIndexInFileMessages];
+  }
+
+  public:
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kRawFieldNumber = 2,
+    kPlayerIdFieldNumber = 1,
+  };
+  // bytes raw = 2;
+  void clear_raw();
+  const std::string& raw() const;
+  void set_raw(const std::string& value);
+  void set_raw(std::string&& value);
+  void set_raw(const char* value);
+  void set_raw(const void* value, size_t size);
+  std::string* mutable_raw();
+  std::string* release_raw();
+  void set_allocated_raw(std::string* raw);
+  private:
+  const std::string& _internal_raw() const;
+  void _internal_set_raw(const std::string& value);
+  std::string* _internal_mutable_raw();
+  public:
+
+  // .NFMsg.Ident player_id = 1;
+  bool has_player_id() const;
+  private:
+  bool _internal_has_player_id() const;
+  public:
+  void clear_player_id();
+  const ::NFMsg::Ident& player_id() const;
+  ::NFMsg::Ident* release_player_id();
+  ::NFMsg::Ident* mutable_player_id();
+  void set_allocated_player_id(::NFMsg::Ident* player_id);
+  private:
+  const ::NFMsg::Ident& _internal_player_id() const;
+  ::NFMsg::Ident* _internal_mutable_player_id();
+  public:
+
+  // @@protoc_insertion_point(class_scope:NFMsg.ReqAckModel)
+ private:
+  class _Internal;
+
+  ::PROTOBUF_NAMESPACE_ID::internal::InternalMetadataWithArena _internal_metadata_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr raw_;
+  ::NFMsg::Ident* player_id_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_NFMsgShare_2eproto;
+};
 // ===================================================================
 
 
@@ -4139,9 +4583,281 @@ inline void ReqAckPlayerChat::set_allocated_chat_info(std::string* chat_info) {
   // @@protoc_insertion_point(field_set_allocated:NFMsg.ReqAckPlayerChat.chat_info)
 }
 
+// -------------------------------------------------------------------
+
+// ModelSyncUnit
+
+// bytes raw = 1;
+inline void ModelSyncUnit::clear_raw() {
+  raw_.ClearToEmptyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+}
+inline const std::string& ModelSyncUnit::raw() const {
+  // @@protoc_insertion_point(field_get:NFMsg.ModelSyncUnit.raw)
+  return _internal_raw();
+}
+inline void ModelSyncUnit::set_raw(const std::string& value) {
+  _internal_set_raw(value);
+  // @@protoc_insertion_point(field_set:NFMsg.ModelSyncUnit.raw)
+}
+inline std::string* ModelSyncUnit::mutable_raw() {
+  // @@protoc_insertion_point(field_mutable:NFMsg.ModelSyncUnit.raw)
+  return _internal_mutable_raw();
+}
+inline const std::string& ModelSyncUnit::_internal_raw() const {
+  return raw_.GetNoArena();
+}
+inline void ModelSyncUnit::_internal_set_raw(const std::string& value) {
+  
+  raw_.SetNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), value);
+}
+inline void ModelSyncUnit::set_raw(std::string&& value) {
+  
+  raw_.SetNoArena(
+    &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:NFMsg.ModelSyncUnit.raw)
+}
+inline void ModelSyncUnit::set_raw(const char* value) {
+  GOOGLE_DCHECK(value != nullptr);
+  
+  raw_.SetNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:NFMsg.ModelSyncUnit.raw)
+}
+inline void ModelSyncUnit::set_raw(const void* value, size_t size) {
+  
+  raw_.SetNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:NFMsg.ModelSyncUnit.raw)
+}
+inline std::string* ModelSyncUnit::_internal_mutable_raw() {
+  
+  return raw_.MutableNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+}
+inline std::string* ModelSyncUnit::release_raw() {
+  // @@protoc_insertion_point(field_release:NFMsg.ModelSyncUnit.raw)
+  
+  return raw_.ReleaseNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+}
+inline void ModelSyncUnit::set_allocated_raw(std::string* raw) {
+  if (raw != nullptr) {
+    
+  } else {
+    
+  }
+  raw_.SetAllocatedNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), raw);
+  // @@protoc_insertion_point(field_set_allocated:NFMsg.ModelSyncUnit.raw)
+}
+
+// -------------------------------------------------------------------
+
+// ReqAckModelSync
+
+// int32 sequence = 1;
+inline void ReqAckModelSync::clear_sequence() {
+  sequence_ = 0;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 ReqAckModelSync::_internal_sequence() const {
+  return sequence_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 ReqAckModelSync::sequence() const {
+  // @@protoc_insertion_point(field_get:NFMsg.ReqAckModelSync.sequence)
+  return _internal_sequence();
+}
+inline void ReqAckModelSync::_internal_set_sequence(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  
+  sequence_ = value;
+}
+inline void ReqAckModelSync::set_sequence(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  _internal_set_sequence(value);
+  // @@protoc_insertion_point(field_set:NFMsg.ReqAckModelSync.sequence)
+}
+
+// .NFMsg.ModelSyncUnit sync_unit = 2;
+inline bool ReqAckModelSync::_internal_has_sync_unit() const {
+  return this != internal_default_instance() && sync_unit_ != nullptr;
+}
+inline bool ReqAckModelSync::has_sync_unit() const {
+  return _internal_has_sync_unit();
+}
+inline void ReqAckModelSync::clear_sync_unit() {
+  if (GetArenaNoVirtual() == nullptr && sync_unit_ != nullptr) {
+    delete sync_unit_;
+  }
+  sync_unit_ = nullptr;
+}
+inline const ::NFMsg::ModelSyncUnit& ReqAckModelSync::_internal_sync_unit() const {
+  const ::NFMsg::ModelSyncUnit* p = sync_unit_;
+  return p != nullptr ? *p : *reinterpret_cast<const ::NFMsg::ModelSyncUnit*>(
+      &::NFMsg::_ModelSyncUnit_default_instance_);
+}
+inline const ::NFMsg::ModelSyncUnit& ReqAckModelSync::sync_unit() const {
+  // @@protoc_insertion_point(field_get:NFMsg.ReqAckModelSync.sync_unit)
+  return _internal_sync_unit();
+}
+inline ::NFMsg::ModelSyncUnit* ReqAckModelSync::release_sync_unit() {
+  // @@protoc_insertion_point(field_release:NFMsg.ReqAckModelSync.sync_unit)
+  
+  ::NFMsg::ModelSyncUnit* temp = sync_unit_;
+  sync_unit_ = nullptr;
+  return temp;
+}
+inline ::NFMsg::ModelSyncUnit* ReqAckModelSync::_internal_mutable_sync_unit() {
+  
+  if (sync_unit_ == nullptr) {
+    auto* p = CreateMaybeMessage<::NFMsg::ModelSyncUnit>(GetArenaNoVirtual());
+    sync_unit_ = p;
+  }
+  return sync_unit_;
+}
+inline ::NFMsg::ModelSyncUnit* ReqAckModelSync::mutable_sync_unit() {
+  // @@protoc_insertion_point(field_mutable:NFMsg.ReqAckModelSync.sync_unit)
+  return _internal_mutable_sync_unit();
+}
+inline void ReqAckModelSync::set_allocated_sync_unit(::NFMsg::ModelSyncUnit* sync_unit) {
+  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaNoVirtual();
+  if (message_arena == nullptr) {
+    delete sync_unit_;
+  }
+  if (sync_unit) {
+    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena = nullptr;
+    if (message_arena != submessage_arena) {
+      sync_unit = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
+          message_arena, sync_unit, submessage_arena);
+    }
+    
+  } else {
+    
+  }
+  sync_unit_ = sync_unit;
+  // @@protoc_insertion_point(field_set_allocated:NFMsg.ReqAckModelSync.sync_unit)
+}
+
+// -------------------------------------------------------------------
+
+// ReqAckModel
+
+// .NFMsg.Ident player_id = 1;
+inline bool ReqAckModel::_internal_has_player_id() const {
+  return this != internal_default_instance() && player_id_ != nullptr;
+}
+inline bool ReqAckModel::has_player_id() const {
+  return _internal_has_player_id();
+}
+inline const ::NFMsg::Ident& ReqAckModel::_internal_player_id() const {
+  const ::NFMsg::Ident* p = player_id_;
+  return p != nullptr ? *p : *reinterpret_cast<const ::NFMsg::Ident*>(
+      &::NFMsg::_Ident_default_instance_);
+}
+inline const ::NFMsg::Ident& ReqAckModel::player_id() const {
+  // @@protoc_insertion_point(field_get:NFMsg.ReqAckModel.player_id)
+  return _internal_player_id();
+}
+inline ::NFMsg::Ident* ReqAckModel::release_player_id() {
+  // @@protoc_insertion_point(field_release:NFMsg.ReqAckModel.player_id)
+  
+  ::NFMsg::Ident* temp = player_id_;
+  player_id_ = nullptr;
+  return temp;
+}
+inline ::NFMsg::Ident* ReqAckModel::_internal_mutable_player_id() {
+  
+  if (player_id_ == nullptr) {
+    auto* p = CreateMaybeMessage<::NFMsg::Ident>(GetArenaNoVirtual());
+    player_id_ = p;
+  }
+  return player_id_;
+}
+inline ::NFMsg::Ident* ReqAckModel::mutable_player_id() {
+  // @@protoc_insertion_point(field_mutable:NFMsg.ReqAckModel.player_id)
+  return _internal_mutable_player_id();
+}
+inline void ReqAckModel::set_allocated_player_id(::NFMsg::Ident* player_id) {
+  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaNoVirtual();
+  if (message_arena == nullptr) {
+    delete reinterpret_cast< ::PROTOBUF_NAMESPACE_ID::MessageLite*>(player_id_);
+  }
+  if (player_id) {
+    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena = nullptr;
+    if (message_arena != submessage_arena) {
+      player_id = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
+          message_arena, player_id, submessage_arena);
+    }
+    
+  } else {
+    
+  }
+  player_id_ = player_id;
+  // @@protoc_insertion_point(field_set_allocated:NFMsg.ReqAckModel.player_id)
+}
+
+// bytes raw = 2;
+inline void ReqAckModel::clear_raw() {
+  raw_.ClearToEmptyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+}
+inline const std::string& ReqAckModel::raw() const {
+  // @@protoc_insertion_point(field_get:NFMsg.ReqAckModel.raw)
+  return _internal_raw();
+}
+inline void ReqAckModel::set_raw(const std::string& value) {
+  _internal_set_raw(value);
+  // @@protoc_insertion_point(field_set:NFMsg.ReqAckModel.raw)
+}
+inline std::string* ReqAckModel::mutable_raw() {
+  // @@protoc_insertion_point(field_mutable:NFMsg.ReqAckModel.raw)
+  return _internal_mutable_raw();
+}
+inline const std::string& ReqAckModel::_internal_raw() const {
+  return raw_.GetNoArena();
+}
+inline void ReqAckModel::_internal_set_raw(const std::string& value) {
+  
+  raw_.SetNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), value);
+}
+inline void ReqAckModel::set_raw(std::string&& value) {
+  
+  raw_.SetNoArena(
+    &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:NFMsg.ReqAckModel.raw)
+}
+inline void ReqAckModel::set_raw(const char* value) {
+  GOOGLE_DCHECK(value != nullptr);
+  
+  raw_.SetNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:NFMsg.ReqAckModel.raw)
+}
+inline void ReqAckModel::set_raw(const void* value, size_t size) {
+  
+  raw_.SetNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:NFMsg.ReqAckModel.raw)
+}
+inline std::string* ReqAckModel::_internal_mutable_raw() {
+  
+  return raw_.MutableNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+}
+inline std::string* ReqAckModel::release_raw() {
+  // @@protoc_insertion_point(field_release:NFMsg.ReqAckModel.raw)
+  
+  return raw_.ReleaseNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+}
+inline void ReqAckModel::set_allocated_raw(std::string* raw) {
+  if (raw != nullptr) {
+    
+  } else {
+    
+  }
+  raw_.SetAllocatedNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), raw);
+  // @@protoc_insertion_point(field_set_allocated:NFMsg.ReqAckModel.raw)
+}
+
 #ifdef __GNUC__
   #pragma GCC diagnostic pop
 #endif  // __GNUC__
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
 // -------------------------------------------------------------------
 
 // -------------------------------------------------------------------

@@ -1,0 +1,1157 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"childIndexes" : 
+					[
+						1,
+						3,
+						17,
+						36,
+						44
+					],
+					"minimumCMakeVersion" : 
+					{
+						"string" : "2.8"
+					},
+					"projectIndex" : 0,
+					"source" : "."
+				},
+				{
+					"build" : "Dependencies",
+					"childIndexes" : 
+					[
+						2
+					],
+					"minimumCMakeVersion" : 
+					{
+						"string" : "2.8"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 0,
+					"source" : "Dependencies"
+				},
+				{
+					"build" : "Dependencies/navigation",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "2.8"
+					},
+					"parentIndex" : 1,
+					"projectIndex" : 0,
+					"source" : "Dependencies/navigation",
+					"targetIndexes" : 
+					[
+						42
+					]
+				},
+				{
+					"build" : "NFComm",
+					"childIndexes" : 
+					[
+						4,
+						5,
+						6,
+						7,
+						8,
+						9,
+						10,
+						11,
+						12,
+						13,
+						14,
+						15,
+						16
+					],
+					"minimumCMakeVersion" : 
+					{
+						"string" : "2.8"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 0,
+					"source" : "NFComm"
+				},
+				{
+					"build" : "NFComm/NFPluginLoader",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "2.8"
+					},
+					"parentIndex" : 3,
+					"projectIndex" : 0,
+					"source" : "NFComm/NFPluginLoader",
+					"targetIndexes" : 
+					[
+						26
+					]
+				},
+				{
+					"build" : "NFComm/NFActorPlugin",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "2.8"
+					},
+					"parentIndex" : 3,
+					"projectIndex" : 0,
+					"source" : "NFComm/NFActorPlugin",
+					"targetIndexes" : 
+					[
+						0
+					]
+				},
+				{
+					"build" : "NFComm/NFConfigPlugin",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "2.8"
+					},
+					"parentIndex" : 3,
+					"projectIndex" : 0,
+					"source" : "NFComm/NFConfigPlugin",
+					"targetIndexes" : 
+					[
+						2
+					]
+				},
+				{
+					"build" : "NFComm/NFCore",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "2.8"
+					},
+					"parentIndex" : 3,
+					"projectIndex" : 0,
+					"source" : "NFComm/NFCore",
+					"targetIndexes" : 
+					[
+						4
+					]
+				},
+				{
+					"build" : "NFComm/NFKernelPlugin",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "2.8"
+					},
+					"parentIndex" : 3,
+					"projectIndex" : 0,
+					"source" : "NFComm/NFKernelPlugin",
+					"targetIndexes" : 
+					[
+						12
+					]
+				},
+				{
+					"build" : "NFComm/NFLogPlugin",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "2.8"
+					},
+					"parentIndex" : 3,
+					"projectIndex" : 0,
+					"source" : "NFComm/NFLogPlugin",
+					"targetIndexes" : 
+					[
+						13
+					]
+				},
+				{
+					"build" : "NFComm/NFMessageDefine",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "2.8"
+					},
+					"parentIndex" : 3,
+					"projectIndex" : 0,
+					"source" : "NFComm/NFMessageDefine",
+					"targetIndexes" : 
+					[
+						22
+					]
+				},
+				{
+					"build" : "NFComm/NFNetPlugin",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "2.8"
+					},
+					"parentIndex" : 3,
+					"projectIndex" : 0,
+					"source" : "NFComm/NFNetPlugin",
+					"targetIndexes" : 
+					[
+						24
+					]
+				},
+				{
+					"build" : "NFComm/NFSecurityPlugin",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "2.8"
+					},
+					"parentIndex" : 3,
+					"projectIndex" : 0,
+					"source" : "NFComm/NFSecurityPlugin",
+					"targetIndexes" : 
+					[
+						30
+					]
+				},
+				{
+					"build" : "NFComm/NFNavigationPlugin",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "2.8"
+					},
+					"parentIndex" : 3,
+					"projectIndex" : 0,
+					"source" : "NFComm/NFNavigationPlugin",
+					"targetIndexes" : 
+					[
+						23
+					]
+				},
+				{
+					"build" : "NFComm/NFNoSqlPlugin",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "2.8"
+					},
+					"parentIndex" : 3,
+					"projectIndex" : 0,
+					"source" : "NFComm/NFNoSqlPlugin",
+					"targetIndexes" : 
+					[
+						25
+					]
+				},
+				{
+					"build" : "NFComm/NFTestPlugin",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "2.8"
+					},
+					"parentIndex" : 3,
+					"projectIndex" : 0,
+					"source" : "NFComm/NFTestPlugin",
+					"targetIndexes" : 
+					[
+						32
+					]
+				},
+				{
+					"build" : "NFComm/NFLuaScriptPlugin",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "2.8"
+					},
+					"parentIndex" : 3,
+					"projectIndex" : 0,
+					"source" : "NFComm/NFLuaScriptPlugin",
+					"targetIndexes" : 
+					[
+						18
+					]
+				},
+				{
+					"build" : "NFServer",
+					"childIndexes" : 
+					[
+						18,
+						19,
+						20,
+						21,
+						22,
+						23,
+						24,
+						25,
+						26,
+						27,
+						28,
+						29,
+						30,
+						31,
+						32,
+						33,
+						34,
+						35
+					],
+					"minimumCMakeVersion" : 
+					{
+						"string" : "2.8"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 0,
+					"source" : "NFServer"
+				},
+				{
+					"build" : "NFServer/NFGameServerNet_ClientPlugin",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "2.8"
+					},
+					"parentIndex" : 17,
+					"projectIndex" : 0,
+					"source" : "NFServer/NFGameServerNet_ClientPlugin",
+					"targetIndexes" : 
+					[
+						8
+					]
+				},
+				{
+					"build" : "NFServer/NFGameServerNet_ServerPlugin",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "2.8"
+					},
+					"parentIndex" : 17,
+					"projectIndex" : 0,
+					"source" : "NFServer/NFGameServerNet_ServerPlugin",
+					"targetIndexes" : 
+					[
+						9
+					]
+				},
+				{
+					"build" : "NFServer/NFGameServerPlugin",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "2.8"
+					},
+					"parentIndex" : 17,
+					"projectIndex" : 0,
+					"source" : "NFServer/NFGameServerPlugin",
+					"targetIndexes" : 
+					[
+						10
+					]
+				},
+				{
+					"build" : "NFServer/NFLoginLogicPlugin",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "2.8"
+					},
+					"parentIndex" : 17,
+					"projectIndex" : 0,
+					"source" : "NFServer/NFLoginLogicPlugin",
+					"targetIndexes" : 
+					[
+						14
+					]
+				},
+				{
+					"build" : "NFServer/NFLoginNet_ClientPlugin",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "2.8"
+					},
+					"parentIndex" : 17,
+					"projectIndex" : 0,
+					"source" : "NFServer/NFLoginNet_ClientPlugin",
+					"targetIndexes" : 
+					[
+						15
+					]
+				},
+				{
+					"build" : "NFServer/NFLoginNet_ServerPlugin",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "2.8"
+					},
+					"parentIndex" : 17,
+					"projectIndex" : 0,
+					"source" : "NFServer/NFLoginNet_ServerPlugin",
+					"targetIndexes" : 
+					[
+						17
+					]
+				},
+				{
+					"build" : "NFServer/NFLoginNet_HttpServerPlugin",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "2.8"
+					},
+					"parentIndex" : 17,
+					"projectIndex" : 0,
+					"source" : "NFServer/NFLoginNet_HttpServerPlugin",
+					"targetIndexes" : 
+					[
+						16
+					]
+				},
+				{
+					"build" : "NFServer/NFMasterNet_ServerPlugin",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "2.8"
+					},
+					"parentIndex" : 17,
+					"projectIndex" : 0,
+					"source" : "NFServer/NFMasterNet_ServerPlugin",
+					"targetIndexes" : 
+					[
+						20
+					]
+				},
+				{
+					"build" : "NFServer/NFMasterNet_HttpServerPlugin",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "2.8"
+					},
+					"parentIndex" : 17,
+					"projectIndex" : 0,
+					"source" : "NFServer/NFMasterNet_HttpServerPlugin",
+					"targetIndexes" : 
+					[
+						19
+					]
+				},
+				{
+					"build" : "NFServer/NFMasterServerPlugin",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "2.8"
+					},
+					"parentIndex" : 17,
+					"projectIndex" : 0,
+					"source" : "NFServer/NFMasterServerPlugin",
+					"targetIndexes" : 
+					[
+						21
+					]
+				},
+				{
+					"build" : "NFServer/NFProxyServerNet_ClientPlugin",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "2.8"
+					},
+					"parentIndex" : 17,
+					"projectIndex" : 0,
+					"source" : "NFServer/NFProxyServerNet_ClientPlugin",
+					"targetIndexes" : 
+					[
+						28
+					]
+				},
+				{
+					"build" : "NFServer/NFProxyServerNet_ServerPlugin",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "2.8"
+					},
+					"parentIndex" : 17,
+					"projectIndex" : 0,
+					"source" : "NFServer/NFProxyServerNet_ServerPlugin",
+					"targetIndexes" : 
+					[
+						29
+					]
+				},
+				{
+					"build" : "NFServer/NFProxyLogicPlugin",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "2.8"
+					},
+					"parentIndex" : 17,
+					"projectIndex" : 0,
+					"source" : "NFServer/NFProxyLogicPlugin",
+					"targetIndexes" : 
+					[
+						27
+					]
+				},
+				{
+					"build" : "NFServer/NFWorldNet_ClientPlugin",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "2.8"
+					},
+					"parentIndex" : 17,
+					"projectIndex" : 0,
+					"source" : "NFServer/NFWorldNet_ClientPlugin",
+					"targetIndexes" : 
+					[
+						33
+					]
+				},
+				{
+					"build" : "NFServer/NFWorldNet_ServerPlugin",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "2.8"
+					},
+					"parentIndex" : 17,
+					"projectIndex" : 0,
+					"source" : "NFServer/NFWorldNet_ServerPlugin",
+					"targetIndexes" : 
+					[
+						34
+					]
+				},
+				{
+					"build" : "NFServer/NFDBNet_ClientPlugin",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "2.8"
+					},
+					"parentIndex" : 17,
+					"projectIndex" : 0,
+					"source" : "NFServer/NFDBNet_ClientPlugin",
+					"targetIndexes" : 
+					[
+						6
+					]
+				},
+				{
+					"build" : "NFServer/NFDBNet_ServerPlugin",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "2.8"
+					},
+					"parentIndex" : 17,
+					"projectIndex" : 0,
+					"source" : "NFServer/NFDBNet_ServerPlugin",
+					"targetIndexes" : 
+					[
+						7
+					]
+				},
+				{
+					"build" : "NFServer/NFDBLogicPlugin",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "2.8"
+					},
+					"parentIndex" : 17,
+					"projectIndex" : 0,
+					"source" : "NFServer/NFDBLogicPlugin",
+					"targetIndexes" : 
+					[
+						5
+					]
+				},
+				{
+					"build" : "Tutorial",
+					"childIndexes" : 
+					[
+						37,
+						38,
+						39,
+						40,
+						41,
+						42,
+						43
+					],
+					"minimumCMakeVersion" : 
+					{
+						"string" : "2.8"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 0,
+					"source" : "Tutorial"
+				},
+				{
+					"build" : "Tutorial/Tutorial1",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "2.8"
+					},
+					"parentIndex" : 36,
+					"projectIndex" : 0,
+					"source" : "Tutorial/Tutorial1",
+					"targetIndexes" : 
+					[
+						35
+					]
+				},
+				{
+					"build" : "Tutorial/Tutorial2",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "2.8"
+					},
+					"parentIndex" : 36,
+					"projectIndex" : 0,
+					"source" : "Tutorial/Tutorial2",
+					"targetIndexes" : 
+					[
+						36
+					]
+				},
+				{
+					"build" : "Tutorial/Tutorial3",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "2.8"
+					},
+					"parentIndex" : 36,
+					"projectIndex" : 0,
+					"source" : "Tutorial/Tutorial3",
+					"targetIndexes" : 
+					[
+						37
+					]
+				},
+				{
+					"build" : "Tutorial/Tutorial4",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "2.8"
+					},
+					"parentIndex" : 36,
+					"projectIndex" : 0,
+					"source" : "Tutorial/Tutorial4",
+					"targetIndexes" : 
+					[
+						38
+					]
+				},
+				{
+					"build" : "Tutorial/Tutorial5",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "2.8"
+					},
+					"parentIndex" : 36,
+					"projectIndex" : 0,
+					"source" : "Tutorial/Tutorial5",
+					"targetIndexes" : 
+					[
+						39
+					]
+				},
+				{
+					"build" : "Tutorial/Tutorial6",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "2.8"
+					},
+					"parentIndex" : 36,
+					"projectIndex" : 0,
+					"source" : "Tutorial/Tutorial6",
+					"targetIndexes" : 
+					[
+						40
+					]
+				},
+				{
+					"build" : "Tutorial/Tutorial7",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "2.8"
+					},
+					"parentIndex" : 36,
+					"projectIndex" : 0,
+					"source" : "Tutorial/Tutorial7",
+					"targetIndexes" : 
+					[
+						41
+					]
+				},
+				{
+					"build" : "NFExamples",
+					"childIndexes" : 
+					[
+						45,
+						46,
+						47,
+						48
+					],
+					"minimumCMakeVersion" : 
+					{
+						"string" : "2.8"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 0,
+					"source" : "NFExamples"
+				},
+				{
+					"build" : "NFExamples/NFChatPlugin",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "2.8"
+					},
+					"parentIndex" : 44,
+					"projectIndex" : 0,
+					"source" : "NFExamples/NFChatPlugin",
+					"targetIndexes" : 
+					[
+						1
+					]
+				},
+				{
+					"build" : "NFExamples/NFInventoryPlugin",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "2.8"
+					},
+					"parentIndex" : 44,
+					"projectIndex" : 0,
+					"source" : "NFExamples/NFInventoryPlugin",
+					"targetIndexes" : 
+					[
+						11
+					]
+				},
+				{
+					"build" : "NFExamples/NFConsumeManagerPlugin",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "2.8"
+					},
+					"parentIndex" : 44,
+					"projectIndex" : 0,
+					"source" : "NFExamples/NFConsumeManagerPlugin",
+					"targetIndexes" : 
+					[
+						3
+					]
+				},
+				{
+					"build" : "NFExamples/NFServer",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "2.8"
+					},
+					"parentIndex" : 44,
+					"projectIndex" : 0,
+					"source" : "NFExamples/NFServer",
+					"targetIndexes" : 
+					[
+						31
+					]
+				}
+			],
+			"name" : "Debug",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3,
+						4,
+						5,
+						6,
+						7,
+						8,
+						9,
+						10,
+						11,
+						12,
+						13,
+						14,
+						15,
+						16,
+						17,
+						18,
+						19,
+						20,
+						21,
+						22,
+						23,
+						24,
+						25,
+						26,
+						27,
+						28,
+						29,
+						30,
+						31,
+						32,
+						33,
+						34,
+						35,
+						36,
+						37,
+						38,
+						39,
+						40,
+						41,
+						42,
+						43,
+						44,
+						45,
+						46,
+						47,
+						48
+					],
+					"name" : "NoahFrame",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3,
+						4,
+						5,
+						6,
+						7,
+						8,
+						9,
+						10,
+						11,
+						12,
+						13,
+						14,
+						15,
+						16,
+						17,
+						18,
+						19,
+						20,
+						21,
+						22,
+						23,
+						24,
+						25,
+						26,
+						27,
+						28,
+						29,
+						30,
+						31,
+						32,
+						33,
+						34,
+						35,
+						36,
+						37,
+						38,
+						39,
+						40,
+						41,
+						42
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 5,
+					"id" : "NFActorPlugin::@864cd50bf2445c898d7f",
+					"jsonFile" : "target-NFActorPlugin-Debug-ed7ed4641e829e06394f.json",
+					"name" : "NFActorPlugin",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 45,
+					"id" : "NFChatPlugin::@16886097a1ad194a9aa5",
+					"jsonFile" : "target-NFChatPlugin-Debug-8964154d0a3ba96db707.json",
+					"name" : "NFChatPlugin",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 6,
+					"id" : "NFConfigPlugin::@9f5086ad3da8341982a5",
+					"jsonFile" : "target-NFConfigPlugin-Debug-eb8485061e5e902f7046.json",
+					"name" : "NFConfigPlugin",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 47,
+					"id" : "NFConsumeManagerPlugin::@c9805017db2b421d9fad",
+					"jsonFile" : "target-NFConsumeManagerPlugin-Debug-8ea1d945be9967d4c3e9.json",
+					"name" : "NFConsumeManagerPlugin",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 7,
+					"id" : "NFCore::@5c898e9a86819bf73f38",
+					"jsonFile" : "target-NFCore-Debug-f2e26e6fe2164eb4055c.json",
+					"name" : "NFCore",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 35,
+					"id" : "NFDBLogicPlugin::@0ea0f6f404a0b3257cda",
+					"jsonFile" : "target-NFDBLogicPlugin-Debug-d57410e002e210ef3a94.json",
+					"name" : "NFDBLogicPlugin",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 33,
+					"id" : "NFDBNet_ClientPlugin::@3439e867be108ee1c2dc",
+					"jsonFile" : "target-NFDBNet_ClientPlugin-Debug-ef0d8c1d65d152047ab8.json",
+					"name" : "NFDBNet_ClientPlugin",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 34,
+					"id" : "NFDBNet_ServerPlugin::@170282164678d31e0b89",
+					"jsonFile" : "target-NFDBNet_ServerPlugin-Debug-6b7b7e4c99c10c14949e.json",
+					"name" : "NFDBNet_ServerPlugin",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 18,
+					"id" : "NFGameServerNet_ClientPlugin::@2f17b7427fc36a068145",
+					"jsonFile" : "target-NFGameServerNet_ClientPlugin-Debug-cb522db3086a5aef36f0.json",
+					"name" : "NFGameServerNet_ClientPlugin",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 19,
+					"id" : "NFGameServerNet_ServerPlugin::@8fc057aa6d0abb15003b",
+					"jsonFile" : "target-NFGameServerNet_ServerPlugin-Debug-f863593e67cab406e60f.json",
+					"name" : "NFGameServerNet_ServerPlugin",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 20,
+					"id" : "NFGameServerPlugin::@4c44657cd8d0296320f6",
+					"jsonFile" : "target-NFGameServerPlugin-Debug-c5e713b39d106f9ebf33.json",
+					"name" : "NFGameServerPlugin",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 46,
+					"id" : "NFInventoryPlugin::@f038c66ee59749b82306",
+					"jsonFile" : "target-NFInventoryPlugin-Debug-d710027f1b3c974e48ac.json",
+					"name" : "NFInventoryPlugin",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 8,
+					"id" : "NFKernelPlugin::@f47a1d31924bdd369adc",
+					"jsonFile" : "target-NFKernelPlugin-Debug-c977c4d1fb7b10997e37.json",
+					"name" : "NFKernelPlugin",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 9,
+					"id" : "NFLogPlugin::@7ba64ea168fd0793594e",
+					"jsonFile" : "target-NFLogPlugin-Debug-4273b734a2972bf33133.json",
+					"name" : "NFLogPlugin",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 21,
+					"id" : "NFLoginLogicPlugin::@bd6c416bdc72e73c9d50",
+					"jsonFile" : "target-NFLoginLogicPlugin-Debug-dd017d8a48e3540bc4cf.json",
+					"name" : "NFLoginLogicPlugin",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 22,
+					"id" : "NFLoginNet_ClientPlugin::@48e955503946fcbf3946",
+					"jsonFile" : "target-NFLoginNet_ClientPlugin-Debug-8db0eb518f502fa00d33.json",
+					"name" : "NFLoginNet_ClientPlugin",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 24,
+					"id" : "NFLoginNet_HttpServerPlugin::@7946a3ec81b6d783efdf",
+					"jsonFile" : "target-NFLoginNet_HttpServerPlugin-Debug-fca944bc78f25c7e6f35.json",
+					"name" : "NFLoginNet_HttpServerPlugin",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 23,
+					"id" : "NFLoginNet_ServerPlugin::@208360444bea0a3a6250",
+					"jsonFile" : "target-NFLoginNet_ServerPlugin-Debug-65a70125637ce853dbe3.json",
+					"name" : "NFLoginNet_ServerPlugin",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 16,
+					"id" : "NFLuaScriptPlugin::@21430faa8b409a41fe0f",
+					"jsonFile" : "target-NFLuaScriptPlugin-Debug-87a31a8fd09792e97d62.json",
+					"name" : "NFLuaScriptPlugin",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 26,
+					"id" : "NFMasterNet_HttpServerPlugin::@eb3aa67b61460d05ce12",
+					"jsonFile" : "target-NFMasterNet_HttpServerPlugin-Debug-0fc5326cb00360ed2ac0.json",
+					"name" : "NFMasterNet_HttpServerPlugin",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 25,
+					"id" : "NFMasterNet_ServerPlugin::@34df342955e05c0f7a44",
+					"jsonFile" : "target-NFMasterNet_ServerPlugin-Debug-4a49336a7bb4d5c892ac.json",
+					"name" : "NFMasterNet_ServerPlugin",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 27,
+					"id" : "NFMasterServerPlugin::@8d6fcb2722d4c9ae8953",
+					"jsonFile" : "target-NFMasterServerPlugin-Debug-13f09fe862cc9f996a32.json",
+					"name" : "NFMasterServerPlugin",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 10,
+					"id" : "NFMessageDefine::@517ef342def70a8b0c2c",
+					"jsonFile" : "target-NFMessageDefine-Debug-8b2f2486ac7f71857683.json",
+					"name" : "NFMessageDefine",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 13,
+					"id" : "NFNavigationPlugin::@2cf9ef8860d80ded8561",
+					"jsonFile" : "target-NFNavigationPlugin-Debug-86eedfbb1f90e8c11448.json",
+					"name" : "NFNavigationPlugin",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 11,
+					"id" : "NFNetPlugin::@69d0cdd53444f844061c",
+					"jsonFile" : "target-NFNetPlugin-Debug-a0cfc5cce249f5ca59ea.json",
+					"name" : "NFNetPlugin",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 14,
+					"id" : "NFNoSqlPlugin::@36ddef1012e3124ed62c",
+					"jsonFile" : "target-NFNoSqlPlugin-Debug-5b60ebe3679989bc7422.json",
+					"name" : "NFNoSqlPlugin",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 4,
+					"id" : "NFPluginLoader::@e0da8b6a76d16bb8e40a",
+					"jsonFile" : "target-NFPluginLoader-Debug-24e803ddf1e7e5f65898.json",
+					"name" : "NFPluginLoader",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 30,
+					"id" : "NFProxyLogicPlugin::@578d3dc3cef47eaa6c4d",
+					"jsonFile" : "target-NFProxyLogicPlugin-Debug-43a2df0a1e40723ec1bc.json",
+					"name" : "NFProxyLogicPlugin",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 28,
+					"id" : "NFProxyServerNet_ClientPlugin::@16f557267231458925ea",
+					"jsonFile" : "target-NFProxyServerNet_ClientPlugin-Debug-6a1392d173c7f78a0512.json",
+					"name" : "NFProxyServerNet_ClientPlugin",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 29,
+					"id" : "NFProxyServerNet_ServerPlugin::@a1cc854272c08dfce156",
+					"jsonFile" : "target-NFProxyServerNet_ServerPlugin-Debug-54a4acb6c3afbad0c465.json",
+					"name" : "NFProxyServerNet_ServerPlugin",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 12,
+					"id" : "NFSecurityPlugin::@621740119493c58f7fec",
+					"jsonFile" : "target-NFSecurityPlugin-Debug-94a487660bf1e7e79f9f.json",
+					"name" : "NFSecurityPlugin",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 48,
+					"id" : "NFServer::@fa71fd6b7cf9bb87492b",
+					"jsonFile" : "target-NFServer-Debug-aa771844bbd1bdf12856.json",
+					"name" : "NFServer",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 15,
+					"id" : "NFTestPlugin::@2d9762b20815f1d5843b",
+					"jsonFile" : "target-NFTestPlugin-Debug-953ffa2af916ed0ce049.json",
+					"name" : "NFTestPlugin",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 31,
+					"id" : "NFWorldNet_ClientPlugin::@8f512a6e84292553e8da",
+					"jsonFile" : "target-NFWorldNet_ClientPlugin-Debug-96065d4723ce518c93c3.json",
+					"name" : "NFWorldNet_ClientPlugin",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 32,
+					"id" : "NFWorldNet_ServerPlugin::@635f45ea0e7a05630b24",
+					"jsonFile" : "target-NFWorldNet_ServerPlugin-Debug-c4bd1ab5a9a518049fed.json",
+					"name" : "NFWorldNet_ServerPlugin",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 37,
+					"id" : "Tutorial1::@76a9a9fc38032e351657",
+					"jsonFile" : "target-Tutorial1-Debug-0e80dcb37d2776134998.json",
+					"name" : "Tutorial1",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 38,
+					"id" : "Tutorial2::@31cf74adf0b008b8d2b7",
+					"jsonFile" : "target-Tutorial2-Debug-8caf082ee38b2cd80ccb.json",
+					"name" : "Tutorial2",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 39,
+					"id" : "Tutorial3Plugin::@1b183adf7c9f68a75225",
+					"jsonFile" : "target-Tutorial3Plugin-Debug-02c2fd53df4beb7234a5.json",
+					"name" : "Tutorial3Plugin",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 40,
+					"id" : "Tutorial4Plugin::@95925640e31fc98049c9",
+					"jsonFile" : "target-Tutorial4Plugin-Debug-57400e6fa8fd97cd5874.json",
+					"name" : "Tutorial4Plugin",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 41,
+					"id" : "Tutorial5::@353e61e97a5b76da1494",
+					"jsonFile" : "target-Tutorial5-Debug-f1058da1d949d762c67e.json",
+					"name" : "Tutorial5",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 42,
+					"id" : "Tutorial6::@b76fdca1cbe6ea64ad25",
+					"jsonFile" : "target-Tutorial6-Debug-9349d4f50903b3f48f31.json",
+					"name" : "Tutorial6",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 43,
+					"id" : "Tutorial7::@042fd62c5fcfd907f118",
+					"jsonFile" : "target-Tutorial7-Debug-b1933329e13d1e7f127c.json",
+					"name" : "Tutorial7",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 2,
+					"id" : "navigation::@8d93798ee8812d44e256",
+					"jsonFile" : "target-navigation-Debug-eb03f84c2e6f66ce0e4d.json",
+					"name" : "navigation",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "D:/UnityProj/NoahGameFrame/out/build/x64-Debug (默认值)",
+		"source" : "D:/UnityProj/NoahGameFrame"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 1
+	}
+}

@@ -1,0 +1,905 @@
+{
+	"artifacts" : 
+	[
+		{
+			"path" : "D:/UnityProj/NoahGameFrame/_Out/Debug/NFServer.exe"
+		},
+		{
+			"path" : "D:/UnityProj/NoahGameFrame/_Out/Debug/NFServer.pdb"
+		}
+	],
+	"backtrace" : 1,
+	"backtraceGraph" : 
+	{
+		"commands" : 
+		[
+			"add_executable",
+			"link_directories",
+			"target_link_libraries",
+			"add_definitions",
+			"include_directories"
+		],
+		"files" : 
+		[
+			"NFExamples/NFServer/CMakeLists.txt",
+			"CMakeLists.txt",
+			"NFComm/NFPluginLoader/CMakeLists.txt",
+			"NFComm/NFLuaScriptPlugin/CMakeLists.txt",
+			"NFComm/NFNavigationPlugin/CMakeLists.txt",
+			"NFComm/NFNoSqlPlugin/CMakeLists.txt",
+			"NFComm/NFCore/CMakeLists.txt"
+		],
+		"nodes" : 
+		[
+			{
+				"file" : 0
+			},
+			{
+				"command" : 0,
+				"file" : 0,
+				"line" : 6,
+				"parent" : 0
+			},
+			{
+				"file" : 1
+			},
+			{
+				"command" : 1,
+				"file" : 1,
+				"line" : 101,
+				"parent" : 2
+			},
+			{
+				"command" : 2,
+				"file" : 0,
+				"line" : 11,
+				"parent" : 0
+			},
+			{
+				"file" : 2
+			},
+			{
+				"command" : 2,
+				"file" : 2,
+				"line" : 11,
+				"parent" : 5
+			},
+			{
+				"command" : 2,
+				"file" : 2,
+				"line" : 12,
+				"parent" : 5
+			},
+			{
+				"command" : 2,
+				"file" : 2,
+				"line" : 13,
+				"parent" : 5
+			},
+			{
+				"command" : 2,
+				"file" : 2,
+				"line" : 14,
+				"parent" : 5
+			},
+			{
+				"command" : 2,
+				"file" : 2,
+				"line" : 15,
+				"parent" : 5
+			},
+			{
+				"file" : 3
+			},
+			{
+				"command" : 2,
+				"file" : 3,
+				"line" : 9,
+				"parent" : 11
+			},
+			{
+				"command" : 2,
+				"file" : 2,
+				"line" : 16,
+				"parent" : 5
+			},
+			{
+				"file" : 4
+			},
+			{
+				"command" : 2,
+				"file" : 4,
+				"line" : 26,
+				"parent" : 14
+			},
+			{
+				"command" : 2,
+				"file" : 2,
+				"line" : 18,
+				"parent" : 5
+			},
+			{
+				"file" : 5
+			},
+			{
+				"command" : 2,
+				"file" : 5,
+				"line" : 40,
+				"parent" : 17
+			},
+			{
+				"command" : 2,
+				"file" : 2,
+				"line" : 19,
+				"parent" : 5
+			},
+			{
+				"command" : 2,
+				"file" : 2,
+				"line" : 20,
+				"parent" : 5
+			},
+			{
+				"command" : 2,
+				"file" : 2,
+				"line" : 21,
+				"parent" : 5
+			},
+			{
+				"command" : 2,
+				"file" : 2,
+				"line" : 22,
+				"parent" : 5
+			},
+			{
+				"command" : 2,
+				"file" : 2,
+				"line" : 23,
+				"parent" : 5
+			},
+			{
+				"command" : 2,
+				"file" : 2,
+				"line" : 28,
+				"parent" : 5
+			},
+			{
+				"command" : 2,
+				"file" : 2,
+				"line" : 29,
+				"parent" : 5
+			},
+			{
+				"command" : 2,
+				"file" : 2,
+				"line" : 30,
+				"parent" : 5
+			},
+			{
+				"command" : 2,
+				"file" : 2,
+				"line" : 32,
+				"parent" : 5
+			},
+			{
+				"command" : 2,
+				"file" : 2,
+				"line" : 33,
+				"parent" : 5
+			},
+			{
+				"command" : 2,
+				"file" : 2,
+				"line" : 34,
+				"parent" : 5
+			},
+			{
+				"command" : 2,
+				"file" : 2,
+				"line" : 36,
+				"parent" : 5
+			},
+			{
+				"command" : 2,
+				"file" : 2,
+				"line" : 37,
+				"parent" : 5
+			},
+			{
+				"command" : 2,
+				"file" : 2,
+				"line" : 38,
+				"parent" : 5
+			},
+			{
+				"command" : 2,
+				"file" : 2,
+				"line" : 39,
+				"parent" : 5
+			},
+			{
+				"command" : 2,
+				"file" : 2,
+				"line" : 41,
+				"parent" : 5
+			},
+			{
+				"command" : 2,
+				"file" : 2,
+				"line" : 42,
+				"parent" : 5
+			},
+			{
+				"command" : 2,
+				"file" : 2,
+				"line" : 43,
+				"parent" : 5
+			},
+			{
+				"command" : 2,
+				"file" : 2,
+				"line" : 45,
+				"parent" : 5
+			},
+			{
+				"command" : 2,
+				"file" : 2,
+				"line" : 46,
+				"parent" : 5
+			},
+			{
+				"command" : 2,
+				"file" : 2,
+				"line" : 47,
+				"parent" : 5
+			},
+			{
+				"command" : 2,
+				"file" : 2,
+				"line" : 49,
+				"parent" : 5
+			},
+			{
+				"command" : 2,
+				"file" : 2,
+				"line" : 50,
+				"parent" : 5
+			},
+			{
+				"command" : 2,
+				"file" : 2,
+				"line" : 52,
+				"parent" : 5
+			},
+			{
+				"command" : 2,
+				"file" : 2,
+				"line" : 53,
+				"parent" : 5
+			},
+			{
+				"command" : 2,
+				"file" : 2,
+				"line" : 54,
+				"parent" : 5
+			},
+			{
+				"command" : 2,
+				"file" : 2,
+				"line" : 55,
+				"parent" : 5
+			},
+			{
+				"command" : 2,
+				"file" : 2,
+				"line" : 56,
+				"parent" : 5
+			},
+			{
+				"command" : 2,
+				"file" : 2,
+				"line" : 57,
+				"parent" : 5
+			},
+			{
+				"command" : 2,
+				"file" : 2,
+				"line" : 58,
+				"parent" : 5
+			},
+			{
+				"command" : 2,
+				"file" : 2,
+				"line" : 9,
+				"parent" : 5
+			},
+			{
+				"command" : 2,
+				"file" : 2,
+				"line" : 10,
+				"parent" : 5
+			},
+			{
+				"command" : 2,
+				"file" : 2,
+				"line" : 17,
+				"parent" : 5
+			},
+			{
+				"file" : 6
+			},
+			{
+				"command" : 2,
+				"file" : 6,
+				"line" : 29,
+				"parent" : 52
+			},
+			{
+				"command" : 3,
+				"file" : 0,
+				"line" : 37,
+				"parent" : 0
+			},
+			{
+				"command" : 4,
+				"file" : 1,
+				"line" : 58,
+				"parent" : 2
+			},
+			{
+				"command" : 4,
+				"file" : 1,
+				"line" : 91,
+				"parent" : 2
+			}
+		]
+	},
+	"compileGroups" : 
+	[
+		{
+			"compileCommandFragments" : 
+			[
+				{
+					"fragment" : "-D_X64 -D_WINDOWS /EHsc /MDd /Zi /Ob0 /Od /RTC1"
+				}
+			],
+			"defines" : 
+			[
+				{
+					"backtrace" : 54,
+					"define" : "_CONSOLE"
+				},
+				{
+					"backtrace" : 54,
+					"define" : "_X64"
+				}
+			],
+			"includes" : 
+			[
+				{
+					"backtrace" : 55,
+					"path" : "D:/UnityProj/NoahGameFrame"
+				},
+				{
+					"backtrace" : 55,
+					"path" : "D:/UnityProj/NoahGameFrame/Dependencies"
+				},
+				{
+					"backtrace" : 55,
+					"path" : "D:/UnityProj/NoahGameFrame/Dependencies/NFMessageDefine"
+				},
+				{
+					"backtrace" : 55,
+					"path" : "D:/UnityProj/NoahGameFrame/NFComm/NFPluginModule"
+				},
+				{
+					"backtrace" : 55,
+					"path" : "D:/UnityProj/NoahGameFrame/Dependencies/hiredis/hiredis_win"
+				},
+				{
+					"backtrace" : 55,
+					"path" : "D:/UnityProj/NoahGameFrame/Dependencies/vcpkg/installed/x64-windows-static/include"
+				},
+				{
+					"backtrace" : 55,
+					"path" : "D:/UnityProj/NoahGameFrame/Dependencies/vcpkg/installed/x64-windows-static/include/SDL2"
+				},
+				{
+					"backtrace" : 55,
+					"path" : "D:/UnityProj/NoahGameFrame/Dependencies/vcpkg/installed/x64-windows-static/include/google/protobuf"
+				},
+				{
+					"backtrace" : 55,
+					"path" : "D:/UnityProj/NoahGameFrame/Dependencies/vcpkg/installed/x64-windows-static/include/google/protobuf/src"
+				},
+				{
+					"backtrace" : 56,
+					"path" : "D:/UnityProj/NoahGameFrame/Dependencies/libevent/WIN32-Code"
+				},
+				{
+					"backtrace" : 4,
+					"path" : "D:/UnityProj/NoahGameFrame/Dependencies/navigation"
+				}
+			],
+			"language" : "CXX",
+			"sourceIndexes" : 
+			[
+				0
+			]
+		}
+	],
+	"dependencies" : 
+	[
+		{
+			"backtrace" : 4,
+			"id" : "navigation::@8d93798ee8812d44e256"
+		},
+		{
+			"backtrace" : 4,
+			"id" : "NFConfigPlugin::@9f5086ad3da8341982a5"
+		},
+		{
+			"backtrace" : 4,
+			"id" : "NFPluginLoader::@e0da8b6a76d16bb8e40a"
+		},
+		{
+			"backtrace" : 4,
+			"id" : "NFActorPlugin::@864cd50bf2445c898d7f"
+		},
+		{
+			"backtrace" : 4,
+			"id" : "NFLogPlugin::@7ba64ea168fd0793594e"
+		},
+		{
+			"backtrace" : 4,
+			"id" : "NFKernelPlugin::@f47a1d31924bdd369adc"
+		},
+		{
+			"backtrace" : 4,
+			"id" : "NFCore::@5c898e9a86819bf73f38"
+		},
+		{
+			"backtrace" : 4,
+			"id" : "NFMessageDefine::@517ef342def70a8b0c2c"
+		},
+		{
+			"backtrace" : 4,
+			"id" : "NFNetPlugin::@69d0cdd53444f844061c"
+		},
+		{
+			"backtrace" : 4,
+			"id" : "NFNoSqlPlugin::@36ddef1012e3124ed62c"
+		},
+		{
+			"backtrace" : 4,
+			"id" : "NFSecurityPlugin::@621740119493c58f7fec"
+		},
+		{
+			"backtrace" : 4,
+			"id" : "NFNavigationPlugin::@2cf9ef8860d80ded8561"
+		},
+		{
+			"backtrace" : 4,
+			"id" : "NFTestPlugin::@2d9762b20815f1d5843b"
+		},
+		{
+			"backtrace" : 4,
+			"id" : "NFLoginNet_ServerPlugin::@208360444bea0a3a6250"
+		},
+		{
+			"backtrace" : 4,
+			"id" : "NFGameServerPlugin::@4c44657cd8d0296320f6"
+		},
+		{
+			"backtrace" : 4,
+			"id" : "NFLoginLogicPlugin::@bd6c416bdc72e73c9d50"
+		},
+		{
+			"backtrace" : 4,
+			"id" : "NFLoginNet_ClientPlugin::@48e955503946fcbf3946"
+		},
+		{
+			"backtrace" : 4,
+			"id" : "NFLoginNet_HttpServerPlugin::@7946a3ec81b6d783efdf"
+		},
+		{
+			"backtrace" : 4,
+			"id" : "NFLuaScriptPlugin::@21430faa8b409a41fe0f"
+		},
+		{
+			"backtrace" : 4,
+			"id" : "NFGameServerNet_ServerPlugin::@8fc057aa6d0abb15003b"
+		},
+		{
+			"backtrace" : 4,
+			"id" : "NFGameServerNet_ClientPlugin::@2f17b7427fc36a068145"
+		},
+		{
+			"backtrace" : 4,
+			"id" : "NFProxyServerNet_ServerPlugin::@a1cc854272c08dfce156"
+		},
+		{
+			"backtrace" : 4,
+			"id" : "NFMasterServerPlugin::@8d6fcb2722d4c9ae8953"
+		},
+		{
+			"backtrace" : 4,
+			"id" : "NFProxyLogicPlugin::@578d3dc3cef47eaa6c4d"
+		},
+		{
+			"backtrace" : 4,
+			"id" : "NFProxyServerNet_ClientPlugin::@16f557267231458925ea"
+		},
+		{
+			"backtrace" : 4,
+			"id" : "NFMasterNet_HttpServerPlugin::@eb3aa67b61460d05ce12"
+		},
+		{
+			"backtrace" : 4,
+			"id" : "NFMasterNet_ServerPlugin::@34df342955e05c0f7a44"
+		},
+		{
+			"backtrace" : 4,
+			"id" : "NFWorldNet_ServerPlugin::@635f45ea0e7a05630b24"
+		},
+		{
+			"backtrace" : 4,
+			"id" : "NFDBNet_ClientPlugin::@3439e867be108ee1c2dc"
+		},
+		{
+			"backtrace" : 4,
+			"id" : "NFWorldNet_ClientPlugin::@8f512a6e84292553e8da"
+		},
+		{
+			"backtrace" : 4,
+			"id" : "Tutorial2::@31cf74adf0b008b8d2b7"
+		},
+		{
+			"backtrace" : 4,
+			"id" : "NFDBLogicPlugin::@0ea0f6f404a0b3257cda"
+		},
+		{
+			"backtrace" : 4,
+			"id" : "Tutorial1::@76a9a9fc38032e351657"
+		},
+		{
+			"backtrace" : 4,
+			"id" : "NFDBNet_ServerPlugin::@170282164678d31e0b89"
+		},
+		{
+			"backtrace" : 4,
+			"id" : "Tutorial3Plugin::@1b183adf7c9f68a75225"
+		},
+		{
+			"backtrace" : 4,
+			"id" : "Tutorial6::@b76fdca1cbe6ea64ad25"
+		},
+		{
+			"backtrace" : 4,
+			"id" : "Tutorial4Plugin::@95925640e31fc98049c9"
+		},
+		{
+			"backtrace" : 4,
+			"id" : "Tutorial5::@353e61e97a5b76da1494"
+		},
+		{
+			"backtrace" : 4,
+			"id" : "NFChatPlugin::@16886097a1ad194a9aa5"
+		},
+		{
+			"backtrace" : 4,
+			"id" : "NFConsumeManagerPlugin::@c9805017db2b421d9fad"
+		},
+		{
+			"backtrace" : 4,
+			"id" : "NFInventoryPlugin::@f038c66ee59749b82306"
+		},
+		{
+			"backtrace" : 4,
+			"id" : "Tutorial7::@042fd62c5fcfd907f118"
+		}
+	],
+	"folder" : 
+	{
+		"name" : "NFComm/NFServer"
+	},
+	"id" : "NFServer::@fa71fd6b7cf9bb87492b",
+	"link" : 
+	{
+		"commandFragments" : 
+		[
+			{
+				"fragment" : "-D_X64 -D_WINDOWS /EHsc /MDd /Zi /Ob0 /Od /RTC1",
+				"role" : "flags"
+			},
+			{
+				"fragment" : "/machine:x64 /debug /INCREMENTAL /subsystem:console",
+				"role" : "flags"
+			},
+			{
+				"backtrace" : 3,
+				"fragment" : "-LIBPATH:D:\\UnityProj\\NoahGameFrame\\Dependencies\\lib",
+				"role" : "libraryPath"
+			},
+			{
+				"backtrace" : 3,
+				"fragment" : "-LIBPATH:D:\\UnityProj\\NoahGameFrame\\_Out\\Debug",
+				"role" : "libraryPath"
+			},
+			{
+				"backtrace" : 3,
+				"fragment" : "-LIBPATH:D:\\UnityProj\\NoahGameFrame\\Dependencies\\lib\\Debug",
+				"role" : "libraryPath"
+			},
+			{
+				"backtrace" : 4,
+				"fragment" : "..\\..\\..\\..\\..\\_Out\\Debug\\NFPluginLoader.lib",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 6,
+				"fragment" : "..\\..\\..\\..\\..\\_Out\\Debug\\NFActorPlugin.lib",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 7,
+				"fragment" : "..\\..\\..\\..\\..\\_Out\\Debug\\NFConfigPlugin.lib",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 8,
+				"fragment" : "..\\..\\..\\..\\..\\_Out\\Debug\\NFKernelPlugin.lib",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 9,
+				"fragment" : "..\\..\\..\\..\\..\\_Out\\Debug\\NFLogPlugin.lib",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 10,
+				"fragment" : "..\\..\\..\\..\\..\\_Out\\Debug\\NFLuaScriptPlugin.lib",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 12,
+				"fragment" : "liblua.a.lib",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 13,
+				"fragment" : "..\\..\\..\\..\\..\\_Out\\Debug\\NFNavigationPlugin.lib",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 15,
+				"fragment" : "..\\..\\..\\..\\..\\Dependencies\\lib\\navigation.lib",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 16,
+				"fragment" : "..\\..\\..\\..\\..\\_Out\\Debug\\NFNoSqlPlugin.lib",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 18,
+				"fragment" : "hiredis_d.lib",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 19,
+				"fragment" : "..\\..\\..\\..\\..\\_Out\\Debug\\NFSecurityPlugin.lib",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 20,
+				"fragment" : "..\\..\\..\\..\\..\\_Out\\Debug\\NFTestPlugin.lib",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 21,
+				"fragment" : "..\\..\\..\\..\\..\\_Out\\Debug\\NFChatPlugin.lib",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 22,
+				"fragment" : "..\\..\\..\\..\\..\\_Out\\Debug\\NFConsumeManagerPlugin.lib",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 23,
+				"fragment" : "..\\..\\..\\..\\..\\_Out\\Debug\\NFInventoryPlugin.lib",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 24,
+				"fragment" : "..\\..\\..\\..\\..\\_Out\\Debug\\NFDBLogicPlugin.lib",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 25,
+				"fragment" : "..\\..\\..\\..\\..\\_Out\\Debug\\NFDBNet_ClientPlugin.lib",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 26,
+				"fragment" : "..\\..\\..\\..\\..\\_Out\\Debug\\NFDBNet_ServerPlugin.lib",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 27,
+				"fragment" : "..\\..\\..\\..\\..\\_Out\\Debug\\NFGameServerPlugin.lib",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 28,
+				"fragment" : "..\\..\\..\\..\\..\\_Out\\Debug\\NFGameServerNet_ClientPlugin.lib",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 29,
+				"fragment" : "..\\..\\..\\..\\..\\_Out\\Debug\\NFGameServerNet_ServerPlugin.lib",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 30,
+				"fragment" : "..\\..\\..\\..\\..\\_Out\\Debug\\NFLoginLogicPlugin.lib",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 31,
+				"fragment" : "..\\..\\..\\..\\..\\_Out\\Debug\\NFLoginNet_ClientPlugin.lib",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 32,
+				"fragment" : "..\\..\\..\\..\\..\\_Out\\Debug\\NFLoginNet_ServerPlugin.lib",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 33,
+				"fragment" : "..\\..\\..\\..\\..\\_Out\\Debug\\NFLoginNet_HttpServerPlugin.lib",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 34,
+				"fragment" : "..\\..\\..\\..\\..\\_Out\\Debug\\NFMasterServerPlugin.lib",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 35,
+				"fragment" : "..\\..\\..\\..\\..\\_Out\\Debug\\NFMasterNet_ServerPlugin.lib",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 36,
+				"fragment" : "..\\..\\..\\..\\..\\_Out\\Debug\\NFMasterNet_HttpServerPlugin.lib",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 37,
+				"fragment" : "..\\..\\..\\..\\..\\_Out\\Debug\\NFProxyLogicPlugin.lib",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 38,
+				"fragment" : "..\\..\\..\\..\\..\\_Out\\Debug\\NFProxyServerNet_ClientPlugin.lib",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 39,
+				"fragment" : "..\\..\\..\\..\\..\\_Out\\Debug\\NFProxyServerNet_ServerPlugin.lib",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 40,
+				"fragment" : "..\\..\\..\\..\\..\\_Out\\Debug\\NFWorldNet_ClientPlugin.lib",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 41,
+				"fragment" : "..\\..\\..\\..\\..\\_Out\\Debug\\NFWorldNet_ServerPlugin.lib",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 42,
+				"fragment" : "..\\..\\..\\..\\..\\_Out\\Debug\\Tutorial1.lib",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 43,
+				"fragment" : "..\\..\\..\\..\\..\\_Out\\Debug\\Tutorial2.lib",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 44,
+				"fragment" : "..\\..\\..\\..\\..\\_Out\\Debug\\Tutorial3Plugin.lib",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 45,
+				"fragment" : "..\\..\\..\\..\\..\\_Out\\Debug\\Tutorial4Plugin.lib",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 46,
+				"fragment" : "..\\..\\..\\..\\..\\_Out\\Debug\\Tutorial5.lib",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 47,
+				"fragment" : "..\\..\\..\\..\\..\\_Out\\Debug\\Tutorial6.lib",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 48,
+				"fragment" : "..\\..\\..\\..\\..\\_Out\\Debug\\Tutorial7.lib",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 49,
+				"fragment" : "..\\..\\..\\..\\..\\_Out\\Debug\\NFCore.lib",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 50,
+				"fragment" : "..\\..\\..\\..\\..\\_Out\\Debug\\NFMessageDefine.lib",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 51,
+				"fragment" : "..\\..\\..\\..\\..\\_Out\\Debug\\NFNetPlugin.lib",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 53,
+				"fragment" : "-static-libstdc++",
+				"role" : "libraries"
+			},
+			{
+				"fragment" : "kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib",
+				"role" : "libraries"
+			}
+		],
+		"language" : "CXX"
+	},
+	"name" : "NFServer",
+	"nameOnDisk" : "NFServer.exe",
+	"paths" : 
+	{
+		"build" : "NFExamples/NFServer",
+		"source" : "NFExamples/NFServer"
+	},
+	"sourceGroups" : 
+	[
+		{
+			"name" : "Source Files",
+			"sourceIndexes" : 
+			[
+				0
+			]
+		},
+		{
+			"name" : "Header Files",
+			"sourceIndexes" : 
+			[
+				1
+			]
+		}
+	],
+	"sources" : 
+	[
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "NFExamples/NFServer/NFServer.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "NFExamples/NFServer/NFServer.h",
+			"sourceGroupIndex" : 1
+		}
+	],
+	"type" : "EXECUTABLE"
+}
