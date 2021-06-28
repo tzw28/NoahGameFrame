@@ -156,6 +156,9 @@ enum EGameMsgID
 	REQ_MODEL_RAW							= 500;
 	ACK_MODEL_RAW							= 501;
 
+	REQ_MODEL_VIEW							= 520;
+	ACK_MODEL_VIEW							= 521;
+
 	ACK_ONLINE_NOTIFY						= 600;
 	ACK_OFFLINE_NOTIFY						= 601;
 

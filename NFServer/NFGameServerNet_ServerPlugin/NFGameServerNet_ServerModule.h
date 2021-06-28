@@ -44,6 +44,8 @@
 #include "NFComm/NFPluginModule/NFISyncPosModule.h"
 
 #include "OCCProcessor.h"
+#include "OCCUtil.h"
+#include "OCCLogger.h"
 ////////////////////////////////////////////////////////////////////////////
 
 
@@ -95,6 +97,8 @@ protected:
 
     void OnClientModelRawProcess(const NFSOCK sockIndex, const int msgID, const char* msg, const uint32_t len);
 
+    void OnClientModelViewProcess(const NFSOCK sockIndex, const int msgID, const char* msg, const uint32_t len);
+
     void OnLagTestProcess(const NFSOCK sockIndex, const int msgID, const char* msg, const uint32_t len);
 
     ///////////WORLD_START///////////////////////////////////////////////////////////////
@@ -122,5 +126,8 @@ private:
     NFIThreadPoolModule* m_pThreadPoolModule;
 
     OCCProcessor* m_pOcc;
+    std::vector<std::string> m_aModels;
+    int m_aCurrentModel = -1;
+    OCCLogger* m_aLogger;
 };
 #endif

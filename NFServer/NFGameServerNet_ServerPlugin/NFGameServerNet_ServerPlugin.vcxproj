@@ -104,7 +104,9 @@
     <ClInclude Include="NFGameServerNet_ServerModule.h" />
     <ClInclude Include="NFGameServerNet_ServerPlugin.h" />
     <ClInclude Include="NFSceneAutoBroadcastModule.h" />
+    <ClInclude Include="OCCLogger.h" />
     <ClInclude Include="OCCProcessor.h" />
+    <ClInclude Include="OCCUtil.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="dllmain.cpp">
@@ -120,7 +122,9 @@
     <ClCompile Include="NFGameServerNet_ServerModule.cpp" />
     <ClCompile Include="NFGameServerNet_ServerPlugin.cpp" />
     <ClCompile Include="NFSceneAutoBroadcastModule.cpp" />
+    <ClCompile Include="OCCLogger.cpp" />
     <ClCompile Include="OCCProcessor.cpp" />
+    <ClCompile Include="OCCUtil.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

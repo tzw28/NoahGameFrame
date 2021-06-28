@@ -28,6 +28,7 @@
 #include "NFComm/NFMessageDefine/NFProtocolDefine.hpp"
 #include "NFComm/NFPluginModule/NFIEventModule.h"
 #include "NFComm/NFKernelPlugin/NFSceneModule.h"
+#include "OCCUtil.h"
 
 bool NFGameServerNet_ServerModule::Init()
 {
@@ -50,6 +51,9 @@ bool NFGameServerNet_ServerModule::Init()
     m_pOcc = new OCCProcessor();
     // m_pOcc->readSampleModel();
     m_pOcc->initializeModel();
+    m_aLogger = new OCCLogger(LogLevel_Info, OCCLogger::GetAppPathA().append("..\\servicelog\\"));
+
+    loadModelFileNames(m_aModels);
 
     return true;
 }
@@ -76,6 +80,8 @@ bool NFGameServerNet_ServerModule::AfterInit()
     m_pNetModule->AddEventCallBack(this, &NFGameServerNet_ServerModule::OnSocketPSEvent);
 
     m_pNetModule->AddReceiveCallBack(NFMsg::REQ_MODEL_RAW, this, &NFGameServerNet_ServerModule::OnClientModelRawProcess);
+
+    m_pNetModule->AddReceiveCallBack(NFMsg::REQ_MODEL_VIEW, this, &NFGameServerNet_ServerModule::OnClientModelViewProcess);
 
     /////////////////////////////////////////////////////////////////////////
 
@@ -232,8 +238,6 @@ void NFGameServerNet_ServerModule::OnClientReqMoveProcess(const NFSOCK sockIndex
 
         if (xMsg.sync_unit_size() > 0)
         {
-            m_pOcc->printModelStatus();
-            m_pLogModule->LogInfo(nPlayerID, "printModelStatus");
             NFMsg::PosSyncUnit* syncUnit = xMsg.mutable_sync_unit(0);
             if (syncUnit)
             {
@@ -274,6 +278,27 @@ void NFGameServerNet_ServerModule::OnClientModelRawProcess(const NFSOCK sockInde
     CLIENT_MSG_PROCESS_NO_OBJECT(msgID, msg, len, NFMsg::ReqAckModelSync)
 
         std::cout << "process require model raw\n" << std::endl;
+    std::string aModelFile = "";
+    std::cout << "local models " << m_aModels.size() << std::endl;
+    if (m_aModels.size() > 0)
+    {
+        if (m_aCurrentModel == -1)
+        {
+            m_aCurrentModel = 0;
+            aModelFile = m_aModels[0];
+        }
+        else
+        {
+            std::cout << "Current Model " << m_aCurrentModel << std::endl;
+            aModelFile = m_aModels[m_aCurrentModel];
+            m_aCurrentModel = (m_aCurrentModel + 1) % m_aModels.size();
+        }
+        m_pOcc->loadModel(aModelFile.c_str());
+    }
+    else
+    {
+        m_pOcc->initializeModel();
+    }
     string temp_str;
     m_pOcc->toMeshString(temp_str);
     xMsg.set_sequence(1208);
@@ -283,8 +308,58 @@ void NFGameServerNet_ServerModule::OnClientModelRawProcess(const NFSOCK sockInde
     const int groupID = m_pKernelModule->GetPropertyInt(nPlayerID, NFrame::Player::GroupID());
 
     //this code means the game server will sends a message to all players who in the same room
+
+    long long t = m_aLogger->GetSystemTime();
+    std::cout << "send model msg " << t << std::endl;
+    m_aLogger->TraceInfo(("send model " + std::to_string(t)).c_str());
     this->SendGroupMsgPBToGate(NFMsg::ACK_MODEL_RAW, xMsg, sceneID, groupID);
 
+}
+
+void NFGameServerNet_ServerModule::OnClientModelViewProcess(const NFSOCK sockIndex, const int msgID, const char* msg, const uint32_t len)
+{
+    CLIENT_MSG_PROCESS_NO_OBJECT(msgID, msg, len, NFMsg::ReqAckModelView)
+
+
+        if (xMsg.sync_unit_size() > 0)
+        {
+            NFMsg::ModelViewSyncUnit* syncUnit = xMsg.mutable_sync_unit(0);
+            if (syncUnit)
+            {
+                const NFGUID& xViewer = NFINetModule::PBToNF(syncUnit->player_id());
+                if (xViewer != nPlayerID)
+                {
+                    // 不该出现的情况
+                    const NFGUID masterID = m_pKernelModule->GetPropertyObject(xViewer, NFrame::NPC::MasterID());
+                    if (masterID != nPlayerID)
+                    {
+                        m_pLogModule->LogError(xViewer, "Message come from player " + nPlayerID.ToString());
+                        return;
+                    }
+                    return;
+                }
+                else
+                {
+                    const int sceneID = m_pKernelModule->GetPropertyInt32(xViewer, NFrame::Player::SceneID());
+                    const int groupID = m_pKernelModule->GetPropertyInt32(xViewer, NFrame::Player::GroupID());
+
+                    // 未进行处理直接转发
+                    // TODO 需要模块化，写成一个插件
+                    this->SendGroupMsgPBToGate(NFMsg::ACK_MODEL_VIEW, xMsg, sceneID, groupID);
+                    // ModelViewSyncUnit viewSyncUnit;
+
+                    // viewSyncUnit.player_id = xViewer;
+                    // viewSyncUnit.camera_pos = NFINetModule::PBToNF(syncUnit->camera_pos());
+                    // viewSyncUnit.model_pos = NFINetModule::PBToNF(syncUnit->model_pos());
+                    // viewSyncUnit.model_rot = NFINetModule::PBToNF(syncUnit->model_rot());
+                    // viewSyncUnit.model_scale = NFINetModule::PBToNF(syncUnit->model_scale());
+
+                    // m_pSyncPosModule->RequireMove(NFGUID(sceneID, groupID), posSyncUnit);
+                    // m_pKernelModule->SetPropertyVector3(nPlayerID, NFrame::IObject::Position(), posSyncUnit.pos);
+                    //this->SendGroupMsgPBToGate(NFMsg::ACK_MOVE, xMsg, sceneID, groupID);
+                }
+            }
+        }
 }
 
 void NFGameServerNet_ServerModule::OnProxyServerRegisteredProcess(const NFSOCK sockIndex, const int msgID, const char* msg, const uint32_t len)

@@ -66,7 +66,19 @@ namespace NFMsg {
             "VW5pdBILCgNyYXcYASABKAwiTAoPUmVxQWNrTW9kZWxTeW5jEhAKCHNlcXVl",
             "bmNlGAEgASgFEicKCXN5bmNfdW5pdBgCIAEoCzIULk5GTXNnLk1vZGVsU3lu",
             "Y1VuaXQiOwoLUmVxQWNrTW9kZWwSHwoJcGxheWVyX2lkGAEgASgLMgwuTkZN",
-            "c2cuSWRlbnQSCwoDcmF3GAIgASgMYgZwcm90bzM="));
+            "c2cuSWRlbnQSCwoDcmF3GAIgASgMItkCChFNb2RlbFZpZXdTeW5jVW5pdBIf",
+            "CglwbGF5ZXJfaWQYASABKAsyDC5ORk1zZy5JZGVudBI9CgtwbGF5ZXJfdHlw",
+            "ZRgCIAEoDjIoLk5GTXNnLk1vZGVsVmlld1N5bmNVbml0LkVWaWV3UGxheWVy",
+            "VHlwZRIiCgpjYW1lcmFfcG9zGAMgASgLMg4uTkZNc2cuVmVjdG9yMxIiCgpj",
+            "YW1lcmFfcm90GAQgASgLMg4uTkZNc2cuVmVjdG9yMxIhCgltb2RlbF9wb3MY",
+            "BSABKAsyDi5ORk1zZy5WZWN0b3IzEiEKCW1vZGVsX3JvdBgGIAEoCzIOLk5G",
+            "TXNnLlZlY3RvcjMSIwoLbW9kZWxfc2NhbGUYByABKAsyDi5ORk1zZy5WZWN0",
+            "b3IzIjEKD0VWaWV3UGxheWVyVHlwZRILCgdFVlNUX1BDEAASEQoNRVZTVF9I",
+            "T0xPTEVOUxABIlQKE1JlcUFja01vZGVsVmlld1N5bmMSEAoIc2VxdWVuY2UY",
+            "ASABKAUSKwoJc3luY191bml0GAIgASgLMhguTkZNc2cuTW9kZWxWaWV3U3lu",
+            "Y1VuaXQiXwoPUmVxQWNrTW9kZWxWaWV3Eh8KCXBsYXllcl9pZBgBIAEoCzIM",
+            "Lk5GTXNnLklkZW50EisKCXN5bmNfdW5pdBgCIAMoCzIYLk5GTXNnLk1vZGVs",
+            "Vmlld1N5bmNVbml0YgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::NFMsg.NFDefineReflection.Descriptor, global::NFMsg.NFMsgBaseReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -85,7 +97,10 @@ namespace NFMsg {
             new pbr::GeneratedClrTypeInfo(typeof(global::NFMsg.ReqAckPlayerChat), global::NFMsg.ReqAckPlayerChat.Parser, new[]{ "PlayerId", "PlayerName", "ChatChannel", "ChatType", "ChatInfo" }, null, new[]{ typeof(global::NFMsg.ReqAckPlayerChat.Types.EGameChatChannel), typeof(global::NFMsg.ReqAckPlayerChat.Types.EGameChatType) }, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::NFMsg.ModelSyncUnit), global::NFMsg.ModelSyncUnit.Parser, new[]{ "Raw" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::NFMsg.ReqAckModelSync), global::NFMsg.ReqAckModelSync.Parser, new[]{ "Sequence", "SyncUnit" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::NFMsg.ReqAckModel), global::NFMsg.ReqAckModel.Parser, new[]{ "PlayerId", "Raw" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::NFMsg.ReqAckModel), global::NFMsg.ReqAckModel.Parser, new[]{ "PlayerId", "Raw" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::NFMsg.ModelViewSyncUnit), global::NFMsg.ModelViewSyncUnit.Parser, new[]{ "PlayerId", "PlayerType", "CameraPos", "CameraRot", "ModelPos", "ModelRot", "ModelScale" }, null, new[]{ typeof(global::NFMsg.ModelViewSyncUnit.Types.EViewPlayerType) }, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::NFMsg.ReqAckModelViewSync), global::NFMsg.ReqAckModelViewSync.Parser, new[]{ "Sequence", "SyncUnit" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::NFMsg.ReqAckModelView), global::NFMsg.ReqAckModelView.Parser, new[]{ "PlayerId", "SyncUnit" }, null, null, null, null)
           }));
     }
     #endregion
@@ -3189,6 +3204,669 @@ namespace NFMsg {
           }
           case 18: {
             Raw = input.ReadBytes();
+            break;
+          }
+        }
+      }
+    }
+
+  }
+
+  public sealed partial class ModelViewSyncUnit : pb::IMessage<ModelViewSyncUnit> {
+    private static readonly pb::MessageParser<ModelViewSyncUnit> _parser = new pb::MessageParser<ModelViewSyncUnit>(() => new ModelViewSyncUnit());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pb::MessageParser<ModelViewSyncUnit> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::NFMsg.NFMsgShareReflection.Descriptor.MessageTypes[16]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public ModelViewSyncUnit() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public ModelViewSyncUnit(ModelViewSyncUnit other) : this() {
+      playerId_ = other.playerId_ != null ? other.playerId_.Clone() : null;
+      playerType_ = other.playerType_;
+      cameraPos_ = other.cameraPos_ != null ? other.cameraPos_.Clone() : null;
+      cameraRot_ = other.cameraRot_ != null ? other.cameraRot_.Clone() : null;
+      modelPos_ = other.modelPos_ != null ? other.modelPos_.Clone() : null;
+      modelRot_ = other.modelRot_ != null ? other.modelRot_.Clone() : null;
+      modelScale_ = other.modelScale_ != null ? other.modelScale_.Clone() : null;
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public ModelViewSyncUnit Clone() {
+      return new ModelViewSyncUnit(this);
+    }
+
+    /// <summary>Field number for the "player_id" field.</summary>
+    public const int PlayerIdFieldNumber = 1;
+    private global::NFMsg.Ident playerId_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public global::NFMsg.Ident PlayerId {
+      get { return playerId_; }
+      set {
+        playerId_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "player_type" field.</summary>
+    public const int PlayerTypeFieldNumber = 2;
+    private global::NFMsg.ModelViewSyncUnit.Types.EViewPlayerType playerType_ = global::NFMsg.ModelViewSyncUnit.Types.EViewPlayerType.EvstPc;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public global::NFMsg.ModelViewSyncUnit.Types.EViewPlayerType PlayerType {
+      get { return playerType_; }
+      set {
+        playerType_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "camera_pos" field.</summary>
+    public const int CameraPosFieldNumber = 3;
+    private global::NFMsg.Vector3 cameraPos_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public global::NFMsg.Vector3 CameraPos {
+      get { return cameraPos_; }
+      set {
+        cameraPos_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "camera_rot" field.</summary>
+    public const int CameraRotFieldNumber = 4;
+    private global::NFMsg.Vector3 cameraRot_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public global::NFMsg.Vector3 CameraRot {
+      get { return cameraRot_; }
+      set {
+        cameraRot_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "model_pos" field.</summary>
+    public const int ModelPosFieldNumber = 5;
+    private global::NFMsg.Vector3 modelPos_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public global::NFMsg.Vector3 ModelPos {
+      get { return modelPos_; }
+      set {
+        modelPos_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "model_rot" field.</summary>
+    public const int ModelRotFieldNumber = 6;
+    private global::NFMsg.Vector3 modelRot_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public global::NFMsg.Vector3 ModelRot {
+      get { return modelRot_; }
+      set {
+        modelRot_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "model_scale" field.</summary>
+    public const int ModelScaleFieldNumber = 7;
+    private global::NFMsg.Vector3 modelScale_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public global::NFMsg.Vector3 ModelScale {
+      get { return modelScale_; }
+      set {
+        modelScale_ = value;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override bool Equals(object other) {
+      return Equals(other as ModelViewSyncUnit);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool Equals(ModelViewSyncUnit other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (!object.Equals(PlayerId, other.PlayerId)) return false;
+      if (PlayerType != other.PlayerType) return false;
+      if (!object.Equals(CameraPos, other.CameraPos)) return false;
+      if (!object.Equals(CameraRot, other.CameraRot)) return false;
+      if (!object.Equals(ModelPos, other.ModelPos)) return false;
+      if (!object.Equals(ModelRot, other.ModelRot)) return false;
+      if (!object.Equals(ModelScale, other.ModelScale)) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (playerId_ != null) hash ^= PlayerId.GetHashCode();
+      if (PlayerType != global::NFMsg.ModelViewSyncUnit.Types.EViewPlayerType.EvstPc) hash ^= PlayerType.GetHashCode();
+      if (cameraPos_ != null) hash ^= CameraPos.GetHashCode();
+      if (cameraRot_ != null) hash ^= CameraRot.GetHashCode();
+      if (modelPos_ != null) hash ^= ModelPos.GetHashCode();
+      if (modelRot_ != null) hash ^= ModelRot.GetHashCode();
+      if (modelScale_ != null) hash ^= ModelScale.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void WriteTo(pb::CodedOutputStream output) {
+      if (playerId_ != null) {
+        output.WriteRawTag(10);
+        output.WriteMessage(PlayerId);
+      }
+      if (PlayerType != global::NFMsg.ModelViewSyncUnit.Types.EViewPlayerType.EvstPc) {
+        output.WriteRawTag(16);
+        output.WriteEnum((int) PlayerType);
+      }
+      if (cameraPos_ != null) {
+        output.WriteRawTag(26);
+        output.WriteMessage(CameraPos);
+      }
+      if (cameraRot_ != null) {
+        output.WriteRawTag(34);
+        output.WriteMessage(CameraRot);
+      }
+      if (modelPos_ != null) {
+        output.WriteRawTag(42);
+        output.WriteMessage(ModelPos);
+      }
+      if (modelRot_ != null) {
+        output.WriteRawTag(50);
+        output.WriteMessage(ModelRot);
+      }
+      if (modelScale_ != null) {
+        output.WriteRawTag(58);
+        output.WriteMessage(ModelScale);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int CalculateSize() {
+      int size = 0;
+      if (playerId_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(PlayerId);
+      }
+      if (PlayerType != global::NFMsg.ModelViewSyncUnit.Types.EViewPlayerType.EvstPc) {
+        size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) PlayerType);
+      }
+      if (cameraPos_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(CameraPos);
+      }
+      if (cameraRot_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(CameraRot);
+      }
+      if (modelPos_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(ModelPos);
+      }
+      if (modelRot_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(ModelRot);
+      }
+      if (modelScale_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(ModelScale);
+      }
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(ModelViewSyncUnit other) {
+      if (other == null) {
+        return;
+      }
+      if (other.playerId_ != null) {
+        if (playerId_ == null) {
+          PlayerId = new global::NFMsg.Ident();
+        }
+        PlayerId.MergeFrom(other.PlayerId);
+      }
+      if (other.PlayerType != global::NFMsg.ModelViewSyncUnit.Types.EViewPlayerType.EvstPc) {
+        PlayerType = other.PlayerType;
+      }
+      if (other.cameraPos_ != null) {
+        if (cameraPos_ == null) {
+          CameraPos = new global::NFMsg.Vector3();
+        }
+        CameraPos.MergeFrom(other.CameraPos);
+      }
+      if (other.cameraRot_ != null) {
+        if (cameraRot_ == null) {
+          CameraRot = new global::NFMsg.Vector3();
+        }
+        CameraRot.MergeFrom(other.CameraRot);
+      }
+      if (other.modelPos_ != null) {
+        if (modelPos_ == null) {
+          ModelPos = new global::NFMsg.Vector3();
+        }
+        ModelPos.MergeFrom(other.ModelPos);
+      }
+      if (other.modelRot_ != null) {
+        if (modelRot_ == null) {
+          ModelRot = new global::NFMsg.Vector3();
+        }
+        ModelRot.MergeFrom(other.ModelRot);
+      }
+      if (other.modelScale_ != null) {
+        if (modelScale_ == null) {
+          ModelScale = new global::NFMsg.Vector3();
+        }
+        ModelScale.MergeFrom(other.ModelScale);
+      }
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(pb::CodedInputStream input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 10: {
+            if (playerId_ == null) {
+              PlayerId = new global::NFMsg.Ident();
+            }
+            input.ReadMessage(PlayerId);
+            break;
+          }
+          case 16: {
+            PlayerType = (global::NFMsg.ModelViewSyncUnit.Types.EViewPlayerType) input.ReadEnum();
+            break;
+          }
+          case 26: {
+            if (cameraPos_ == null) {
+              CameraPos = new global::NFMsg.Vector3();
+            }
+            input.ReadMessage(CameraPos);
+            break;
+          }
+          case 34: {
+            if (cameraRot_ == null) {
+              CameraRot = new global::NFMsg.Vector3();
+            }
+            input.ReadMessage(CameraRot);
+            break;
+          }
+          case 42: {
+            if (modelPos_ == null) {
+              ModelPos = new global::NFMsg.Vector3();
+            }
+            input.ReadMessage(ModelPos);
+            break;
+          }
+          case 50: {
+            if (modelRot_ == null) {
+              ModelRot = new global::NFMsg.Vector3();
+            }
+            input.ReadMessage(ModelRot);
+            break;
+          }
+          case 58: {
+            if (modelScale_ == null) {
+              ModelScale = new global::NFMsg.Vector3();
+            }
+            input.ReadMessage(ModelScale);
+            break;
+          }
+        }
+      }
+    }
+
+    #region Nested types
+    /// <summary>Container for nested types declared in the ModelViewSyncUnit message type.</summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static partial class Types {
+      public enum EViewPlayerType {
+        [pbr::OriginalName("EVST_PC")] EvstPc = 0,
+        [pbr::OriginalName("EVST_HOLOLENS")] EvstHololens = 1,
+      }
+
+    }
+    #endregion
+
+  }
+
+  public sealed partial class ReqAckModelViewSync : pb::IMessage<ReqAckModelViewSync> {
+    private static readonly pb::MessageParser<ReqAckModelViewSync> _parser = new pb::MessageParser<ReqAckModelViewSync>(() => new ReqAckModelViewSync());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pb::MessageParser<ReqAckModelViewSync> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::NFMsg.NFMsgShareReflection.Descriptor.MessageTypes[17]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public ReqAckModelViewSync() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public ReqAckModelViewSync(ReqAckModelViewSync other) : this() {
+      sequence_ = other.sequence_;
+      syncUnit_ = other.syncUnit_ != null ? other.syncUnit_.Clone() : null;
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public ReqAckModelViewSync Clone() {
+      return new ReqAckModelViewSync(this);
+    }
+
+    /// <summary>Field number for the "sequence" field.</summary>
+    public const int SequenceFieldNumber = 1;
+    private int sequence_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int Sequence {
+      get { return sequence_; }
+      set {
+        sequence_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "sync_unit" field.</summary>
+    public const int SyncUnitFieldNumber = 2;
+    private global::NFMsg.ModelViewSyncUnit syncUnit_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public global::NFMsg.ModelViewSyncUnit SyncUnit {
+      get { return syncUnit_; }
+      set {
+        syncUnit_ = value;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override bool Equals(object other) {
+      return Equals(other as ReqAckModelViewSync);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool Equals(ReqAckModelViewSync other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (Sequence != other.Sequence) return false;
+      if (!object.Equals(SyncUnit, other.SyncUnit)) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (Sequence != 0) hash ^= Sequence.GetHashCode();
+      if (syncUnit_ != null) hash ^= SyncUnit.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void WriteTo(pb::CodedOutputStream output) {
+      if (Sequence != 0) {
+        output.WriteRawTag(8);
+        output.WriteInt32(Sequence);
+      }
+      if (syncUnit_ != null) {
+        output.WriteRawTag(18);
+        output.WriteMessage(SyncUnit);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int CalculateSize() {
+      int size = 0;
+      if (Sequence != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(Sequence);
+      }
+      if (syncUnit_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(SyncUnit);
+      }
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(ReqAckModelViewSync other) {
+      if (other == null) {
+        return;
+      }
+      if (other.Sequence != 0) {
+        Sequence = other.Sequence;
+      }
+      if (other.syncUnit_ != null) {
+        if (syncUnit_ == null) {
+          SyncUnit = new global::NFMsg.ModelViewSyncUnit();
+        }
+        SyncUnit.MergeFrom(other.SyncUnit);
+      }
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(pb::CodedInputStream input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 8: {
+            Sequence = input.ReadInt32();
+            break;
+          }
+          case 18: {
+            if (syncUnit_ == null) {
+              SyncUnit = new global::NFMsg.ModelViewSyncUnit();
+            }
+            input.ReadMessage(SyncUnit);
+            break;
+          }
+        }
+      }
+    }
+
+  }
+
+  public sealed partial class ReqAckModelView : pb::IMessage<ReqAckModelView> {
+    private static readonly pb::MessageParser<ReqAckModelView> _parser = new pb::MessageParser<ReqAckModelView>(() => new ReqAckModelView());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pb::MessageParser<ReqAckModelView> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::NFMsg.NFMsgShareReflection.Descriptor.MessageTypes[18]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public ReqAckModelView() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public ReqAckModelView(ReqAckModelView other) : this() {
+      playerId_ = other.playerId_ != null ? other.playerId_.Clone() : null;
+      syncUnit_ = other.syncUnit_.Clone();
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public ReqAckModelView Clone() {
+      return new ReqAckModelView(this);
+    }
+
+    /// <summary>Field number for the "player_id" field.</summary>
+    public const int PlayerIdFieldNumber = 1;
+    private global::NFMsg.Ident playerId_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public global::NFMsg.Ident PlayerId {
+      get { return playerId_; }
+      set {
+        playerId_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "sync_unit" field.</summary>
+    public const int SyncUnitFieldNumber = 2;
+    private static readonly pb::FieldCodec<global::NFMsg.ModelViewSyncUnit> _repeated_syncUnit_codec
+        = pb::FieldCodec.ForMessage(18, global::NFMsg.ModelViewSyncUnit.Parser);
+    private readonly pbc::RepeatedField<global::NFMsg.ModelViewSyncUnit> syncUnit_ = new pbc::RepeatedField<global::NFMsg.ModelViewSyncUnit>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public pbc::RepeatedField<global::NFMsg.ModelViewSyncUnit> SyncUnit {
+      get { return syncUnit_; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override bool Equals(object other) {
+      return Equals(other as ReqAckModelView);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool Equals(ReqAckModelView other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (!object.Equals(PlayerId, other.PlayerId)) return false;
+      if(!syncUnit_.Equals(other.syncUnit_)) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (playerId_ != null) hash ^= PlayerId.GetHashCode();
+      hash ^= syncUnit_.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void WriteTo(pb::CodedOutputStream output) {
+      if (playerId_ != null) {
+        output.WriteRawTag(10);
+        output.WriteMessage(PlayerId);
+      }
+      syncUnit_.WriteTo(output, _repeated_syncUnit_codec);
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int CalculateSize() {
+      int size = 0;
+      if (playerId_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(PlayerId);
+      }
+      size += syncUnit_.CalculateSize(_repeated_syncUnit_codec);
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(ReqAckModelView other) {
+      if (other == null) {
+        return;
+      }
+      if (other.playerId_ != null) {
+        if (playerId_ == null) {
+          PlayerId = new global::NFMsg.Ident();
+        }
+        PlayerId.MergeFrom(other.PlayerId);
+      }
+      syncUnit_.Add(other.syncUnit_);
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(pb::CodedInputStream input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 10: {
+            if (playerId_ == null) {
+              PlayerId = new global::NFMsg.Ident();
+            }
+            input.ReadMessage(PlayerId);
+            break;
+          }
+          case 18: {
+            syncUnit_.AddEntriesFrom(input, _repeated_syncUnit_codec);
             break;
           }
         }

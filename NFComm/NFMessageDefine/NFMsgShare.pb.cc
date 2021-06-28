@@ -17,6 +17,7 @@
 extern PROTOBUF_INTERNAL_EXPORT_NFMsgShare_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<1> scc_info_EffectData_NFMsgShare_2eproto;
 extern PROTOBUF_INTERNAL_EXPORT_NFMsgBase_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_Ident_NFMsgBase_2eproto;
 extern PROTOBUF_INTERNAL_EXPORT_NFMsgShare_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_ModelSyncUnit_NFMsgShare_2eproto;
+extern PROTOBUF_INTERNAL_EXPORT_NFMsgShare_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<2> scc_info_ModelViewSyncUnit_NFMsgShare_2eproto;
 extern PROTOBUF_INTERNAL_EXPORT_NFMsgShare_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<1> scc_info_PlayerEntryInfo_NFMsgShare_2eproto;
 extern PROTOBUF_INTERNAL_EXPORT_NFMsgShare_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<2> scc_info_PosSyncUnit_NFMsgShare_2eproto;
 extern PROTOBUF_INTERNAL_EXPORT_NFMsgBase_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_Vector3_NFMsgBase_2eproto;
@@ -85,6 +86,18 @@ class ReqAckModelDefaultTypeInternal {
  public:
   ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<ReqAckModel> _instance;
 } _ReqAckModel_default_instance_;
+class ModelViewSyncUnitDefaultTypeInternal {
+ public:
+  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<ModelViewSyncUnit> _instance;
+} _ModelViewSyncUnit_default_instance_;
+class ReqAckModelViewSyncDefaultTypeInternal {
+ public:
+  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<ReqAckModelViewSync> _instance;
+} _ReqAckModelViewSync_default_instance_;
+class ReqAckModelViewDefaultTypeInternal {
+ public:
+  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<ReqAckModelView> _instance;
+} _ReqAckModelView_default_instance_;
 }  // namespace NFMsg
 static void InitDefaultsscc_info_AckPlayerEntryList_NFMsgShare_2eproto() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
@@ -144,6 +157,22 @@ static void InitDefaultsscc_info_ModelSyncUnit_NFMsgShare_2eproto() {
 
 ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_ModelSyncUnit_NFMsgShare_2eproto =
     {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_ModelSyncUnit_NFMsgShare_2eproto}, {}};
+
+static void InitDefaultsscc_info_ModelViewSyncUnit_NFMsgShare_2eproto() {
+  GOOGLE_PROTOBUF_VERIFY_VERSION;
+
+  {
+    void* ptr = &::NFMsg::_ModelViewSyncUnit_default_instance_;
+    new (ptr) ::NFMsg::ModelViewSyncUnit();
+    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
+  }
+  ::NFMsg::ModelViewSyncUnit::InitAsDefaultInstance();
+}
+
+::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<2> scc_info_ModelViewSyncUnit_NFMsgShare_2eproto =
+    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 2, 0, InitDefaultsscc_info_ModelViewSyncUnit_NFMsgShare_2eproto}, {
+      &scc_info_Ident_NFMsgBase_2eproto.base,
+      &scc_info_Vector3_NFMsgBase_2eproto.base,}};
 
 static void InitDefaultsscc_info_PlayerEntryInfo_NFMsgShare_2eproto() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
@@ -219,6 +248,37 @@ static void InitDefaultsscc_info_ReqAckModelSync_NFMsgShare_2eproto() {
 ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<1> scc_info_ReqAckModelSync_NFMsgShare_2eproto =
     {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 1, 0, InitDefaultsscc_info_ReqAckModelSync_NFMsgShare_2eproto}, {
       &scc_info_ModelSyncUnit_NFMsgShare_2eproto.base,}};
+
+static void InitDefaultsscc_info_ReqAckModelView_NFMsgShare_2eproto() {
+  GOOGLE_PROTOBUF_VERIFY_VERSION;
+
+  {
+    void* ptr = &::NFMsg::_ReqAckModelView_default_instance_;
+    new (ptr) ::NFMsg::ReqAckModelView();
+    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
+  }
+  ::NFMsg::ReqAckModelView::InitAsDefaultInstance();
+}
+
+::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<2> scc_info_ReqAckModelView_NFMsgShare_2eproto =
+    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 2, 0, InitDefaultsscc_info_ReqAckModelView_NFMsgShare_2eproto}, {
+      &scc_info_Ident_NFMsgBase_2eproto.base,
+      &scc_info_ModelViewSyncUnit_NFMsgShare_2eproto.base,}};
+
+static void InitDefaultsscc_info_ReqAckModelViewSync_NFMsgShare_2eproto() {
+  GOOGLE_PROTOBUF_VERIFY_VERSION;
+
+  {
+    void* ptr = &::NFMsg::_ReqAckModelViewSync_default_instance_;
+    new (ptr) ::NFMsg::ReqAckModelViewSync();
+    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
+  }
+  ::NFMsg::ReqAckModelViewSync::InitAsDefaultInstance();
+}
+
+::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<1> scc_info_ReqAckModelViewSync_NFMsgShare_2eproto =
+    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 1, 0, InitDefaultsscc_info_ReqAckModelViewSync_NFMsgShare_2eproto}, {
+      &scc_info_ModelViewSyncUnit_NFMsgShare_2eproto.base,}};
 
 static void InitDefaultsscc_info_ReqAckPlayerChat_NFMsgShare_2eproto() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
@@ -323,8 +383,8 @@ static void InitDefaultsscc_info_ReqLeaveGameServer_NFMsgShare_2eproto() {
 ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_ReqLeaveGameServer_NFMsgShare_2eproto =
     {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_ReqLeaveGameServer_NFMsgShare_2eproto}, {}};
 
-static ::PROTOBUF_NAMESPACE_ID::Metadata file_level_metadata_NFMsgShare_2eproto[16];
-static const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* file_level_enum_descriptors_NFMsgShare_2eproto[4];
+static ::PROTOBUF_NAMESPACE_ID::Metadata file_level_metadata_NFMsgShare_2eproto[19];
+static const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* file_level_enum_descriptors_NFMsgShare_2eproto[5];
 static constexpr ::PROTOBUF_NAMESPACE_ID::ServiceDescriptor const** file_level_service_descriptors_NFMsgShare_2eproto = nullptr;
 
 const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_NFMsgShare_2eproto::offsets[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
@@ -458,6 +518,32 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_NFMsgShare_2eproto::offsets[] 
   ~0u,  // no _weak_field_map_
   PROTOBUF_FIELD_OFFSET(::NFMsg::ReqAckModel, player_id_),
   PROTOBUF_FIELD_OFFSET(::NFMsg::ReqAckModel, raw_),
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::NFMsg::ModelViewSyncUnit, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::NFMsg::ModelViewSyncUnit, player_id_),
+  PROTOBUF_FIELD_OFFSET(::NFMsg::ModelViewSyncUnit, player_type_),
+  PROTOBUF_FIELD_OFFSET(::NFMsg::ModelViewSyncUnit, camera_pos_),
+  PROTOBUF_FIELD_OFFSET(::NFMsg::ModelViewSyncUnit, camera_rot_),
+  PROTOBUF_FIELD_OFFSET(::NFMsg::ModelViewSyncUnit, model_pos_),
+  PROTOBUF_FIELD_OFFSET(::NFMsg::ModelViewSyncUnit, model_rot_),
+  PROTOBUF_FIELD_OFFSET(::NFMsg::ModelViewSyncUnit, model_scale_),
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::NFMsg::ReqAckModelViewSync, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::NFMsg::ReqAckModelViewSync, sequence_),
+  PROTOBUF_FIELD_OFFSET(::NFMsg::ReqAckModelViewSync, sync_unit_),
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::NFMsg::ReqAckModelView, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::NFMsg::ReqAckModelView, player_id_),
+  PROTOBUF_FIELD_OFFSET(::NFMsg::ReqAckModelView, sync_unit_),
 };
 static const ::PROTOBUF_NAMESPACE_ID::internal::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
   { 0, -1, sizeof(::NFMsg::ReqEnterGameServer)},
@@ -476,6 +562,9 @@ static const ::PROTOBUF_NAMESPACE_ID::internal::MigrationSchema schemas[] PROTOB
   { 110, -1, sizeof(::NFMsg::ModelSyncUnit)},
   { 116, -1, sizeof(::NFMsg::ReqAckModelSync)},
   { 123, -1, sizeof(::NFMsg::ReqAckModel)},
+  { 130, -1, sizeof(::NFMsg::ModelViewSyncUnit)},
+  { 142, -1, sizeof(::NFMsg::ReqAckModelViewSync)},
+  { 149, -1, sizeof(::NFMsg::ReqAckModelView)},
 };
 
 static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] = {
@@ -495,6 +584,9 @@ static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] =
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::NFMsg::_ModelSyncUnit_default_instance_),
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::NFMsg::_ReqAckModelSync_default_instance_),
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::NFMsg::_ReqAckModel_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::NFMsg::_ModelViewSyncUnit_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::NFMsg::_ReqAckModelViewSync_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::NFMsg::_ReqAckModelView_default_instance_),
 };
 
 const char descriptor_table_protodef_NFMsgShare_2eproto[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) =
@@ -545,22 +637,39 @@ const char descriptor_table_protodef_NFMsgShare_2eproto[] PROTOBUF_SECTION_VARIA
   "\013\n\003raw\030\001 \001(\014\"L\n\017ReqAckModelSync\022\020\n\010seque"
   "nce\030\001 \001(\005\022\'\n\tsync_unit\030\002 \001(\0132\024.NFMsg.Mod"
   "elSyncUnit\";\n\013ReqAckModel\022\037\n\tplayer_id\030\001"
-  " \001(\0132\014.NFMsg.Ident\022\013\n\003raw\030\002 \001(\014b\006proto3"
+  " \001(\0132\014.NFMsg.Ident\022\013\n\003raw\030\002 \001(\014\"\331\002\n\021Mode"
+  "lViewSyncUnit\022\037\n\tplayer_id\030\001 \001(\0132\014.NFMsg"
+  ".Ident\022=\n\013player_type\030\002 \001(\0162(.NFMsg.Mode"
+  "lViewSyncUnit.EViewPlayerType\022\"\n\ncamera_"
+  "pos\030\003 \001(\0132\016.NFMsg.Vector3\022\"\n\ncamera_rot\030"
+  "\004 \001(\0132\016.NFMsg.Vector3\022!\n\tmodel_pos\030\005 \001(\013"
+  "2\016.NFMsg.Vector3\022!\n\tmodel_rot\030\006 \001(\0132\016.NF"
+  "Msg.Vector3\022#\n\013model_scale\030\007 \001(\0132\016.NFMsg"
+  ".Vector3\"1\n\017EViewPlayerType\022\013\n\007EVST_PC\020\000"
+  "\022\021\n\rEVST_HOLOLENS\020\001\"T\n\023ReqAckModelViewSy"
+  "nc\022\020\n\010sequence\030\001 \001(\005\022+\n\tsync_unit\030\002 \001(\0132"
+  "\030.NFMsg.ModelViewSyncUnit\"_\n\017ReqAckModel"
+  "View\022\037\n\tplayer_id\030\001 \001(\0132\014.NFMsg.Ident\022+\n"
+  "\tsync_unit\030\002 \003(\0132\030.NFMsg.ModelViewSyncUn"
+  "itb\006proto3"
   ;
 static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_NFMsgShare_2eproto_deps[2] = {
   &::descriptor_table_NFDefine_2eproto,
   &::descriptor_table_NFMsgBase_2eproto,
 };
-static ::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase*const descriptor_table_NFMsgShare_2eproto_sccs[16] = {
+static ::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase*const descriptor_table_NFMsgShare_2eproto_sccs[19] = {
   &scc_info_AckPlayerEntryList_NFMsgShare_2eproto.base,
   &scc_info_AckPlayerLeaveList_NFMsgShare_2eproto.base,
   &scc_info_EffectData_NFMsgShare_2eproto.base,
   &scc_info_ModelSyncUnit_NFMsgShare_2eproto.base,
+  &scc_info_ModelViewSyncUnit_NFMsgShare_2eproto.base,
   &scc_info_PlayerEntryInfo_NFMsgShare_2eproto.base,
   &scc_info_PosSyncUnit_NFMsgShare_2eproto.base,
   &scc_info_ReqAckEnterGameSuccess_NFMsgShare_2eproto.base,
   &scc_info_ReqAckModel_NFMsgShare_2eproto.base,
   &scc_info_ReqAckModelSync_NFMsgShare_2eproto.base,
+  &scc_info_ReqAckModelView_NFMsgShare_2eproto.base,
+  &scc_info_ReqAckModelViewSync_NFMsgShare_2eproto.base,
   &scc_info_ReqAckPlayerChat_NFMsgShare_2eproto.base,
   &scc_info_ReqAckPlayerPosSync_NFMsgShare_2eproto.base,
   &scc_info_ReqAckSwapScene_NFMsgShare_2eproto.base,
@@ -572,10 +681,10 @@ static ::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase*const descriptor_table_NFM
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_NFMsgShare_2eproto_once;
 static bool descriptor_table_NFMsgShare_2eproto_initialized = false;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_NFMsgShare_2eproto = {
-  &descriptor_table_NFMsgShare_2eproto_initialized, descriptor_table_protodef_NFMsgShare_2eproto, "NFMsgShare.proto", 1919,
-  &descriptor_table_NFMsgShare_2eproto_once, descriptor_table_NFMsgShare_2eproto_sccs, descriptor_table_NFMsgShare_2eproto_deps, 16, 2,
+  &descriptor_table_NFMsgShare_2eproto_initialized, descriptor_table_protodef_NFMsgShare_2eproto, "NFMsgShare.proto", 2450,
+  &descriptor_table_NFMsgShare_2eproto_once, descriptor_table_NFMsgShare_2eproto_sccs, descriptor_table_NFMsgShare_2eproto_deps, 19, 2,
   schemas, file_default_instances, TableStruct_NFMsgShare_2eproto::offsets,
-  file_level_metadata_NFMsgShare_2eproto, 16, file_level_enum_descriptors_NFMsgShare_2eproto, file_level_service_descriptors_NFMsgShare_2eproto,
+  file_level_metadata_NFMsgShare_2eproto, 19, file_level_enum_descriptors_NFMsgShare_2eproto, file_level_service_descriptors_NFMsgShare_2eproto,
 };
 
 // Force running AddDescriptors() at dynamic initialization time.
@@ -680,6 +789,27 @@ constexpr ReqAckPlayerChat_EGameChatType ReqAckPlayerChat::EGCT_EMOJI;
 constexpr ReqAckPlayerChat_EGameChatType ReqAckPlayerChat::EGameChatType_MIN;
 constexpr ReqAckPlayerChat_EGameChatType ReqAckPlayerChat::EGameChatType_MAX;
 constexpr int ReqAckPlayerChat::EGameChatType_ARRAYSIZE;
+#endif  // (__cplusplus < 201703) && (!defined(_MSC_VER) || _MSC_VER >= 1900)
+const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* ModelViewSyncUnit_EViewPlayerType_descriptor() {
+  ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(&descriptor_table_NFMsgShare_2eproto);
+  return file_level_enum_descriptors_NFMsgShare_2eproto[4];
+}
+bool ModelViewSyncUnit_EViewPlayerType_IsValid(int value) {
+  switch (value) {
+    case 0:
+    case 1:
+      return true;
+    default:
+      return false;
+  }
+}
+
+#if (__cplusplus < 201703) && (!defined(_MSC_VER) || _MSC_VER >= 1900)
+constexpr ModelViewSyncUnit_EViewPlayerType ModelViewSyncUnit::EVST_PC;
+constexpr ModelViewSyncUnit_EViewPlayerType ModelViewSyncUnit::EVST_HOLOLENS;
+constexpr ModelViewSyncUnit_EViewPlayerType ModelViewSyncUnit::EViewPlayerType_MIN;
+constexpr ModelViewSyncUnit_EViewPlayerType ModelViewSyncUnit::EViewPlayerType_MAX;
+constexpr int ModelViewSyncUnit::EViewPlayerType_ARRAYSIZE;
 #endif  // (__cplusplus < 201703) && (!defined(_MSC_VER) || _MSC_VER >= 1900)
 
 // ===================================================================
@@ -4883,6 +5013,963 @@ void ReqAckModel::InternalSwap(ReqAckModel* other) {
 }
 
 
+// ===================================================================
+
+void ModelViewSyncUnit::InitAsDefaultInstance() {
+  ::NFMsg::_ModelViewSyncUnit_default_instance_._instance.get_mutable()->player_id_ = const_cast< ::NFMsg::Ident*>(
+      ::NFMsg::Ident::internal_default_instance());
+  ::NFMsg::_ModelViewSyncUnit_default_instance_._instance.get_mutable()->camera_pos_ = const_cast< ::NFMsg::Vector3*>(
+      ::NFMsg::Vector3::internal_default_instance());
+  ::NFMsg::_ModelViewSyncUnit_default_instance_._instance.get_mutable()->camera_rot_ = const_cast< ::NFMsg::Vector3*>(
+      ::NFMsg::Vector3::internal_default_instance());
+  ::NFMsg::_ModelViewSyncUnit_default_instance_._instance.get_mutable()->model_pos_ = const_cast< ::NFMsg::Vector3*>(
+      ::NFMsg::Vector3::internal_default_instance());
+  ::NFMsg::_ModelViewSyncUnit_default_instance_._instance.get_mutable()->model_rot_ = const_cast< ::NFMsg::Vector3*>(
+      ::NFMsg::Vector3::internal_default_instance());
+  ::NFMsg::_ModelViewSyncUnit_default_instance_._instance.get_mutable()->model_scale_ = const_cast< ::NFMsg::Vector3*>(
+      ::NFMsg::Vector3::internal_default_instance());
+}
+class ModelViewSyncUnit::_Internal {
+ public:
+  static const ::NFMsg::Ident& player_id(const ModelViewSyncUnit* msg);
+  static const ::NFMsg::Vector3& camera_pos(const ModelViewSyncUnit* msg);
+  static const ::NFMsg::Vector3& camera_rot(const ModelViewSyncUnit* msg);
+  static const ::NFMsg::Vector3& model_pos(const ModelViewSyncUnit* msg);
+  static const ::NFMsg::Vector3& model_rot(const ModelViewSyncUnit* msg);
+  static const ::NFMsg::Vector3& model_scale(const ModelViewSyncUnit* msg);
+};
+
+const ::NFMsg::Ident&
+ModelViewSyncUnit::_Internal::player_id(const ModelViewSyncUnit* msg) {
+  return *msg->player_id_;
+}
+const ::NFMsg::Vector3&
+ModelViewSyncUnit::_Internal::camera_pos(const ModelViewSyncUnit* msg) {
+  return *msg->camera_pos_;
+}
+const ::NFMsg::Vector3&
+ModelViewSyncUnit::_Internal::camera_rot(const ModelViewSyncUnit* msg) {
+  return *msg->camera_rot_;
+}
+const ::NFMsg::Vector3&
+ModelViewSyncUnit::_Internal::model_pos(const ModelViewSyncUnit* msg) {
+  return *msg->model_pos_;
+}
+const ::NFMsg::Vector3&
+ModelViewSyncUnit::_Internal::model_rot(const ModelViewSyncUnit* msg) {
+  return *msg->model_rot_;
+}
+const ::NFMsg::Vector3&
+ModelViewSyncUnit::_Internal::model_scale(const ModelViewSyncUnit* msg) {
+  return *msg->model_scale_;
+}
+void ModelViewSyncUnit::clear_player_id() {
+  if (GetArenaNoVirtual() == nullptr && player_id_ != nullptr) {
+    delete player_id_;
+  }
+  player_id_ = nullptr;
+}
+void ModelViewSyncUnit::clear_camera_pos() {
+  if (GetArenaNoVirtual() == nullptr && camera_pos_ != nullptr) {
+    delete camera_pos_;
+  }
+  camera_pos_ = nullptr;
+}
+void ModelViewSyncUnit::clear_camera_rot() {
+  if (GetArenaNoVirtual() == nullptr && camera_rot_ != nullptr) {
+    delete camera_rot_;
+  }
+  camera_rot_ = nullptr;
+}
+void ModelViewSyncUnit::clear_model_pos() {
+  if (GetArenaNoVirtual() == nullptr && model_pos_ != nullptr) {
+    delete model_pos_;
+  }
+  model_pos_ = nullptr;
+}
+void ModelViewSyncUnit::clear_model_rot() {
+  if (GetArenaNoVirtual() == nullptr && model_rot_ != nullptr) {
+    delete model_rot_;
+  }
+  model_rot_ = nullptr;
+}
+void ModelViewSyncUnit::clear_model_scale() {
+  if (GetArenaNoVirtual() == nullptr && model_scale_ != nullptr) {
+    delete model_scale_;
+  }
+  model_scale_ = nullptr;
+}
+ModelViewSyncUnit::ModelViewSyncUnit()
+  : ::PROTOBUF_NAMESPACE_ID::Message(), _internal_metadata_(nullptr) {
+  SharedCtor();
+  // @@protoc_insertion_point(constructor:NFMsg.ModelViewSyncUnit)
+}
+ModelViewSyncUnit::ModelViewSyncUnit(const ModelViewSyncUnit& from)
+  : ::PROTOBUF_NAMESPACE_ID::Message(),
+      _internal_metadata_(nullptr) {
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  if (from._internal_has_player_id()) {
+    player_id_ = new ::NFMsg::Ident(*from.player_id_);
+  } else {
+    player_id_ = nullptr;
+  }
+  if (from._internal_has_camera_pos()) {
+    camera_pos_ = new ::NFMsg::Vector3(*from.camera_pos_);
+  } else {
+    camera_pos_ = nullptr;
+  }
+  if (from._internal_has_camera_rot()) {
+    camera_rot_ = new ::NFMsg::Vector3(*from.camera_rot_);
+  } else {
+    camera_rot_ = nullptr;
+  }
+  if (from._internal_has_model_pos()) {
+    model_pos_ = new ::NFMsg::Vector3(*from.model_pos_);
+  } else {
+    model_pos_ = nullptr;
+  }
+  if (from._internal_has_model_rot()) {
+    model_rot_ = new ::NFMsg::Vector3(*from.model_rot_);
+  } else {
+    model_rot_ = nullptr;
+  }
+  if (from._internal_has_model_scale()) {
+    model_scale_ = new ::NFMsg::Vector3(*from.model_scale_);
+  } else {
+    model_scale_ = nullptr;
+  }
+  player_type_ = from.player_type_;
+  // @@protoc_insertion_point(copy_constructor:NFMsg.ModelViewSyncUnit)
+}
+
+void ModelViewSyncUnit::SharedCtor() {
+  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&scc_info_ModelViewSyncUnit_NFMsgShare_2eproto.base);
+  ::memset(&player_id_, 0, static_cast<size_t>(
+      reinterpret_cast<char*>(&player_type_) -
+      reinterpret_cast<char*>(&player_id_)) + sizeof(player_type_));
+}
+
+ModelViewSyncUnit::~ModelViewSyncUnit() {
+  // @@protoc_insertion_point(destructor:NFMsg.ModelViewSyncUnit)
+  SharedDtor();
+}
+
+void ModelViewSyncUnit::SharedDtor() {
+  if (this != internal_default_instance()) delete player_id_;
+  if (this != internal_default_instance()) delete camera_pos_;
+  if (this != internal_default_instance()) delete camera_rot_;
+  if (this != internal_default_instance()) delete model_pos_;
+  if (this != internal_default_instance()) delete model_rot_;
+  if (this != internal_default_instance()) delete model_scale_;
+}
+
+void ModelViewSyncUnit::SetCachedSize(int size) const {
+  _cached_size_.Set(size);
+}
+const ModelViewSyncUnit& ModelViewSyncUnit::default_instance() {
+  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_ModelViewSyncUnit_NFMsgShare_2eproto.base);
+  return *internal_default_instance();
+}
+
+
+void ModelViewSyncUnit::Clear() {
+// @@protoc_insertion_point(message_clear_start:NFMsg.ModelViewSyncUnit)
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  if (GetArenaNoVirtual() == nullptr && player_id_ != nullptr) {
+    delete player_id_;
+  }
+  player_id_ = nullptr;
+  if (GetArenaNoVirtual() == nullptr && camera_pos_ != nullptr) {
+    delete camera_pos_;
+  }
+  camera_pos_ = nullptr;
+  if (GetArenaNoVirtual() == nullptr && camera_rot_ != nullptr) {
+    delete camera_rot_;
+  }
+  camera_rot_ = nullptr;
+  if (GetArenaNoVirtual() == nullptr && model_pos_ != nullptr) {
+    delete model_pos_;
+  }
+  model_pos_ = nullptr;
+  if (GetArenaNoVirtual() == nullptr && model_rot_ != nullptr) {
+    delete model_rot_;
+  }
+  model_rot_ = nullptr;
+  if (GetArenaNoVirtual() == nullptr && model_scale_ != nullptr) {
+    delete model_scale_;
+  }
+  model_scale_ = nullptr;
+  player_type_ = 0;
+  _internal_metadata_.Clear();
+}
+
+const char* ModelViewSyncUnit::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    CHK_(ptr);
+    switch (tag >> 3) {
+      // .NFMsg.Ident player_id = 1;
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
+          ptr = ctx->ParseMessage(_internal_mutable_player_id(), ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // .NFMsg.ModelViewSyncUnit.EViewPlayerType player_type = 2;
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 16)) {
+          ::PROTOBUF_NAMESPACE_ID::uint64 val = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
+          CHK_(ptr);
+          _internal_set_player_type(static_cast<::NFMsg::ModelViewSyncUnit_EViewPlayerType>(val));
+        } else goto handle_unusual;
+        continue;
+      // .NFMsg.Vector3 camera_pos = 3;
+      case 3:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 26)) {
+          ptr = ctx->ParseMessage(_internal_mutable_camera_pos(), ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // .NFMsg.Vector3 camera_rot = 4;
+      case 4:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 34)) {
+          ptr = ctx->ParseMessage(_internal_mutable_camera_rot(), ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // .NFMsg.Vector3 model_pos = 5;
+      case 5:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 42)) {
+          ptr = ctx->ParseMessage(_internal_mutable_model_pos(), ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // .NFMsg.Vector3 model_rot = 6;
+      case 6:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 50)) {
+          ptr = ctx->ParseMessage(_internal_mutable_model_rot(), ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // .NFMsg.Vector3 model_scale = 7;
+      case 7:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 58)) {
+          ptr = ctx->ParseMessage(_internal_mutable_model_scale(), ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      default: {
+      handle_unusual:
+        if ((tag & 7) == 4 || tag == 0) {
+          ctx->SetLastTag(tag);
+          goto success;
+        }
+        ptr = UnknownFieldParse(tag, &_internal_metadata_, ptr, ctx);
+        CHK_(ptr != nullptr);
+        continue;
+      }
+    }  // switch
+  }  // while
+success:
+  return ptr;
+failure:
+  ptr = nullptr;
+  goto success;
+#undef CHK_
+}
+
+::PROTOBUF_NAMESPACE_ID::uint8* ModelViewSyncUnit::_InternalSerialize(
+    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:NFMsg.ModelViewSyncUnit)
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // .NFMsg.Ident player_id = 1;
+  if (this->has_player_id()) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
+      InternalWriteMessage(
+        1, _Internal::player_id(this), target, stream);
+  }
+
+  // .NFMsg.ModelViewSyncUnit.EViewPlayerType player_type = 2;
+  if (this->player_type() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteEnumToArray(
+      2, this->_internal_player_type(), target);
+  }
+
+  // .NFMsg.Vector3 camera_pos = 3;
+  if (this->has_camera_pos()) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
+      InternalWriteMessage(
+        3, _Internal::camera_pos(this), target, stream);
+  }
+
+  // .NFMsg.Vector3 camera_rot = 4;
+  if (this->has_camera_rot()) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
+      InternalWriteMessage(
+        4, _Internal::camera_rot(this), target, stream);
+  }
+
+  // .NFMsg.Vector3 model_pos = 5;
+  if (this->has_model_pos()) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
+      InternalWriteMessage(
+        5, _Internal::model_pos(this), target, stream);
+  }
+
+  // .NFMsg.Vector3 model_rot = 6;
+  if (this->has_model_rot()) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
+      InternalWriteMessage(
+        6, _Internal::model_rot(this), target, stream);
+  }
+
+  // .NFMsg.Vector3 model_scale = 7;
+  if (this->has_model_scale()) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
+      InternalWriteMessage(
+        7, _Internal::model_scale(this), target, stream);
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields(), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:NFMsg.ModelViewSyncUnit)
+  return target;
+}
+
+size_t ModelViewSyncUnit::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:NFMsg.ModelViewSyncUnit)
+  size_t total_size = 0;
+
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  // .NFMsg.Ident player_id = 1;
+  if (this->has_player_id()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
+        *player_id_);
+  }
+
+  // .NFMsg.Vector3 camera_pos = 3;
+  if (this->has_camera_pos()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
+        *camera_pos_);
+  }
+
+  // .NFMsg.Vector3 camera_rot = 4;
+  if (this->has_camera_rot()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
+        *camera_rot_);
+  }
+
+  // .NFMsg.Vector3 model_pos = 5;
+  if (this->has_model_pos()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
+        *model_pos_);
+  }
+
+  // .NFMsg.Vector3 model_rot = 6;
+  if (this->has_model_rot()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
+        *model_rot_);
+  }
+
+  // .NFMsg.Vector3 model_scale = 7;
+  if (this->has_model_scale()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
+        *model_scale_);
+  }
+
+  // .NFMsg.ModelViewSyncUnit.EViewPlayerType player_type = 2;
+  if (this->player_type() != 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::EnumSize(this->_internal_player_type());
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
+        _internal_metadata_, total_size, &_cached_size_);
+  }
+  int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
+  SetCachedSize(cached_size);
+  return total_size;
+}
+
+void ModelViewSyncUnit::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:NFMsg.ModelViewSyncUnit)
+  GOOGLE_DCHECK_NE(&from, this);
+  const ModelViewSyncUnit* source =
+      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<ModelViewSyncUnit>(
+          &from);
+  if (source == nullptr) {
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:NFMsg.ModelViewSyncUnit)
+    ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
+  } else {
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:NFMsg.ModelViewSyncUnit)
+    MergeFrom(*source);
+  }
+}
+
+void ModelViewSyncUnit::MergeFrom(const ModelViewSyncUnit& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:NFMsg.ModelViewSyncUnit)
+  GOOGLE_DCHECK_NE(&from, this);
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  if (from.has_player_id()) {
+    _internal_mutable_player_id()->::NFMsg::Ident::MergeFrom(from._internal_player_id());
+  }
+  if (from.has_camera_pos()) {
+    _internal_mutable_camera_pos()->::NFMsg::Vector3::MergeFrom(from._internal_camera_pos());
+  }
+  if (from.has_camera_rot()) {
+    _internal_mutable_camera_rot()->::NFMsg::Vector3::MergeFrom(from._internal_camera_rot());
+  }
+  if (from.has_model_pos()) {
+    _internal_mutable_model_pos()->::NFMsg::Vector3::MergeFrom(from._internal_model_pos());
+  }
+  if (from.has_model_rot()) {
+    _internal_mutable_model_rot()->::NFMsg::Vector3::MergeFrom(from._internal_model_rot());
+  }
+  if (from.has_model_scale()) {
+    _internal_mutable_model_scale()->::NFMsg::Vector3::MergeFrom(from._internal_model_scale());
+  }
+  if (from.player_type() != 0) {
+    _internal_set_player_type(from._internal_player_type());
+  }
+}
+
+void ModelViewSyncUnit::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:NFMsg.ModelViewSyncUnit)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+void ModelViewSyncUnit::CopyFrom(const ModelViewSyncUnit& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:NFMsg.ModelViewSyncUnit)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool ModelViewSyncUnit::IsInitialized() const {
+  return true;
+}
+
+void ModelViewSyncUnit::InternalSwap(ModelViewSyncUnit* other) {
+  using std::swap;
+  _internal_metadata_.Swap(&other->_internal_metadata_);
+  swap(player_id_, other->player_id_);
+  swap(camera_pos_, other->camera_pos_);
+  swap(camera_rot_, other->camera_rot_);
+  swap(model_pos_, other->model_pos_);
+  swap(model_rot_, other->model_rot_);
+  swap(model_scale_, other->model_scale_);
+  swap(player_type_, other->player_type_);
+}
+
+::PROTOBUF_NAMESPACE_ID::Metadata ModelViewSyncUnit::GetMetadata() const {
+  return GetMetadataStatic();
+}
+
+
+// ===================================================================
+
+void ReqAckModelViewSync::InitAsDefaultInstance() {
+  ::NFMsg::_ReqAckModelViewSync_default_instance_._instance.get_mutable()->sync_unit_ = const_cast< ::NFMsg::ModelViewSyncUnit*>(
+      ::NFMsg::ModelViewSyncUnit::internal_default_instance());
+}
+class ReqAckModelViewSync::_Internal {
+ public:
+  static const ::NFMsg::ModelViewSyncUnit& sync_unit(const ReqAckModelViewSync* msg);
+};
+
+const ::NFMsg::ModelViewSyncUnit&
+ReqAckModelViewSync::_Internal::sync_unit(const ReqAckModelViewSync* msg) {
+  return *msg->sync_unit_;
+}
+ReqAckModelViewSync::ReqAckModelViewSync()
+  : ::PROTOBUF_NAMESPACE_ID::Message(), _internal_metadata_(nullptr) {
+  SharedCtor();
+  // @@protoc_insertion_point(constructor:NFMsg.ReqAckModelViewSync)
+}
+ReqAckModelViewSync::ReqAckModelViewSync(const ReqAckModelViewSync& from)
+  : ::PROTOBUF_NAMESPACE_ID::Message(),
+      _internal_metadata_(nullptr) {
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  if (from._internal_has_sync_unit()) {
+    sync_unit_ = new ::NFMsg::ModelViewSyncUnit(*from.sync_unit_);
+  } else {
+    sync_unit_ = nullptr;
+  }
+  sequence_ = from.sequence_;
+  // @@protoc_insertion_point(copy_constructor:NFMsg.ReqAckModelViewSync)
+}
+
+void ReqAckModelViewSync::SharedCtor() {
+  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&scc_info_ReqAckModelViewSync_NFMsgShare_2eproto.base);
+  ::memset(&sync_unit_, 0, static_cast<size_t>(
+      reinterpret_cast<char*>(&sequence_) -
+      reinterpret_cast<char*>(&sync_unit_)) + sizeof(sequence_));
+}
+
+ReqAckModelViewSync::~ReqAckModelViewSync() {
+  // @@protoc_insertion_point(destructor:NFMsg.ReqAckModelViewSync)
+  SharedDtor();
+}
+
+void ReqAckModelViewSync::SharedDtor() {
+  if (this != internal_default_instance()) delete sync_unit_;
+}
+
+void ReqAckModelViewSync::SetCachedSize(int size) const {
+  _cached_size_.Set(size);
+}
+const ReqAckModelViewSync& ReqAckModelViewSync::default_instance() {
+  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_ReqAckModelViewSync_NFMsgShare_2eproto.base);
+  return *internal_default_instance();
+}
+
+
+void ReqAckModelViewSync::Clear() {
+// @@protoc_insertion_point(message_clear_start:NFMsg.ReqAckModelViewSync)
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  if (GetArenaNoVirtual() == nullptr && sync_unit_ != nullptr) {
+    delete sync_unit_;
+  }
+  sync_unit_ = nullptr;
+  sequence_ = 0;
+  _internal_metadata_.Clear();
+}
+
+const char* ReqAckModelViewSync::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    CHK_(ptr);
+    switch (tag >> 3) {
+      // int32 sequence = 1;
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
+          sequence_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // .NFMsg.ModelViewSyncUnit sync_unit = 2;
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 18)) {
+          ptr = ctx->ParseMessage(_internal_mutable_sync_unit(), ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      default: {
+      handle_unusual:
+        if ((tag & 7) == 4 || tag == 0) {
+          ctx->SetLastTag(tag);
+          goto success;
+        }
+        ptr = UnknownFieldParse(tag, &_internal_metadata_, ptr, ctx);
+        CHK_(ptr != nullptr);
+        continue;
+      }
+    }  // switch
+  }  // while
+success:
+  return ptr;
+failure:
+  ptr = nullptr;
+  goto success;
+#undef CHK_
+}
+
+::PROTOBUF_NAMESPACE_ID::uint8* ReqAckModelViewSync::_InternalSerialize(
+    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:NFMsg.ReqAckModelViewSync)
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // int32 sequence = 1;
+  if (this->sequence() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(1, this->_internal_sequence(), target);
+  }
+
+  // .NFMsg.ModelViewSyncUnit sync_unit = 2;
+  if (this->has_sync_unit()) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
+      InternalWriteMessage(
+        2, _Internal::sync_unit(this), target, stream);
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields(), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:NFMsg.ReqAckModelViewSync)
+  return target;
+}
+
+size_t ReqAckModelViewSync::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:NFMsg.ReqAckModelViewSync)
+  size_t total_size = 0;
+
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  // .NFMsg.ModelViewSyncUnit sync_unit = 2;
+  if (this->has_sync_unit()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
+        *sync_unit_);
+  }
+
+  // int32 sequence = 1;
+  if (this->sequence() != 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32Size(
+        this->_internal_sequence());
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
+        _internal_metadata_, total_size, &_cached_size_);
+  }
+  int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
+  SetCachedSize(cached_size);
+  return total_size;
+}
+
+void ReqAckModelViewSync::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:NFMsg.ReqAckModelViewSync)
+  GOOGLE_DCHECK_NE(&from, this);
+  const ReqAckModelViewSync* source =
+      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<ReqAckModelViewSync>(
+          &from);
+  if (source == nullptr) {
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:NFMsg.ReqAckModelViewSync)
+    ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
+  } else {
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:NFMsg.ReqAckModelViewSync)
+    MergeFrom(*source);
+  }
+}
+
+void ReqAckModelViewSync::MergeFrom(const ReqAckModelViewSync& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:NFMsg.ReqAckModelViewSync)
+  GOOGLE_DCHECK_NE(&from, this);
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  if (from.has_sync_unit()) {
+    _internal_mutable_sync_unit()->::NFMsg::ModelViewSyncUnit::MergeFrom(from._internal_sync_unit());
+  }
+  if (from.sequence() != 0) {
+    _internal_set_sequence(from._internal_sequence());
+  }
+}
+
+void ReqAckModelViewSync::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:NFMsg.ReqAckModelViewSync)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+void ReqAckModelViewSync::CopyFrom(const ReqAckModelViewSync& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:NFMsg.ReqAckModelViewSync)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool ReqAckModelViewSync::IsInitialized() const {
+  return true;
+}
+
+void ReqAckModelViewSync::InternalSwap(ReqAckModelViewSync* other) {
+  using std::swap;
+  _internal_metadata_.Swap(&other->_internal_metadata_);
+  swap(sync_unit_, other->sync_unit_);
+  swap(sequence_, other->sequence_);
+}
+
+::PROTOBUF_NAMESPACE_ID::Metadata ReqAckModelViewSync::GetMetadata() const {
+  return GetMetadataStatic();
+}
+
+
+// ===================================================================
+
+void ReqAckModelView::InitAsDefaultInstance() {
+  ::NFMsg::_ReqAckModelView_default_instance_._instance.get_mutable()->player_id_ = const_cast< ::NFMsg::Ident*>(
+      ::NFMsg::Ident::internal_default_instance());
+}
+class ReqAckModelView::_Internal {
+ public:
+  static const ::NFMsg::Ident& player_id(const ReqAckModelView* msg);
+};
+
+const ::NFMsg::Ident&
+ReqAckModelView::_Internal::player_id(const ReqAckModelView* msg) {
+  return *msg->player_id_;
+}
+void ReqAckModelView::clear_player_id() {
+  if (GetArenaNoVirtual() == nullptr && player_id_ != nullptr) {
+    delete player_id_;
+  }
+  player_id_ = nullptr;
+}
+ReqAckModelView::ReqAckModelView()
+  : ::PROTOBUF_NAMESPACE_ID::Message(), _internal_metadata_(nullptr) {
+  SharedCtor();
+  // @@protoc_insertion_point(constructor:NFMsg.ReqAckModelView)
+}
+ReqAckModelView::ReqAckModelView(const ReqAckModelView& from)
+  : ::PROTOBUF_NAMESPACE_ID::Message(),
+      _internal_metadata_(nullptr),
+      sync_unit_(from.sync_unit_) {
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  if (from._internal_has_player_id()) {
+    player_id_ = new ::NFMsg::Ident(*from.player_id_);
+  } else {
+    player_id_ = nullptr;
+  }
+  // @@protoc_insertion_point(copy_constructor:NFMsg.ReqAckModelView)
+}
+
+void ReqAckModelView::SharedCtor() {
+  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&scc_info_ReqAckModelView_NFMsgShare_2eproto.base);
+  player_id_ = nullptr;
+}
+
+ReqAckModelView::~ReqAckModelView() {
+  // @@protoc_insertion_point(destructor:NFMsg.ReqAckModelView)
+  SharedDtor();
+}
+
+void ReqAckModelView::SharedDtor() {
+  if (this != internal_default_instance()) delete player_id_;
+}
+
+void ReqAckModelView::SetCachedSize(int size) const {
+  _cached_size_.Set(size);
+}
+const ReqAckModelView& ReqAckModelView::default_instance() {
+  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_ReqAckModelView_NFMsgShare_2eproto.base);
+  return *internal_default_instance();
+}
+
+
+void ReqAckModelView::Clear() {
+// @@protoc_insertion_point(message_clear_start:NFMsg.ReqAckModelView)
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  sync_unit_.Clear();
+  if (GetArenaNoVirtual() == nullptr && player_id_ != nullptr) {
+    delete player_id_;
+  }
+  player_id_ = nullptr;
+  _internal_metadata_.Clear();
+}
+
+const char* ReqAckModelView::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    CHK_(ptr);
+    switch (tag >> 3) {
+      // .NFMsg.Ident player_id = 1;
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
+          ptr = ctx->ParseMessage(_internal_mutable_player_id(), ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // repeated .NFMsg.ModelViewSyncUnit sync_unit = 2;
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 18)) {
+          ptr -= 1;
+          do {
+            ptr += 1;
+            ptr = ctx->ParseMessage(_internal_add_sync_unit(), ptr);
+            CHK_(ptr);
+            if (!ctx->DataAvailable(ptr)) break;
+          } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<18>(ptr));
+        } else goto handle_unusual;
+        continue;
+      default: {
+      handle_unusual:
+        if ((tag & 7) == 4 || tag == 0) {
+          ctx->SetLastTag(tag);
+          goto success;
+        }
+        ptr = UnknownFieldParse(tag, &_internal_metadata_, ptr, ctx);
+        CHK_(ptr != nullptr);
+        continue;
+      }
+    }  // switch
+  }  // while
+success:
+  return ptr;
+failure:
+  ptr = nullptr;
+  goto success;
+#undef CHK_
+}
+
+::PROTOBUF_NAMESPACE_ID::uint8* ReqAckModelView::_InternalSerialize(
+    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:NFMsg.ReqAckModelView)
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // .NFMsg.Ident player_id = 1;
+  if (this->has_player_id()) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
+      InternalWriteMessage(
+        1, _Internal::player_id(this), target, stream);
+  }
+
+  // repeated .NFMsg.ModelViewSyncUnit sync_unit = 2;
+  for (unsigned int i = 0,
+      n = static_cast<unsigned int>(this->_internal_sync_unit_size()); i < n; i++) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
+      InternalWriteMessage(2, this->_internal_sync_unit(i), target, stream);
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields(), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:NFMsg.ReqAckModelView)
+  return target;
+}
+
+size_t ReqAckModelView::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:NFMsg.ReqAckModelView)
+  size_t total_size = 0;
+
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  // repeated .NFMsg.ModelViewSyncUnit sync_unit = 2;
+  total_size += 1UL * this->_internal_sync_unit_size();
+  for (const auto& msg : this->sync_unit_) {
+    total_size +=
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(msg);
+  }
+
+  // .NFMsg.Ident player_id = 1;
+  if (this->has_player_id()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
+        *player_id_);
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
+        _internal_metadata_, total_size, &_cached_size_);
+  }
+  int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
+  SetCachedSize(cached_size);
+  return total_size;
+}
+
+void ReqAckModelView::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:NFMsg.ReqAckModelView)
+  GOOGLE_DCHECK_NE(&from, this);
+  const ReqAckModelView* source =
+      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<ReqAckModelView>(
+          &from);
+  if (source == nullptr) {
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:NFMsg.ReqAckModelView)
+    ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
+  } else {
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:NFMsg.ReqAckModelView)
+    MergeFrom(*source);
+  }
+}
+
+void ReqAckModelView::MergeFrom(const ReqAckModelView& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:NFMsg.ReqAckModelView)
+  GOOGLE_DCHECK_NE(&from, this);
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  sync_unit_.MergeFrom(from.sync_unit_);
+  if (from.has_player_id()) {
+    _internal_mutable_player_id()->::NFMsg::Ident::MergeFrom(from._internal_player_id());
+  }
+}
+
+void ReqAckModelView::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:NFMsg.ReqAckModelView)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+void ReqAckModelView::CopyFrom(const ReqAckModelView& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:NFMsg.ReqAckModelView)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool ReqAckModelView::IsInitialized() const {
+  return true;
+}
+
+void ReqAckModelView::InternalSwap(ReqAckModelView* other) {
+  using std::swap;
+  _internal_metadata_.Swap(&other->_internal_metadata_);
+  sync_unit_.InternalSwap(&other->sync_unit_);
+  swap(player_id_, other->player_id_);
+}
+
+::PROTOBUF_NAMESPACE_ID::Metadata ReqAckModelView::GetMetadata() const {
+  return GetMetadataStatic();
+}
+
+
 // @@protoc_insertion_point(namespace_scope)
 }  // namespace NFMsg
 PROTOBUF_NAMESPACE_OPEN
@@ -4933,6 +6020,15 @@ template<> PROTOBUF_NOINLINE ::NFMsg::ReqAckModelSync* Arena::CreateMaybeMessage
 }
 template<> PROTOBUF_NOINLINE ::NFMsg::ReqAckModel* Arena::CreateMaybeMessage< ::NFMsg::ReqAckModel >(Arena* arena) {
   return Arena::CreateInternal< ::NFMsg::ReqAckModel >(arena);
+}
+template<> PROTOBUF_NOINLINE ::NFMsg::ModelViewSyncUnit* Arena::CreateMaybeMessage< ::NFMsg::ModelViewSyncUnit >(Arena* arena) {
+  return Arena::CreateInternal< ::NFMsg::ModelViewSyncUnit >(arena);
+}
+template<> PROTOBUF_NOINLINE ::NFMsg::ReqAckModelViewSync* Arena::CreateMaybeMessage< ::NFMsg::ReqAckModelViewSync >(Arena* arena) {
+  return Arena::CreateInternal< ::NFMsg::ReqAckModelViewSync >(arena);
+}
+template<> PROTOBUF_NOINLINE ::NFMsg::ReqAckModelView* Arena::CreateMaybeMessage< ::NFMsg::ReqAckModelView >(Arena* arena) {
+  return Arena::CreateInternal< ::NFMsg::ReqAckModelView >(arena);
 }
 PROTOBUF_NAMESPACE_CLOSE
 

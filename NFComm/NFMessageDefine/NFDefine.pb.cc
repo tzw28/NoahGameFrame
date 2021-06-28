@@ -37,7 +37,7 @@ const char descriptor_table_protodef_NFDefine_2eproto[] PROTOBUF_SECTION_VARIABL
   "ER_USING\020s\022\024\n\020CHARACTER_LOCKED\020t\022\021\n\rZONE"
   "_OVERLOAD\020u\022\016\n\nNOT_ONLINE\020v\022\031\n\024INSUFFICI"
   "ENT_DIAMOND\020\310\001\022\026\n\021INSUFFICIENT_GOLD\020\311\001\022\024"
-  "\n\017INSUFFICIENT_SP\020\312\001*\221\020\n\nEGameMsgID\022\n\n\006U"
+  "\n\017INSUFFICIENT_SP\020\312\001*\273\020\n\nEGameMsgID\022\n\n\006U"
   "NKNOW\020\000\022\020\n\014EVENT_RESULT\020\001\022\023\n\017EVENT_TRANS"
   "PORT\020\002\022\020\n\014CLOSE_SOCKET\020\003\022\030\n\024WTM_WORLD_RE"
   "GISTERED\020\n\022\032\n\026WTM_WORLD_UNREGISTERED\020\013\022\025"
@@ -88,18 +88,19 @@ const char descriptor_table_protodef_NFDefine_2eproto[] PROTOBUF_SECTION_VARIABL
   "KILL_OBJECTX\020\220\003\022\026\n\021ACK_SKILL_OBJECTX\020\221\003\022"
   "\022\n\rREQ_SKILL_POS\020\222\003\022\022\n\rACK_SKILL_POS\020\223\003\022"
   "\022\n\rREQ_MODEL_RAW\020\364\003\022\022\n\rACK_MODEL_RAW\020\365\003\022"
-  "\026\n\021ACK_ONLINE_NOTIFY\020\330\004\022\027\n\022ACK_OFFLINE_N"
-  "OTIFY\020\331\004*G\n\tEItemType\022\r\n\tEIT_EQUIP\020\000\022\013\n\007"
-  "EIT_GEM\020\001\022\016\n\nEIT_SUPPLY\020\002\022\016\n\nEIT_SCROLL\020"
-  "\003*\267\001\n\nESkillType\022\026\n\022BRIEF_SINGLE_SKILL\020\000"
-  "\022\025\n\021BRIEF_GROUP_SKILL\020\001\022\027\n\023BULLET_SINGLE"
-  "_SKILL\020\002\022\030\n\024BULLET_REBOUND_SKILL\020\003\022\034\n\030BU"
-  "LLET_TARGET_BOMB_SKILL\020\004\022\031\n\025BULLET_POS_B"
-  "OMB_SKILL\020\005\022\016\n\nFUNC_SKILL\020\006*M\n\nESceneTyp"
-  "e\022\020\n\014NORMAL_SCENE\020\000\022\026\n\022SINGLE_CLONE_SCEN"
-  "E\020\001\022\025\n\021MULTI_CLONE_SCENE\020\002*F\n\010ENPCType\022\016"
-  "\n\nNORMAL_NPC\020\000\022\014\n\010HERO_NPC\020\001\022\016\n\nTURRET_N"
-  "PC\020\002\022\014\n\010FUNC_NPC\020\003b\006proto3"
+  "\023\n\016REQ_MODEL_VIEW\020\210\004\022\023\n\016ACK_MODEL_VIEW\020\211"
+  "\004\022\026\n\021ACK_ONLINE_NOTIFY\020\330\004\022\027\n\022ACK_OFFLINE"
+  "_NOTIFY\020\331\004*G\n\tEItemType\022\r\n\tEIT_EQUIP\020\000\022\013"
+  "\n\007EIT_GEM\020\001\022\016\n\nEIT_SUPPLY\020\002\022\016\n\nEIT_SCROL"
+  "L\020\003*\267\001\n\nESkillType\022\026\n\022BRIEF_SINGLE_SKILL"
+  "\020\000\022\025\n\021BRIEF_GROUP_SKILL\020\001\022\027\n\023BULLET_SING"
+  "LE_SKILL\020\002\022\030\n\024BULLET_REBOUND_SKILL\020\003\022\034\n\030"
+  "BULLET_TARGET_BOMB_SKILL\020\004\022\031\n\025BULLET_POS"
+  "_BOMB_SKILL\020\005\022\016\n\nFUNC_SKILL\020\006*M\n\nESceneT"
+  "ype\022\020\n\014NORMAL_SCENE\020\000\022\026\n\022SINGLE_CLONE_SC"
+  "ENE\020\001\022\025\n\021MULTI_CLONE_SCENE\020\002*F\n\010ENPCType"
+  "\022\016\n\nNORMAL_NPC\020\000\022\014\n\010HERO_NPC\020\001\022\016\n\nTURRET"
+  "_NPC\020\002\022\014\n\010FUNC_NPC\020\003b\006proto3"
   ;
 static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_NFDefine_2eproto_deps[1] = {
 };
@@ -108,7 +109,7 @@ static ::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase*const descriptor_table_NFD
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_NFDefine_2eproto_once;
 static bool descriptor_table_NFDefine_2eproto_initialized = false;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_NFDefine_2eproto = {
-  &descriptor_table_NFDefine_2eproto_initialized, descriptor_table_protodef_NFDefine_2eproto, "NFDefine.proto", 3026,
+  &descriptor_table_NFDefine_2eproto_initialized, descriptor_table_protodef_NFDefine_2eproto, "NFDefine.proto", 3068,
   &descriptor_table_NFDefine_2eproto_once, descriptor_table_NFDefine_2eproto_sccs, descriptor_table_NFDefine_2eproto_deps, 0, 0,
   schemas, file_default_instances, TableStruct_NFDefine_2eproto::offsets,
   file_level_metadata_NFDefine_2eproto, 0, file_level_enum_descriptors_NFDefine_2eproto, file_level_service_descriptors_NFDefine_2eproto,
@@ -247,6 +248,8 @@ bool EGameMsgID_IsValid(int value) {
     case 403:
     case 500:
     case 501:
+    case 520:
+    case 521:
     case 600:
     case 601:
       return true;

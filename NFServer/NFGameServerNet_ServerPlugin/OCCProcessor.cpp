@@ -25,16 +25,25 @@
 #include <NCollection_Vector.hxx>
 #include <Message_ProgressScope.hxx>
 #include <Message_ProgressIndicator.hxx>
+#include <STEPControl_Reader.hxx>
 
 #include <fstream> 
 #include <iostream> 
 #include <string> 
 #include <filesystem>
+#include <sstream>
 
+#include "OCCUtil.h"
+
+
+OCCProcessor::OCCProcessor()
+{
+    m_aLogger = new OCCLogger(LogLevel_Info, OCCLogger::GetAppPathA().append("..\\occlog\\"));
+}
 
 int OCCProcessor::initializeModel()
 {
-    m_aProperty.type = BOX;
+    // m_aProperty.type = BOX;
     m_aProperty.width = 1.0;
     m_aProperty.height = 1.0;
     m_aProperty.length = 1.0;
@@ -54,6 +63,11 @@ int OCCProcessor::initializeModel()
     */
     std::cout << "end of create cube\n" << std::endl;
     return 0;
+}
+
+OCCProcessor::~OCCProcessor()
+{
+    delete m_aLogger;
 }
 
 int OCCProcessor::updateShape(ModelProperty newShapeProperty)
@@ -78,6 +92,61 @@ int OCCProcessor::readSampleModel()
     return 0;
 }
 
+int OCCProcessor::loadModel(Standard_CString sModelName)
+{
+    clock_t start, end;
+    start = clock();
+    std::cout << "load model " << sModelName << endswith(sModelName, ".stl") << std::endl;
+
+    if (endswith(sModelName, ".step") || endswith(sModelName, ".stp"))
+        loadStepModel(sModelName);
+    else if (endswith(sModelName, ".stl"))
+        loadStlModel(sModelName);
+
+    end = clock();
+    std::stringstream sstr;
+    sstr << "Load model" << sModelName << " "
+        << std::to_string((end - start) * 1000 / CLOCKS_PER_SEC).c_str() << "ms";
+    m_aLogger->TraceInfo(sstr.str().c_str());
+    return 0;
+}
+
+
+int OCCProcessor::loadStepModel(Standard_CString sModelName)
+{
+    std::cout << "start to load step " << sModelName << std::endl;
+
+    STEPControl_Reader aReader;
+    TCollection_AsciiString sPath("../Models/");
+    sPath += sModelName;
+
+    aReader.ReadFile(sPath.ToCString());
+    aReader.TransferRoots();
+    m_aShape = aReader.OneShape();
+
+    BRepMesh_IncrementalMesh BMesh(m_aShape, 0.1, Standard_True);
+
+    std::cout << "end of step loading\n" << std::endl;
+    return 0;
+}
+
+int OCCProcessor::loadStlModel(Standard_CString sModelName)
+{
+
+    std::cout << "start to load stl " << sModelName << std::endl;
+
+    TCollection_AsciiString sPath("../Models/");
+    sPath += sModelName;
+
+    StlAPI_Reader aReader_Stl;
+    aReader_Stl.Read(m_aShape, sPath.ToCString());
+
+    BRepMesh_IncrementalMesh BMesh(m_aShape, 0.1, Standard_True);
+
+    std::cout << "end of stl reading" << std::endl;
+    return 0;
+}
+
 int OCCProcessor::stretchWidth(float newWidth)
 {
     std::cout << "start to stretch width " << newWidth << std::endl;
@@ -97,6 +166,8 @@ int OCCProcessor::printModelStatus()
 int OCCProcessor::toMeshString(std::string& mesh_str)
 {
     std::cout << "start to generate mesh" << std::endl;
+    clock_t start, end;
+    start = clock();
     BRepMesh_IncrementalMesh BMesh(m_aShape, 0.1, Standard_True);
 
     ////////////// to mesh
@@ -240,5 +311,9 @@ int OCCProcessor::toMeshString(std::string& mesh_str)
             aPS.Next(IND_THRESHOLD);
         }
     }
+    end = clock();
+    std::stringstream sstr;
+    sstr << "To mesh " << std::to_string((end - start) * 1000 / CLOCKS_PER_SEC).c_str() << "ms";
+    m_aLogger->TraceInfo(sstr.str().c_str());
     return 0;
 }

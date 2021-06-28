@@ -50,7 +50,7 @@ struct TableStruct_NFMsgShare_2eproto {
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::PROTOBUF_NAMESPACE_ID::internal::AuxillaryParseTableField aux[]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
-  static const ::PROTOBUF_NAMESPACE_ID::internal::ParseTable schema[16]
+  static const ::PROTOBUF_NAMESPACE_ID::internal::ParseTable schema[19]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::PROTOBUF_NAMESPACE_ID::internal::FieldMetadata field_metadata[];
   static const ::PROTOBUF_NAMESPACE_ID::internal::SerializationTable serialization_table[];
@@ -70,6 +70,9 @@ extern EffectDataDefaultTypeInternal _EffectData_default_instance_;
 class ModelSyncUnit;
 class ModelSyncUnitDefaultTypeInternal;
 extern ModelSyncUnitDefaultTypeInternal _ModelSyncUnit_default_instance_;
+class ModelViewSyncUnit;
+class ModelViewSyncUnitDefaultTypeInternal;
+extern ModelViewSyncUnitDefaultTypeInternal _ModelViewSyncUnit_default_instance_;
 class PlayerEntryInfo;
 class PlayerEntryInfoDefaultTypeInternal;
 extern PlayerEntryInfoDefaultTypeInternal _PlayerEntryInfo_default_instance_;
@@ -85,6 +88,12 @@ extern ReqAckModelDefaultTypeInternal _ReqAckModel_default_instance_;
 class ReqAckModelSync;
 class ReqAckModelSyncDefaultTypeInternal;
 extern ReqAckModelSyncDefaultTypeInternal _ReqAckModelSync_default_instance_;
+class ReqAckModelView;
+class ReqAckModelViewDefaultTypeInternal;
+extern ReqAckModelViewDefaultTypeInternal _ReqAckModelView_default_instance_;
+class ReqAckModelViewSync;
+class ReqAckModelViewSyncDefaultTypeInternal;
+extern ReqAckModelViewSyncDefaultTypeInternal _ReqAckModelViewSync_default_instance_;
 class ReqAckPlayerChat;
 class ReqAckPlayerChatDefaultTypeInternal;
 extern ReqAckPlayerChatDefaultTypeInternal _ReqAckPlayerChat_default_instance_;
@@ -112,11 +121,14 @@ template<> ::NFMsg::AckPlayerEntryList* Arena::CreateMaybeMessage<::NFMsg::AckPl
 template<> ::NFMsg::AckPlayerLeaveList* Arena::CreateMaybeMessage<::NFMsg::AckPlayerLeaveList>(Arena*);
 template<> ::NFMsg::EffectData* Arena::CreateMaybeMessage<::NFMsg::EffectData>(Arena*);
 template<> ::NFMsg::ModelSyncUnit* Arena::CreateMaybeMessage<::NFMsg::ModelSyncUnit>(Arena*);
+template<> ::NFMsg::ModelViewSyncUnit* Arena::CreateMaybeMessage<::NFMsg::ModelViewSyncUnit>(Arena*);
 template<> ::NFMsg::PlayerEntryInfo* Arena::CreateMaybeMessage<::NFMsg::PlayerEntryInfo>(Arena*);
 template<> ::NFMsg::PosSyncUnit* Arena::CreateMaybeMessage<::NFMsg::PosSyncUnit>(Arena*);
 template<> ::NFMsg::ReqAckEnterGameSuccess* Arena::CreateMaybeMessage<::NFMsg::ReqAckEnterGameSuccess>(Arena*);
 template<> ::NFMsg::ReqAckModel* Arena::CreateMaybeMessage<::NFMsg::ReqAckModel>(Arena*);
 template<> ::NFMsg::ReqAckModelSync* Arena::CreateMaybeMessage<::NFMsg::ReqAckModelSync>(Arena*);
+template<> ::NFMsg::ReqAckModelView* Arena::CreateMaybeMessage<::NFMsg::ReqAckModelView>(Arena*);
+template<> ::NFMsg::ReqAckModelViewSync* Arena::CreateMaybeMessage<::NFMsg::ReqAckModelViewSync>(Arena*);
 template<> ::NFMsg::ReqAckPlayerChat* Arena::CreateMaybeMessage<::NFMsg::ReqAckPlayerChat>(Arena*);
 template<> ::NFMsg::ReqAckPlayerPosSync* Arena::CreateMaybeMessage<::NFMsg::ReqAckPlayerPosSync>(Arena*);
 template<> ::NFMsg::ReqAckSwapScene* Arena::CreateMaybeMessage<::NFMsg::ReqAckSwapScene>(Arena*);
@@ -234,6 +246,31 @@ inline bool ReqAckPlayerChat_EGameChatType_Parse(
     const std::string& name, ReqAckPlayerChat_EGameChatType* value) {
   return ::PROTOBUF_NAMESPACE_ID::internal::ParseNamedEnum<ReqAckPlayerChat_EGameChatType>(
     ReqAckPlayerChat_EGameChatType_descriptor(), name, value);
+}
+enum ModelViewSyncUnit_EViewPlayerType : int {
+  ModelViewSyncUnit_EViewPlayerType_EVST_PC = 0,
+  ModelViewSyncUnit_EViewPlayerType_EVST_HOLOLENS = 1,
+  ModelViewSyncUnit_EViewPlayerType_ModelViewSyncUnit_EViewPlayerType_INT_MIN_SENTINEL_DO_NOT_USE_ = std::numeric_limits<::PROTOBUF_NAMESPACE_ID::int32>::min(),
+  ModelViewSyncUnit_EViewPlayerType_ModelViewSyncUnit_EViewPlayerType_INT_MAX_SENTINEL_DO_NOT_USE_ = std::numeric_limits<::PROTOBUF_NAMESPACE_ID::int32>::max()
+};
+bool ModelViewSyncUnit_EViewPlayerType_IsValid(int value);
+constexpr ModelViewSyncUnit_EViewPlayerType ModelViewSyncUnit_EViewPlayerType_EViewPlayerType_MIN = ModelViewSyncUnit_EViewPlayerType_EVST_PC;
+constexpr ModelViewSyncUnit_EViewPlayerType ModelViewSyncUnit_EViewPlayerType_EViewPlayerType_MAX = ModelViewSyncUnit_EViewPlayerType_EVST_HOLOLENS;
+constexpr int ModelViewSyncUnit_EViewPlayerType_EViewPlayerType_ARRAYSIZE = ModelViewSyncUnit_EViewPlayerType_EViewPlayerType_MAX + 1;
+
+const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* ModelViewSyncUnit_EViewPlayerType_descriptor();
+template<typename T>
+inline const std::string& ModelViewSyncUnit_EViewPlayerType_Name(T enum_t_value) {
+  static_assert(::std::is_same<T, ModelViewSyncUnit_EViewPlayerType>::value ||
+    ::std::is_integral<T>::value,
+    "Incorrect type passed to function ModelViewSyncUnit_EViewPlayerType_Name.");
+  return ::PROTOBUF_NAMESPACE_ID::internal::NameOfEnum(
+    ModelViewSyncUnit_EViewPlayerType_descriptor(), enum_t_value);
+}
+inline bool ModelViewSyncUnit_EViewPlayerType_Parse(
+    const std::string& name, ModelViewSyncUnit_EViewPlayerType* value) {
+  return ::PROTOBUF_NAMESPACE_ID::internal::ParseNamedEnum<ModelViewSyncUnit_EViewPlayerType>(
+    ModelViewSyncUnit_EViewPlayerType_descriptor(), name, value);
 }
 // ===================================================================
 
@@ -2959,6 +2996,565 @@ class ReqAckModel :
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_NFMsgShare_2eproto;
 };
+// -------------------------------------------------------------------
+
+class ModelViewSyncUnit :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:NFMsg.ModelViewSyncUnit) */ {
+ public:
+  ModelViewSyncUnit();
+  virtual ~ModelViewSyncUnit();
+
+  ModelViewSyncUnit(const ModelViewSyncUnit& from);
+  ModelViewSyncUnit(ModelViewSyncUnit&& from) noexcept
+    : ModelViewSyncUnit() {
+    *this = ::std::move(from);
+  }
+
+  inline ModelViewSyncUnit& operator=(const ModelViewSyncUnit& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline ModelViewSyncUnit& operator=(ModelViewSyncUnit&& from) noexcept {
+    if (GetArenaNoVirtual() == from.GetArenaNoVirtual()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return GetMetadataStatic().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return GetMetadataStatic().reflection;
+  }
+  static const ModelViewSyncUnit& default_instance();
+
+  static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
+  static inline const ModelViewSyncUnit* internal_default_instance() {
+    return reinterpret_cast<const ModelViewSyncUnit*>(
+               &_ModelViewSyncUnit_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    16;
+
+  friend void swap(ModelViewSyncUnit& a, ModelViewSyncUnit& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(ModelViewSyncUnit* other) {
+    if (other == this) return;
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline ModelViewSyncUnit* New() const final {
+    return CreateMaybeMessage<ModelViewSyncUnit>(nullptr);
+  }
+
+  ModelViewSyncUnit* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
+    return CreateMaybeMessage<ModelViewSyncUnit>(arena);
+  }
+  void CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void CopyFrom(const ModelViewSyncUnit& from);
+  void MergeFrom(const ModelViewSyncUnit& from);
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  ::PROTOBUF_NAMESPACE_ID::uint8* _InternalSerialize(
+      ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  inline void SharedCtor();
+  inline void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(ModelViewSyncUnit* other);
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "NFMsg.ModelViewSyncUnit";
+  }
+  private:
+  inline ::PROTOBUF_NAMESPACE_ID::Arena* GetArenaNoVirtual() const {
+    return nullptr;
+  }
+  inline void* MaybeArenaPtr() const {
+    return nullptr;
+  }
+  public:
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+  private:
+  static ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadataStatic() {
+    ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(&::descriptor_table_NFMsgShare_2eproto);
+    return ::descriptor_table_NFMsgShare_2eproto.file_level_metadata[kIndexInFileMessages];
+  }
+
+  public:
+
+  // nested types ----------------------------------------------------
+
+  typedef ModelViewSyncUnit_EViewPlayerType EViewPlayerType;
+  static constexpr EViewPlayerType EVST_PC =
+    ModelViewSyncUnit_EViewPlayerType_EVST_PC;
+  static constexpr EViewPlayerType EVST_HOLOLENS =
+    ModelViewSyncUnit_EViewPlayerType_EVST_HOLOLENS;
+  static inline bool EViewPlayerType_IsValid(int value) {
+    return ModelViewSyncUnit_EViewPlayerType_IsValid(value);
+  }
+  static constexpr EViewPlayerType EViewPlayerType_MIN =
+    ModelViewSyncUnit_EViewPlayerType_EViewPlayerType_MIN;
+  static constexpr EViewPlayerType EViewPlayerType_MAX =
+    ModelViewSyncUnit_EViewPlayerType_EViewPlayerType_MAX;
+  static constexpr int EViewPlayerType_ARRAYSIZE =
+    ModelViewSyncUnit_EViewPlayerType_EViewPlayerType_ARRAYSIZE;
+  static inline const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor*
+  EViewPlayerType_descriptor() {
+    return ModelViewSyncUnit_EViewPlayerType_descriptor();
+  }
+  template<typename T>
+  static inline const std::string& EViewPlayerType_Name(T enum_t_value) {
+    static_assert(::std::is_same<T, EViewPlayerType>::value ||
+      ::std::is_integral<T>::value,
+      "Incorrect type passed to function EViewPlayerType_Name.");
+    return ModelViewSyncUnit_EViewPlayerType_Name(enum_t_value);
+  }
+  static inline bool EViewPlayerType_Parse(const std::string& name,
+      EViewPlayerType* value) {
+    return ModelViewSyncUnit_EViewPlayerType_Parse(name, value);
+  }
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kPlayerIdFieldNumber = 1,
+    kCameraPosFieldNumber = 3,
+    kCameraRotFieldNumber = 4,
+    kModelPosFieldNumber = 5,
+    kModelRotFieldNumber = 6,
+    kModelScaleFieldNumber = 7,
+    kPlayerTypeFieldNumber = 2,
+  };
+  // .NFMsg.Ident player_id = 1;
+  bool has_player_id() const;
+  private:
+  bool _internal_has_player_id() const;
+  public:
+  void clear_player_id();
+  const ::NFMsg::Ident& player_id() const;
+  ::NFMsg::Ident* release_player_id();
+  ::NFMsg::Ident* mutable_player_id();
+  void set_allocated_player_id(::NFMsg::Ident* player_id);
+  private:
+  const ::NFMsg::Ident& _internal_player_id() const;
+  ::NFMsg::Ident* _internal_mutable_player_id();
+  public:
+
+  // .NFMsg.Vector3 camera_pos = 3;
+  bool has_camera_pos() const;
+  private:
+  bool _internal_has_camera_pos() const;
+  public:
+  void clear_camera_pos();
+  const ::NFMsg::Vector3& camera_pos() const;
+  ::NFMsg::Vector3* release_camera_pos();
+  ::NFMsg::Vector3* mutable_camera_pos();
+  void set_allocated_camera_pos(::NFMsg::Vector3* camera_pos);
+  private:
+  const ::NFMsg::Vector3& _internal_camera_pos() const;
+  ::NFMsg::Vector3* _internal_mutable_camera_pos();
+  public:
+
+  // .NFMsg.Vector3 camera_rot = 4;
+  bool has_camera_rot() const;
+  private:
+  bool _internal_has_camera_rot() const;
+  public:
+  void clear_camera_rot();
+  const ::NFMsg::Vector3& camera_rot() const;
+  ::NFMsg::Vector3* release_camera_rot();
+  ::NFMsg::Vector3* mutable_camera_rot();
+  void set_allocated_camera_rot(::NFMsg::Vector3* camera_rot);
+  private:
+  const ::NFMsg::Vector3& _internal_camera_rot() const;
+  ::NFMsg::Vector3* _internal_mutable_camera_rot();
+  public:
+
+  // .NFMsg.Vector3 model_pos = 5;
+  bool has_model_pos() const;
+  private:
+  bool _internal_has_model_pos() const;
+  public:
+  void clear_model_pos();
+  const ::NFMsg::Vector3& model_pos() const;
+  ::NFMsg::Vector3* release_model_pos();
+  ::NFMsg::Vector3* mutable_model_pos();
+  void set_allocated_model_pos(::NFMsg::Vector3* model_pos);
+  private:
+  const ::NFMsg::Vector3& _internal_model_pos() const;
+  ::NFMsg::Vector3* _internal_mutable_model_pos();
+  public:
+
+  // .NFMsg.Vector3 model_rot = 6;
+  bool has_model_rot() const;
+  private:
+  bool _internal_has_model_rot() const;
+  public:
+  void clear_model_rot();
+  const ::NFMsg::Vector3& model_rot() const;
+  ::NFMsg::Vector3* release_model_rot();
+  ::NFMsg::Vector3* mutable_model_rot();
+  void set_allocated_model_rot(::NFMsg::Vector3* model_rot);
+  private:
+  const ::NFMsg::Vector3& _internal_model_rot() const;
+  ::NFMsg::Vector3* _internal_mutable_model_rot();
+  public:
+
+  // .NFMsg.Vector3 model_scale = 7;
+  bool has_model_scale() const;
+  private:
+  bool _internal_has_model_scale() const;
+  public:
+  void clear_model_scale();
+  const ::NFMsg::Vector3& model_scale() const;
+  ::NFMsg::Vector3* release_model_scale();
+  ::NFMsg::Vector3* mutable_model_scale();
+  void set_allocated_model_scale(::NFMsg::Vector3* model_scale);
+  private:
+  const ::NFMsg::Vector3& _internal_model_scale() const;
+  ::NFMsg::Vector3* _internal_mutable_model_scale();
+  public:
+
+  // .NFMsg.ModelViewSyncUnit.EViewPlayerType player_type = 2;
+  void clear_player_type();
+  ::NFMsg::ModelViewSyncUnit_EViewPlayerType player_type() const;
+  void set_player_type(::NFMsg::ModelViewSyncUnit_EViewPlayerType value);
+  private:
+  ::NFMsg::ModelViewSyncUnit_EViewPlayerType _internal_player_type() const;
+  void _internal_set_player_type(::NFMsg::ModelViewSyncUnit_EViewPlayerType value);
+  public:
+
+  // @@protoc_insertion_point(class_scope:NFMsg.ModelViewSyncUnit)
+ private:
+  class _Internal;
+
+  ::PROTOBUF_NAMESPACE_ID::internal::InternalMetadataWithArena _internal_metadata_;
+  ::NFMsg::Ident* player_id_;
+  ::NFMsg::Vector3* camera_pos_;
+  ::NFMsg::Vector3* camera_rot_;
+  ::NFMsg::Vector3* model_pos_;
+  ::NFMsg::Vector3* model_rot_;
+  ::NFMsg::Vector3* model_scale_;
+  int player_type_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_NFMsgShare_2eproto;
+};
+// -------------------------------------------------------------------
+
+class ReqAckModelViewSync :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:NFMsg.ReqAckModelViewSync) */ {
+ public:
+  ReqAckModelViewSync();
+  virtual ~ReqAckModelViewSync();
+
+  ReqAckModelViewSync(const ReqAckModelViewSync& from);
+  ReqAckModelViewSync(ReqAckModelViewSync&& from) noexcept
+    : ReqAckModelViewSync() {
+    *this = ::std::move(from);
+  }
+
+  inline ReqAckModelViewSync& operator=(const ReqAckModelViewSync& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline ReqAckModelViewSync& operator=(ReqAckModelViewSync&& from) noexcept {
+    if (GetArenaNoVirtual() == from.GetArenaNoVirtual()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return GetMetadataStatic().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return GetMetadataStatic().reflection;
+  }
+  static const ReqAckModelViewSync& default_instance();
+
+  static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
+  static inline const ReqAckModelViewSync* internal_default_instance() {
+    return reinterpret_cast<const ReqAckModelViewSync*>(
+               &_ReqAckModelViewSync_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    17;
+
+  friend void swap(ReqAckModelViewSync& a, ReqAckModelViewSync& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(ReqAckModelViewSync* other) {
+    if (other == this) return;
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline ReqAckModelViewSync* New() const final {
+    return CreateMaybeMessage<ReqAckModelViewSync>(nullptr);
+  }
+
+  ReqAckModelViewSync* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
+    return CreateMaybeMessage<ReqAckModelViewSync>(arena);
+  }
+  void CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void CopyFrom(const ReqAckModelViewSync& from);
+  void MergeFrom(const ReqAckModelViewSync& from);
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  ::PROTOBUF_NAMESPACE_ID::uint8* _InternalSerialize(
+      ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  inline void SharedCtor();
+  inline void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(ReqAckModelViewSync* other);
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "NFMsg.ReqAckModelViewSync";
+  }
+  private:
+  inline ::PROTOBUF_NAMESPACE_ID::Arena* GetArenaNoVirtual() const {
+    return nullptr;
+  }
+  inline void* MaybeArenaPtr() const {
+    return nullptr;
+  }
+  public:
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+  private:
+  static ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadataStatic() {
+    ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(&::descriptor_table_NFMsgShare_2eproto);
+    return ::descriptor_table_NFMsgShare_2eproto.file_level_metadata[kIndexInFileMessages];
+  }
+
+  public:
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kSyncUnitFieldNumber = 2,
+    kSequenceFieldNumber = 1,
+  };
+  // .NFMsg.ModelViewSyncUnit sync_unit = 2;
+  bool has_sync_unit() const;
+  private:
+  bool _internal_has_sync_unit() const;
+  public:
+  void clear_sync_unit();
+  const ::NFMsg::ModelViewSyncUnit& sync_unit() const;
+  ::NFMsg::ModelViewSyncUnit* release_sync_unit();
+  ::NFMsg::ModelViewSyncUnit* mutable_sync_unit();
+  void set_allocated_sync_unit(::NFMsg::ModelViewSyncUnit* sync_unit);
+  private:
+  const ::NFMsg::ModelViewSyncUnit& _internal_sync_unit() const;
+  ::NFMsg::ModelViewSyncUnit* _internal_mutable_sync_unit();
+  public:
+
+  // int32 sequence = 1;
+  void clear_sequence();
+  ::PROTOBUF_NAMESPACE_ID::int32 sequence() const;
+  void set_sequence(::PROTOBUF_NAMESPACE_ID::int32 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::int32 _internal_sequence() const;
+  void _internal_set_sequence(::PROTOBUF_NAMESPACE_ID::int32 value);
+  public:
+
+  // @@protoc_insertion_point(class_scope:NFMsg.ReqAckModelViewSync)
+ private:
+  class _Internal;
+
+  ::PROTOBUF_NAMESPACE_ID::internal::InternalMetadataWithArena _internal_metadata_;
+  ::NFMsg::ModelViewSyncUnit* sync_unit_;
+  ::PROTOBUF_NAMESPACE_ID::int32 sequence_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_NFMsgShare_2eproto;
+};
+// -------------------------------------------------------------------
+
+class ReqAckModelView :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:NFMsg.ReqAckModelView) */ {
+ public:
+  ReqAckModelView();
+  virtual ~ReqAckModelView();
+
+  ReqAckModelView(const ReqAckModelView& from);
+  ReqAckModelView(ReqAckModelView&& from) noexcept
+    : ReqAckModelView() {
+    *this = ::std::move(from);
+  }
+
+  inline ReqAckModelView& operator=(const ReqAckModelView& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline ReqAckModelView& operator=(ReqAckModelView&& from) noexcept {
+    if (GetArenaNoVirtual() == from.GetArenaNoVirtual()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return GetMetadataStatic().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return GetMetadataStatic().reflection;
+  }
+  static const ReqAckModelView& default_instance();
+
+  static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
+  static inline const ReqAckModelView* internal_default_instance() {
+    return reinterpret_cast<const ReqAckModelView*>(
+               &_ReqAckModelView_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    18;
+
+  friend void swap(ReqAckModelView& a, ReqAckModelView& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(ReqAckModelView* other) {
+    if (other == this) return;
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline ReqAckModelView* New() const final {
+    return CreateMaybeMessage<ReqAckModelView>(nullptr);
+  }
+
+  ReqAckModelView* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
+    return CreateMaybeMessage<ReqAckModelView>(arena);
+  }
+  void CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void CopyFrom(const ReqAckModelView& from);
+  void MergeFrom(const ReqAckModelView& from);
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  ::PROTOBUF_NAMESPACE_ID::uint8* _InternalSerialize(
+      ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  inline void SharedCtor();
+  inline void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(ReqAckModelView* other);
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "NFMsg.ReqAckModelView";
+  }
+  private:
+  inline ::PROTOBUF_NAMESPACE_ID::Arena* GetArenaNoVirtual() const {
+    return nullptr;
+  }
+  inline void* MaybeArenaPtr() const {
+    return nullptr;
+  }
+  public:
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+  private:
+  static ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadataStatic() {
+    ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(&::descriptor_table_NFMsgShare_2eproto);
+    return ::descriptor_table_NFMsgShare_2eproto.file_level_metadata[kIndexInFileMessages];
+  }
+
+  public:
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kSyncUnitFieldNumber = 2,
+    kPlayerIdFieldNumber = 1,
+  };
+  // repeated .NFMsg.ModelViewSyncUnit sync_unit = 2;
+  int sync_unit_size() const;
+  private:
+  int _internal_sync_unit_size() const;
+  public:
+  void clear_sync_unit();
+  ::NFMsg::ModelViewSyncUnit* mutable_sync_unit(int index);
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::NFMsg::ModelViewSyncUnit >*
+      mutable_sync_unit();
+  private:
+  const ::NFMsg::ModelViewSyncUnit& _internal_sync_unit(int index) const;
+  ::NFMsg::ModelViewSyncUnit* _internal_add_sync_unit();
+  public:
+  const ::NFMsg::ModelViewSyncUnit& sync_unit(int index) const;
+  ::NFMsg::ModelViewSyncUnit* add_sync_unit();
+  const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::NFMsg::ModelViewSyncUnit >&
+      sync_unit() const;
+
+  // .NFMsg.Ident player_id = 1;
+  bool has_player_id() const;
+  private:
+  bool _internal_has_player_id() const;
+  public:
+  void clear_player_id();
+  const ::NFMsg::Ident& player_id() const;
+  ::NFMsg::Ident* release_player_id();
+  ::NFMsg::Ident* mutable_player_id();
+  void set_allocated_player_id(::NFMsg::Ident* player_id);
+  private:
+  const ::NFMsg::Ident& _internal_player_id() const;
+  ::NFMsg::Ident* _internal_mutable_player_id();
+  public:
+
+  // @@protoc_insertion_point(class_scope:NFMsg.ReqAckModelView)
+ private:
+  class _Internal;
+
+  ::PROTOBUF_NAMESPACE_ID::internal::InternalMetadataWithArena _internal_metadata_;
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::NFMsg::ModelViewSyncUnit > sync_unit_;
+  ::NFMsg::Ident* player_id_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_NFMsgShare_2eproto;
+};
 // ===================================================================
 
 
@@ -4849,9 +5445,544 @@ inline void ReqAckModel::set_allocated_raw(std::string* raw) {
   // @@protoc_insertion_point(field_set_allocated:NFMsg.ReqAckModel.raw)
 }
 
+// -------------------------------------------------------------------
+
+// ModelViewSyncUnit
+
+// .NFMsg.Ident player_id = 1;
+inline bool ModelViewSyncUnit::_internal_has_player_id() const {
+  return this != internal_default_instance() && player_id_ != nullptr;
+}
+inline bool ModelViewSyncUnit::has_player_id() const {
+  return _internal_has_player_id();
+}
+inline const ::NFMsg::Ident& ModelViewSyncUnit::_internal_player_id() const {
+  const ::NFMsg::Ident* p = player_id_;
+  return p != nullptr ? *p : *reinterpret_cast<const ::NFMsg::Ident*>(
+      &::NFMsg::_Ident_default_instance_);
+}
+inline const ::NFMsg::Ident& ModelViewSyncUnit::player_id() const {
+  // @@protoc_insertion_point(field_get:NFMsg.ModelViewSyncUnit.player_id)
+  return _internal_player_id();
+}
+inline ::NFMsg::Ident* ModelViewSyncUnit::release_player_id() {
+  // @@protoc_insertion_point(field_release:NFMsg.ModelViewSyncUnit.player_id)
+  
+  ::NFMsg::Ident* temp = player_id_;
+  player_id_ = nullptr;
+  return temp;
+}
+inline ::NFMsg::Ident* ModelViewSyncUnit::_internal_mutable_player_id() {
+  
+  if (player_id_ == nullptr) {
+    auto* p = CreateMaybeMessage<::NFMsg::Ident>(GetArenaNoVirtual());
+    player_id_ = p;
+  }
+  return player_id_;
+}
+inline ::NFMsg::Ident* ModelViewSyncUnit::mutable_player_id() {
+  // @@protoc_insertion_point(field_mutable:NFMsg.ModelViewSyncUnit.player_id)
+  return _internal_mutable_player_id();
+}
+inline void ModelViewSyncUnit::set_allocated_player_id(::NFMsg::Ident* player_id) {
+  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaNoVirtual();
+  if (message_arena == nullptr) {
+    delete reinterpret_cast< ::PROTOBUF_NAMESPACE_ID::MessageLite*>(player_id_);
+  }
+  if (player_id) {
+    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena = nullptr;
+    if (message_arena != submessage_arena) {
+      player_id = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
+          message_arena, player_id, submessage_arena);
+    }
+    
+  } else {
+    
+  }
+  player_id_ = player_id;
+  // @@protoc_insertion_point(field_set_allocated:NFMsg.ModelViewSyncUnit.player_id)
+}
+
+// .NFMsg.ModelViewSyncUnit.EViewPlayerType player_type = 2;
+inline void ModelViewSyncUnit::clear_player_type() {
+  player_type_ = 0;
+}
+inline ::NFMsg::ModelViewSyncUnit_EViewPlayerType ModelViewSyncUnit::_internal_player_type() const {
+  return static_cast< ::NFMsg::ModelViewSyncUnit_EViewPlayerType >(player_type_);
+}
+inline ::NFMsg::ModelViewSyncUnit_EViewPlayerType ModelViewSyncUnit::player_type() const {
+  // @@protoc_insertion_point(field_get:NFMsg.ModelViewSyncUnit.player_type)
+  return _internal_player_type();
+}
+inline void ModelViewSyncUnit::_internal_set_player_type(::NFMsg::ModelViewSyncUnit_EViewPlayerType value) {
+  
+  player_type_ = value;
+}
+inline void ModelViewSyncUnit::set_player_type(::NFMsg::ModelViewSyncUnit_EViewPlayerType value) {
+  _internal_set_player_type(value);
+  // @@protoc_insertion_point(field_set:NFMsg.ModelViewSyncUnit.player_type)
+}
+
+// .NFMsg.Vector3 camera_pos = 3;
+inline bool ModelViewSyncUnit::_internal_has_camera_pos() const {
+  return this != internal_default_instance() && camera_pos_ != nullptr;
+}
+inline bool ModelViewSyncUnit::has_camera_pos() const {
+  return _internal_has_camera_pos();
+}
+inline const ::NFMsg::Vector3& ModelViewSyncUnit::_internal_camera_pos() const {
+  const ::NFMsg::Vector3* p = camera_pos_;
+  return p != nullptr ? *p : *reinterpret_cast<const ::NFMsg::Vector3*>(
+      &::NFMsg::_Vector3_default_instance_);
+}
+inline const ::NFMsg::Vector3& ModelViewSyncUnit::camera_pos() const {
+  // @@protoc_insertion_point(field_get:NFMsg.ModelViewSyncUnit.camera_pos)
+  return _internal_camera_pos();
+}
+inline ::NFMsg::Vector3* ModelViewSyncUnit::release_camera_pos() {
+  // @@protoc_insertion_point(field_release:NFMsg.ModelViewSyncUnit.camera_pos)
+  
+  ::NFMsg::Vector3* temp = camera_pos_;
+  camera_pos_ = nullptr;
+  return temp;
+}
+inline ::NFMsg::Vector3* ModelViewSyncUnit::_internal_mutable_camera_pos() {
+  
+  if (camera_pos_ == nullptr) {
+    auto* p = CreateMaybeMessage<::NFMsg::Vector3>(GetArenaNoVirtual());
+    camera_pos_ = p;
+  }
+  return camera_pos_;
+}
+inline ::NFMsg::Vector3* ModelViewSyncUnit::mutable_camera_pos() {
+  // @@protoc_insertion_point(field_mutable:NFMsg.ModelViewSyncUnit.camera_pos)
+  return _internal_mutable_camera_pos();
+}
+inline void ModelViewSyncUnit::set_allocated_camera_pos(::NFMsg::Vector3* camera_pos) {
+  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaNoVirtual();
+  if (message_arena == nullptr) {
+    delete reinterpret_cast< ::PROTOBUF_NAMESPACE_ID::MessageLite*>(camera_pos_);
+  }
+  if (camera_pos) {
+    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena = nullptr;
+    if (message_arena != submessage_arena) {
+      camera_pos = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
+          message_arena, camera_pos, submessage_arena);
+    }
+    
+  } else {
+    
+  }
+  camera_pos_ = camera_pos;
+  // @@protoc_insertion_point(field_set_allocated:NFMsg.ModelViewSyncUnit.camera_pos)
+}
+
+// .NFMsg.Vector3 camera_rot = 4;
+inline bool ModelViewSyncUnit::_internal_has_camera_rot() const {
+  return this != internal_default_instance() && camera_rot_ != nullptr;
+}
+inline bool ModelViewSyncUnit::has_camera_rot() const {
+  return _internal_has_camera_rot();
+}
+inline const ::NFMsg::Vector3& ModelViewSyncUnit::_internal_camera_rot() const {
+  const ::NFMsg::Vector3* p = camera_rot_;
+  return p != nullptr ? *p : *reinterpret_cast<const ::NFMsg::Vector3*>(
+      &::NFMsg::_Vector3_default_instance_);
+}
+inline const ::NFMsg::Vector3& ModelViewSyncUnit::camera_rot() const {
+  // @@protoc_insertion_point(field_get:NFMsg.ModelViewSyncUnit.camera_rot)
+  return _internal_camera_rot();
+}
+inline ::NFMsg::Vector3* ModelViewSyncUnit::release_camera_rot() {
+  // @@protoc_insertion_point(field_release:NFMsg.ModelViewSyncUnit.camera_rot)
+  
+  ::NFMsg::Vector3* temp = camera_rot_;
+  camera_rot_ = nullptr;
+  return temp;
+}
+inline ::NFMsg::Vector3* ModelViewSyncUnit::_internal_mutable_camera_rot() {
+  
+  if (camera_rot_ == nullptr) {
+    auto* p = CreateMaybeMessage<::NFMsg::Vector3>(GetArenaNoVirtual());
+    camera_rot_ = p;
+  }
+  return camera_rot_;
+}
+inline ::NFMsg::Vector3* ModelViewSyncUnit::mutable_camera_rot() {
+  // @@protoc_insertion_point(field_mutable:NFMsg.ModelViewSyncUnit.camera_rot)
+  return _internal_mutable_camera_rot();
+}
+inline void ModelViewSyncUnit::set_allocated_camera_rot(::NFMsg::Vector3* camera_rot) {
+  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaNoVirtual();
+  if (message_arena == nullptr) {
+    delete reinterpret_cast< ::PROTOBUF_NAMESPACE_ID::MessageLite*>(camera_rot_);
+  }
+  if (camera_rot) {
+    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena = nullptr;
+    if (message_arena != submessage_arena) {
+      camera_rot = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
+          message_arena, camera_rot, submessage_arena);
+    }
+    
+  } else {
+    
+  }
+  camera_rot_ = camera_rot;
+  // @@protoc_insertion_point(field_set_allocated:NFMsg.ModelViewSyncUnit.camera_rot)
+}
+
+// .NFMsg.Vector3 model_pos = 5;
+inline bool ModelViewSyncUnit::_internal_has_model_pos() const {
+  return this != internal_default_instance() && model_pos_ != nullptr;
+}
+inline bool ModelViewSyncUnit::has_model_pos() const {
+  return _internal_has_model_pos();
+}
+inline const ::NFMsg::Vector3& ModelViewSyncUnit::_internal_model_pos() const {
+  const ::NFMsg::Vector3* p = model_pos_;
+  return p != nullptr ? *p : *reinterpret_cast<const ::NFMsg::Vector3*>(
+      &::NFMsg::_Vector3_default_instance_);
+}
+inline const ::NFMsg::Vector3& ModelViewSyncUnit::model_pos() const {
+  // @@protoc_insertion_point(field_get:NFMsg.ModelViewSyncUnit.model_pos)
+  return _internal_model_pos();
+}
+inline ::NFMsg::Vector3* ModelViewSyncUnit::release_model_pos() {
+  // @@protoc_insertion_point(field_release:NFMsg.ModelViewSyncUnit.model_pos)
+  
+  ::NFMsg::Vector3* temp = model_pos_;
+  model_pos_ = nullptr;
+  return temp;
+}
+inline ::NFMsg::Vector3* ModelViewSyncUnit::_internal_mutable_model_pos() {
+  
+  if (model_pos_ == nullptr) {
+    auto* p = CreateMaybeMessage<::NFMsg::Vector3>(GetArenaNoVirtual());
+    model_pos_ = p;
+  }
+  return model_pos_;
+}
+inline ::NFMsg::Vector3* ModelViewSyncUnit::mutable_model_pos() {
+  // @@protoc_insertion_point(field_mutable:NFMsg.ModelViewSyncUnit.model_pos)
+  return _internal_mutable_model_pos();
+}
+inline void ModelViewSyncUnit::set_allocated_model_pos(::NFMsg::Vector3* model_pos) {
+  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaNoVirtual();
+  if (message_arena == nullptr) {
+    delete reinterpret_cast< ::PROTOBUF_NAMESPACE_ID::MessageLite*>(model_pos_);
+  }
+  if (model_pos) {
+    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena = nullptr;
+    if (message_arena != submessage_arena) {
+      model_pos = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
+          message_arena, model_pos, submessage_arena);
+    }
+    
+  } else {
+    
+  }
+  model_pos_ = model_pos;
+  // @@protoc_insertion_point(field_set_allocated:NFMsg.ModelViewSyncUnit.model_pos)
+}
+
+// .NFMsg.Vector3 model_rot = 6;
+inline bool ModelViewSyncUnit::_internal_has_model_rot() const {
+  return this != internal_default_instance() && model_rot_ != nullptr;
+}
+inline bool ModelViewSyncUnit::has_model_rot() const {
+  return _internal_has_model_rot();
+}
+inline const ::NFMsg::Vector3& ModelViewSyncUnit::_internal_model_rot() const {
+  const ::NFMsg::Vector3* p = model_rot_;
+  return p != nullptr ? *p : *reinterpret_cast<const ::NFMsg::Vector3*>(
+      &::NFMsg::_Vector3_default_instance_);
+}
+inline const ::NFMsg::Vector3& ModelViewSyncUnit::model_rot() const {
+  // @@protoc_insertion_point(field_get:NFMsg.ModelViewSyncUnit.model_rot)
+  return _internal_model_rot();
+}
+inline ::NFMsg::Vector3* ModelViewSyncUnit::release_model_rot() {
+  // @@protoc_insertion_point(field_release:NFMsg.ModelViewSyncUnit.model_rot)
+  
+  ::NFMsg::Vector3* temp = model_rot_;
+  model_rot_ = nullptr;
+  return temp;
+}
+inline ::NFMsg::Vector3* ModelViewSyncUnit::_internal_mutable_model_rot() {
+  
+  if (model_rot_ == nullptr) {
+    auto* p = CreateMaybeMessage<::NFMsg::Vector3>(GetArenaNoVirtual());
+    model_rot_ = p;
+  }
+  return model_rot_;
+}
+inline ::NFMsg::Vector3* ModelViewSyncUnit::mutable_model_rot() {
+  // @@protoc_insertion_point(field_mutable:NFMsg.ModelViewSyncUnit.model_rot)
+  return _internal_mutable_model_rot();
+}
+inline void ModelViewSyncUnit::set_allocated_model_rot(::NFMsg::Vector3* model_rot) {
+  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaNoVirtual();
+  if (message_arena == nullptr) {
+    delete reinterpret_cast< ::PROTOBUF_NAMESPACE_ID::MessageLite*>(model_rot_);
+  }
+  if (model_rot) {
+    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena = nullptr;
+    if (message_arena != submessage_arena) {
+      model_rot = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
+          message_arena, model_rot, submessage_arena);
+    }
+    
+  } else {
+    
+  }
+  model_rot_ = model_rot;
+  // @@protoc_insertion_point(field_set_allocated:NFMsg.ModelViewSyncUnit.model_rot)
+}
+
+// .NFMsg.Vector3 model_scale = 7;
+inline bool ModelViewSyncUnit::_internal_has_model_scale() const {
+  return this != internal_default_instance() && model_scale_ != nullptr;
+}
+inline bool ModelViewSyncUnit::has_model_scale() const {
+  return _internal_has_model_scale();
+}
+inline const ::NFMsg::Vector3& ModelViewSyncUnit::_internal_model_scale() const {
+  const ::NFMsg::Vector3* p = model_scale_;
+  return p != nullptr ? *p : *reinterpret_cast<const ::NFMsg::Vector3*>(
+      &::NFMsg::_Vector3_default_instance_);
+}
+inline const ::NFMsg::Vector3& ModelViewSyncUnit::model_scale() const {
+  // @@protoc_insertion_point(field_get:NFMsg.ModelViewSyncUnit.model_scale)
+  return _internal_model_scale();
+}
+inline ::NFMsg::Vector3* ModelViewSyncUnit::release_model_scale() {
+  // @@protoc_insertion_point(field_release:NFMsg.ModelViewSyncUnit.model_scale)
+  
+  ::NFMsg::Vector3* temp = model_scale_;
+  model_scale_ = nullptr;
+  return temp;
+}
+inline ::NFMsg::Vector3* ModelViewSyncUnit::_internal_mutable_model_scale() {
+  
+  if (model_scale_ == nullptr) {
+    auto* p = CreateMaybeMessage<::NFMsg::Vector3>(GetArenaNoVirtual());
+    model_scale_ = p;
+  }
+  return model_scale_;
+}
+inline ::NFMsg::Vector3* ModelViewSyncUnit::mutable_model_scale() {
+  // @@protoc_insertion_point(field_mutable:NFMsg.ModelViewSyncUnit.model_scale)
+  return _internal_mutable_model_scale();
+}
+inline void ModelViewSyncUnit::set_allocated_model_scale(::NFMsg::Vector3* model_scale) {
+  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaNoVirtual();
+  if (message_arena == nullptr) {
+    delete reinterpret_cast< ::PROTOBUF_NAMESPACE_ID::MessageLite*>(model_scale_);
+  }
+  if (model_scale) {
+    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena = nullptr;
+    if (message_arena != submessage_arena) {
+      model_scale = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
+          message_arena, model_scale, submessage_arena);
+    }
+    
+  } else {
+    
+  }
+  model_scale_ = model_scale;
+  // @@protoc_insertion_point(field_set_allocated:NFMsg.ModelViewSyncUnit.model_scale)
+}
+
+// -------------------------------------------------------------------
+
+// ReqAckModelViewSync
+
+// int32 sequence = 1;
+inline void ReqAckModelViewSync::clear_sequence() {
+  sequence_ = 0;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 ReqAckModelViewSync::_internal_sequence() const {
+  return sequence_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 ReqAckModelViewSync::sequence() const {
+  // @@protoc_insertion_point(field_get:NFMsg.ReqAckModelViewSync.sequence)
+  return _internal_sequence();
+}
+inline void ReqAckModelViewSync::_internal_set_sequence(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  
+  sequence_ = value;
+}
+inline void ReqAckModelViewSync::set_sequence(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  _internal_set_sequence(value);
+  // @@protoc_insertion_point(field_set:NFMsg.ReqAckModelViewSync.sequence)
+}
+
+// .NFMsg.ModelViewSyncUnit sync_unit = 2;
+inline bool ReqAckModelViewSync::_internal_has_sync_unit() const {
+  return this != internal_default_instance() && sync_unit_ != nullptr;
+}
+inline bool ReqAckModelViewSync::has_sync_unit() const {
+  return _internal_has_sync_unit();
+}
+inline void ReqAckModelViewSync::clear_sync_unit() {
+  if (GetArenaNoVirtual() == nullptr && sync_unit_ != nullptr) {
+    delete sync_unit_;
+  }
+  sync_unit_ = nullptr;
+}
+inline const ::NFMsg::ModelViewSyncUnit& ReqAckModelViewSync::_internal_sync_unit() const {
+  const ::NFMsg::ModelViewSyncUnit* p = sync_unit_;
+  return p != nullptr ? *p : *reinterpret_cast<const ::NFMsg::ModelViewSyncUnit*>(
+      &::NFMsg::_ModelViewSyncUnit_default_instance_);
+}
+inline const ::NFMsg::ModelViewSyncUnit& ReqAckModelViewSync::sync_unit() const {
+  // @@protoc_insertion_point(field_get:NFMsg.ReqAckModelViewSync.sync_unit)
+  return _internal_sync_unit();
+}
+inline ::NFMsg::ModelViewSyncUnit* ReqAckModelViewSync::release_sync_unit() {
+  // @@protoc_insertion_point(field_release:NFMsg.ReqAckModelViewSync.sync_unit)
+  
+  ::NFMsg::ModelViewSyncUnit* temp = sync_unit_;
+  sync_unit_ = nullptr;
+  return temp;
+}
+inline ::NFMsg::ModelViewSyncUnit* ReqAckModelViewSync::_internal_mutable_sync_unit() {
+  
+  if (sync_unit_ == nullptr) {
+    auto* p = CreateMaybeMessage<::NFMsg::ModelViewSyncUnit>(GetArenaNoVirtual());
+    sync_unit_ = p;
+  }
+  return sync_unit_;
+}
+inline ::NFMsg::ModelViewSyncUnit* ReqAckModelViewSync::mutable_sync_unit() {
+  // @@protoc_insertion_point(field_mutable:NFMsg.ReqAckModelViewSync.sync_unit)
+  return _internal_mutable_sync_unit();
+}
+inline void ReqAckModelViewSync::set_allocated_sync_unit(::NFMsg::ModelViewSyncUnit* sync_unit) {
+  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaNoVirtual();
+  if (message_arena == nullptr) {
+    delete sync_unit_;
+  }
+  if (sync_unit) {
+    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena = nullptr;
+    if (message_arena != submessage_arena) {
+      sync_unit = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
+          message_arena, sync_unit, submessage_arena);
+    }
+    
+  } else {
+    
+  }
+  sync_unit_ = sync_unit;
+  // @@protoc_insertion_point(field_set_allocated:NFMsg.ReqAckModelViewSync.sync_unit)
+}
+
+// -------------------------------------------------------------------
+
+// ReqAckModelView
+
+// .NFMsg.Ident player_id = 1;
+inline bool ReqAckModelView::_internal_has_player_id() const {
+  return this != internal_default_instance() && player_id_ != nullptr;
+}
+inline bool ReqAckModelView::has_player_id() const {
+  return _internal_has_player_id();
+}
+inline const ::NFMsg::Ident& ReqAckModelView::_internal_player_id() const {
+  const ::NFMsg::Ident* p = player_id_;
+  return p != nullptr ? *p : *reinterpret_cast<const ::NFMsg::Ident*>(
+      &::NFMsg::_Ident_default_instance_);
+}
+inline const ::NFMsg::Ident& ReqAckModelView::player_id() const {
+  // @@protoc_insertion_point(field_get:NFMsg.ReqAckModelView.player_id)
+  return _internal_player_id();
+}
+inline ::NFMsg::Ident* ReqAckModelView::release_player_id() {
+  // @@protoc_insertion_point(field_release:NFMsg.ReqAckModelView.player_id)
+  
+  ::NFMsg::Ident* temp = player_id_;
+  player_id_ = nullptr;
+  return temp;
+}
+inline ::NFMsg::Ident* ReqAckModelView::_internal_mutable_player_id() {
+  
+  if (player_id_ == nullptr) {
+    auto* p = CreateMaybeMessage<::NFMsg::Ident>(GetArenaNoVirtual());
+    player_id_ = p;
+  }
+  return player_id_;
+}
+inline ::NFMsg::Ident* ReqAckModelView::mutable_player_id() {
+  // @@protoc_insertion_point(field_mutable:NFMsg.ReqAckModelView.player_id)
+  return _internal_mutable_player_id();
+}
+inline void ReqAckModelView::set_allocated_player_id(::NFMsg::Ident* player_id) {
+  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaNoVirtual();
+  if (message_arena == nullptr) {
+    delete reinterpret_cast< ::PROTOBUF_NAMESPACE_ID::MessageLite*>(player_id_);
+  }
+  if (player_id) {
+    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena = nullptr;
+    if (message_arena != submessage_arena) {
+      player_id = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
+          message_arena, player_id, submessage_arena);
+    }
+    
+  } else {
+    
+  }
+  player_id_ = player_id;
+  // @@protoc_insertion_point(field_set_allocated:NFMsg.ReqAckModelView.player_id)
+}
+
+// repeated .NFMsg.ModelViewSyncUnit sync_unit = 2;
+inline int ReqAckModelView::_internal_sync_unit_size() const {
+  return sync_unit_.size();
+}
+inline int ReqAckModelView::sync_unit_size() const {
+  return _internal_sync_unit_size();
+}
+inline void ReqAckModelView::clear_sync_unit() {
+  sync_unit_.Clear();
+}
+inline ::NFMsg::ModelViewSyncUnit* ReqAckModelView::mutable_sync_unit(int index) {
+  // @@protoc_insertion_point(field_mutable:NFMsg.ReqAckModelView.sync_unit)
+  return sync_unit_.Mutable(index);
+}
+inline ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::NFMsg::ModelViewSyncUnit >*
+ReqAckModelView::mutable_sync_unit() {
+  // @@protoc_insertion_point(field_mutable_list:NFMsg.ReqAckModelView.sync_unit)
+  return &sync_unit_;
+}
+inline const ::NFMsg::ModelViewSyncUnit& ReqAckModelView::_internal_sync_unit(int index) const {
+  return sync_unit_.Get(index);
+}
+inline const ::NFMsg::ModelViewSyncUnit& ReqAckModelView::sync_unit(int index) const {
+  // @@protoc_insertion_point(field_get:NFMsg.ReqAckModelView.sync_unit)
+  return _internal_sync_unit(index);
+}
+inline ::NFMsg::ModelViewSyncUnit* ReqAckModelView::_internal_add_sync_unit() {
+  return sync_unit_.Add();
+}
+inline ::NFMsg::ModelViewSyncUnit* ReqAckModelView::add_sync_unit() {
+  // @@protoc_insertion_point(field_add:NFMsg.ReqAckModelView.sync_unit)
+  return _internal_add_sync_unit();
+}
+inline const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::NFMsg::ModelViewSyncUnit >&
+ReqAckModelView::sync_unit() const {
+  // @@protoc_insertion_point(field_list:NFMsg.ReqAckModelView.sync_unit)
+  return sync_unit_;
+}
+
 #ifdef __GNUC__
   #pragma GCC diagnostic pop
 #endif  // __GNUC__
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
 // -------------------------------------------------------------------
 
 // -------------------------------------------------------------------
@@ -4908,6 +6039,11 @@ template <> struct is_proto_enum< ::NFMsg::ReqAckPlayerChat_EGameChatType> : ::s
 template <>
 inline const EnumDescriptor* GetEnumDescriptor< ::NFMsg::ReqAckPlayerChat_EGameChatType>() {
   return ::NFMsg::ReqAckPlayerChat_EGameChatType_descriptor();
+}
+template <> struct is_proto_enum< ::NFMsg::ModelViewSyncUnit_EViewPlayerType> : ::std::true_type {};
+template <>
+inline const EnumDescriptor* GetEnumDescriptor< ::NFMsg::ModelViewSyncUnit_EViewPlayerType>() {
+  return ::NFMsg::ModelViewSyncUnit_EViewPlayerType_descriptor();
 }
 
 PROTOBUF_NAMESPACE_CLOSE

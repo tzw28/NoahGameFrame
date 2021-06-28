@@ -158,3 +158,34 @@ message ReqAckModel
 	Ident	player_id = 1;
 	bytes 	raw = 2;
 }
+
+/////////////////////////////////////////
+
+message ModelViewSyncUnit
+{	
+	enum EViewPlayerType
+	{
+		EVST_PC = 0;
+		EVST_HOLOLENS = 1;
+	}
+	Ident	player_id = 1;
+	EViewPlayerType player_type = 2;
+    Vector3 camera_pos = 3;
+    Vector3 camera_rot = 4;
+    Vector3 model_pos = 5;
+    Vector3 model_rot = 6;
+    Vector3 model_scale = 7;
+}
+
+message ReqAckModelViewSync
+{
+    int32 sequence = 1;
+	ModelViewSyncUnit sync_unit = 2;
+}
+
+
+message ReqAckModelView
+{
+	Ident	player_id = 1;
+	repeated ModelViewSyncUnit sync_unit = 2;
+}
