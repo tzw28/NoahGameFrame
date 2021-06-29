@@ -38,7 +38,7 @@
 
 OCCProcessor::OCCProcessor()
 {
-    m_aLogger = new OCCLogger(LogLevel_Info, OCCLogger::GetAppPathA().append("..\\occlog\\"));
+    // m_aLogger = new OCCLogger(LogLevel_Info, OCCLogger::GetAppPathA().append("..\\occlog\\"));
 }
 
 int OCCProcessor::initializeModel()
@@ -67,7 +67,7 @@ int OCCProcessor::initializeModel()
 
 OCCProcessor::~OCCProcessor()
 {
-    delete m_aLogger;
+    // delete m_aLogger;
 }
 
 int OCCProcessor::updateShape(ModelProperty newShapeProperty)
@@ -107,7 +107,7 @@ int OCCProcessor::loadModel(Standard_CString sModelName)
     std::stringstream sstr;
     sstr << "Load model" << sModelName << " "
         << std::to_string((end - start) * 1000 / CLOCKS_PER_SEC).c_str() << "ms";
-    m_aLogger->TraceInfo(sstr.str().c_str());
+    // m_aLogger->TraceInfo(sstr.str().c_str());
     return 0;
 }
 
@@ -314,6 +314,6 @@ int OCCProcessor::toMeshString(std::string& mesh_str)
     end = clock();
     std::stringstream sstr;
     sstr << "To mesh " << std::to_string((end - start) * 1000 / CLOCKS_PER_SEC).c_str() << "ms";
-    m_aLogger->TraceInfo(sstr.str().c_str());
+    // m_aLogger->TraceInfo(sstr.str().c_str());
     return 0;
 }

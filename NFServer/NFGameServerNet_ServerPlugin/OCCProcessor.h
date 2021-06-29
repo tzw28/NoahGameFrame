@@ -20,7 +20,7 @@ private:
     TopoDS_Shape m_aShape;
     ModelProperty m_aProperty;
     int m_aCurrentIndex = 0;
-    OCCLogger* m_aLogger;
+    // OCCLogger* m_aLogger;
 
     static const Standard_Integer THE_STL_SIZEOF_FACET = 50;
     static const Standard_Integer IND_THRESHOLD = 1000; // increment the indicator every 1k triangles
