@@ -51,7 +51,7 @@ bool NFGameServerNet_ServerModule::Init()
     m_pOcc = new OCCProcessor();
     // m_pOcc->readSampleModel();
     m_pOcc->initializeModel();
-    m_aLogger = new OCCLogger(LogLevel_Info, OCCLogger::GetAppPathA().append("..\\servicelog\\"));
+    // m_aLogger = new OCCLogger(LogLevel_Info, OCCLogger::GetAppPathA().append("..\\servicelog\\"));
 
     loadModelFileNames(m_aModels);
 
@@ -309,9 +309,9 @@ void NFGameServerNet_ServerModule::OnClientModelRawProcess(const NFSOCK sockInde
 
     //this code means the game server will sends a message to all players who in the same room
 
-    long long t = m_aLogger->GetSystemTime();
-    std::cout << "send model msg " << t << std::endl;
-    m_aLogger->TraceInfo(("send model " + std::to_string(t)).c_str());
+    // long long t = m_aLogger->GetSystemTime();
+    // std::cout << "send model msg " << t << std::endl;
+    // m_aLogger->TraceInfo(("send model " + std::to_string(t)).c_str());
     this->SendGroupMsgPBToGate(NFMsg::ACK_MODEL_RAW, xMsg, sceneID, groupID);
 
 }

@@ -128,6 +128,6 @@ private:
     OCCProcessor* m_pOcc;
     std::vector<std::string> m_aModels;
     int m_aCurrentModel = -1;
-    OCCLogger* m_aLogger;
+    // OCCLogger* m_aLogger;
 };
 #endif

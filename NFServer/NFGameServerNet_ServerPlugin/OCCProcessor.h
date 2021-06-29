@@ -4,7 +4,7 @@
 #include <string> 
 
 #include "OCCLogger.h"
-using namespace LOGGER;
+// using namespace LOGGER;
 
 struct ModelProperty {
     enum type {
