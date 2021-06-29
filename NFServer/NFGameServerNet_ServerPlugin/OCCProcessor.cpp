@@ -27,7 +27,7 @@
 #include <fstream> 
 #include <iostream> 
 #include <string> 
-#include <filesystem>
+// #include <filesystem>
 #include <sstream>
 
 #include "OCCUtil.h"
@@ -79,7 +79,7 @@ int OCCProcessor::readSampleModel()
 {
     std::cout << "start to read stl\n" << std::endl;
 
-    std::cout << "Current path is " << std::filesystem::current_path() << '\n';
+    // std::cout << "Current path is " << std::filesystem::current_path() << '\n';
     StlAPI_Reader aReader_Stl;
     aReader_Stl.Read(m_aShape, "../Models/cube.stl");
     BRepMesh_IncrementalMesh BMesh(m_aShape, 0.1, Standard_True);
