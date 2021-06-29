@@ -30,10 +30,10 @@ Info    2016-01-26 10:13:29 TraceInfo
 Fatal   2016-01-26 10:13:29 TraceFatal 2
 Error   2016-01-26 10:13:29 TraceError sun2
 */
-
+#if 0
 #ifndef _LOGGER_H_
 #define _LOGGER_H_
-//#include <Windows.h>
+#include <Windows.h>
 #include <stdio.h>
 #include <string>
 #include <fstream>
@@ -105,5 +105,7 @@ namespace LOGGER
         // CRITICAL_SECTION m_cs;
     };
 }
+
+#endif
 
 #endif
