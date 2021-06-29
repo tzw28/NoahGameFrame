@@ -33,7 +33,7 @@ Error   2016-01-26 10:13:29 TraceError sun2
 
 #ifndef _LOGGER_H_
 #define _LOGGER_H_
-#include <Windows.h>
+//#include <Windows.h>
 #include <stdio.h>
 #include <string>
 #include <fstream>

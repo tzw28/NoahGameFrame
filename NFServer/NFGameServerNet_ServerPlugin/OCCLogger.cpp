@@ -1,4 +1,5 @@
-﻿//logger.cpp
+﻿#if 0
+//logger.cpp
 #include "OCCLogger.h"
 #include <time.h>
 #include <stdarg.h>
@@ -302,3 +303,4 @@ namespace LOGGER
         return t.time * 1000 + t.millitm;
     }
 }
+#endif
