@@ -102,7 +102,7 @@ namespace LOGGER
         //日志文件全路径
         std::string m_strLogFilePath;
         //线程同步的临界区变量
-        CRITICAL_SECTION m_cs;
+        // CRITICAL_SECTION m_cs;
     };
 }
 
