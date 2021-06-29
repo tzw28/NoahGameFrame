@@ -21,10 +21,7 @@
 #include <StlAPI_Reader.hxx>
 #include <StlAPI_Writer.hxx>
 #include <BRepMesh_IncrementalMesh.hxx>
-#include <Message_ProgressScope.hxx>
 #include <NCollection_Vector.hxx>
-#include <Message_ProgressScope.hxx>
-#include <Message_ProgressIndicator.hxx>
 #include <STEPControl_Reader.hxx>
 
 #include <fstream> 
