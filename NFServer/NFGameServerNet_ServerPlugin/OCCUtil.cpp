@@ -2,8 +2,12 @@
 #include <io.h>
 #include <iostream> 
 
+
 void getFiles(std::string path, std::vector<std::string>& files)
 {
+
+#if 0 // _findfirst not working properly in Centos
+
     // 文件句柄
     long hFile = 0;
     // 文件信息
@@ -27,6 +31,7 @@ void getFiles(std::string path, std::vector<std::string>& files)
         _findclose(hFile);
     }
     std::cout << "end of model file names" << std::endl;
+#endif // 0
 }
 
 int loadModelFileNames(std::vector<std::string>& aModels)
