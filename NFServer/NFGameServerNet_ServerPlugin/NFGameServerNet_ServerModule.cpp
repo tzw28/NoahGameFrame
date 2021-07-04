@@ -282,6 +282,7 @@ void NFGameServerNet_ServerModule::OnClientModelRawProcess(const NFSOCK sockInde
     std::stringstream ssout;
     std::cout << "local models " << m_aModels.size() << std::endl;
     long long t;
+    string temp_str = "";
     if (m_aModels.size() > 0)
     {
         if (m_aCurrentModel == -1)
@@ -297,7 +298,7 @@ void NFGameServerNet_ServerModule::OnClientModelRawProcess(const NFSOCK sockInde
         }
         t = GetSystemTime();
         ssout << t << " ";
-        m_pOcc->loadModel(aModelFile.c_str());
+        m_pOcc->loadModel(aModelFile.c_str(), temp_str);
         t = GetSystemTime();
         ssout << t << " ";
     }
@@ -305,8 +306,8 @@ void NFGameServerNet_ServerModule::OnClientModelRawProcess(const NFSOCK sockInde
     {
         m_pOcc->initializeModel();
     }
-    string temp_str;
-    m_pOcc->toMeshString(temp_str);
+    if (temp_str == "")
+        m_pOcc->toMeshString(temp_str);
     t = GetSystemTime();
     ssout << t << " ";
     xMsg.set_sequence(1208);

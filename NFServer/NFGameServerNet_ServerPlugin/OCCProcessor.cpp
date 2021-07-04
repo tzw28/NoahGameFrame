@@ -89,7 +89,7 @@ int OCCProcessor::readSampleModel()
     return 0;
 }
 
-int OCCProcessor::loadModel(Standard_CString sModelName)
+int OCCProcessor::loadModel(Standard_CString sModelName, std::string& sModelFileContent)
 {
     clock_t start, end;
     start = clock();
@@ -98,7 +98,11 @@ int OCCProcessor::loadModel(Standard_CString sModelName)
     if (endswith(sModelName, ".step") || endswith(sModelName, ".stp"))
         loadStepModel(sModelName);
     else if (endswith(sModelName, ".stl"))
-        loadStlModel(sModelName);
+    {
+        // loadStlModel(sModelName);
+        std::string res = loadStlModel_File(sModelName);
+        sModelFileContent = res;
+    }
 
     end = clock();
     std::stringstream sstr;
@@ -144,6 +148,15 @@ int OCCProcessor::loadStlModel(Standard_CString sModelName)
     return 0;
 }
 
+std::string OCCProcessor::loadStlModel_File(Standard_CString sModelName)
+{
+    std::ifstream fin(std::string("../Models/") + sModelName);   // filename: xly2016I.txt
+    std::stringstream buffer;            // stringstream object
+    buffer << fin.rdbuf();          // read file content in stringstream object
+    std::string str(buffer.str());
+    return str;
+}
+
 int OCCProcessor::stretchWidth(float newWidth)
 {
     std::cout << "start to stretch width " << newWidth << std::endl;
@@ -177,7 +190,7 @@ int OCCProcessor::toMeshString(std::string& mesh_str)
     int count = 0;
     for (TopExp_Explorer anExpSF(m_aShape, TopAbs_FACE); anExpSF.More(); anExpSF.Next(), count++)
     {
-        std::cout << "calculate face " << count << std::endl;
+        // std::cout << "calculate face " << count << std::endl;
         TopLoc_Location aLoc;
         Handle(Poly_Triangulation) aTriangulation = BRep_Tool::Triangulation(TopoDS::Face(anExpSF.Current()), aLoc);
         if (!aTriangulation.IsNull())
