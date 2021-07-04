@@ -99,9 +99,9 @@ int OCCProcessor::loadModel(Standard_CString sModelName, std::string& sModelFile
         loadStepModel(sModelName);
     else if (endswith(sModelName, ".stl"))
     {
-        loadStlModel(sModelName);
-        // std::string res = loadStlModel_File(sModelName);
-        // sModelFileContent = res;
+        // loadStlModel(sModelName);
+        std::string res = loadStlModel_File(sModelName);
+        sModelFileContent = res;
     }
 
     end = clock();
