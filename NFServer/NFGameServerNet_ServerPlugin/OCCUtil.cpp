@@ -62,3 +62,10 @@ bool endswith(const std::string& str, const std::string& end)
 
     return false;
 }
+
+long long GetSystemTime()
+{
+    timeb t;
+    ftime(&t);
+    return t.time * 1000 + t.millitm;
+}

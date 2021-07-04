@@ -279,7 +279,9 @@ void NFGameServerNet_ServerModule::OnClientModelRawProcess(const NFSOCK sockInde
 
         std::cout << "process require model raw\n" << std::endl;
     std::string aModelFile = "";
+    std::stringstream ssout;
     std::cout << "local models " << m_aModels.size() << std::endl;
+    long long t;
     if (m_aModels.size() > 0)
     {
         if (m_aCurrentModel == -1)
@@ -293,7 +295,11 @@ void NFGameServerNet_ServerModule::OnClientModelRawProcess(const NFSOCK sockInde
             aModelFile = m_aModels[m_aCurrentModel];
             m_aCurrentModel = (m_aCurrentModel + 1) % m_aModels.size();
         }
+        t = GetSystemTime();
+        ssout << t << " ";
         m_pOcc->loadModel(aModelFile.c_str());
+        t = GetSystemTime();
+        ssout << t << " ";
     }
     else
     {
@@ -301,7 +307,10 @@ void NFGameServerNet_ServerModule::OnClientModelRawProcess(const NFSOCK sockInde
     }
     string temp_str;
     m_pOcc->toMeshString(temp_str);
+    t = GetSystemTime();
+    ssout << t << " ";
     xMsg.set_sequence(1208);
+    xMsg.set_msg(ssout.str());
     NFMsg::ModelSyncUnit* syncUnit = xMsg.mutable_sync_unit();
     syncUnit->set_raw(temp_str);
     const int sceneID = m_pKernelModule->GetPropertyInt(nPlayerID, NFrame::Player::SceneID());
@@ -309,7 +318,6 @@ void NFGameServerNet_ServerModule::OnClientModelRawProcess(const NFSOCK sockInde
 
     //this code means the game server will sends a message to all players who in the same room
 
-    // long long t = m_aLogger->GetSystemTime();
     // std::cout << "send model msg " << t << std::endl;
     // m_aLogger->TraceInfo(("send model " + std::to_string(t)).c_str());
     this->SendGroupMsgPBToGate(NFMsg::ACK_MODEL_RAW, xMsg, sceneID, groupID);

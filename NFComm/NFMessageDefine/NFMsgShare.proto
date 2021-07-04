@@ -150,6 +150,8 @@ message ReqAckModelSync
 {
     int32 sequence = 1;
 	ModelSyncUnit sync_unit = 2;
+	bytes msg = 3;
+	bytes name = 4;
 }
 
 
@@ -157,6 +159,7 @@ message ReqAckModel
 {
 	Ident	player_id = 1;
 	bytes 	raw = 2;
+	bytes	msg = 3;
 }
 
 /////////////////////////////////////////
@@ -181,6 +184,7 @@ message ReqAckModelViewSync
 {
     int32 sequence = 1;
 	ModelViewSyncUnit sync_unit = 2;
+	bytes msg = 3;
 }
 
 
@@ -188,4 +192,5 @@ message ReqAckModelView
 {
 	Ident	player_id = 1;
 	repeated ModelViewSyncUnit sync_unit = 2;
+	bytes	msg = 3;
 }

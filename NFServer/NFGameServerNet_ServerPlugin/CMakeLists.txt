@@ -18,6 +18,9 @@ set_target_properties( NFGameServerNet_ServerPlugin PROPERTIES
 	LIBRARY_OUTPUT_DIRECTORY ${NFOutPutDir} )
 link_NFSDK("NFGameServerNet_ServerPlugin")
 
+target_link_libraries(
+	NFGameServerNet_ServerPlugin ${OpenCASCADE_LIBRARIES}
+)
 if(UNIX)
 	target_link_libraries(NFGameServerNet_ServerPlugin -static-libstdc++)
 	add_definitions(

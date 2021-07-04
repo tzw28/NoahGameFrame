@@ -53,7 +53,14 @@ elseif(UNIX)
 		${SolutionDir}/Dependencies/vcpkg/installed/x64-linux/include/SDL2
 		${SolutionDir}/Dependencies/vcpkg/installed/x64-linux/include/google/protobuf/ 
 		${SolutionDir}/Dependencies/vcpkg/installed/x64-linux/include/google/protobuf/src/
+		# ${CASROOT}/inc
+		/usr/local/include/opencascade
 	)
+	
+	find_package(OpenCASCADE REQUIRED)
+	# include_directories(${OpenCASCADE_INCLUDE_DIR})
+	MESSAGE("OCC-Include-Dir: ${OpenCASCADE_INCLUDE_DIR}")
+	MESSAGE("OCC-Lib-Dir: ${OpenCASCADE_LIBRARIES}")
 else()
 	include_directories(
 		${SolutionDir}
@@ -65,6 +72,7 @@ else()
 		${SolutionDir}/Dependencies/vcpkg/installed/x64-windows-static/include/SDL2
 		${SolutionDir}/Dependencies/vcpkg/installed/x64-windows-static/include/google/protobuf/ 
 		${SolutionDir}/Dependencies/vcpkg/installed/x64-windows-static/include/google/protobuf/src/
+		${CASROOT}/inc
 	)
 endif()
 
@@ -98,7 +106,10 @@ else()
 endif()
 
 
-link_directories(${DependenciesLibPath})
+link_directories(
+	${DependenciesLibPath}
+	${OpenCASCADE_LIBRARY_DIR}
+)
 
 if(${BUILD_TOOLS_ONLY} STREQUAL "ON")
 	message("Build Tools Only")

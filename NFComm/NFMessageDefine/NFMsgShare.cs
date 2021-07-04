@@ -63,22 +63,23 @@ namespace NFMsg {
             "RUdDQ19HTE9CQUwQABINCglFR0NDX0NMQU4QARINCglFR0NDX1JPT00QAhIN",
             "CglFR0NDX1RFQU0QAyI+Cg1FR2FtZUNoYXRUeXBlEg0KCUVHQ1RfVEVYVBAA",
             "Eg4KCkVHQ1RfVk9JQ0UQARIOCgpFR0NUX0VNT0pJEAIiHAoNTW9kZWxTeW5j",
-            "VW5pdBILCgNyYXcYASABKAwiTAoPUmVxQWNrTW9kZWxTeW5jEhAKCHNlcXVl",
+            "VW5pdBILCgNyYXcYASABKAwiZwoPUmVxQWNrTW9kZWxTeW5jEhAKCHNlcXVl",
             "bmNlGAEgASgFEicKCXN5bmNfdW5pdBgCIAEoCzIULk5GTXNnLk1vZGVsU3lu",
-            "Y1VuaXQiOwoLUmVxQWNrTW9kZWwSHwoJcGxheWVyX2lkGAEgASgLMgwuTkZN",
-            "c2cuSWRlbnQSCwoDcmF3GAIgASgMItkCChFNb2RlbFZpZXdTeW5jVW5pdBIf",
-            "CglwbGF5ZXJfaWQYASABKAsyDC5ORk1zZy5JZGVudBI9CgtwbGF5ZXJfdHlw",
-            "ZRgCIAEoDjIoLk5GTXNnLk1vZGVsVmlld1N5bmNVbml0LkVWaWV3UGxheWVy",
-            "VHlwZRIiCgpjYW1lcmFfcG9zGAMgASgLMg4uTkZNc2cuVmVjdG9yMxIiCgpj",
-            "YW1lcmFfcm90GAQgASgLMg4uTkZNc2cuVmVjdG9yMxIhCgltb2RlbF9wb3MY",
-            "BSABKAsyDi5ORk1zZy5WZWN0b3IzEiEKCW1vZGVsX3JvdBgGIAEoCzIOLk5G",
-            "TXNnLlZlY3RvcjMSIwoLbW9kZWxfc2NhbGUYByABKAsyDi5ORk1zZy5WZWN0",
-            "b3IzIjEKD0VWaWV3UGxheWVyVHlwZRILCgdFVlNUX1BDEAASEQoNRVZTVF9I",
-            "T0xPTEVOUxABIlQKE1JlcUFja01vZGVsVmlld1N5bmMSEAoIc2VxdWVuY2UY",
-            "ASABKAUSKwoJc3luY191bml0GAIgASgLMhguTkZNc2cuTW9kZWxWaWV3U3lu",
-            "Y1VuaXQiXwoPUmVxQWNrTW9kZWxWaWV3Eh8KCXBsYXllcl9pZBgBIAEoCzIM",
-            "Lk5GTXNnLklkZW50EisKCXN5bmNfdW5pdBgCIAMoCzIYLk5GTXNnLk1vZGVs",
-            "Vmlld1N5bmNVbml0YgZwcm90bzM="));
+            "Y1VuaXQSCwoDbXNnGAMgASgMEgwKBG5hbWUYBCABKAwiSAoLUmVxQWNrTW9k",
+            "ZWwSHwoJcGxheWVyX2lkGAEgASgLMgwuTkZNc2cuSWRlbnQSCwoDcmF3GAIg",
+            "ASgMEgsKA21zZxgDIAEoDCLZAgoRTW9kZWxWaWV3U3luY1VuaXQSHwoJcGxh",
+            "eWVyX2lkGAEgASgLMgwuTkZNc2cuSWRlbnQSPQoLcGxheWVyX3R5cGUYAiAB",
+            "KA4yKC5ORk1zZy5Nb2RlbFZpZXdTeW5jVW5pdC5FVmlld1BsYXllclR5cGUS",
+            "IgoKY2FtZXJhX3BvcxgDIAEoCzIOLk5GTXNnLlZlY3RvcjMSIgoKY2FtZXJh",
+            "X3JvdBgEIAEoCzIOLk5GTXNnLlZlY3RvcjMSIQoJbW9kZWxfcG9zGAUgASgL",
+            "Mg4uTkZNc2cuVmVjdG9yMxIhCgltb2RlbF9yb3QYBiABKAsyDi5ORk1zZy5W",
+            "ZWN0b3IzEiMKC21vZGVsX3NjYWxlGAcgASgLMg4uTkZNc2cuVmVjdG9yMyIx",
+            "Cg9FVmlld1BsYXllclR5cGUSCwoHRVZTVF9QQxAAEhEKDUVWU1RfSE9MT0xF",
+            "TlMQASJhChNSZXFBY2tNb2RlbFZpZXdTeW5jEhAKCHNlcXVlbmNlGAEgASgF",
+            "EisKCXN5bmNfdW5pdBgCIAEoCzIYLk5GTXNnLk1vZGVsVmlld1N5bmNVbml0",
+            "EgsKA21zZxgDIAEoDCJsCg9SZXFBY2tNb2RlbFZpZXcSHwoJcGxheWVyX2lk",
+            "GAEgASgLMgwuTkZNc2cuSWRlbnQSKwoJc3luY191bml0GAIgAygLMhguTkZN",
+            "c2cuTW9kZWxWaWV3U3luY1VuaXQSCwoDbXNnGAMgASgMYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::NFMsg.NFDefineReflection.Descriptor, global::NFMsg.NFMsgBaseReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -96,11 +97,11 @@ namespace NFMsg {
             new pbr::GeneratedClrTypeInfo(typeof(global::NFMsg.ReqAckSwapScene), global::NFMsg.ReqAckSwapScene.Parser, new[]{ "TransferType", "SceneId", "LineId", "X", "Y", "Z", "Data" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::NFMsg.ReqAckPlayerChat), global::NFMsg.ReqAckPlayerChat.Parser, new[]{ "PlayerId", "PlayerName", "ChatChannel", "ChatType", "ChatInfo" }, null, new[]{ typeof(global::NFMsg.ReqAckPlayerChat.Types.EGameChatChannel), typeof(global::NFMsg.ReqAckPlayerChat.Types.EGameChatType) }, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::NFMsg.ModelSyncUnit), global::NFMsg.ModelSyncUnit.Parser, new[]{ "Raw" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::NFMsg.ReqAckModelSync), global::NFMsg.ReqAckModelSync.Parser, new[]{ "Sequence", "SyncUnit" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::NFMsg.ReqAckModel), global::NFMsg.ReqAckModel.Parser, new[]{ "PlayerId", "Raw" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::NFMsg.ReqAckModelSync), global::NFMsg.ReqAckModelSync.Parser, new[]{ "Sequence", "SyncUnit", "Msg", "Name" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::NFMsg.ReqAckModel), global::NFMsg.ReqAckModel.Parser, new[]{ "PlayerId", "Raw", "Msg" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::NFMsg.ModelViewSyncUnit), global::NFMsg.ModelViewSyncUnit.Parser, new[]{ "PlayerId", "PlayerType", "CameraPos", "CameraRot", "ModelPos", "ModelRot", "ModelScale" }, null, new[]{ typeof(global::NFMsg.ModelViewSyncUnit.Types.EViewPlayerType) }, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::NFMsg.ReqAckModelViewSync), global::NFMsg.ReqAckModelViewSync.Parser, new[]{ "Sequence", "SyncUnit" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::NFMsg.ReqAckModelView), global::NFMsg.ReqAckModelView.Parser, new[]{ "PlayerId", "SyncUnit" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::NFMsg.ReqAckModelViewSync), global::NFMsg.ReqAckModelViewSync.Parser, new[]{ "Sequence", "SyncUnit", "Msg" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::NFMsg.ReqAckModelView), global::NFMsg.ReqAckModelView.Parser, new[]{ "PlayerId", "SyncUnit", "Msg" }, null, null, null, null)
           }));
     }
     #endregion
@@ -2913,6 +2914,8 @@ namespace NFMsg {
     public ReqAckModelSync(ReqAckModelSync other) : this() {
       sequence_ = other.sequence_;
       syncUnit_ = other.syncUnit_ != null ? other.syncUnit_.Clone() : null;
+      msg_ = other.msg_;
+      name_ = other.name_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -2943,6 +2946,28 @@ namespace NFMsg {
       }
     }
 
+    /// <summary>Field number for the "msg" field.</summary>
+    public const int MsgFieldNumber = 3;
+    private pb::ByteString msg_ = pb::ByteString.Empty;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public pb::ByteString Msg {
+      get { return msg_; }
+      set {
+        msg_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "name" field.</summary>
+    public const int NameFieldNumber = 4;
+    private pb::ByteString name_ = pb::ByteString.Empty;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public pb::ByteString Name {
+      get { return name_; }
+      set {
+        name_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override bool Equals(object other) {
       return Equals(other as ReqAckModelSync);
@@ -2958,6 +2983,8 @@ namespace NFMsg {
       }
       if (Sequence != other.Sequence) return false;
       if (!object.Equals(SyncUnit, other.SyncUnit)) return false;
+      if (Msg != other.Msg) return false;
+      if (Name != other.Name) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -2966,6 +2993,8 @@ namespace NFMsg {
       int hash = 1;
       if (Sequence != 0) hash ^= Sequence.GetHashCode();
       if (syncUnit_ != null) hash ^= SyncUnit.GetHashCode();
+      if (Msg.Length != 0) hash ^= Msg.GetHashCode();
+      if (Name.Length != 0) hash ^= Name.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -2987,6 +3016,14 @@ namespace NFMsg {
         output.WriteRawTag(18);
         output.WriteMessage(SyncUnit);
       }
+      if (Msg.Length != 0) {
+        output.WriteRawTag(26);
+        output.WriteBytes(Msg);
+      }
+      if (Name.Length != 0) {
+        output.WriteRawTag(34);
+        output.WriteBytes(Name);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -3000,6 +3037,12 @@ namespace NFMsg {
       }
       if (syncUnit_ != null) {
         size += 1 + pb::CodedOutputStream.ComputeMessageSize(SyncUnit);
+      }
+      if (Msg.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeBytesSize(Msg);
+      }
+      if (Name.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeBytesSize(Name);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -3021,6 +3064,12 @@ namespace NFMsg {
         }
         SyncUnit.MergeFrom(other.SyncUnit);
       }
+      if (other.Msg.Length != 0) {
+        Msg = other.Msg;
+      }
+      if (other.Name.Length != 0) {
+        Name = other.Name;
+      }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
 
@@ -3041,6 +3090,14 @@ namespace NFMsg {
               SyncUnit = new global::NFMsg.ModelSyncUnit();
             }
             input.ReadMessage(SyncUnit);
+            break;
+          }
+          case 26: {
+            Msg = input.ReadBytes();
+            break;
+          }
+          case 34: {
+            Name = input.ReadBytes();
             break;
           }
         }
@@ -3076,6 +3133,7 @@ namespace NFMsg {
     public ReqAckModel(ReqAckModel other) : this() {
       playerId_ = other.playerId_ != null ? other.playerId_.Clone() : null;
       raw_ = other.raw_;
+      msg_ = other.msg_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -3106,6 +3164,17 @@ namespace NFMsg {
       }
     }
 
+    /// <summary>Field number for the "msg" field.</summary>
+    public const int MsgFieldNumber = 3;
+    private pb::ByteString msg_ = pb::ByteString.Empty;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public pb::ByteString Msg {
+      get { return msg_; }
+      set {
+        msg_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override bool Equals(object other) {
       return Equals(other as ReqAckModel);
@@ -3121,6 +3190,7 @@ namespace NFMsg {
       }
       if (!object.Equals(PlayerId, other.PlayerId)) return false;
       if (Raw != other.Raw) return false;
+      if (Msg != other.Msg) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -3129,6 +3199,7 @@ namespace NFMsg {
       int hash = 1;
       if (playerId_ != null) hash ^= PlayerId.GetHashCode();
       if (Raw.Length != 0) hash ^= Raw.GetHashCode();
+      if (Msg.Length != 0) hash ^= Msg.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -3150,6 +3221,10 @@ namespace NFMsg {
         output.WriteRawTag(18);
         output.WriteBytes(Raw);
       }
+      if (Msg.Length != 0) {
+        output.WriteRawTag(26);
+        output.WriteBytes(Msg);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -3163,6 +3238,9 @@ namespace NFMsg {
       }
       if (Raw.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeBytesSize(Raw);
+      }
+      if (Msg.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeBytesSize(Msg);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -3184,6 +3262,9 @@ namespace NFMsg {
       if (other.Raw.Length != 0) {
         Raw = other.Raw;
       }
+      if (other.Msg.Length != 0) {
+        Msg = other.Msg;
+      }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
 
@@ -3204,6 +3285,10 @@ namespace NFMsg {
           }
           case 18: {
             Raw = input.ReadBytes();
+            break;
+          }
+          case 26: {
+            Msg = input.ReadBytes();
             break;
           }
         }
@@ -3584,6 +3669,7 @@ namespace NFMsg {
     public ReqAckModelViewSync(ReqAckModelViewSync other) : this() {
       sequence_ = other.sequence_;
       syncUnit_ = other.syncUnit_ != null ? other.syncUnit_.Clone() : null;
+      msg_ = other.msg_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -3614,6 +3700,17 @@ namespace NFMsg {
       }
     }
 
+    /// <summary>Field number for the "msg" field.</summary>
+    public const int MsgFieldNumber = 3;
+    private pb::ByteString msg_ = pb::ByteString.Empty;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public pb::ByteString Msg {
+      get { return msg_; }
+      set {
+        msg_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override bool Equals(object other) {
       return Equals(other as ReqAckModelViewSync);
@@ -3629,6 +3726,7 @@ namespace NFMsg {
       }
       if (Sequence != other.Sequence) return false;
       if (!object.Equals(SyncUnit, other.SyncUnit)) return false;
+      if (Msg != other.Msg) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -3637,6 +3735,7 @@ namespace NFMsg {
       int hash = 1;
       if (Sequence != 0) hash ^= Sequence.GetHashCode();
       if (syncUnit_ != null) hash ^= SyncUnit.GetHashCode();
+      if (Msg.Length != 0) hash ^= Msg.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -3658,6 +3757,10 @@ namespace NFMsg {
         output.WriteRawTag(18);
         output.WriteMessage(SyncUnit);
       }
+      if (Msg.Length != 0) {
+        output.WriteRawTag(26);
+        output.WriteBytes(Msg);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -3671,6 +3774,9 @@ namespace NFMsg {
       }
       if (syncUnit_ != null) {
         size += 1 + pb::CodedOutputStream.ComputeMessageSize(SyncUnit);
+      }
+      if (Msg.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeBytesSize(Msg);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -3692,6 +3798,9 @@ namespace NFMsg {
         }
         SyncUnit.MergeFrom(other.SyncUnit);
       }
+      if (other.Msg.Length != 0) {
+        Msg = other.Msg;
+      }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
 
@@ -3712,6 +3821,10 @@ namespace NFMsg {
               SyncUnit = new global::NFMsg.ModelViewSyncUnit();
             }
             input.ReadMessage(SyncUnit);
+            break;
+          }
+          case 26: {
+            Msg = input.ReadBytes();
             break;
           }
         }
@@ -3747,6 +3860,7 @@ namespace NFMsg {
     public ReqAckModelView(ReqAckModelView other) : this() {
       playerId_ = other.playerId_ != null ? other.playerId_.Clone() : null;
       syncUnit_ = other.syncUnit_.Clone();
+      msg_ = other.msg_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -3776,6 +3890,17 @@ namespace NFMsg {
       get { return syncUnit_; }
     }
 
+    /// <summary>Field number for the "msg" field.</summary>
+    public const int MsgFieldNumber = 3;
+    private pb::ByteString msg_ = pb::ByteString.Empty;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public pb::ByteString Msg {
+      get { return msg_; }
+      set {
+        msg_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override bool Equals(object other) {
       return Equals(other as ReqAckModelView);
@@ -3791,6 +3916,7 @@ namespace NFMsg {
       }
       if (!object.Equals(PlayerId, other.PlayerId)) return false;
       if(!syncUnit_.Equals(other.syncUnit_)) return false;
+      if (Msg != other.Msg) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -3799,6 +3925,7 @@ namespace NFMsg {
       int hash = 1;
       if (playerId_ != null) hash ^= PlayerId.GetHashCode();
       hash ^= syncUnit_.GetHashCode();
+      if (Msg.Length != 0) hash ^= Msg.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -3817,6 +3944,10 @@ namespace NFMsg {
         output.WriteMessage(PlayerId);
       }
       syncUnit_.WriteTo(output, _repeated_syncUnit_codec);
+      if (Msg.Length != 0) {
+        output.WriteRawTag(26);
+        output.WriteBytes(Msg);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -3829,6 +3960,9 @@ namespace NFMsg {
         size += 1 + pb::CodedOutputStream.ComputeMessageSize(PlayerId);
       }
       size += syncUnit_.CalculateSize(_repeated_syncUnit_codec);
+      if (Msg.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeBytesSize(Msg);
+      }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
       }
@@ -3847,6 +3981,9 @@ namespace NFMsg {
         PlayerId.MergeFrom(other.PlayerId);
       }
       syncUnit_.Add(other.syncUnit_);
+      if (other.Msg.Length != 0) {
+        Msg = other.Msg;
+      }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
 
@@ -3867,6 +4004,10 @@ namespace NFMsg {
           }
           case 18: {
             syncUnit_.AddEntriesFrom(input, _repeated_syncUnit_codec);
+            break;
+          }
+          case 26: {
+            Msg = input.ReadBytes();
             break;
           }
         }
