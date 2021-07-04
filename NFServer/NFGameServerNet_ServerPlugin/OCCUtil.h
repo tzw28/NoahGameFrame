@@ -1,7 +1,7 @@
 ﻿#pragma once
 #include <string>
 #include <vector>
-#include <sys\timeb.h>
+#include <sys/timeb.h>
 
 void getFiles(std::string path, std::vector<std::string>& files);
 
