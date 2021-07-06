@@ -95,6 +95,7 @@ protected:
     void OnClientReqMoveProcess(const NFSOCK sockIndex, const int msgID, const char* msg, const uint32_t len);
     void OnClientEnterGameFinishProcess(const NFSOCK sockIndex, const int msgID, const char* msg, const uint32_t len);
 
+    void OnClientModelInfoListProcess(const NFSOCK sockIndex, const int msgID, const char* msg, const uint32_t len);
     void OnClientModelRawProcess(const NFSOCK sockIndex, const int msgID, const char* msg, const uint32_t len);
 
     void OnClientModelViewProcess(const NFSOCK sockIndex, const int msgID, const char* msg, const uint32_t len);

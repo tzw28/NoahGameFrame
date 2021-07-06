@@ -50,7 +50,7 @@ struct TableStruct_NFMsgShare_2eproto {
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::PROTOBUF_NAMESPACE_ID::internal::AuxillaryParseTableField aux[]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
-  static const ::PROTOBUF_NAMESPACE_ID::internal::ParseTable schema[19]
+  static const ::PROTOBUF_NAMESPACE_ID::internal::ParseTable schema[22]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::PROTOBUF_NAMESPACE_ID::internal::FieldMetadata field_metadata[];
   static const ::PROTOBUF_NAMESPACE_ID::internal::SerializationTable serialization_table[];
@@ -67,6 +67,9 @@ extern AckPlayerLeaveListDefaultTypeInternal _AckPlayerLeaveList_default_instanc
 class EffectData;
 class EffectDataDefaultTypeInternal;
 extern EffectDataDefaultTypeInternal _EffectData_default_instance_;
+class ModelInfoUnit;
+class ModelInfoUnitDefaultTypeInternal;
+extern ModelInfoUnitDefaultTypeInternal _ModelInfoUnit_default_instance_;
 class ModelSyncUnit;
 class ModelSyncUnitDefaultTypeInternal;
 extern ModelSyncUnitDefaultTypeInternal _ModelSyncUnit_default_instance_;
@@ -82,12 +85,18 @@ extern PosSyncUnitDefaultTypeInternal _PosSyncUnit_default_instance_;
 class ReqAckEnterGameSuccess;
 class ReqAckEnterGameSuccessDefaultTypeInternal;
 extern ReqAckEnterGameSuccessDefaultTypeInternal _ReqAckEnterGameSuccess_default_instance_;
-class ReqAckModel;
-class ReqAckModelDefaultTypeInternal;
-extern ReqAckModelDefaultTypeInternal _ReqAckModel_default_instance_;
+class ReqAckModelInfoList;
+class ReqAckModelInfoListDefaultTypeInternal;
+extern ReqAckModelInfoListDefaultTypeInternal _ReqAckModelInfoList_default_instance_;
+class ReqAckModelSwitch;
+class ReqAckModelSwitchDefaultTypeInternal;
+extern ReqAckModelSwitchDefaultTypeInternal _ReqAckModelSwitch_default_instance_;
 class ReqAckModelSync;
 class ReqAckModelSyncDefaultTypeInternal;
 extern ReqAckModelSyncDefaultTypeInternal _ReqAckModelSync_default_instance_;
+class ReqAckModelTarget;
+class ReqAckModelTargetDefaultTypeInternal;
+extern ReqAckModelTargetDefaultTypeInternal _ReqAckModelTarget_default_instance_;
 class ReqAckModelView;
 class ReqAckModelViewDefaultTypeInternal;
 extern ReqAckModelViewDefaultTypeInternal _ReqAckModelView_default_instance_;
@@ -120,13 +129,16 @@ PROTOBUF_NAMESPACE_OPEN
 template<> ::NFMsg::AckPlayerEntryList* Arena::CreateMaybeMessage<::NFMsg::AckPlayerEntryList>(Arena*);
 template<> ::NFMsg::AckPlayerLeaveList* Arena::CreateMaybeMessage<::NFMsg::AckPlayerLeaveList>(Arena*);
 template<> ::NFMsg::EffectData* Arena::CreateMaybeMessage<::NFMsg::EffectData>(Arena*);
+template<> ::NFMsg::ModelInfoUnit* Arena::CreateMaybeMessage<::NFMsg::ModelInfoUnit>(Arena*);
 template<> ::NFMsg::ModelSyncUnit* Arena::CreateMaybeMessage<::NFMsg::ModelSyncUnit>(Arena*);
 template<> ::NFMsg::ModelViewSyncUnit* Arena::CreateMaybeMessage<::NFMsg::ModelViewSyncUnit>(Arena*);
 template<> ::NFMsg::PlayerEntryInfo* Arena::CreateMaybeMessage<::NFMsg::PlayerEntryInfo>(Arena*);
 template<> ::NFMsg::PosSyncUnit* Arena::CreateMaybeMessage<::NFMsg::PosSyncUnit>(Arena*);
 template<> ::NFMsg::ReqAckEnterGameSuccess* Arena::CreateMaybeMessage<::NFMsg::ReqAckEnterGameSuccess>(Arena*);
-template<> ::NFMsg::ReqAckModel* Arena::CreateMaybeMessage<::NFMsg::ReqAckModel>(Arena*);
+template<> ::NFMsg::ReqAckModelInfoList* Arena::CreateMaybeMessage<::NFMsg::ReqAckModelInfoList>(Arena*);
+template<> ::NFMsg::ReqAckModelSwitch* Arena::CreateMaybeMessage<::NFMsg::ReqAckModelSwitch>(Arena*);
 template<> ::NFMsg::ReqAckModelSync* Arena::CreateMaybeMessage<::NFMsg::ReqAckModelSync>(Arena*);
+template<> ::NFMsg::ReqAckModelTarget* Arena::CreateMaybeMessage<::NFMsg::ReqAckModelTarget>(Arena*);
 template<> ::NFMsg::ReqAckModelView* Arena::CreateMaybeMessage<::NFMsg::ReqAckModelView>(Arena*);
 template<> ::NFMsg::ReqAckModelViewSync* Arena::CreateMaybeMessage<::NFMsg::ReqAckModelViewSync>(Arena*);
 template<> ::NFMsg::ReqAckPlayerChat* Arena::CreateMaybeMessage<::NFMsg::ReqAckPlayerChat>(Arena*);
@@ -2882,23 +2894,23 @@ class ReqAckModelSync :
 };
 // -------------------------------------------------------------------
 
-class ReqAckModel :
-    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:NFMsg.ReqAckModel) */ {
+class ModelInfoUnit :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:NFMsg.ModelInfoUnit) */ {
  public:
-  ReqAckModel();
-  virtual ~ReqAckModel();
+  ModelInfoUnit();
+  virtual ~ModelInfoUnit();
 
-  ReqAckModel(const ReqAckModel& from);
-  ReqAckModel(ReqAckModel&& from) noexcept
-    : ReqAckModel() {
+  ModelInfoUnit(const ModelInfoUnit& from);
+  ModelInfoUnit(ModelInfoUnit&& from) noexcept
+    : ModelInfoUnit() {
     *this = ::std::move(from);
   }
 
-  inline ReqAckModel& operator=(const ReqAckModel& from) {
+  inline ModelInfoUnit& operator=(const ModelInfoUnit& from) {
     CopyFrom(from);
     return *this;
   }
-  inline ReqAckModel& operator=(ReqAckModel&& from) noexcept {
+  inline ModelInfoUnit& operator=(ModelInfoUnit&& from) noexcept {
     if (GetArenaNoVirtual() == from.GetArenaNoVirtual()) {
       if (this != &from) InternalSwap(&from);
     } else {
@@ -2916,37 +2928,37 @@ class ReqAckModel :
   static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
     return GetMetadataStatic().reflection;
   }
-  static const ReqAckModel& default_instance();
+  static const ModelInfoUnit& default_instance();
 
   static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
-  static inline const ReqAckModel* internal_default_instance() {
-    return reinterpret_cast<const ReqAckModel*>(
-               &_ReqAckModel_default_instance_);
+  static inline const ModelInfoUnit* internal_default_instance() {
+    return reinterpret_cast<const ModelInfoUnit*>(
+               &_ModelInfoUnit_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
     15;
 
-  friend void swap(ReqAckModel& a, ReqAckModel& b) {
+  friend void swap(ModelInfoUnit& a, ModelInfoUnit& b) {
     a.Swap(&b);
   }
-  inline void Swap(ReqAckModel* other) {
+  inline void Swap(ModelInfoUnit* other) {
     if (other == this) return;
     InternalSwap(other);
   }
 
   // implements Message ----------------------------------------------
 
-  inline ReqAckModel* New() const final {
-    return CreateMaybeMessage<ReqAckModel>(nullptr);
+  inline ModelInfoUnit* New() const final {
+    return CreateMaybeMessage<ModelInfoUnit>(nullptr);
   }
 
-  ReqAckModel* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
-    return CreateMaybeMessage<ReqAckModel>(arena);
+  ModelInfoUnit* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
+    return CreateMaybeMessage<ModelInfoUnit>(arena);
   }
   void CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
   void MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
-  void CopyFrom(const ReqAckModel& from);
-  void MergeFrom(const ReqAckModel& from);
+  void CopyFrom(const ModelInfoUnit& from);
+  void MergeFrom(const ModelInfoUnit& from);
   PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
   bool IsInitialized() const final;
 
@@ -2960,10 +2972,10 @@ class ReqAckModel :
   inline void SharedCtor();
   inline void SharedDtor();
   void SetCachedSize(int size) const final;
-  void InternalSwap(ReqAckModel* other);
+  void InternalSwap(ModelInfoUnit* other);
   friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
   static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
-    return "NFMsg.ReqAckModel";
+    return "NFMsg.ModelInfoUnit";
   }
   private:
   inline ::PROTOBUF_NAMESPACE_ID::Arena* GetArenaNoVirtual() const {
@@ -2988,27 +3000,184 @@ class ReqAckModel :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kRawFieldNumber = 2,
-    kMsgFieldNumber = 3,
-    kPlayerIdFieldNumber = 1,
+    kNameFieldNumber = 1,
+    kNoteFieldNumber = 2,
   };
-  // bytes raw = 2;
-  void clear_raw();
-  const std::string& raw() const;
-  void set_raw(const std::string& value);
-  void set_raw(std::string&& value);
-  void set_raw(const char* value);
-  void set_raw(const void* value, size_t size);
-  std::string* mutable_raw();
-  std::string* release_raw();
-  void set_allocated_raw(std::string* raw);
+  // bytes name = 1;
+  void clear_name();
+  const std::string& name() const;
+  void set_name(const std::string& value);
+  void set_name(std::string&& value);
+  void set_name(const char* value);
+  void set_name(const void* value, size_t size);
+  std::string* mutable_name();
+  std::string* release_name();
+  void set_allocated_name(std::string* name);
   private:
-  const std::string& _internal_raw() const;
-  void _internal_set_raw(const std::string& value);
-  std::string* _internal_mutable_raw();
+  const std::string& _internal_name() const;
+  void _internal_set_name(const std::string& value);
+  std::string* _internal_mutable_name();
   public:
 
-  // bytes msg = 3;
+  // bytes note = 2;
+  void clear_note();
+  const std::string& note() const;
+  void set_note(const std::string& value);
+  void set_note(std::string&& value);
+  void set_note(const char* value);
+  void set_note(const void* value, size_t size);
+  std::string* mutable_note();
+  std::string* release_note();
+  void set_allocated_note(std::string* note);
+  private:
+  const std::string& _internal_note() const;
+  void _internal_set_note(const std::string& value);
+  std::string* _internal_mutable_note();
+  public:
+
+  // @@protoc_insertion_point(class_scope:NFMsg.ModelInfoUnit)
+ private:
+  class _Internal;
+
+  ::PROTOBUF_NAMESPACE_ID::internal::InternalMetadataWithArena _internal_metadata_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr name_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr note_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_NFMsgShare_2eproto;
+};
+// -------------------------------------------------------------------
+
+class ReqAckModelInfoList :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:NFMsg.ReqAckModelInfoList) */ {
+ public:
+  ReqAckModelInfoList();
+  virtual ~ReqAckModelInfoList();
+
+  ReqAckModelInfoList(const ReqAckModelInfoList& from);
+  ReqAckModelInfoList(ReqAckModelInfoList&& from) noexcept
+    : ReqAckModelInfoList() {
+    *this = ::std::move(from);
+  }
+
+  inline ReqAckModelInfoList& operator=(const ReqAckModelInfoList& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline ReqAckModelInfoList& operator=(ReqAckModelInfoList&& from) noexcept {
+    if (GetArenaNoVirtual() == from.GetArenaNoVirtual()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return GetMetadataStatic().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return GetMetadataStatic().reflection;
+  }
+  static const ReqAckModelInfoList& default_instance();
+
+  static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
+  static inline const ReqAckModelInfoList* internal_default_instance() {
+    return reinterpret_cast<const ReqAckModelInfoList*>(
+               &_ReqAckModelInfoList_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    16;
+
+  friend void swap(ReqAckModelInfoList& a, ReqAckModelInfoList& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(ReqAckModelInfoList* other) {
+    if (other == this) return;
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline ReqAckModelInfoList* New() const final {
+    return CreateMaybeMessage<ReqAckModelInfoList>(nullptr);
+  }
+
+  ReqAckModelInfoList* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
+    return CreateMaybeMessage<ReqAckModelInfoList>(arena);
+  }
+  void CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void CopyFrom(const ReqAckModelInfoList& from);
+  void MergeFrom(const ReqAckModelInfoList& from);
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  ::PROTOBUF_NAMESPACE_ID::uint8* _InternalSerialize(
+      ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  inline void SharedCtor();
+  inline void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(ReqAckModelInfoList* other);
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "NFMsg.ReqAckModelInfoList";
+  }
+  private:
+  inline ::PROTOBUF_NAMESPACE_ID::Arena* GetArenaNoVirtual() const {
+    return nullptr;
+  }
+  inline void* MaybeArenaPtr() const {
+    return nullptr;
+  }
+  public:
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+  private:
+  static ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadataStatic() {
+    ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(&::descriptor_table_NFMsgShare_2eproto);
+    return ::descriptor_table_NFMsgShare_2eproto.file_level_metadata[kIndexInFileMessages];
+  }
+
+  public:
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kInfoListFieldNumber = 5,
+    kMsgFieldNumber = 2,
+    kClientFieldNumber = 1,
+    kNumFieldNumber = 3,
+    kCurFieldNumber = 4,
+  };
+  // repeated .NFMsg.ModelInfoUnit info_list = 5;
+  int info_list_size() const;
+  private:
+  int _internal_info_list_size() const;
+  public:
+  void clear_info_list();
+  ::NFMsg::ModelInfoUnit* mutable_info_list(int index);
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::NFMsg::ModelInfoUnit >*
+      mutable_info_list();
+  private:
+  const ::NFMsg::ModelInfoUnit& _internal_info_list(int index) const;
+  ::NFMsg::ModelInfoUnit* _internal_add_info_list();
+  public:
+  const ::NFMsg::ModelInfoUnit& info_list(int index) const;
+  ::NFMsg::ModelInfoUnit* add_info_list();
+  const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::NFMsg::ModelInfoUnit >&
+      info_list() const;
+
+  // bytes msg = 2;
   void clear_msg();
   const std::string& msg() const;
   void set_msg(const std::string& value);
@@ -3024,29 +3193,385 @@ class ReqAckModel :
   std::string* _internal_mutable_msg();
   public:
 
-  // .NFMsg.Ident player_id = 1;
-  bool has_player_id() const;
+  // int32 client = 1;
+  void clear_client();
+  ::PROTOBUF_NAMESPACE_ID::int32 client() const;
+  void set_client(::PROTOBUF_NAMESPACE_ID::int32 value);
   private:
-  bool _internal_has_player_id() const;
-  public:
-  void clear_player_id();
-  const ::NFMsg::Ident& player_id() const;
-  ::NFMsg::Ident* release_player_id();
-  ::NFMsg::Ident* mutable_player_id();
-  void set_allocated_player_id(::NFMsg::Ident* player_id);
-  private:
-  const ::NFMsg::Ident& _internal_player_id() const;
-  ::NFMsg::Ident* _internal_mutable_player_id();
+  ::PROTOBUF_NAMESPACE_ID::int32 _internal_client() const;
+  void _internal_set_client(::PROTOBUF_NAMESPACE_ID::int32 value);
   public:
 
-  // @@protoc_insertion_point(class_scope:NFMsg.ReqAckModel)
+  // int32 num = 3;
+  void clear_num();
+  ::PROTOBUF_NAMESPACE_ID::int32 num() const;
+  void set_num(::PROTOBUF_NAMESPACE_ID::int32 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::int32 _internal_num() const;
+  void _internal_set_num(::PROTOBUF_NAMESPACE_ID::int32 value);
+  public:
+
+  // int32 cur = 4;
+  void clear_cur();
+  ::PROTOBUF_NAMESPACE_ID::int32 cur() const;
+  void set_cur(::PROTOBUF_NAMESPACE_ID::int32 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::int32 _internal_cur() const;
+  void _internal_set_cur(::PROTOBUF_NAMESPACE_ID::int32 value);
+  public:
+
+  // @@protoc_insertion_point(class_scope:NFMsg.ReqAckModelInfoList)
  private:
   class _Internal;
 
   ::PROTOBUF_NAMESPACE_ID::internal::InternalMetadataWithArena _internal_metadata_;
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr raw_;
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::NFMsg::ModelInfoUnit > info_list_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr msg_;
-  ::NFMsg::Ident* player_id_;
+  ::PROTOBUF_NAMESPACE_ID::int32 client_;
+  ::PROTOBUF_NAMESPACE_ID::int32 num_;
+  ::PROTOBUF_NAMESPACE_ID::int32 cur_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_NFMsgShare_2eproto;
+};
+// -------------------------------------------------------------------
+
+class ReqAckModelTarget :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:NFMsg.ReqAckModelTarget) */ {
+ public:
+  ReqAckModelTarget();
+  virtual ~ReqAckModelTarget();
+
+  ReqAckModelTarget(const ReqAckModelTarget& from);
+  ReqAckModelTarget(ReqAckModelTarget&& from) noexcept
+    : ReqAckModelTarget() {
+    *this = ::std::move(from);
+  }
+
+  inline ReqAckModelTarget& operator=(const ReqAckModelTarget& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline ReqAckModelTarget& operator=(ReqAckModelTarget&& from) noexcept {
+    if (GetArenaNoVirtual() == from.GetArenaNoVirtual()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return GetMetadataStatic().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return GetMetadataStatic().reflection;
+  }
+  static const ReqAckModelTarget& default_instance();
+
+  static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
+  static inline const ReqAckModelTarget* internal_default_instance() {
+    return reinterpret_cast<const ReqAckModelTarget*>(
+               &_ReqAckModelTarget_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    17;
+
+  friend void swap(ReqAckModelTarget& a, ReqAckModelTarget& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(ReqAckModelTarget* other) {
+    if (other == this) return;
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline ReqAckModelTarget* New() const final {
+    return CreateMaybeMessage<ReqAckModelTarget>(nullptr);
+  }
+
+  ReqAckModelTarget* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
+    return CreateMaybeMessage<ReqAckModelTarget>(arena);
+  }
+  void CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void CopyFrom(const ReqAckModelTarget& from);
+  void MergeFrom(const ReqAckModelTarget& from);
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  ::PROTOBUF_NAMESPACE_ID::uint8* _InternalSerialize(
+      ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  inline void SharedCtor();
+  inline void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(ReqAckModelTarget* other);
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "NFMsg.ReqAckModelTarget";
+  }
+  private:
+  inline ::PROTOBUF_NAMESPACE_ID::Arena* GetArenaNoVirtual() const {
+    return nullptr;
+  }
+  inline void* MaybeArenaPtr() const {
+    return nullptr;
+  }
+  public:
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+  private:
+  static ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadataStatic() {
+    ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(&::descriptor_table_NFMsgShare_2eproto);
+    return ::descriptor_table_NFMsgShare_2eproto.file_level_metadata[kIndexInFileMessages];
+  }
+
+  public:
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kMsgFieldNumber = 2,
+    kSyncUnitFieldNumber = 4,
+    kClientFieldNumber = 1,
+    kCurFieldNumber = 3,
+  };
+  // bytes msg = 2;
+  void clear_msg();
+  const std::string& msg() const;
+  void set_msg(const std::string& value);
+  void set_msg(std::string&& value);
+  void set_msg(const char* value);
+  void set_msg(const void* value, size_t size);
+  std::string* mutable_msg();
+  std::string* release_msg();
+  void set_allocated_msg(std::string* msg);
+  private:
+  const std::string& _internal_msg() const;
+  void _internal_set_msg(const std::string& value);
+  std::string* _internal_mutable_msg();
+  public:
+
+  // .NFMsg.ModelSyncUnit sync_unit = 4;
+  bool has_sync_unit() const;
+  private:
+  bool _internal_has_sync_unit() const;
+  public:
+  void clear_sync_unit();
+  const ::NFMsg::ModelSyncUnit& sync_unit() const;
+  ::NFMsg::ModelSyncUnit* release_sync_unit();
+  ::NFMsg::ModelSyncUnit* mutable_sync_unit();
+  void set_allocated_sync_unit(::NFMsg::ModelSyncUnit* sync_unit);
+  private:
+  const ::NFMsg::ModelSyncUnit& _internal_sync_unit() const;
+  ::NFMsg::ModelSyncUnit* _internal_mutable_sync_unit();
+  public:
+
+  // int32 client = 1;
+  void clear_client();
+  ::PROTOBUF_NAMESPACE_ID::int32 client() const;
+  void set_client(::PROTOBUF_NAMESPACE_ID::int32 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::int32 _internal_client() const;
+  void _internal_set_client(::PROTOBUF_NAMESPACE_ID::int32 value);
+  public:
+
+  // int32 cur = 3;
+  void clear_cur();
+  ::PROTOBUF_NAMESPACE_ID::int32 cur() const;
+  void set_cur(::PROTOBUF_NAMESPACE_ID::int32 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::int32 _internal_cur() const;
+  void _internal_set_cur(::PROTOBUF_NAMESPACE_ID::int32 value);
+  public:
+
+  // @@protoc_insertion_point(class_scope:NFMsg.ReqAckModelTarget)
+ private:
+  class _Internal;
+
+  ::PROTOBUF_NAMESPACE_ID::internal::InternalMetadataWithArena _internal_metadata_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr msg_;
+  ::NFMsg::ModelSyncUnit* sync_unit_;
+  ::PROTOBUF_NAMESPACE_ID::int32 client_;
+  ::PROTOBUF_NAMESPACE_ID::int32 cur_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_NFMsgShare_2eproto;
+};
+// -------------------------------------------------------------------
+
+class ReqAckModelSwitch :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:NFMsg.ReqAckModelSwitch) */ {
+ public:
+  ReqAckModelSwitch();
+  virtual ~ReqAckModelSwitch();
+
+  ReqAckModelSwitch(const ReqAckModelSwitch& from);
+  ReqAckModelSwitch(ReqAckModelSwitch&& from) noexcept
+    : ReqAckModelSwitch() {
+    *this = ::std::move(from);
+  }
+
+  inline ReqAckModelSwitch& operator=(const ReqAckModelSwitch& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline ReqAckModelSwitch& operator=(ReqAckModelSwitch&& from) noexcept {
+    if (GetArenaNoVirtual() == from.GetArenaNoVirtual()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return GetMetadataStatic().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return GetMetadataStatic().reflection;
+  }
+  static const ReqAckModelSwitch& default_instance();
+
+  static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
+  static inline const ReqAckModelSwitch* internal_default_instance() {
+    return reinterpret_cast<const ReqAckModelSwitch*>(
+               &_ReqAckModelSwitch_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    18;
+
+  friend void swap(ReqAckModelSwitch& a, ReqAckModelSwitch& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(ReqAckModelSwitch* other) {
+    if (other == this) return;
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline ReqAckModelSwitch* New() const final {
+    return CreateMaybeMessage<ReqAckModelSwitch>(nullptr);
+  }
+
+  ReqAckModelSwitch* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
+    return CreateMaybeMessage<ReqAckModelSwitch>(arena);
+  }
+  void CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void CopyFrom(const ReqAckModelSwitch& from);
+  void MergeFrom(const ReqAckModelSwitch& from);
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  ::PROTOBUF_NAMESPACE_ID::uint8* _InternalSerialize(
+      ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  inline void SharedCtor();
+  inline void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(ReqAckModelSwitch* other);
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "NFMsg.ReqAckModelSwitch";
+  }
+  private:
+  inline ::PROTOBUF_NAMESPACE_ID::Arena* GetArenaNoVirtual() const {
+    return nullptr;
+  }
+  inline void* MaybeArenaPtr() const {
+    return nullptr;
+  }
+  public:
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+  private:
+  static ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadataStatic() {
+    ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(&::descriptor_table_NFMsgShare_2eproto);
+    return ::descriptor_table_NFMsgShare_2eproto.file_level_metadata[kIndexInFileMessages];
+  }
+
+  public:
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kMsgFieldNumber = 2,
+    kClientFieldNumber = 1,
+    kCurFieldNumber = 3,
+    kNextFieldNumber = 4,
+  };
+  // bytes msg = 2;
+  void clear_msg();
+  const std::string& msg() const;
+  void set_msg(const std::string& value);
+  void set_msg(std::string&& value);
+  void set_msg(const char* value);
+  void set_msg(const void* value, size_t size);
+  std::string* mutable_msg();
+  std::string* release_msg();
+  void set_allocated_msg(std::string* msg);
+  private:
+  const std::string& _internal_msg() const;
+  void _internal_set_msg(const std::string& value);
+  std::string* _internal_mutable_msg();
+  public:
+
+  // int32 client = 1;
+  void clear_client();
+  ::PROTOBUF_NAMESPACE_ID::int32 client() const;
+  void set_client(::PROTOBUF_NAMESPACE_ID::int32 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::int32 _internal_client() const;
+  void _internal_set_client(::PROTOBUF_NAMESPACE_ID::int32 value);
+  public:
+
+  // int32 cur = 3;
+  void clear_cur();
+  ::PROTOBUF_NAMESPACE_ID::int32 cur() const;
+  void set_cur(::PROTOBUF_NAMESPACE_ID::int32 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::int32 _internal_cur() const;
+  void _internal_set_cur(::PROTOBUF_NAMESPACE_ID::int32 value);
+  public:
+
+  // int32 next = 4;
+  void clear_next();
+  ::PROTOBUF_NAMESPACE_ID::int32 next() const;
+  void set_next(::PROTOBUF_NAMESPACE_ID::int32 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::int32 _internal_next() const;
+  void _internal_set_next(::PROTOBUF_NAMESPACE_ID::int32 value);
+  public:
+
+  // @@protoc_insertion_point(class_scope:NFMsg.ReqAckModelSwitch)
+ private:
+  class _Internal;
+
+  ::PROTOBUF_NAMESPACE_ID::internal::InternalMetadataWithArena _internal_metadata_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr msg_;
+  ::PROTOBUF_NAMESPACE_ID::int32 client_;
+  ::PROTOBUF_NAMESPACE_ID::int32 cur_;
+  ::PROTOBUF_NAMESPACE_ID::int32 next_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_NFMsgShare_2eproto;
 };
@@ -3094,7 +3619,7 @@ class ModelViewSyncUnit :
                &_ModelViewSyncUnit_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    16;
+    19;
 
   friend void swap(ModelViewSyncUnit& a, ModelViewSyncUnit& b) {
     a.Swap(&b);
@@ -3354,7 +3879,7 @@ class ReqAckModelViewSync :
                &_ReqAckModelViewSync_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    17;
+    20;
 
   friend void swap(ReqAckModelViewSync& a, ReqAckModelViewSync& b) {
     a.Swap(&b);
@@ -3517,7 +4042,7 @@ class ReqAckModelView :
                &_ReqAckModelView_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    18;
+    21;
 
   friend void swap(ReqAckModelView& a, ReqAckModelView& b) {
     a.Swap(&b);
@@ -5539,180 +6064,577 @@ inline void ReqAckModelSync::set_allocated_name(std::string* name) {
 
 // -------------------------------------------------------------------
 
-// ReqAckModel
+// ModelInfoUnit
 
-// .NFMsg.Ident player_id = 1;
-inline bool ReqAckModel::_internal_has_player_id() const {
-  return this != internal_default_instance() && player_id_ != nullptr;
+// bytes name = 1;
+inline void ModelInfoUnit::clear_name() {
+  name_.ClearToEmptyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
-inline bool ReqAckModel::has_player_id() const {
-  return _internal_has_player_id();
+inline const std::string& ModelInfoUnit::name() const {
+  // @@protoc_insertion_point(field_get:NFMsg.ModelInfoUnit.name)
+  return _internal_name();
 }
-inline const ::NFMsg::Ident& ReqAckModel::_internal_player_id() const {
-  const ::NFMsg::Ident* p = player_id_;
-  return p != nullptr ? *p : *reinterpret_cast<const ::NFMsg::Ident*>(
-      &::NFMsg::_Ident_default_instance_);
+inline void ModelInfoUnit::set_name(const std::string& value) {
+  _internal_set_name(value);
+  // @@protoc_insertion_point(field_set:NFMsg.ModelInfoUnit.name)
 }
-inline const ::NFMsg::Ident& ReqAckModel::player_id() const {
-  // @@protoc_insertion_point(field_get:NFMsg.ReqAckModel.player_id)
-  return _internal_player_id();
+inline std::string* ModelInfoUnit::mutable_name() {
+  // @@protoc_insertion_point(field_mutable:NFMsg.ModelInfoUnit.name)
+  return _internal_mutable_name();
 }
-inline ::NFMsg::Ident* ReqAckModel::release_player_id() {
-  // @@protoc_insertion_point(field_release:NFMsg.ReqAckModel.player_id)
+inline const std::string& ModelInfoUnit::_internal_name() const {
+  return name_.GetNoArena();
+}
+inline void ModelInfoUnit::_internal_set_name(const std::string& value) {
   
-  ::NFMsg::Ident* temp = player_id_;
-  player_id_ = nullptr;
-  return temp;
+  name_.SetNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), value);
 }
-inline ::NFMsg::Ident* ReqAckModel::_internal_mutable_player_id() {
+inline void ModelInfoUnit::set_name(std::string&& value) {
   
-  if (player_id_ == nullptr) {
-    auto* p = CreateMaybeMessage<::NFMsg::Ident>(GetArenaNoVirtual());
-    player_id_ = p;
-  }
-  return player_id_;
-}
-inline ::NFMsg::Ident* ReqAckModel::mutable_player_id() {
-  // @@protoc_insertion_point(field_mutable:NFMsg.ReqAckModel.player_id)
-  return _internal_mutable_player_id();
-}
-inline void ReqAckModel::set_allocated_player_id(::NFMsg::Ident* player_id) {
-  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaNoVirtual();
-  if (message_arena == nullptr) {
-    delete reinterpret_cast< ::PROTOBUF_NAMESPACE_ID::MessageLite*>(player_id_);
-  }
-  if (player_id) {
-    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena = nullptr;
-    if (message_arena != submessage_arena) {
-      player_id = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
-          message_arena, player_id, submessage_arena);
-    }
-    
-  } else {
-    
-  }
-  player_id_ = player_id;
-  // @@protoc_insertion_point(field_set_allocated:NFMsg.ReqAckModel.player_id)
-}
-
-// bytes raw = 2;
-inline void ReqAckModel::clear_raw() {
-  raw_.ClearToEmptyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-}
-inline const std::string& ReqAckModel::raw() const {
-  // @@protoc_insertion_point(field_get:NFMsg.ReqAckModel.raw)
-  return _internal_raw();
-}
-inline void ReqAckModel::set_raw(const std::string& value) {
-  _internal_set_raw(value);
-  // @@protoc_insertion_point(field_set:NFMsg.ReqAckModel.raw)
-}
-inline std::string* ReqAckModel::mutable_raw() {
-  // @@protoc_insertion_point(field_mutable:NFMsg.ReqAckModel.raw)
-  return _internal_mutable_raw();
-}
-inline const std::string& ReqAckModel::_internal_raw() const {
-  return raw_.GetNoArena();
-}
-inline void ReqAckModel::_internal_set_raw(const std::string& value) {
-  
-  raw_.SetNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), value);
-}
-inline void ReqAckModel::set_raw(std::string&& value) {
-  
-  raw_.SetNoArena(
+  name_.SetNoArena(
     &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
-  // @@protoc_insertion_point(field_set_rvalue:NFMsg.ReqAckModel.raw)
+  // @@protoc_insertion_point(field_set_rvalue:NFMsg.ModelInfoUnit.name)
 }
-inline void ReqAckModel::set_raw(const char* value) {
+inline void ModelInfoUnit::set_name(const char* value) {
   GOOGLE_DCHECK(value != nullptr);
   
-  raw_.SetNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
-  // @@protoc_insertion_point(field_set_char:NFMsg.ReqAckModel.raw)
+  name_.SetNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:NFMsg.ModelInfoUnit.name)
 }
-inline void ReqAckModel::set_raw(const void* value, size_t size) {
+inline void ModelInfoUnit::set_name(const void* value, size_t size) {
   
-  raw_.SetNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+  name_.SetNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
       ::std::string(reinterpret_cast<const char*>(value), size));
-  // @@protoc_insertion_point(field_set_pointer:NFMsg.ReqAckModel.raw)
+  // @@protoc_insertion_point(field_set_pointer:NFMsg.ModelInfoUnit.name)
 }
-inline std::string* ReqAckModel::_internal_mutable_raw() {
+inline std::string* ModelInfoUnit::_internal_mutable_name() {
   
-  return raw_.MutableNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  return name_.MutableNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
-inline std::string* ReqAckModel::release_raw() {
-  // @@protoc_insertion_point(field_release:NFMsg.ReqAckModel.raw)
+inline std::string* ModelInfoUnit::release_name() {
+  // @@protoc_insertion_point(field_release:NFMsg.ModelInfoUnit.name)
   
-  return raw_.ReleaseNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  return name_.ReleaseNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
-inline void ReqAckModel::set_allocated_raw(std::string* raw) {
-  if (raw != nullptr) {
+inline void ModelInfoUnit::set_allocated_name(std::string* name) {
+  if (name != nullptr) {
     
   } else {
     
   }
-  raw_.SetAllocatedNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), raw);
-  // @@protoc_insertion_point(field_set_allocated:NFMsg.ReqAckModel.raw)
+  name_.SetAllocatedNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), name);
+  // @@protoc_insertion_point(field_set_allocated:NFMsg.ModelInfoUnit.name)
 }
 
-// bytes msg = 3;
-inline void ReqAckModel::clear_msg() {
+// bytes note = 2;
+inline void ModelInfoUnit::clear_note() {
+  note_.ClearToEmptyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+}
+inline const std::string& ModelInfoUnit::note() const {
+  // @@protoc_insertion_point(field_get:NFMsg.ModelInfoUnit.note)
+  return _internal_note();
+}
+inline void ModelInfoUnit::set_note(const std::string& value) {
+  _internal_set_note(value);
+  // @@protoc_insertion_point(field_set:NFMsg.ModelInfoUnit.note)
+}
+inline std::string* ModelInfoUnit::mutable_note() {
+  // @@protoc_insertion_point(field_mutable:NFMsg.ModelInfoUnit.note)
+  return _internal_mutable_note();
+}
+inline const std::string& ModelInfoUnit::_internal_note() const {
+  return note_.GetNoArena();
+}
+inline void ModelInfoUnit::_internal_set_note(const std::string& value) {
+  
+  note_.SetNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), value);
+}
+inline void ModelInfoUnit::set_note(std::string&& value) {
+  
+  note_.SetNoArena(
+    &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:NFMsg.ModelInfoUnit.note)
+}
+inline void ModelInfoUnit::set_note(const char* value) {
+  GOOGLE_DCHECK(value != nullptr);
+  
+  note_.SetNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:NFMsg.ModelInfoUnit.note)
+}
+inline void ModelInfoUnit::set_note(const void* value, size_t size) {
+  
+  note_.SetNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:NFMsg.ModelInfoUnit.note)
+}
+inline std::string* ModelInfoUnit::_internal_mutable_note() {
+  
+  return note_.MutableNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+}
+inline std::string* ModelInfoUnit::release_note() {
+  // @@protoc_insertion_point(field_release:NFMsg.ModelInfoUnit.note)
+  
+  return note_.ReleaseNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+}
+inline void ModelInfoUnit::set_allocated_note(std::string* note) {
+  if (note != nullptr) {
+    
+  } else {
+    
+  }
+  note_.SetAllocatedNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), note);
+  // @@protoc_insertion_point(field_set_allocated:NFMsg.ModelInfoUnit.note)
+}
+
+// -------------------------------------------------------------------
+
+// ReqAckModelInfoList
+
+// int32 client = 1;
+inline void ReqAckModelInfoList::clear_client() {
+  client_ = 0;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 ReqAckModelInfoList::_internal_client() const {
+  return client_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 ReqAckModelInfoList::client() const {
+  // @@protoc_insertion_point(field_get:NFMsg.ReqAckModelInfoList.client)
+  return _internal_client();
+}
+inline void ReqAckModelInfoList::_internal_set_client(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  
+  client_ = value;
+}
+inline void ReqAckModelInfoList::set_client(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  _internal_set_client(value);
+  // @@protoc_insertion_point(field_set:NFMsg.ReqAckModelInfoList.client)
+}
+
+// bytes msg = 2;
+inline void ReqAckModelInfoList::clear_msg() {
   msg_.ClearToEmptyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
-inline const std::string& ReqAckModel::msg() const {
-  // @@protoc_insertion_point(field_get:NFMsg.ReqAckModel.msg)
+inline const std::string& ReqAckModelInfoList::msg() const {
+  // @@protoc_insertion_point(field_get:NFMsg.ReqAckModelInfoList.msg)
   return _internal_msg();
 }
-inline void ReqAckModel::set_msg(const std::string& value) {
+inline void ReqAckModelInfoList::set_msg(const std::string& value) {
   _internal_set_msg(value);
-  // @@protoc_insertion_point(field_set:NFMsg.ReqAckModel.msg)
+  // @@protoc_insertion_point(field_set:NFMsg.ReqAckModelInfoList.msg)
 }
-inline std::string* ReqAckModel::mutable_msg() {
-  // @@protoc_insertion_point(field_mutable:NFMsg.ReqAckModel.msg)
+inline std::string* ReqAckModelInfoList::mutable_msg() {
+  // @@protoc_insertion_point(field_mutable:NFMsg.ReqAckModelInfoList.msg)
   return _internal_mutable_msg();
 }
-inline const std::string& ReqAckModel::_internal_msg() const {
+inline const std::string& ReqAckModelInfoList::_internal_msg() const {
   return msg_.GetNoArena();
 }
-inline void ReqAckModel::_internal_set_msg(const std::string& value) {
+inline void ReqAckModelInfoList::_internal_set_msg(const std::string& value) {
   
   msg_.SetNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), value);
 }
-inline void ReqAckModel::set_msg(std::string&& value) {
+inline void ReqAckModelInfoList::set_msg(std::string&& value) {
   
   msg_.SetNoArena(
     &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
-  // @@protoc_insertion_point(field_set_rvalue:NFMsg.ReqAckModel.msg)
+  // @@protoc_insertion_point(field_set_rvalue:NFMsg.ReqAckModelInfoList.msg)
 }
-inline void ReqAckModel::set_msg(const char* value) {
+inline void ReqAckModelInfoList::set_msg(const char* value) {
   GOOGLE_DCHECK(value != nullptr);
   
   msg_.SetNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
-  // @@protoc_insertion_point(field_set_char:NFMsg.ReqAckModel.msg)
+  // @@protoc_insertion_point(field_set_char:NFMsg.ReqAckModelInfoList.msg)
 }
-inline void ReqAckModel::set_msg(const void* value, size_t size) {
+inline void ReqAckModelInfoList::set_msg(const void* value, size_t size) {
   
   msg_.SetNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
       ::std::string(reinterpret_cast<const char*>(value), size));
-  // @@protoc_insertion_point(field_set_pointer:NFMsg.ReqAckModel.msg)
+  // @@protoc_insertion_point(field_set_pointer:NFMsg.ReqAckModelInfoList.msg)
 }
-inline std::string* ReqAckModel::_internal_mutable_msg() {
+inline std::string* ReqAckModelInfoList::_internal_mutable_msg() {
   
   return msg_.MutableNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
-inline std::string* ReqAckModel::release_msg() {
-  // @@protoc_insertion_point(field_release:NFMsg.ReqAckModel.msg)
+inline std::string* ReqAckModelInfoList::release_msg() {
+  // @@protoc_insertion_point(field_release:NFMsg.ReqAckModelInfoList.msg)
   
   return msg_.ReleaseNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
-inline void ReqAckModel::set_allocated_msg(std::string* msg) {
+inline void ReqAckModelInfoList::set_allocated_msg(std::string* msg) {
   if (msg != nullptr) {
     
   } else {
     
   }
   msg_.SetAllocatedNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), msg);
-  // @@protoc_insertion_point(field_set_allocated:NFMsg.ReqAckModel.msg)
+  // @@protoc_insertion_point(field_set_allocated:NFMsg.ReqAckModelInfoList.msg)
+}
+
+// int32 num = 3;
+inline void ReqAckModelInfoList::clear_num() {
+  num_ = 0;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 ReqAckModelInfoList::_internal_num() const {
+  return num_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 ReqAckModelInfoList::num() const {
+  // @@protoc_insertion_point(field_get:NFMsg.ReqAckModelInfoList.num)
+  return _internal_num();
+}
+inline void ReqAckModelInfoList::_internal_set_num(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  
+  num_ = value;
+}
+inline void ReqAckModelInfoList::set_num(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  _internal_set_num(value);
+  // @@protoc_insertion_point(field_set:NFMsg.ReqAckModelInfoList.num)
+}
+
+// int32 cur = 4;
+inline void ReqAckModelInfoList::clear_cur() {
+  cur_ = 0;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 ReqAckModelInfoList::_internal_cur() const {
+  return cur_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 ReqAckModelInfoList::cur() const {
+  // @@protoc_insertion_point(field_get:NFMsg.ReqAckModelInfoList.cur)
+  return _internal_cur();
+}
+inline void ReqAckModelInfoList::_internal_set_cur(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  
+  cur_ = value;
+}
+inline void ReqAckModelInfoList::set_cur(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  _internal_set_cur(value);
+  // @@protoc_insertion_point(field_set:NFMsg.ReqAckModelInfoList.cur)
+}
+
+// repeated .NFMsg.ModelInfoUnit info_list = 5;
+inline int ReqAckModelInfoList::_internal_info_list_size() const {
+  return info_list_.size();
+}
+inline int ReqAckModelInfoList::info_list_size() const {
+  return _internal_info_list_size();
+}
+inline void ReqAckModelInfoList::clear_info_list() {
+  info_list_.Clear();
+}
+inline ::NFMsg::ModelInfoUnit* ReqAckModelInfoList::mutable_info_list(int index) {
+  // @@protoc_insertion_point(field_mutable:NFMsg.ReqAckModelInfoList.info_list)
+  return info_list_.Mutable(index);
+}
+inline ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::NFMsg::ModelInfoUnit >*
+ReqAckModelInfoList::mutable_info_list() {
+  // @@protoc_insertion_point(field_mutable_list:NFMsg.ReqAckModelInfoList.info_list)
+  return &info_list_;
+}
+inline const ::NFMsg::ModelInfoUnit& ReqAckModelInfoList::_internal_info_list(int index) const {
+  return info_list_.Get(index);
+}
+inline const ::NFMsg::ModelInfoUnit& ReqAckModelInfoList::info_list(int index) const {
+  // @@protoc_insertion_point(field_get:NFMsg.ReqAckModelInfoList.info_list)
+  return _internal_info_list(index);
+}
+inline ::NFMsg::ModelInfoUnit* ReqAckModelInfoList::_internal_add_info_list() {
+  return info_list_.Add();
+}
+inline ::NFMsg::ModelInfoUnit* ReqAckModelInfoList::add_info_list() {
+  // @@protoc_insertion_point(field_add:NFMsg.ReqAckModelInfoList.info_list)
+  return _internal_add_info_list();
+}
+inline const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::NFMsg::ModelInfoUnit >&
+ReqAckModelInfoList::info_list() const {
+  // @@protoc_insertion_point(field_list:NFMsg.ReqAckModelInfoList.info_list)
+  return info_list_;
+}
+
+// -------------------------------------------------------------------
+
+// ReqAckModelTarget
+
+// int32 client = 1;
+inline void ReqAckModelTarget::clear_client() {
+  client_ = 0;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 ReqAckModelTarget::_internal_client() const {
+  return client_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 ReqAckModelTarget::client() const {
+  // @@protoc_insertion_point(field_get:NFMsg.ReqAckModelTarget.client)
+  return _internal_client();
+}
+inline void ReqAckModelTarget::_internal_set_client(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  
+  client_ = value;
+}
+inline void ReqAckModelTarget::set_client(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  _internal_set_client(value);
+  // @@protoc_insertion_point(field_set:NFMsg.ReqAckModelTarget.client)
+}
+
+// bytes msg = 2;
+inline void ReqAckModelTarget::clear_msg() {
+  msg_.ClearToEmptyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+}
+inline const std::string& ReqAckModelTarget::msg() const {
+  // @@protoc_insertion_point(field_get:NFMsg.ReqAckModelTarget.msg)
+  return _internal_msg();
+}
+inline void ReqAckModelTarget::set_msg(const std::string& value) {
+  _internal_set_msg(value);
+  // @@protoc_insertion_point(field_set:NFMsg.ReqAckModelTarget.msg)
+}
+inline std::string* ReqAckModelTarget::mutable_msg() {
+  // @@protoc_insertion_point(field_mutable:NFMsg.ReqAckModelTarget.msg)
+  return _internal_mutable_msg();
+}
+inline const std::string& ReqAckModelTarget::_internal_msg() const {
+  return msg_.GetNoArena();
+}
+inline void ReqAckModelTarget::_internal_set_msg(const std::string& value) {
+  
+  msg_.SetNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), value);
+}
+inline void ReqAckModelTarget::set_msg(std::string&& value) {
+  
+  msg_.SetNoArena(
+    &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:NFMsg.ReqAckModelTarget.msg)
+}
+inline void ReqAckModelTarget::set_msg(const char* value) {
+  GOOGLE_DCHECK(value != nullptr);
+  
+  msg_.SetNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:NFMsg.ReqAckModelTarget.msg)
+}
+inline void ReqAckModelTarget::set_msg(const void* value, size_t size) {
+  
+  msg_.SetNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:NFMsg.ReqAckModelTarget.msg)
+}
+inline std::string* ReqAckModelTarget::_internal_mutable_msg() {
+  
+  return msg_.MutableNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+}
+inline std::string* ReqAckModelTarget::release_msg() {
+  // @@protoc_insertion_point(field_release:NFMsg.ReqAckModelTarget.msg)
+  
+  return msg_.ReleaseNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+}
+inline void ReqAckModelTarget::set_allocated_msg(std::string* msg) {
+  if (msg != nullptr) {
+    
+  } else {
+    
+  }
+  msg_.SetAllocatedNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), msg);
+  // @@protoc_insertion_point(field_set_allocated:NFMsg.ReqAckModelTarget.msg)
+}
+
+// int32 cur = 3;
+inline void ReqAckModelTarget::clear_cur() {
+  cur_ = 0;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 ReqAckModelTarget::_internal_cur() const {
+  return cur_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 ReqAckModelTarget::cur() const {
+  // @@protoc_insertion_point(field_get:NFMsg.ReqAckModelTarget.cur)
+  return _internal_cur();
+}
+inline void ReqAckModelTarget::_internal_set_cur(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  
+  cur_ = value;
+}
+inline void ReqAckModelTarget::set_cur(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  _internal_set_cur(value);
+  // @@protoc_insertion_point(field_set:NFMsg.ReqAckModelTarget.cur)
+}
+
+// .NFMsg.ModelSyncUnit sync_unit = 4;
+inline bool ReqAckModelTarget::_internal_has_sync_unit() const {
+  return this != internal_default_instance() && sync_unit_ != nullptr;
+}
+inline bool ReqAckModelTarget::has_sync_unit() const {
+  return _internal_has_sync_unit();
+}
+inline void ReqAckModelTarget::clear_sync_unit() {
+  if (GetArenaNoVirtual() == nullptr && sync_unit_ != nullptr) {
+    delete sync_unit_;
+  }
+  sync_unit_ = nullptr;
+}
+inline const ::NFMsg::ModelSyncUnit& ReqAckModelTarget::_internal_sync_unit() const {
+  const ::NFMsg::ModelSyncUnit* p = sync_unit_;
+  return p != nullptr ? *p : *reinterpret_cast<const ::NFMsg::ModelSyncUnit*>(
+      &::NFMsg::_ModelSyncUnit_default_instance_);
+}
+inline const ::NFMsg::ModelSyncUnit& ReqAckModelTarget::sync_unit() const {
+  // @@protoc_insertion_point(field_get:NFMsg.ReqAckModelTarget.sync_unit)
+  return _internal_sync_unit();
+}
+inline ::NFMsg::ModelSyncUnit* ReqAckModelTarget::release_sync_unit() {
+  // @@protoc_insertion_point(field_release:NFMsg.ReqAckModelTarget.sync_unit)
+  
+  ::NFMsg::ModelSyncUnit* temp = sync_unit_;
+  sync_unit_ = nullptr;
+  return temp;
+}
+inline ::NFMsg::ModelSyncUnit* ReqAckModelTarget::_internal_mutable_sync_unit() {
+  
+  if (sync_unit_ == nullptr) {
+    auto* p = CreateMaybeMessage<::NFMsg::ModelSyncUnit>(GetArenaNoVirtual());
+    sync_unit_ = p;
+  }
+  return sync_unit_;
+}
+inline ::NFMsg::ModelSyncUnit* ReqAckModelTarget::mutable_sync_unit() {
+  // @@protoc_insertion_point(field_mutable:NFMsg.ReqAckModelTarget.sync_unit)
+  return _internal_mutable_sync_unit();
+}
+inline void ReqAckModelTarget::set_allocated_sync_unit(::NFMsg::ModelSyncUnit* sync_unit) {
+  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaNoVirtual();
+  if (message_arena == nullptr) {
+    delete sync_unit_;
+  }
+  if (sync_unit) {
+    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena = nullptr;
+    if (message_arena != submessage_arena) {
+      sync_unit = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
+          message_arena, sync_unit, submessage_arena);
+    }
+    
+  } else {
+    
+  }
+  sync_unit_ = sync_unit;
+  // @@protoc_insertion_point(field_set_allocated:NFMsg.ReqAckModelTarget.sync_unit)
+}
+
+// -------------------------------------------------------------------
+
+// ReqAckModelSwitch
+
+// int32 client = 1;
+inline void ReqAckModelSwitch::clear_client() {
+  client_ = 0;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 ReqAckModelSwitch::_internal_client() const {
+  return client_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 ReqAckModelSwitch::client() const {
+  // @@protoc_insertion_point(field_get:NFMsg.ReqAckModelSwitch.client)
+  return _internal_client();
+}
+inline void ReqAckModelSwitch::_internal_set_client(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  
+  client_ = value;
+}
+inline void ReqAckModelSwitch::set_client(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  _internal_set_client(value);
+  // @@protoc_insertion_point(field_set:NFMsg.ReqAckModelSwitch.client)
+}
+
+// bytes msg = 2;
+inline void ReqAckModelSwitch::clear_msg() {
+  msg_.ClearToEmptyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+}
+inline const std::string& ReqAckModelSwitch::msg() const {
+  // @@protoc_insertion_point(field_get:NFMsg.ReqAckModelSwitch.msg)
+  return _internal_msg();
+}
+inline void ReqAckModelSwitch::set_msg(const std::string& value) {
+  _internal_set_msg(value);
+  // @@protoc_insertion_point(field_set:NFMsg.ReqAckModelSwitch.msg)
+}
+inline std::string* ReqAckModelSwitch::mutable_msg() {
+  // @@protoc_insertion_point(field_mutable:NFMsg.ReqAckModelSwitch.msg)
+  return _internal_mutable_msg();
+}
+inline const std::string& ReqAckModelSwitch::_internal_msg() const {
+  return msg_.GetNoArena();
+}
+inline void ReqAckModelSwitch::_internal_set_msg(const std::string& value) {
+  
+  msg_.SetNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), value);
+}
+inline void ReqAckModelSwitch::set_msg(std::string&& value) {
+  
+  msg_.SetNoArena(
+    &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:NFMsg.ReqAckModelSwitch.msg)
+}
+inline void ReqAckModelSwitch::set_msg(const char* value) {
+  GOOGLE_DCHECK(value != nullptr);
+  
+  msg_.SetNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:NFMsg.ReqAckModelSwitch.msg)
+}
+inline void ReqAckModelSwitch::set_msg(const void* value, size_t size) {
+  
+  msg_.SetNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:NFMsg.ReqAckModelSwitch.msg)
+}
+inline std::string* ReqAckModelSwitch::_internal_mutable_msg() {
+  
+  return msg_.MutableNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+}
+inline std::string* ReqAckModelSwitch::release_msg() {
+  // @@protoc_insertion_point(field_release:NFMsg.ReqAckModelSwitch.msg)
+  
+  return msg_.ReleaseNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+}
+inline void ReqAckModelSwitch::set_allocated_msg(std::string* msg) {
+  if (msg != nullptr) {
+    
+  } else {
+    
+  }
+  msg_.SetAllocatedNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), msg);
+  // @@protoc_insertion_point(field_set_allocated:NFMsg.ReqAckModelSwitch.msg)
+}
+
+// int32 cur = 3;
+inline void ReqAckModelSwitch::clear_cur() {
+  cur_ = 0;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 ReqAckModelSwitch::_internal_cur() const {
+  return cur_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 ReqAckModelSwitch::cur() const {
+  // @@protoc_insertion_point(field_get:NFMsg.ReqAckModelSwitch.cur)
+  return _internal_cur();
+}
+inline void ReqAckModelSwitch::_internal_set_cur(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  
+  cur_ = value;
+}
+inline void ReqAckModelSwitch::set_cur(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  _internal_set_cur(value);
+  // @@protoc_insertion_point(field_set:NFMsg.ReqAckModelSwitch.cur)
+}
+
+// int32 next = 4;
+inline void ReqAckModelSwitch::clear_next() {
+  next_ = 0;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 ReqAckModelSwitch::_internal_next() const {
+  return next_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 ReqAckModelSwitch::next() const {
+  // @@protoc_insertion_point(field_get:NFMsg.ReqAckModelSwitch.next)
+  return _internal_next();
+}
+inline void ReqAckModelSwitch::_internal_set_next(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  
+  next_ = value;
+}
+inline void ReqAckModelSwitch::set_next(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  _internal_set_next(value);
+  // @@protoc_insertion_point(field_set:NFMsg.ReqAckModelSwitch.next)
 }
 
 // -------------------------------------------------------------------
@@ -6367,6 +7289,12 @@ inline void ReqAckModelView::set_allocated_msg(std::string* msg) {
 #ifdef __GNUC__
   #pragma GCC diagnostic pop
 #endif  // __GNUC__
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
 // -------------------------------------------------------------------
 
 // -------------------------------------------------------------------

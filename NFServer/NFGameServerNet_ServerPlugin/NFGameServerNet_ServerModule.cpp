@@ -80,7 +80,7 @@ bool NFGameServerNet_ServerModule::AfterInit()
     m_pNetModule->AddEventCallBack(this, &NFGameServerNet_ServerModule::OnSocketPSEvent);
 
     m_pNetModule->AddReceiveCallBack(NFMsg::REQ_MODEL_RAW, this, &NFGameServerNet_ServerModule::OnClientModelRawProcess);
-
+    m_pNetModule->AddReceiveCallBack(NFMsg::REQ_MODEL_INFO_LIST, this, &NFGameServerNet_ServerModule::OnClientModelInfoListProcess);
     m_pNetModule->AddReceiveCallBack(NFMsg::REQ_MODEL_VIEW, this, &NFGameServerNet_ServerModule::OnClientModelViewProcess);
 
     /////////////////////////////////////////////////////////////////////////
@@ -271,6 +271,33 @@ void NFGameServerNet_ServerModule::OnClientReqMoveProcess(const NFSOCK sockIndex
                 }
             }
         }
+}
+
+void NFGameServerNet_ServerModule::OnClientModelInfoListProcess(const NFSOCK sockIndex, const int msgID, const char* msg, const uint32_t len)
+{
+    CLIENT_MSG_PROCESS_NO_OBJECT(msgID, msg, len, NFMsg::ReqAckModelInfoList)
+
+        std::cout << "process require model info list\n" << std::endl;
+    loadModelFileNames(m_aModels);
+    std::cout << "local models " << m_aModels.size() << std::endl;
+    xMsg.set_cur(m_aCurrentModel);
+    xMsg.set_num(m_aModels.size());
+    NFMsg::ModelInfoUnit* info;
+    for (int i = 0; i < m_aModels.size(); i++)
+    {
+        info = xMsg.add_info_list();
+        info->set_name(m_aModels[i]);
+    }
+    // xMsg.set_msg(ssout.str());
+    const int sceneID = m_pKernelModule->GetPropertyInt(nPlayerID, NFrame::Player::SceneID());
+    const int groupID = m_pKernelModule->GetPropertyInt(nPlayerID, NFrame::Player::GroupID());
+
+    //this code means the game server will sends a message to all players who in the same room
+
+    // std::cout << "send model msg " << t << std::endl;
+    // m_aLogger->TraceInfo(("send model " + std::to_string(t)).c_str());
+    // this->SendGroupMsgPBToGate(NFMsg::ACK_MODEL_RAW, xMsg, sceneID, groupID);
+    this->SendMsgPBToGate(NFMsg::ACK_MODEL_INFO_LIST, xMsg, nPlayerID);
 }
 
 void NFGameServerNet_ServerModule::OnClientModelRawProcess(const NFSOCK sockIndex, const int msgID, const char* msg, const uint32_t len)
