@@ -1,7 +1,7 @@
 ﻿#include "OCCUtil.h"
 #include <io.h>
 #include <iostream> 
-#ifdef __linux // If the version of C++ is less than 17
+#if false // If the version of C++ is less than 17
 #include <experimental/filesystem>
 // It was still in the experimental:: namespace
 namespace fs = std::experimental::filesystem;
