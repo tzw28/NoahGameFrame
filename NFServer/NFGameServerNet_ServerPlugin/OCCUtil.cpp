@@ -1,7 +1,14 @@
 ﻿#include "OCCUtil.h"
 #include <io.h>
 #include <iostream> 
-
+#if true // If the version of C++ is less than 17
+#include <experimental/filesystem>
+// It was still in the experimental:: namespace
+namespace fs = std::experimental::filesystem;
+#else
+#include <filesystem>
+namespace fs = std::filesystem;
+#endif
 
 void getFiles(std::string path, std::vector<std::string>& files)
 {
@@ -36,12 +43,22 @@ void getFiles(std::string path, std::vector<std::string>& files)
 
 int loadModelFileNames(std::vector<std::string>& aModels)
 {
-    std::string aModelPath = "..\\Models";
+    aModels.clear();
+    std::string aModelPath = "../Models";
     std::cout << "start to load model file names" << std::endl;
-    aModels.push_back("cube.stl");
-    aModels.push_back("test.step");
-    aModels.push_back("valve203.step");
-    aModels.push_back("airforce1.stl");
+    fs::directory_iterator files(aModelPath);
+    for (auto& itoa : files)
+    {
+        if (itoa.status().type() != fs::file_type::directory)
+            continue;
+        std::cout << itoa.path().filename().string() << " ";
+        aModels.push_back(itoa.path().filename().string());
+    }
+    std::cout << std::endl;
+    // aModels.push_back("cube.stl");
+    // aModels.push_back("test.step");
+    // aModels.push_back("valve203.step");
+    // aModels.push_back("airforce1.stl");
     // aModels.push_back("Assembly.stp");
     // aModels.push_back("goldwind.stp");
     // TODO 这个函数不行
