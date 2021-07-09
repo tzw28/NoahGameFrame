@@ -20,6 +20,7 @@ link_NFSDK("NFGameServerNet_ServerPlugin")
 
 target_link_libraries(
 	NFGameServerNet_ServerPlugin ${OpenCASCADE_LIBRARIES}
+	NFGameServerNet_ServerPlugin stdc++fs
 )
 if(UNIX)
 	target_link_libraries(NFGameServerNet_ServerPlugin -static-libstdc++)
