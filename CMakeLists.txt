@@ -1,3 +1,4 @@
+set(CMAKE_CXX_STANDARD 17)
 set_property(GLOBAL PROPERTY USE_FOLDERS On)
 
 option(BUILD_TOOLS_ONLY "help string describing option" OFF)
