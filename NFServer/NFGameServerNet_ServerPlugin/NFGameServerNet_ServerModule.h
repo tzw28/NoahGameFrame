@@ -97,7 +97,8 @@ protected:
 
     void OnClientModelInfoListProcess(const NFSOCK sockIndex, const int msgID, const char* msg, const uint32_t len);
     void OnClientModelRawProcess(const NFSOCK sockIndex, const int msgID, const char* msg, const uint32_t len);
-
+    void OnClientModelSwitchProcess(const NFSOCK sockIndex, const int msgID, const char* msg, const uint32_t len);
+    void OnClientModelTargetProcess(const NFSOCK sockIndex, const int msgID, const char* msg, const uint32_t len);
     void OnClientModelViewProcess(const NFSOCK sockIndex, const int msgID, const char* msg, const uint32_t len);
 
     void OnLagTestProcess(const NFSOCK sockIndex, const int msgID, const char* msg, const uint32_t len);

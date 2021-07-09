@@ -593,7 +593,8 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_NFMsgShare_2eproto::offsets[] 
   ~0u,  // no _weak_field_map_
   PROTOBUF_FIELD_OFFSET(::NFMsg::ReqAckModelTarget, client_),
   PROTOBUF_FIELD_OFFSET(::NFMsg::ReqAckModelTarget, msg_),
-  PROTOBUF_FIELD_OFFSET(::NFMsg::ReqAckModelTarget, cur_),
+  PROTOBUF_FIELD_OFFSET(::NFMsg::ReqAckModelTarget, tar_),
+  PROTOBUF_FIELD_OFFSET(::NFMsg::ReqAckModelTarget, level_),
   PROTOBUF_FIELD_OFFSET(::NFMsg::ReqAckModelTarget, sync_unit_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::NFMsg::ReqAckModelSwitch, _internal_metadata_),
@@ -602,8 +603,7 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_NFMsgShare_2eproto::offsets[] 
   ~0u,  // no _weak_field_map_
   PROTOBUF_FIELD_OFFSET(::NFMsg::ReqAckModelSwitch, client_),
   PROTOBUF_FIELD_OFFSET(::NFMsg::ReqAckModelSwitch, msg_),
-  PROTOBUF_FIELD_OFFSET(::NFMsg::ReqAckModelSwitch, cur_),
-  PROTOBUF_FIELD_OFFSET(::NFMsg::ReqAckModelSwitch, next_),
+  PROTOBUF_FIELD_OFFSET(::NFMsg::ReqAckModelSwitch, tar_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::NFMsg::ModelViewSyncUnit, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -652,7 +652,7 @@ static const ::PROTOBUF_NAMESPACE_ID::internal::MigrationSchema schemas[] PROTOB
   { 125, -1, sizeof(::NFMsg::ModelInfoUnit)},
   { 132, -1, sizeof(::NFMsg::ReqAckModelInfoList)},
   { 142, -1, sizeof(::NFMsg::ReqAckModelTarget)},
-  { 151, -1, sizeof(::NFMsg::ReqAckModelSwitch)},
+  { 152, -1, sizeof(::NFMsg::ReqAckModelSwitch)},
   { 160, -1, sizeof(::NFMsg::ModelViewSyncUnit)},
   { 172, -1, sizeof(::NFMsg::ReqAckModelViewSync)},
   { 180, -1, sizeof(::NFMsg::ReqAckModelView)},
@@ -735,25 +735,25 @@ const char descriptor_table_protodef_NFMsgShare_2eproto[] PROTOBUF_SECTION_VARIA
   "(\014\"u\n\023ReqAckModelInfoList\022\016\n\006client\030\001 \001("
   "\005\022\013\n\003msg\030\002 \001(\014\022\013\n\003num\030\003 \001(\005\022\013\n\003cur\030\004 \001(\005"
   "\022\'\n\tinfo_list\030\005 \003(\0132\024.NFMsg.ModelInfoUni"
-  "t\"f\n\021ReqAckModelTarget\022\016\n\006client\030\001 \001(\005\022\013"
-  "\n\003msg\030\002 \001(\014\022\013\n\003cur\030\003 \001(\005\022\'\n\tsync_unit\030\004 "
-  "\001(\0132\024.NFMsg.ModelSyncUnit\"K\n\021ReqAckModel"
-  "Switch\022\016\n\006client\030\001 \001(\005\022\013\n\003msg\030\002 \001(\014\022\013\n\003c"
-  "ur\030\003 \001(\005\022\014\n\004next\030\004 \001(\005\"\331\002\n\021ModelViewSync"
-  "Unit\022\037\n\tplayer_id\030\001 \001(\0132\014.NFMsg.Ident\022=\n"
-  "\013player_type\030\002 \001(\0162(.NFMsg.ModelViewSync"
-  "Unit.EViewPlayerType\022\"\n\ncamera_pos\030\003 \001(\013"
-  "2\016.NFMsg.Vector3\022\"\n\ncamera_rot\030\004 \001(\0132\016.N"
-  "FMsg.Vector3\022!\n\tmodel_pos\030\005 \001(\0132\016.NFMsg."
-  "Vector3\022!\n\tmodel_rot\030\006 \001(\0132\016.NFMsg.Vecto"
-  "r3\022#\n\013model_scale\030\007 \001(\0132\016.NFMsg.Vector3\""
-  "1\n\017EViewPlayerType\022\013\n\007EVST_PC\020\000\022\021\n\rEVST_"
-  "HOLOLENS\020\001\"a\n\023ReqAckModelViewSync\022\020\n\010seq"
-  "uence\030\001 \001(\005\022+\n\tsync_unit\030\002 \001(\0132\030.NFMsg.M"
-  "odelViewSyncUnit\022\013\n\003msg\030\003 \001(\014\"l\n\017ReqAckM"
-  "odelView\022\037\n\tplayer_id\030\001 \001(\0132\014.NFMsg.Iden"
-  "t\022+\n\tsync_unit\030\002 \003(\0132\030.NFMsg.ModelViewSy"
-  "ncUnit\022\013\n\003msg\030\003 \001(\014b\006proto3"
+  "t\"u\n\021ReqAckModelTarget\022\016\n\006client\030\001 \001(\005\022\013"
+  "\n\003msg\030\002 \001(\014\022\013\n\003tar\030\003 \001(\005\022\r\n\005level\030\004 \001(\005\022"
+  "\'\n\tsync_unit\030\005 \001(\0132\024.NFMsg.ModelSyncUnit"
+  "\"=\n\021ReqAckModelSwitch\022\016\n\006client\030\001 \001(\005\022\013\n"
+  "\003msg\030\002 \001(\014\022\013\n\003tar\030\003 \001(\005\"\331\002\n\021ModelViewSyn"
+  "cUnit\022\037\n\tplayer_id\030\001 \001(\0132\014.NFMsg.Ident\022="
+  "\n\013player_type\030\002 \001(\0162(.NFMsg.ModelViewSyn"
+  "cUnit.EViewPlayerType\022\"\n\ncamera_pos\030\003 \001("
+  "\0132\016.NFMsg.Vector3\022\"\n\ncamera_rot\030\004 \001(\0132\016."
+  "NFMsg.Vector3\022!\n\tmodel_pos\030\005 \001(\0132\016.NFMsg"
+  ".Vector3\022!\n\tmodel_rot\030\006 \001(\0132\016.NFMsg.Vect"
+  "or3\022#\n\013model_scale\030\007 \001(\0132\016.NFMsg.Vector3"
+  "\"1\n\017EViewPlayerType\022\013\n\007EVST_PC\020\000\022\021\n\rEVST"
+  "_HOLOLENS\020\001\"a\n\023ReqAckModelViewSync\022\020\n\010se"
+  "quence\030\001 \001(\005\022+\n\tsync_unit\030\002 \001(\0132\030.NFMsg."
+  "ModelViewSyncUnit\022\013\n\003msg\030\003 \001(\014\"l\n\017ReqAck"
+  "ModelView\022\037\n\tplayer_id\030\001 \001(\0132\014.NFMsg.Ide"
+  "nt\022+\n\tsync_unit\030\002 \003(\0132\030.NFMsg.ModelViewS"
+  "yncUnit\022\013\n\003msg\030\003 \001(\014b\006proto3"
   ;
 static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_NFMsgShare_2eproto_deps[2] = {
   &::descriptor_table_NFDefine_2eproto,
@@ -786,7 +786,7 @@ static ::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase*const descriptor_table_NFM
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_NFMsgShare_2eproto_once;
 static bool descriptor_table_NFMsgShare_2eproto_initialized = false;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_NFMsgShare_2eproto = {
-  &descriptor_table_NFMsgShare_2eproto_initialized, descriptor_table_protodef_NFMsgShare_2eproto, "NFMsgShare.proto", 2787,
+  &descriptor_table_NFMsgShare_2eproto_initialized, descriptor_table_protodef_NFMsgShare_2eproto, "NFMsgShare.proto", 2788,
   &descriptor_table_NFMsgShare_2eproto_once, descriptor_table_NFMsgShare_2eproto_sccs, descriptor_table_NFMsgShare_2eproto_deps, 22, 2,
   schemas, file_default_instances, TableStruct_NFMsgShare_2eproto::offsets,
   file_level_metadata_NFMsgShare_2eproto, 22, file_level_enum_descriptors_NFMsgShare_2eproto, file_level_service_descriptors_NFMsgShare_2eproto,
@@ -5510,8 +5510,8 @@ ReqAckModelTarget::ReqAckModelTarget(const ReqAckModelTarget& from)
     sync_unit_ = nullptr;
   }
   ::memcpy(&client_, &from.client_,
-    static_cast<size_t>(reinterpret_cast<char*>(&cur_) -
-    reinterpret_cast<char*>(&client_)) + sizeof(cur_));
+    static_cast<size_t>(reinterpret_cast<char*>(&level_) -
+    reinterpret_cast<char*>(&client_)) + sizeof(level_));
   // @@protoc_insertion_point(copy_constructor:NFMsg.ReqAckModelTarget)
 }
 
@@ -5519,8 +5519,8 @@ void ReqAckModelTarget::SharedCtor() {
   ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&scc_info_ReqAckModelTarget_NFMsgShare_2eproto.base);
   msg_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   ::memset(&sync_unit_, 0, static_cast<size_t>(
-      reinterpret_cast<char*>(&cur_) -
-      reinterpret_cast<char*>(&sync_unit_)) + sizeof(cur_));
+      reinterpret_cast<char*>(&level_) -
+      reinterpret_cast<char*>(&sync_unit_)) + sizeof(level_));
 }
 
 ReqAckModelTarget::~ReqAckModelTarget() {
@@ -5554,8 +5554,8 @@ void ReqAckModelTarget::Clear() {
   }
   sync_unit_ = nullptr;
   ::memset(&client_, 0, static_cast<size_t>(
-      reinterpret_cast<char*>(&cur_) -
-      reinterpret_cast<char*>(&client_)) + sizeof(cur_));
+      reinterpret_cast<char*>(&level_) -
+      reinterpret_cast<char*>(&client_)) + sizeof(level_));
   _internal_metadata_.Clear();
 }
 
@@ -5581,16 +5581,23 @@ const char* ReqAckModelTarget::_InternalParse(const char* ptr, ::PROTOBUF_NAMESP
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // int32 cur = 3;
+      // int32 tar = 3;
       case 3:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 24)) {
-          cur_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
+          tar_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // .NFMsg.ModelSyncUnit sync_unit = 4;
+      // int32 level = 4;
       case 4:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 34)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 32)) {
+          level_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // .NFMsg.ModelSyncUnit sync_unit = 5;
+      case 5:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 42)) {
           ptr = ctx->ParseMessage(_internal_mutable_sync_unit(), ptr);
           CHK_(ptr);
         } else goto handle_unusual;
@@ -5633,18 +5640,24 @@ failure:
         2, this->_internal_msg(), target);
   }
 
-  // int32 cur = 3;
-  if (this->cur() != 0) {
+  // int32 tar = 3;
+  if (this->tar() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(3, this->_internal_cur(), target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(3, this->_internal_tar(), target);
   }
 
-  // .NFMsg.ModelSyncUnit sync_unit = 4;
+  // int32 level = 4;
+  if (this->level() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(4, this->_internal_level(), target);
+  }
+
+  // .NFMsg.ModelSyncUnit sync_unit = 5;
   if (this->has_sync_unit()) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
       InternalWriteMessage(
-        4, _Internal::sync_unit(this), target, stream);
+        5, _Internal::sync_unit(this), target, stream);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -5670,7 +5683,7 @@ size_t ReqAckModelTarget::ByteSizeLong() const {
         this->_internal_msg());
   }
 
-  // .NFMsg.ModelSyncUnit sync_unit = 4;
+  // .NFMsg.ModelSyncUnit sync_unit = 5;
   if (this->has_sync_unit()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
@@ -5684,11 +5697,18 @@ size_t ReqAckModelTarget::ByteSizeLong() const {
         this->_internal_client());
   }
 
-  // int32 cur = 3;
-  if (this->cur() != 0) {
+  // int32 tar = 3;
+  if (this->tar() != 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32Size(
-        this->_internal_cur());
+        this->_internal_tar());
+  }
+
+  // int32 level = 4;
+  if (this->level() != 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32Size(
+        this->_internal_level());
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -5732,8 +5752,11 @@ void ReqAckModelTarget::MergeFrom(const ReqAckModelTarget& from) {
   if (from.client() != 0) {
     _internal_set_client(from._internal_client());
   }
-  if (from.cur() != 0) {
-    _internal_set_cur(from._internal_cur());
+  if (from.tar() != 0) {
+    _internal_set_tar(from._internal_tar());
+  }
+  if (from.level() != 0) {
+    _internal_set_level(from._internal_level());
   }
 }
 
@@ -5762,7 +5785,8 @@ void ReqAckModelTarget::InternalSwap(ReqAckModelTarget* other) {
     GetArenaNoVirtual());
   swap(sync_unit_, other->sync_unit_);
   swap(client_, other->client_);
-  swap(cur_, other->cur_);
+  swap(tar_, other->tar_);
+  swap(level_, other->level_);
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata ReqAckModelTarget::GetMetadata() const {
@@ -5792,8 +5816,8 @@ ReqAckModelSwitch::ReqAckModelSwitch(const ReqAckModelSwitch& from)
     msg_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.msg_);
   }
   ::memcpy(&client_, &from.client_,
-    static_cast<size_t>(reinterpret_cast<char*>(&next_) -
-    reinterpret_cast<char*>(&client_)) + sizeof(next_));
+    static_cast<size_t>(reinterpret_cast<char*>(&tar_) -
+    reinterpret_cast<char*>(&client_)) + sizeof(tar_));
   // @@protoc_insertion_point(copy_constructor:NFMsg.ReqAckModelSwitch)
 }
 
@@ -5801,8 +5825,8 @@ void ReqAckModelSwitch::SharedCtor() {
   ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&scc_info_ReqAckModelSwitch_NFMsgShare_2eproto.base);
   msg_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   ::memset(&client_, 0, static_cast<size_t>(
-      reinterpret_cast<char*>(&next_) -
-      reinterpret_cast<char*>(&client_)) + sizeof(next_));
+      reinterpret_cast<char*>(&tar_) -
+      reinterpret_cast<char*>(&client_)) + sizeof(tar_));
 }
 
 ReqAckModelSwitch::~ReqAckModelSwitch() {
@@ -5831,8 +5855,8 @@ void ReqAckModelSwitch::Clear() {
 
   msg_.ClearToEmptyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   ::memset(&client_, 0, static_cast<size_t>(
-      reinterpret_cast<char*>(&next_) -
-      reinterpret_cast<char*>(&client_)) + sizeof(next_));
+      reinterpret_cast<char*>(&tar_) -
+      reinterpret_cast<char*>(&client_)) + sizeof(tar_));
   _internal_metadata_.Clear();
 }
 
@@ -5858,17 +5882,10 @@ const char* ReqAckModelSwitch::_InternalParse(const char* ptr, ::PROTOBUF_NAMESP
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // int32 cur = 3;
+      // int32 tar = 3;
       case 3:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 24)) {
-          cur_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
-          CHK_(ptr);
-        } else goto handle_unusual;
-        continue;
-      // int32 next = 4;
-      case 4:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 32)) {
-          next_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
+          tar_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
@@ -5910,16 +5927,10 @@ failure:
         2, this->_internal_msg(), target);
   }
 
-  // int32 cur = 3;
-  if (this->cur() != 0) {
+  // int32 tar = 3;
+  if (this->tar() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(3, this->_internal_cur(), target);
-  }
-
-  // int32 next = 4;
-  if (this->next() != 0) {
-    target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(4, this->_internal_next(), target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(3, this->_internal_tar(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -5952,18 +5963,11 @@ size_t ReqAckModelSwitch::ByteSizeLong() const {
         this->_internal_client());
   }
 
-  // int32 cur = 3;
-  if (this->cur() != 0) {
+  // int32 tar = 3;
+  if (this->tar() != 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32Size(
-        this->_internal_cur());
-  }
-
-  // int32 next = 4;
-  if (this->next() != 0) {
-    total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32Size(
-        this->_internal_next());
+        this->_internal_tar());
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -6004,11 +6008,8 @@ void ReqAckModelSwitch::MergeFrom(const ReqAckModelSwitch& from) {
   if (from.client() != 0) {
     _internal_set_client(from._internal_client());
   }
-  if (from.cur() != 0) {
-    _internal_set_cur(from._internal_cur());
-  }
-  if (from.next() != 0) {
-    _internal_set_next(from._internal_next());
+  if (from.tar() != 0) {
+    _internal_set_tar(from._internal_tar());
   }
 }
 
@@ -6036,8 +6037,7 @@ void ReqAckModelSwitch::InternalSwap(ReqAckModelSwitch* other) {
   msg_.Swap(&other->msg_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
     GetArenaNoVirtual());
   swap(client_, other->client_);
-  swap(cur_, other->cur_);
-  swap(next_, other->next_);
+  swap(tar_, other->tar_);
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata ReqAckModelSwitch::GetMetadata() const {

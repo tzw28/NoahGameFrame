@@ -173,16 +173,16 @@ message ReqAckModelTarget
 {
 	int32 client = 1;
 	bytes msg = 2;
-	int32 cur = 3;
-	ModelSyncUnit sync_unit = 4;
+	int32 tar = 3;
+	int32 level = 4;
+	ModelSyncUnit sync_unit = 5;
 }
 
 message ReqAckModelSwitch
 {
 	int32 client = 1;
 	bytes msg = 2;
-	int32 cur = 3;
-	int32 next = 4;
+	int32 tar = 3;
 	// ModelSyncUnit sync_unit = 4;
 }
 

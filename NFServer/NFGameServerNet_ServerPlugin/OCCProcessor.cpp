@@ -89,24 +89,27 @@ int OCCProcessor::readSampleModel()
     return 0;
 }
 
-int OCCProcessor::loadModel(Standard_CString sModelName, std::string& sModelFileContent)
+int OCCProcessor::loadModel(Standard_CString sModelName, int nLevel, std::string& sModelFileContent)
 {
     clock_t start, end;
     start = clock();
-    std::cout << "load model " << sModelName << endswith(sModelName, ".stl") << std::endl;
+    std::stringstream sstr;
+    sstr << sModelName << "/" << nLevel << ".stl";
+    std::string mname = sstr.str();
+    std::cout << "load model " << mname << endswith(mname, ".stl") << std::endl;
 
-    if (endswith(sModelName, ".step") || endswith(sModelName, ".stp"))
-        loadStepModel(sModelName);
-    else if (endswith(sModelName, ".stl"))
+    if (endswith(mname, ".step") || endswith(mname, ".stp"))
+        loadStepModel(mname.c_str());
+    else if (endswith(mname, ".stl"))
     {
         // loadStlModel(sModelName);
-        std::string res = loadStlModel_File(sModelName);
+        std::string res = loadStlModel_File(mname.c_str());
         sModelFileContent = res;
     }
 
     end = clock();
-    std::stringstream sstr;
-    sstr << "Load model" << sModelName << " "
+    sstr.clear();
+    sstr << "Load model" << mname << " "
         << std::to_string((end - start) * 1000 / CLOCKS_PER_SEC).c_str() << "ms";
     // m_aLogger->TraceInfo(sstr.str().c_str());
     return 0;

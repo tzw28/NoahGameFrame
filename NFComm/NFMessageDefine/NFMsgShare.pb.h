@@ -3342,9 +3342,10 @@ class ReqAckModelTarget :
 
   enum : int {
     kMsgFieldNumber = 2,
-    kSyncUnitFieldNumber = 4,
+    kSyncUnitFieldNumber = 5,
     kClientFieldNumber = 1,
-    kCurFieldNumber = 3,
+    kTarFieldNumber = 3,
+    kLevelFieldNumber = 4,
   };
   // bytes msg = 2;
   void clear_msg();
@@ -3362,7 +3363,7 @@ class ReqAckModelTarget :
   std::string* _internal_mutable_msg();
   public:
 
-  // .NFMsg.ModelSyncUnit sync_unit = 4;
+  // .NFMsg.ModelSyncUnit sync_unit = 5;
   bool has_sync_unit() const;
   private:
   bool _internal_has_sync_unit() const;
@@ -3386,13 +3387,22 @@ class ReqAckModelTarget :
   void _internal_set_client(::PROTOBUF_NAMESPACE_ID::int32 value);
   public:
 
-  // int32 cur = 3;
-  void clear_cur();
-  ::PROTOBUF_NAMESPACE_ID::int32 cur() const;
-  void set_cur(::PROTOBUF_NAMESPACE_ID::int32 value);
+  // int32 tar = 3;
+  void clear_tar();
+  ::PROTOBUF_NAMESPACE_ID::int32 tar() const;
+  void set_tar(::PROTOBUF_NAMESPACE_ID::int32 value);
   private:
-  ::PROTOBUF_NAMESPACE_ID::int32 _internal_cur() const;
-  void _internal_set_cur(::PROTOBUF_NAMESPACE_ID::int32 value);
+  ::PROTOBUF_NAMESPACE_ID::int32 _internal_tar() const;
+  void _internal_set_tar(::PROTOBUF_NAMESPACE_ID::int32 value);
+  public:
+
+  // int32 level = 4;
+  void clear_level();
+  ::PROTOBUF_NAMESPACE_ID::int32 level() const;
+  void set_level(::PROTOBUF_NAMESPACE_ID::int32 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::int32 _internal_level() const;
+  void _internal_set_level(::PROTOBUF_NAMESPACE_ID::int32 value);
   public:
 
   // @@protoc_insertion_point(class_scope:NFMsg.ReqAckModelTarget)
@@ -3403,7 +3413,8 @@ class ReqAckModelTarget :
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr msg_;
   ::NFMsg::ModelSyncUnit* sync_unit_;
   ::PROTOBUF_NAMESPACE_ID::int32 client_;
-  ::PROTOBUF_NAMESPACE_ID::int32 cur_;
+  ::PROTOBUF_NAMESPACE_ID::int32 tar_;
+  ::PROTOBUF_NAMESPACE_ID::int32 level_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_NFMsgShare_2eproto;
 };
@@ -3517,8 +3528,7 @@ class ReqAckModelSwitch :
   enum : int {
     kMsgFieldNumber = 2,
     kClientFieldNumber = 1,
-    kCurFieldNumber = 3,
-    kNextFieldNumber = 4,
+    kTarFieldNumber = 3,
   };
   // bytes msg = 2;
   void clear_msg();
@@ -3545,22 +3555,13 @@ class ReqAckModelSwitch :
   void _internal_set_client(::PROTOBUF_NAMESPACE_ID::int32 value);
   public:
 
-  // int32 cur = 3;
-  void clear_cur();
-  ::PROTOBUF_NAMESPACE_ID::int32 cur() const;
-  void set_cur(::PROTOBUF_NAMESPACE_ID::int32 value);
+  // int32 tar = 3;
+  void clear_tar();
+  ::PROTOBUF_NAMESPACE_ID::int32 tar() const;
+  void set_tar(::PROTOBUF_NAMESPACE_ID::int32 value);
   private:
-  ::PROTOBUF_NAMESPACE_ID::int32 _internal_cur() const;
-  void _internal_set_cur(::PROTOBUF_NAMESPACE_ID::int32 value);
-  public:
-
-  // int32 next = 4;
-  void clear_next();
-  ::PROTOBUF_NAMESPACE_ID::int32 next() const;
-  void set_next(::PROTOBUF_NAMESPACE_ID::int32 value);
-  private:
-  ::PROTOBUF_NAMESPACE_ID::int32 _internal_next() const;
-  void _internal_set_next(::PROTOBUF_NAMESPACE_ID::int32 value);
+  ::PROTOBUF_NAMESPACE_ID::int32 _internal_tar() const;
+  void _internal_set_tar(::PROTOBUF_NAMESPACE_ID::int32 value);
   public:
 
   // @@protoc_insertion_point(class_scope:NFMsg.ReqAckModelSwitch)
@@ -3570,8 +3571,7 @@ class ReqAckModelSwitch :
   ::PROTOBUF_NAMESPACE_ID::internal::InternalMetadataWithArena _internal_metadata_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr msg_;
   ::PROTOBUF_NAMESPACE_ID::int32 client_;
-  ::PROTOBUF_NAMESPACE_ID::int32 cur_;
-  ::PROTOBUF_NAMESPACE_ID::int32 next_;
+  ::PROTOBUF_NAMESPACE_ID::int32 tar_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_NFMsgShare_2eproto;
 };
@@ -6433,27 +6433,47 @@ inline void ReqAckModelTarget::set_allocated_msg(std::string* msg) {
   // @@protoc_insertion_point(field_set_allocated:NFMsg.ReqAckModelTarget.msg)
 }
 
-// int32 cur = 3;
-inline void ReqAckModelTarget::clear_cur() {
-  cur_ = 0;
+// int32 tar = 3;
+inline void ReqAckModelTarget::clear_tar() {
+  tar_ = 0;
 }
-inline ::PROTOBUF_NAMESPACE_ID::int32 ReqAckModelTarget::_internal_cur() const {
-  return cur_;
+inline ::PROTOBUF_NAMESPACE_ID::int32 ReqAckModelTarget::_internal_tar() const {
+  return tar_;
 }
-inline ::PROTOBUF_NAMESPACE_ID::int32 ReqAckModelTarget::cur() const {
-  // @@protoc_insertion_point(field_get:NFMsg.ReqAckModelTarget.cur)
-  return _internal_cur();
+inline ::PROTOBUF_NAMESPACE_ID::int32 ReqAckModelTarget::tar() const {
+  // @@protoc_insertion_point(field_get:NFMsg.ReqAckModelTarget.tar)
+  return _internal_tar();
 }
-inline void ReqAckModelTarget::_internal_set_cur(::PROTOBUF_NAMESPACE_ID::int32 value) {
+inline void ReqAckModelTarget::_internal_set_tar(::PROTOBUF_NAMESPACE_ID::int32 value) {
   
-  cur_ = value;
+  tar_ = value;
 }
-inline void ReqAckModelTarget::set_cur(::PROTOBUF_NAMESPACE_ID::int32 value) {
-  _internal_set_cur(value);
-  // @@protoc_insertion_point(field_set:NFMsg.ReqAckModelTarget.cur)
+inline void ReqAckModelTarget::set_tar(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  _internal_set_tar(value);
+  // @@protoc_insertion_point(field_set:NFMsg.ReqAckModelTarget.tar)
 }
 
-// .NFMsg.ModelSyncUnit sync_unit = 4;
+// int32 level = 4;
+inline void ReqAckModelTarget::clear_level() {
+  level_ = 0;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 ReqAckModelTarget::_internal_level() const {
+  return level_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 ReqAckModelTarget::level() const {
+  // @@protoc_insertion_point(field_get:NFMsg.ReqAckModelTarget.level)
+  return _internal_level();
+}
+inline void ReqAckModelTarget::_internal_set_level(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  
+  level_ = value;
+}
+inline void ReqAckModelTarget::set_level(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  _internal_set_level(value);
+  // @@protoc_insertion_point(field_set:NFMsg.ReqAckModelTarget.level)
+}
+
+// .NFMsg.ModelSyncUnit sync_unit = 5;
 inline bool ReqAckModelTarget::_internal_has_sync_unit() const {
   return this != internal_default_instance() && sync_unit_ != nullptr;
 }
@@ -6597,44 +6617,24 @@ inline void ReqAckModelSwitch::set_allocated_msg(std::string* msg) {
   // @@protoc_insertion_point(field_set_allocated:NFMsg.ReqAckModelSwitch.msg)
 }
 
-// int32 cur = 3;
-inline void ReqAckModelSwitch::clear_cur() {
-  cur_ = 0;
+// int32 tar = 3;
+inline void ReqAckModelSwitch::clear_tar() {
+  tar_ = 0;
 }
-inline ::PROTOBUF_NAMESPACE_ID::int32 ReqAckModelSwitch::_internal_cur() const {
-  return cur_;
+inline ::PROTOBUF_NAMESPACE_ID::int32 ReqAckModelSwitch::_internal_tar() const {
+  return tar_;
 }
-inline ::PROTOBUF_NAMESPACE_ID::int32 ReqAckModelSwitch::cur() const {
-  // @@protoc_insertion_point(field_get:NFMsg.ReqAckModelSwitch.cur)
-  return _internal_cur();
+inline ::PROTOBUF_NAMESPACE_ID::int32 ReqAckModelSwitch::tar() const {
+  // @@protoc_insertion_point(field_get:NFMsg.ReqAckModelSwitch.tar)
+  return _internal_tar();
 }
-inline void ReqAckModelSwitch::_internal_set_cur(::PROTOBUF_NAMESPACE_ID::int32 value) {
+inline void ReqAckModelSwitch::_internal_set_tar(::PROTOBUF_NAMESPACE_ID::int32 value) {
   
-  cur_ = value;
+  tar_ = value;
 }
-inline void ReqAckModelSwitch::set_cur(::PROTOBUF_NAMESPACE_ID::int32 value) {
-  _internal_set_cur(value);
-  // @@protoc_insertion_point(field_set:NFMsg.ReqAckModelSwitch.cur)
-}
-
-// int32 next = 4;
-inline void ReqAckModelSwitch::clear_next() {
-  next_ = 0;
-}
-inline ::PROTOBUF_NAMESPACE_ID::int32 ReqAckModelSwitch::_internal_next() const {
-  return next_;
-}
-inline ::PROTOBUF_NAMESPACE_ID::int32 ReqAckModelSwitch::next() const {
-  // @@protoc_insertion_point(field_get:NFMsg.ReqAckModelSwitch.next)
-  return _internal_next();
-}
-inline void ReqAckModelSwitch::_internal_set_next(::PROTOBUF_NAMESPACE_ID::int32 value) {
-  
-  next_ = value;
-}
-inline void ReqAckModelSwitch::set_next(::PROTOBUF_NAMESPACE_ID::int32 value) {
-  _internal_set_next(value);
-  // @@protoc_insertion_point(field_set:NFMsg.ReqAckModelSwitch.next)
+inline void ReqAckModelSwitch::set_tar(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  _internal_set_tar(value);
+  // @@protoc_insertion_point(field_set:NFMsg.ReqAckModelSwitch.tar)
 }
 
 // -------------------------------------------------------------------

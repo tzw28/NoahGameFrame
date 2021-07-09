@@ -32,7 +32,7 @@ public:
     int updateShape(ModelProperty newShapeProperty);
     int stretchWidth(float newWidth);
     int readSampleModel();
-    int loadModel(Standard_CString sModelName, std::string& sModelFileContent);
+    int loadModel(Standard_CString sModelName, int nLevel, std::string& sModelFileContent);
     int loadStepModel(Standard_CString sModelName);
     int loadStlModel(Standard_CString sModelName);
     std::string loadStlModel_File(Standard_CString sModelName);

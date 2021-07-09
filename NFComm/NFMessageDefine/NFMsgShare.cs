@@ -69,23 +69,23 @@ namespace NFMsg {
             "VW5pdBIMCgRuYW1lGAEgASgMEgwKBG5vdGUYAiABKAwidQoTUmVxQWNrTW9k",
             "ZWxJbmZvTGlzdBIOCgZjbGllbnQYASABKAUSCwoDbXNnGAIgASgMEgsKA251",
             "bRgDIAEoBRILCgNjdXIYBCABKAUSJwoJaW5mb19saXN0GAUgAygLMhQuTkZN",
-            "c2cuTW9kZWxJbmZvVW5pdCJmChFSZXFBY2tNb2RlbFRhcmdldBIOCgZjbGll",
-            "bnQYASABKAUSCwoDbXNnGAIgASgMEgsKA2N1chgDIAEoBRInCglzeW5jX3Vu",
-            "aXQYBCABKAsyFC5ORk1zZy5Nb2RlbFN5bmNVbml0IksKEVJlcUFja01vZGVs",
-            "U3dpdGNoEg4KBmNsaWVudBgBIAEoBRILCgNtc2cYAiABKAwSCwoDY3VyGAMg",
-            "ASgFEgwKBG5leHQYBCABKAUi2QIKEU1vZGVsVmlld1N5bmNVbml0Eh8KCXBs",
-            "YXllcl9pZBgBIAEoCzIMLk5GTXNnLklkZW50Ej0KC3BsYXllcl90eXBlGAIg",
-            "ASgOMiguTkZNc2cuTW9kZWxWaWV3U3luY1VuaXQuRVZpZXdQbGF5ZXJUeXBl",
-            "EiIKCmNhbWVyYV9wb3MYAyABKAsyDi5ORk1zZy5WZWN0b3IzEiIKCmNhbWVy",
-            "YV9yb3QYBCABKAsyDi5ORk1zZy5WZWN0b3IzEiEKCW1vZGVsX3BvcxgFIAEo",
-            "CzIOLk5GTXNnLlZlY3RvcjMSIQoJbW9kZWxfcm90GAYgASgLMg4uTkZNc2cu",
-            "VmVjdG9yMxIjCgttb2RlbF9zY2FsZRgHIAEoCzIOLk5GTXNnLlZlY3RvcjMi",
-            "MQoPRVZpZXdQbGF5ZXJUeXBlEgsKB0VWU1RfUEMQABIRCg1FVlNUX0hPTE9M",
-            "RU5TEAEiYQoTUmVxQWNrTW9kZWxWaWV3U3luYxIQCghzZXF1ZW5jZRgBIAEo",
-            "BRIrCglzeW5jX3VuaXQYAiABKAsyGC5ORk1zZy5Nb2RlbFZpZXdTeW5jVW5p",
-            "dBILCgNtc2cYAyABKAwibAoPUmVxQWNrTW9kZWxWaWV3Eh8KCXBsYXllcl9p",
-            "ZBgBIAEoCzIMLk5GTXNnLklkZW50EisKCXN5bmNfdW5pdBgCIAMoCzIYLk5G",
-            "TXNnLk1vZGVsVmlld1N5bmNVbml0EgsKA21zZxgDIAEoDGIGcHJvdG8z"));
+            "c2cuTW9kZWxJbmZvVW5pdCJ1ChFSZXFBY2tNb2RlbFRhcmdldBIOCgZjbGll",
+            "bnQYASABKAUSCwoDbXNnGAIgASgMEgsKA3RhchgDIAEoBRINCgVsZXZlbBgE",
+            "IAEoBRInCglzeW5jX3VuaXQYBSABKAsyFC5ORk1zZy5Nb2RlbFN5bmNVbml0",
+            "Ij0KEVJlcUFja01vZGVsU3dpdGNoEg4KBmNsaWVudBgBIAEoBRILCgNtc2cY",
+            "AiABKAwSCwoDdGFyGAMgASgFItkCChFNb2RlbFZpZXdTeW5jVW5pdBIfCglw",
+            "bGF5ZXJfaWQYASABKAsyDC5ORk1zZy5JZGVudBI9CgtwbGF5ZXJfdHlwZRgC",
+            "IAEoDjIoLk5GTXNnLk1vZGVsVmlld1N5bmNVbml0LkVWaWV3UGxheWVyVHlw",
+            "ZRIiCgpjYW1lcmFfcG9zGAMgASgLMg4uTkZNc2cuVmVjdG9yMxIiCgpjYW1l",
+            "cmFfcm90GAQgASgLMg4uTkZNc2cuVmVjdG9yMxIhCgltb2RlbF9wb3MYBSAB",
+            "KAsyDi5ORk1zZy5WZWN0b3IzEiEKCW1vZGVsX3JvdBgGIAEoCzIOLk5GTXNn",
+            "LlZlY3RvcjMSIwoLbW9kZWxfc2NhbGUYByABKAsyDi5ORk1zZy5WZWN0b3Iz",
+            "IjEKD0VWaWV3UGxheWVyVHlwZRILCgdFVlNUX1BDEAASEQoNRVZTVF9IT0xP",
+            "TEVOUxABImEKE1JlcUFja01vZGVsVmlld1N5bmMSEAoIc2VxdWVuY2UYASAB",
+            "KAUSKwoJc3luY191bml0GAIgASgLMhguTkZNc2cuTW9kZWxWaWV3U3luY1Vu",
+            "aXQSCwoDbXNnGAMgASgMImwKD1JlcUFja01vZGVsVmlldxIfCglwbGF5ZXJf",
+            "aWQYASABKAsyDC5ORk1zZy5JZGVudBIrCglzeW5jX3VuaXQYAiADKAsyGC5O",
+            "Rk1zZy5Nb2RlbFZpZXdTeW5jVW5pdBILCgNtc2cYAyABKAxiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::NFMsg.NFDefineReflection.Descriptor, global::NFMsg.NFMsgBaseReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -106,8 +106,8 @@ namespace NFMsg {
             new pbr::GeneratedClrTypeInfo(typeof(global::NFMsg.ReqAckModelSync), global::NFMsg.ReqAckModelSync.Parser, new[]{ "Sequence", "SyncUnit", "Msg", "Name" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::NFMsg.ModelInfoUnit), global::NFMsg.ModelInfoUnit.Parser, new[]{ "Name", "Note" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::NFMsg.ReqAckModelInfoList), global::NFMsg.ReqAckModelInfoList.Parser, new[]{ "Client", "Msg", "Num", "Cur", "InfoList" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::NFMsg.ReqAckModelTarget), global::NFMsg.ReqAckModelTarget.Parser, new[]{ "Client", "Msg", "Cur", "SyncUnit" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::NFMsg.ReqAckModelSwitch), global::NFMsg.ReqAckModelSwitch.Parser, new[]{ "Client", "Msg", "Cur", "Next" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::NFMsg.ReqAckModelTarget), global::NFMsg.ReqAckModelTarget.Parser, new[]{ "Client", "Msg", "Tar", "Level", "SyncUnit" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::NFMsg.ReqAckModelSwitch), global::NFMsg.ReqAckModelSwitch.Parser, new[]{ "Client", "Msg", "Tar" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::NFMsg.ModelViewSyncUnit), global::NFMsg.ModelViewSyncUnit.Parser, new[]{ "PlayerId", "PlayerType", "CameraPos", "CameraRot", "ModelPos", "ModelRot", "ModelScale" }, null, new[]{ typeof(global::NFMsg.ModelViewSyncUnit.Types.EViewPlayerType) }, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::NFMsg.ReqAckModelViewSync), global::NFMsg.ReqAckModelViewSync.Parser, new[]{ "Sequence", "SyncUnit", "Msg" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::NFMsg.ReqAckModelView), global::NFMsg.ReqAckModelView.Parser, new[]{ "PlayerId", "SyncUnit", "Msg" }, null, null, null, null)
@@ -3532,7 +3532,8 @@ namespace NFMsg {
     public ReqAckModelTarget(ReqAckModelTarget other) : this() {
       client_ = other.client_;
       msg_ = other.msg_;
-      cur_ = other.cur_;
+      tar_ = other.tar_;
+      level_ = other.level_;
       syncUnit_ = other.syncUnit_ != null ? other.syncUnit_.Clone() : null;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
@@ -3564,19 +3565,30 @@ namespace NFMsg {
       }
     }
 
-    /// <summary>Field number for the "cur" field.</summary>
-    public const int CurFieldNumber = 3;
-    private int cur_;
+    /// <summary>Field number for the "tar" field.</summary>
+    public const int TarFieldNumber = 3;
+    private int tar_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public int Cur {
-      get { return cur_; }
+    public int Tar {
+      get { return tar_; }
       set {
-        cur_ = value;
+        tar_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "level" field.</summary>
+    public const int LevelFieldNumber = 4;
+    private int level_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int Level {
+      get { return level_; }
+      set {
+        level_ = value;
       }
     }
 
     /// <summary>Field number for the "sync_unit" field.</summary>
-    public const int SyncUnitFieldNumber = 4;
+    public const int SyncUnitFieldNumber = 5;
     private global::NFMsg.ModelSyncUnit syncUnit_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public global::NFMsg.ModelSyncUnit SyncUnit {
@@ -3601,7 +3613,8 @@ namespace NFMsg {
       }
       if (Client != other.Client) return false;
       if (Msg != other.Msg) return false;
-      if (Cur != other.Cur) return false;
+      if (Tar != other.Tar) return false;
+      if (Level != other.Level) return false;
       if (!object.Equals(SyncUnit, other.SyncUnit)) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
@@ -3611,7 +3624,8 @@ namespace NFMsg {
       int hash = 1;
       if (Client != 0) hash ^= Client.GetHashCode();
       if (Msg.Length != 0) hash ^= Msg.GetHashCode();
-      if (Cur != 0) hash ^= Cur.GetHashCode();
+      if (Tar != 0) hash ^= Tar.GetHashCode();
+      if (Level != 0) hash ^= Level.GetHashCode();
       if (syncUnit_ != null) hash ^= SyncUnit.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
@@ -3634,12 +3648,16 @@ namespace NFMsg {
         output.WriteRawTag(18);
         output.WriteBytes(Msg);
       }
-      if (Cur != 0) {
+      if (Tar != 0) {
         output.WriteRawTag(24);
-        output.WriteInt32(Cur);
+        output.WriteInt32(Tar);
+      }
+      if (Level != 0) {
+        output.WriteRawTag(32);
+        output.WriteInt32(Level);
       }
       if (syncUnit_ != null) {
-        output.WriteRawTag(34);
+        output.WriteRawTag(42);
         output.WriteMessage(SyncUnit);
       }
       if (_unknownFields != null) {
@@ -3656,8 +3674,11 @@ namespace NFMsg {
       if (Msg.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeBytesSize(Msg);
       }
-      if (Cur != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeInt32Size(Cur);
+      if (Tar != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(Tar);
+      }
+      if (Level != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(Level);
       }
       if (syncUnit_ != null) {
         size += 1 + pb::CodedOutputStream.ComputeMessageSize(SyncUnit);
@@ -3679,8 +3700,11 @@ namespace NFMsg {
       if (other.Msg.Length != 0) {
         Msg = other.Msg;
       }
-      if (other.Cur != 0) {
-        Cur = other.Cur;
+      if (other.Tar != 0) {
+        Tar = other.Tar;
+      }
+      if (other.Level != 0) {
+        Level = other.Level;
       }
       if (other.syncUnit_ != null) {
         if (syncUnit_ == null) {
@@ -3708,10 +3732,14 @@ namespace NFMsg {
             break;
           }
           case 24: {
-            Cur = input.ReadInt32();
+            Tar = input.ReadInt32();
             break;
           }
-          case 34: {
+          case 32: {
+            Level = input.ReadInt32();
+            break;
+          }
+          case 42: {
             if (syncUnit_ == null) {
               SyncUnit = new global::NFMsg.ModelSyncUnit();
             }
@@ -3751,8 +3779,7 @@ namespace NFMsg {
     public ReqAckModelSwitch(ReqAckModelSwitch other) : this() {
       client_ = other.client_;
       msg_ = other.msg_;
-      cur_ = other.cur_;
-      next_ = other.next_;
+      tar_ = other.tar_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -3783,28 +3810,17 @@ namespace NFMsg {
       }
     }
 
-    /// <summary>Field number for the "cur" field.</summary>
-    public const int CurFieldNumber = 3;
-    private int cur_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public int Cur {
-      get { return cur_; }
-      set {
-        cur_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "next" field.</summary>
-    public const int NextFieldNumber = 4;
-    private int next_;
+    /// <summary>Field number for the "tar" field.</summary>
+    public const int TarFieldNumber = 3;
+    private int tar_;
     /// <summary>
     /// ModelSyncUnit sync_unit = 4;
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public int Next {
-      get { return next_; }
+    public int Tar {
+      get { return tar_; }
       set {
-        next_ = value;
+        tar_ = value;
       }
     }
 
@@ -3823,8 +3839,7 @@ namespace NFMsg {
       }
       if (Client != other.Client) return false;
       if (Msg != other.Msg) return false;
-      if (Cur != other.Cur) return false;
-      if (Next != other.Next) return false;
+      if (Tar != other.Tar) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -3833,8 +3848,7 @@ namespace NFMsg {
       int hash = 1;
       if (Client != 0) hash ^= Client.GetHashCode();
       if (Msg.Length != 0) hash ^= Msg.GetHashCode();
-      if (Cur != 0) hash ^= Cur.GetHashCode();
-      if (Next != 0) hash ^= Next.GetHashCode();
+      if (Tar != 0) hash ^= Tar.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -3856,13 +3870,9 @@ namespace NFMsg {
         output.WriteRawTag(18);
         output.WriteBytes(Msg);
       }
-      if (Cur != 0) {
+      if (Tar != 0) {
         output.WriteRawTag(24);
-        output.WriteInt32(Cur);
-      }
-      if (Next != 0) {
-        output.WriteRawTag(32);
-        output.WriteInt32(Next);
+        output.WriteInt32(Tar);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -3878,11 +3888,8 @@ namespace NFMsg {
       if (Msg.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeBytesSize(Msg);
       }
-      if (Cur != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeInt32Size(Cur);
-      }
-      if (Next != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeInt32Size(Next);
+      if (Tar != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(Tar);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -3901,11 +3908,8 @@ namespace NFMsg {
       if (other.Msg.Length != 0) {
         Msg = other.Msg;
       }
-      if (other.Cur != 0) {
-        Cur = other.Cur;
-      }
-      if (other.Next != 0) {
-        Next = other.Next;
+      if (other.Tar != 0) {
+        Tar = other.Tar;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -3927,11 +3931,7 @@ namespace NFMsg {
             break;
           }
           case 24: {
-            Cur = input.ReadInt32();
-            break;
-          }
-          case 32: {
-            Next = input.ReadInt32();
+            Tar = input.ReadInt32();
             break;
           }
         }

@@ -81,6 +81,8 @@ bool NFGameServerNet_ServerModule::AfterInit()
 
     m_pNetModule->AddReceiveCallBack(NFMsg::REQ_MODEL_RAW, this, &NFGameServerNet_ServerModule::OnClientModelRawProcess);
     m_pNetModule->AddReceiveCallBack(NFMsg::REQ_MODEL_INFO_LIST, this, &NFGameServerNet_ServerModule::OnClientModelInfoListProcess);
+    m_pNetModule->AddReceiveCallBack(NFMsg::REQ_MODEL_SWITCH, this, &NFGameServerNet_ServerModule::OnClientModelSwitchProcess);
+    m_pNetModule->AddReceiveCallBack(NFMsg::REQ_MODEL_TARGET, this, &NFGameServerNet_ServerModule::OnClientModelTargetProcess);
     m_pNetModule->AddReceiveCallBack(NFMsg::REQ_MODEL_VIEW, this, &NFGameServerNet_ServerModule::OnClientModelViewProcess);
 
     /////////////////////////////////////////////////////////////////////////
@@ -325,7 +327,7 @@ void NFGameServerNet_ServerModule::OnClientModelRawProcess(const NFSOCK sockInde
         }
         t = GetSystemTime();
         ssout << t << " ";
-        m_pOcc->loadModel(aModelFile.c_str(), temp_str);
+        m_pOcc->loadModel(aModelFile.c_str(), 0, temp_str);
         t = GetSystemTime();
         ssout << t << " ";
     }
@@ -350,6 +352,54 @@ void NFGameServerNet_ServerModule::OnClientModelRawProcess(const NFSOCK sockInde
     // m_aLogger->TraceInfo(("send model " + std::to_string(t)).c_str());
     this->SendGroupMsgPBToGate(NFMsg::ACK_MODEL_RAW, xMsg, sceneID, groupID);
 
+}
+
+void NFGameServerNet_ServerModule::OnClientModelTargetProcess(const NFSOCK sockIndex, const int msgID, const char* msg, const uint32_t len)
+{
+    CLIENT_MSG_PROCESS_NO_OBJECT(msgID, msg, len, NFMsg::ReqAckModelTarget)
+
+        std::cout << "process require model raw\n" << std::endl;
+    std::string aModelFile = "";
+    std::stringstream ssout;
+    std::cout << "local models " << m_aModels.size() << std::endl;
+    long long t;
+    string temp_str = "";
+    if (m_aModels.size() > 0)
+    {
+        aModelFile = m_aModels[xMsg.tar()];
+        t = GetSystemTime();
+        ssout << t << " ";
+        m_pOcc->loadModel(aModelFile.c_str(), xMsg.level(), temp_str);
+        t = GetSystemTime();
+        ssout << t << " ";
+    }
+    else
+    {
+        m_pOcc->initializeModel();
+    }
+    if (temp_str == "")
+        m_pOcc->toMeshString(temp_str);
+    t = GetSystemTime();
+    ssout << t << " ";
+    xMsg.set_msg(ssout.str());
+    NFMsg::ModelSyncUnit* syncUnit = xMsg.mutable_sync_unit();
+    syncUnit->set_raw(temp_str);
+    this->SendMsgPBToGate(NFMsg::ACK_MODEL_TARGET, xMsg, nPlayerID);
+}
+
+void NFGameServerNet_ServerModule::OnClientModelSwitchProcess(const NFSOCK sockIndex, const int msgID, const char* msg, const uint32_t len)
+{
+
+    CLIENT_MSG_PROCESS_NO_OBJECT(msgID, msg, len, NFMsg::ReqAckModelSwitch)
+
+        std::cout << "process switch model\n" << std::endl;
+
+
+    std::cout << "Current Model " << m_aCurrentModel << std::endl;
+    m_aCurrentModel = xMsg.tar();
+    const int sceneID = m_pKernelModule->GetPropertyInt(nPlayerID, NFrame::Player::SceneID());
+    const int groupID = m_pKernelModule->GetPropertyInt(nPlayerID, NFrame::Player::GroupID());
+    this->SendGroupMsgPBToGate(NFMsg::ACK_MODEL_SWITCH, xMsg, sceneID, groupID);
 }
 
 void NFGameServerNet_ServerModule::OnClientModelViewProcess(const NFSOCK sockIndex, const int msgID, const char* msg, const uint32_t len)
