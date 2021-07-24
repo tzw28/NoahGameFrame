@@ -1,12 +1,12 @@
-/*
-            This file is part of: 
+﻿/*
+            This file is part of:
                 NoahFrame
             https://github.com/ketoo/NoahGameFrame
 
    Copyright 2009 - 2021 NoahFrame(NoahGameFrame)
 
    File creator: lvsheng.huang
-   
+
    NoahFrame is open-source software and you can redistribute it and/or modify
    it under the terms of the License; besides, anyone who use this file/software must include this copyright announcement.
 
@@ -25,62 +25,63 @@
 
 #include "NFServer.h"
 
+
 int main(int argc, char* argv[])
 {
-	std::cout << "__cplusplus:" << __cplusplus << std::endl;
+    std::cout << "__cplusplus:" << __cplusplus << std::endl;
 
-	std::vector<NF_SHARE_PTR<NFPluginServer>> serverList;
+    std::vector<NF_SHARE_PTR<NFPluginServer>> serverList;
 
-	std::string strArgvList;
-	for (int i = 0; i < argc; i++)
-	{
-		strArgvList += " ";
-		strArgvList += argv[i];
-	}
+    std::string strArgvList;
+    for (int i = 0; i < argc; i++)
+    {
+        strArgvList += " ";
+        strArgvList += argv[i];
+    }
 
-	if (argc == 1)
-	{
-		//IDE
-		serverList.push_back(NF_SHARE_PTR<NFPluginServer>(NF_NEW NFPluginServer(strArgvList + " Server=MasterServer ID=3 Plugin=Plugin.xml")));
-		serverList.push_back(NF_SHARE_PTR<NFPluginServer>(NF_NEW NFPluginServer(strArgvList + " Server=WorldServer ID=7 Plugin=Plugin.xml")));
-		serverList.push_back(NF_SHARE_PTR<NFPluginServer>(NF_NEW NFPluginServer(strArgvList + " Server=LoginServer ID=4 Plugin=Plugin.xml")));
-		serverList.push_back(NF_SHARE_PTR<NFPluginServer>(NF_NEW NFPluginServer(strArgvList + " Server=DBServer ID=8 Plugin=Plugin.xml")));
-		serverList.push_back(NF_SHARE_PTR<NFPluginServer>(NF_NEW NFPluginServer(strArgvList + " Server=ProxyServer ID=5 Plugin=Plugin.xml")));
-		serverList.push_back(NF_SHARE_PTR<NFPluginServer>(NF_NEW NFPluginServer(strArgvList + " Server=GameServer ID=16001 Plugin=Plugin.xml")));
-	}
-	else
-	{
-		serverList.push_back(NF_SHARE_PTR<NFPluginServer>(NF_NEW NFPluginServer(strArgvList)));
-	}
+    if (argc == 1)
+    {
+        //IDE
+        serverList.push_back(NF_SHARE_PTR<NFPluginServer>(NF_NEW NFPluginServer(strArgvList + " Server=MasterServer ID=3 Plugin=Plugin.xml")));
+        serverList.push_back(NF_SHARE_PTR<NFPluginServer>(NF_NEW NFPluginServer(strArgvList + " Server=WorldServer ID=7 Plugin=Plugin.xml")));
+        serverList.push_back(NF_SHARE_PTR<NFPluginServer>(NF_NEW NFPluginServer(strArgvList + " Server=LoginServer ID=4 Plugin=Plugin.xml")));
+        serverList.push_back(NF_SHARE_PTR<NFPluginServer>(NF_NEW NFPluginServer(strArgvList + " Server=DBServer ID=8 Plugin=Plugin.xml")));
+        serverList.push_back(NF_SHARE_PTR<NFPluginServer>(NF_NEW NFPluginServer(strArgvList + " Server=ProxyServer ID=5 Plugin=Plugin.xml")));
+        serverList.push_back(NF_SHARE_PTR<NFPluginServer>(NF_NEW NFPluginServer(strArgvList + " Server=GameServer ID=16001 Plugin=Plugin.xml")));
+    }
+    else
+    {
+        serverList.push_back(NF_SHARE_PTR<NFPluginServer>(NF_NEW NFPluginServer(strArgvList)));
+    }
 
-	for (auto item : serverList)
-	{
-		item->SetBasicWareLoader(BasicPluginLoader);
-		item->SetMidWareLoader(MidWareLoader);
-		item->Init();
-	}
+    for (auto item : serverList)
+    {
+        item->SetBasicWareLoader(BasicPluginLoader);
+        item->SetMidWareLoader(MidWareLoader);
+        item->Init();
+    }
 
-	////////////////
-	uint64_t nIndex = 0;
-	while (true)
-	{
-		nIndex++;
+    ////////////////
+    uint64_t nIndex = 0;
+    while (true)
+    {
+        nIndex++;
 
-		std::this_thread::sleep_for(std::chrono::milliseconds(1));
-		for (auto item : serverList)
-		{
-			item->Execute();
-		}
-	}
+        std::this_thread::sleep_for(std::chrono::milliseconds(1));
+        for (auto item : serverList)
+        {
+            item->Execute();
+        }
+    }
 
-	////////////////
+    ////////////////
 
-	for (auto item : serverList)
-	{
-		item->Final();
-	}
+    for (auto item : serverList)
+    {
+        item->Final();
+    }
 
-	serverList.clear();
+    serverList.clear();
 
     return 0;
 }

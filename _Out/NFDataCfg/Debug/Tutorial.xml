@@ -10,7 +10,7 @@
 		<Plugin Name="NFLuaScriptPlugin" />
 		<Plugin Name="NFActorPlugin" />
 		<Plugin Name="NFNavigationPlugin" />
-		<Plugin Name="Tutorial1" />
+		<Plugin Name="Tutorial5" />
 
 	</GameServer>
 </XML>

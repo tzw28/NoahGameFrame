@@ -1,12 +1,12 @@
-/*
-            This file is part of: 
+﻿/*
+            This file is part of:
                 NoahFrame
             https://github.com/ketoo/NoahGameFrame
 
    Copyright 2009 - 2021 NoahFrame(NoahGameFrame)
 
    File creator: lvsheng.huang
-   
+
    NoahFrame is open-source software and you can redistribute it and/or modify
    it under the terms of the License; besides, anyone who use this file/software must include this copyright announcement.
 
@@ -35,32 +35,32 @@
 #include "NFComm/NFPluginModule/NFIMasterNet_HttpServerModule.h"
 
 class NFMasterNet_HttpServerModule
-	: public NFIMasterNet_HttpServerModule
+    : public NFIMasterNet_HttpServerModule
 {
 public:
-	NFMasterNet_HttpServerModule(NFIPluginManager* p)
-	{
+    NFMasterNet_HttpServerModule(NFIPluginManager* p)
+    {
         m_bIsExecute = true;
-		pPluginManager = p;
-	}
+        pPluginManager = p;
+    }
 
-	virtual bool Init();
-	virtual bool Shut();
+    virtual bool Init();
+    virtual bool Shut();
 
-	virtual bool AfterInit();
-	virtual bool Execute();
+    virtual bool AfterInit();
+    virtual bool Execute();
 
 protected:
-	bool OnCommandQuery(NF_SHARE_PTR<NFHttpRequest> req);
+    bool OnCommandQuery(NF_SHARE_PTR<NFHttpRequest> req);
 
-	NFWebStatus OnFilter(NF_SHARE_PTR<NFHttpRequest> req);
+    NFWebStatus OnFilter(NF_SHARE_PTR<NFHttpRequest> req);
 
 private:
-	NFIKernelModule* m_pKernelModule;
-	NFIHttpServerModule* m_pHttpNetModule;
-	NFIMasterNet_ServerModule* m_pMasterServerModule;
-	NFIClassModule* m_pLogicClassModule;
-	NFIElementModule* m_pElementModule;
+    NFIKernelModule* m_pKernelModule;
+    NFIHttpServerModule* m_pHttpNetModule;
+    NFIMasterNet_ServerModule* m_pMasterServerModule;
+    NFIClassModule* m_pLogicClassModule;
+    NFIElementModule* m_pElementModule;
 };
 
 #endif

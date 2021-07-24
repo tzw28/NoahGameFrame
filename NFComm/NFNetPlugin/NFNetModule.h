@@ -1,12 +1,12 @@
-/*
-            This file is part of: 
+﻿/*
+            This file is part of:
                 NoahFrame
             https://github.com/ketoo/NoahGameFrame
 
    Copyright 2009 - 2021 NoahFrame(NoahGameFrame)
 
    File creator: lvsheng.huang
-   
+
    NoahFrame is open-source software and you can redistribute it and/or modify
    it under the terms of the License; besides, anyone who use this file/software must include this copyright announcement.
 
@@ -58,8 +58,8 @@ public:
 
     virtual ~NFNetModule();
 
-	virtual bool Init();
-	virtual bool AfterInit();
+    virtual bool Init();
+    virtual bool AfterInit();
 
     //as client
     virtual void Initialization(const char* ip, const unsigned short nPort);
@@ -81,17 +81,19 @@ public:
 
 
     virtual bool SendMsgWithOutHead(const int msgID, const std::string& msg, const NFSOCK sockIndex);
+    virtual bool SendMsgWithOutHead(const int msgID, const std::string& msg, const NFSOCK sockIndex, bool isPrint);
     virtual bool SendMsgToAllClientWithOutHead(const int msgID, const std::string& msg);
 
-	virtual bool SendMsgPB(const uint16_t msgID, const google::protobuf::Message& xData, const NFSOCK sockIndex);
-	virtual bool SendMsgPB(const uint16_t msgID, const google::protobuf::Message& xData, const NFSOCK sockIndex, const NFGUID id);
-	virtual bool SendMsg(const uint16_t msgID, const std::string& xData, const NFSOCK sockIndex);
-	virtual bool SendMsg(const uint16_t msgID, const std::string& xData, const NFSOCK sockIndex, const NFGUID id);
+    virtual bool SendMsgPB(const uint16_t msgID, const google::protobuf::Message& xData, const NFSOCK sockIndex);
+    virtual bool SendMsgPB(const uint16_t msgID, const google::protobuf::Message& xData, const NFSOCK sockIndex, const NFGUID id);
+    virtual bool SendMsgPB(const uint16_t msgID, const google::protobuf::Message& xData, const NFSOCK sockIndex, const NFGUID id, bool isPrint);
+    virtual bool SendMsg(const uint16_t msgID, const std::string& xData, const NFSOCK sockIndex);
+    virtual bool SendMsg(const uint16_t msgID, const std::string& xData, const NFSOCK sockIndex, const NFGUID id);
 
     virtual bool SendMsgPBToAllClient(const uint16_t msgID, const google::protobuf::Message& xData);
 
     virtual bool SendMsgPB(const uint16_t msgID, const google::protobuf::Message& xData, const NFSOCK sockIndex, const std::vector<NFGUID>* pClientIDList);
-    virtual bool SendMsgPB(const uint16_t msgID, const std::string& strData, const NFSOCK sockIndex,  const std::vector<NFGUID>* pClientIDList);
+    virtual bool SendMsgPB(const uint16_t msgID, const std::string& strData, const NFSOCK sockIndex, const std::vector<NFGUID>* pClientIDList);
 
     virtual NFINet* GetNet();
 
@@ -107,11 +109,11 @@ private:
     unsigned int mnBufferSize;
     NFINet* m_pNet;
     NFINT64 nLastTime;
-	std::map<int, std::list<NET_RECEIVE_FUNCTOR_PTR>> mxReceiveCallBack;
+    std::map<int, std::list<NET_RECEIVE_FUNCTOR_PTR>> mxReceiveCallBack;
     std::list<NET_EVENT_FUNCTOR_PTR> mxEventCallBackList;
     std::list<NET_RECEIVE_FUNCTOR_PTR> mxCallBackList;
 
-	NFILogModule* m_pLogModule;
+    NFILogModule* m_pLogModule;
 };
 
 #endif

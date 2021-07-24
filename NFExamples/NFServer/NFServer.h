@@ -1,4 +1,4 @@
-/*
+﻿/*
             This file is part of:
                 NoahFrame
             https://github.com/ketoo/NoahGameFrame
@@ -65,6 +65,8 @@
 //MASTER
 #include "NFServer/NFMasterNet_HttpServerPlugin/NFMasterNet_HttpServerPlugin.h"
 #include "NFServer/NFMasterNet_ServerPlugin/NFMasterNet_ServerPlugin.h"
+//MODEL
+#include "NFServer/ModelNet_HttpServerPlugin/ModelNet_HttpServerPlugin.h"
 //PROXY
 #include "NFServer/NFProxyLogicPlugin/NFProxyLogicPlugin.h"
 #include "NFServer/NFProxyServerNet_ClientPlugin/NFProxyServerNet_ClientPlugin.h"
@@ -119,6 +121,9 @@
 #pragma comment( lib, "NFMasterNet_ServerPlugin.lib" )
 #pragma comment( lib, "NFMasterNet_HttpServerPlugin.lib" )
 
+#pragma comment( lib, "ModelServerPlugin.lib" )
+#pragma comment( lib, "ModelNet_HttpServerPlugin.lib" )
+
 #pragma comment( lib, "NFProxyLogicPlugin.lib" )
 #pragma comment( lib, "NFProxyServerNet_ClientPlugin.lib" )
 #pragma comment( lib, "NFProxyServerNet_ServerPlugin.lib" )
@@ -148,23 +153,23 @@ void BasicPluginLoader(NFIPluginManager* pPluginManager)
 
 #ifndef NF_DYNAMIC_PLUGIN
 
-	//for nf-sdk plugins
+    //for nf-sdk plugins
 
-	CREATE_PLUGIN(pPluginManager, NFActorPlugin)
-	CREATE_PLUGIN(pPluginManager, NFConfigPlugin)
-	CREATE_PLUGIN(pPluginManager, NFKernelPlugin)
-	CREATE_PLUGIN(pPluginManager, NFLogPlugin)
-	CREATE_PLUGIN(pPluginManager, NFLuaScriptPlugin)
-	CREATE_PLUGIN(pPluginManager, NFNavigationPlugin)
-	CREATE_PLUGIN(pPluginManager, NFNetPlugin)
-	CREATE_PLUGIN(pPluginManager, NFNoSqlPlugin)
-	CREATE_PLUGIN(pPluginManager, NFSecurityPlugin)
-	CREATE_PLUGIN(pPluginManager, NFTestPlugin)
+    CREATE_PLUGIN(pPluginManager, NFActorPlugin)
+        CREATE_PLUGIN(pPluginManager, NFConfigPlugin)
+        CREATE_PLUGIN(pPluginManager, NFKernelPlugin)
+        CREATE_PLUGIN(pPluginManager, NFLogPlugin)
+        CREATE_PLUGIN(pPluginManager, NFLuaScriptPlugin)
+        CREATE_PLUGIN(pPluginManager, NFNavigationPlugin)
+        CREATE_PLUGIN(pPluginManager, NFNetPlugin)
+        CREATE_PLUGIN(pPluginManager, NFNoSqlPlugin)
+        CREATE_PLUGIN(pPluginManager, NFSecurityPlugin)
+        CREATE_PLUGIN(pPluginManager, NFTestPlugin)
 
 #if NF_PLATFORM == NF_PLATFORM_APPLE || NF_PLATFORM == NF_PLATFORM_WIN
 #ifdef NF_DEBUG_MODE
-		//CREATE_PLUGIN(pPluginManager, NFRenderPlugin)
-		//CREATE_PLUGIN(pPluginManager, NFBluePrintPlugin)
+        //CREATE_PLUGIN(pPluginManager, NFRenderPlugin)
+        //CREATE_PLUGIN(pPluginManager, NFBluePrintPlugin)
 #endif
 #endif
 
@@ -188,6 +193,9 @@ CREATE_PLUGIN(pPluginManager, NFLoginNet_HttpServerPlugin)
 CREATE_PLUGIN(pPluginManager, NFMasterNet_HttpServerPlugin)
 CREATE_PLUGIN(pPluginManager, NFMasterNet_ServerPlugin)
 
+//MASTER
+CREATE_PLUGIN(pPluginManager, ModelNet_HttpServerPlugin)
+
 //PROXY
 CREATE_PLUGIN(pPluginManager, NFProxyLogicPlugin)
 CREATE_PLUGIN(pPluginManager, NFProxyServerNet_ClientPlugin)
@@ -201,15 +209,15 @@ CREATE_PLUGIN(pPluginManager, NFWorldNet_ServerPlugin)
 
 void MidWareLoader(NFIPluginManager* pPluginManager)
 {
-	CREATE_PLUGIN(pPluginManager, NFChatPlugin)
-	CREATE_PLUGIN(pPluginManager, NFConsumeManagerPlugin)
-	CREATE_PLUGIN(pPluginManager, NFInventoryPlugin)
+    CREATE_PLUGIN(pPluginManager, NFChatPlugin)
+        CREATE_PLUGIN(pPluginManager, NFConsumeManagerPlugin)
+        CREATE_PLUGIN(pPluginManager, NFInventoryPlugin)
 
-	CREATE_PLUGIN(pPluginManager, Tutorial1)
-	CREATE_PLUGIN(pPluginManager, Tutorial2)
-	CREATE_PLUGIN(pPluginManager, Tutorial3Plugin)
-	CREATE_PLUGIN(pPluginManager, Tutorial4Plugin)
-	CREATE_PLUGIN(pPluginManager, Tutorial5)
-	CREATE_PLUGIN(pPluginManager, Tutorial6)
-	CREATE_PLUGIN(pPluginManager, Tutorial7)
+        CREATE_PLUGIN(pPluginManager, Tutorial1)
+        CREATE_PLUGIN(pPluginManager, Tutorial2)
+        CREATE_PLUGIN(pPluginManager, Tutorial3Plugin)
+        CREATE_PLUGIN(pPluginManager, Tutorial4Plugin)
+        CREATE_PLUGIN(pPluginManager, Tutorial5)
+        CREATE_PLUGIN(pPluginManager, Tutorial6)
+        CREATE_PLUGIN(pPluginManager, Tutorial7)
 }

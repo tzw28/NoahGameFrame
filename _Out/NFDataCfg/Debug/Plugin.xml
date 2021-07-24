@@ -44,6 +44,16 @@
     <Plugin Name="NFActorPlugin" />
   </MasterServer>
 
+  <ModelServer>
+    <Plugin Name="NFNetPlugin" />
+    <Plugin Name="NFKernelPlugin" />
+    <Plugin Name="NFConfigPlugin" />
+    <Plugin Name="ModelServerPlugin" />
+    <Plugin Name="ModelNet_HttpServerPlugin" />
+    <Plugin Name="NFLogPlugin" />
+    <Plugin Name="NFActorPlugin" />
+  </ModelServer>
+
   <ProxyServer>
     <Plugin Name="NFNetPlugin" />
     <Plugin Name="NFKernelPlugin" />

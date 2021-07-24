@@ -384,7 +384,14 @@ void NFGameServerNet_ServerModule::OnClientModelTargetProcess(const NFSOCK sockI
     xMsg.set_msg(ssout.str());
     NFMsg::ModelSyncUnit* syncUnit = xMsg.mutable_sync_unit();
     syncUnit->set_raw(temp_str);
-    this->SendMsgPBToGate(NFMsg::ACK_MODEL_TARGET, xMsg, nPlayerID);
+
+    t = GetSystemTime();
+    std::cout << "Ready to send " << t;
+    std::ostringstream stream;
+    stream << "Ready to send " << t;
+    m_pLogModule->LogFatal(nPlayerID, stream, __FUNCTION__, __LINE__);
+    this->SendMsgPBToGate(NFMsg::ACK_MODEL_TARGET, xMsg, nPlayerID, true);
+    // m_pNetModule->SendMsgPB(NFMsg::ACK_MODEL_TARGET, xMsg, sockIndex, nPlayerID);
 }
 
 void NFGameServerNet_ServerModule::OnClientModelSwitchProcess(const NFSOCK sockIndex, const int msgID, const char* msg, const uint32_t len)
@@ -534,6 +541,19 @@ void NFGameServerNet_ServerModule::SendMsgPBToGate(const uint16_t msgID, google:
         if (pProxyData)
         {
             m_pNetModule->SendMsgPB(msgID, xMsg, pProxyData->xServerData.nFD, pData->xClientID);
+        }
+    }
+}
+
+void NFGameServerNet_ServerModule::SendMsgPBToGate(const uint16_t msgID, google::protobuf::Message& xMsg, const NFGUID& self, bool isPrint)
+{
+    NF_SHARE_PTR<GateBaseInfo> pData = mRoleBaseData.GetElement(self);
+    if (pData)
+    {
+        NF_SHARE_PTR<GateServerInfo> pProxyData = mProxyMap.GetElement(pData->gateID);
+        if (pProxyData)
+        {
+            m_pNetModule->SendMsgPB(msgID, xMsg, pProxyData->xServerData.nFD, pData->xClientID, true);
         }
     }
 }

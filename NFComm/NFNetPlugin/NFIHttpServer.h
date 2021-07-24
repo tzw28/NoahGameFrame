@@ -1,12 +1,12 @@
-/*
-            This file is part of: 
+﻿/*
+            This file is part of:
                 NoahFrame
             https://github.com/ketoo/NoahGameFrame
 
    Copyright 2009 - 2021 NoahFrame(NoahGameFrame)
 
    File creator: Stonexin
-   
+
    NoahFrame is open-source software and you can redistribute it and/or modify
    it under the terms of the License; besides, anyone who use this file/software must include this copyright announcement.
 
@@ -62,53 +62,54 @@
 enum NFWebStatus
 {
     WEB_OK = 200,
-	WEB_AUTH = 401,
-	WEB_ERROR = 404,
-	WEB_INTER_ERROR = 500,
+    WEB_BAD_REQ = 400,
+    WEB_AUTH = 401,
+    WEB_ERROR = 404,
+    WEB_INTER_ERROR = 500,
     WEB_TIMEOUT = 503,
 };
 
 enum NFHttpType
 {
-	NF_HTTP_REQ_GET = 1 << 0,
-	NF_HTTP_REQ_POST = 1 << 1,
-	NF_HTTP_REQ_HEAD = 1 << 2,
-	NF_HTTP_REQ_PUT = 1 << 3,
-	NF_HTTP_REQ_DELETE = 1 << 4,
-	NF_HTTP_REQ_OPTIONS = 1 << 5,
-	NF_HTTP_REQ_TRACE = 1 << 6,
-	NF_HTTP_REQ_CONNECT = 1 << 7,
-	NF_HTTP_REQ_PATCH = 1 << 8
+    NF_HTTP_REQ_GET = 1 << 0,
+    NF_HTTP_REQ_POST = 1 << 1,
+    NF_HTTP_REQ_HEAD = 1 << 2,
+    NF_HTTP_REQ_PUT = 1 << 3,
+    NF_HTTP_REQ_DELETE = 1 << 4,
+    NF_HTTP_REQ_OPTIONS = 1 << 5,
+    NF_HTTP_REQ_TRACE = 1 << 6,
+    NF_HTTP_REQ_CONNECT = 1 << 7,
+    NF_HTTP_REQ_PATCH = 1 << 8
 };
 
 class NFHttpRequest
 {
 public:
-	NFHttpRequest(const int64_t index)
-	{
-		id = index;
-		Reset();
-	}
+    NFHttpRequest(const int64_t index)
+    {
+        id = index;
+        Reset();
+    }
 
-	void Reset()
-	{
-		url.clear();
-		path.clear();
-		remoteHost.clear();
-		//type
-		body.clear();
-		params.clear();
-		headers.clear();
-	}
-	int64_t id;
+    void Reset()
+    {
+        url.clear();
+        path.clear();
+        remoteHost.clear();
+        //type
+        body.clear();
+        params.clear();
+        headers.clear();
+    }
+    int64_t id;
     void* req;
-	std::string url;
-	std::string path;
-	std::string remoteHost;
-	NFHttpType type;
-	std::string body;//when using post
-	std::map<std::string, std::string> params;//when using get
-	std::map<std::string, std::string> headers;
+    std::string url;
+    std::string path;
+    std::string remoteHost;
+    NFHttpType type;
+    std::string body;//when using post
+    std::map<std::string, std::string> params;//when using get
+    std::map<std::string, std::string> headers;
 };
 
 //it should be
@@ -121,8 +122,8 @@ typedef std::shared_ptr<HTTP_FILTER_FUNCTOR> HTTP_FILTER_FUNCTOR_PTR;
 class NFIHttpServer
 {
 public:
-	virtual ~NFIHttpServer(){}
-	
+    virtual ~NFIHttpServer() {}
+
     virtual bool Execute() = 0;
 
     virtual int InitServer(const unsigned short nPort) = 0;

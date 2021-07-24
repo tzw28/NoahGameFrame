@@ -9,6 +9,7 @@
     <ClInclude Include="OCCProcessor.h" />
     <ClInclude Include="OCCUtil.h" />
     <ClInclude Include="OCCLogger.h" />
+    <ClInclude Include="NlohmannJson.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="dllmain.cpp" />

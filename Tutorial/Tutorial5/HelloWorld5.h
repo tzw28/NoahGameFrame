@@ -1,12 +1,12 @@
-/*
-            This file is part of: 
+﻿/*
+            This file is part of:
                 NoahFrame
             https://github.com/ketoo/NoahGameFrame
 
    Copyright 2009 - 2021 NoahFrame(NoahGameFrame)
 
    File creator: lvsheng.huang
-   
+
    NoahFrame is open-source software and you can redistribute it and/or modify
    it under the terms of the License; besides, anyone who use this file/software must include this copyright announcement.
 
@@ -49,7 +49,7 @@ YOU WILL KNOW HOW TO USE THE "NFIHttpServerModule" AND "NFIHttpClientModule" TO 
 */
 
 class NFIHelloWorld5
-	: public NFIModule
+    : public NFIModule
 {
 
 };
@@ -72,30 +72,30 @@ public:
     virtual bool Shut();
 
 protected:
-	bool OnCommandQuery(NF_SHARE_PTR<NFHttpRequest> req);
+    bool OnCommandQuery(NF_SHARE_PTR<NFHttpRequest> req);
 
-	NFWebStatus OnFilter(NF_SHARE_PTR<NFHttpRequest> req);
+    NFWebStatus OnFilter(NF_SHARE_PTR<NFHttpRequest> req);
 
-	int OnHeartBeat(const NFGUID& self, const std::string& heartBeat, const float time, const int count);
+    int OnHeartBeat(const NFGUID& self, const std::string& heartBeat, const float time, const int count);
 
-	void OnGetCallBack(const NFGUID id, const int state_code, const std::string& strRespData);
-	void OnPostCallBack(const NFGUID id, const int state_code, const std::string& strRespData, const std::string& strMemoData);
+    void OnGetCallBack(const NFGUID id, const int state_code, const std::string& strRespData);
+    void OnPostCallBack(const NFGUID id, const int state_code, const std::string& strRespData, const std::string& strMemoData);
 
     void OnWebSocketTestProcess(const NFSOCK sockIndex, const int msgID, const char* msg, const uint32_t len);
 
-	void OnTCPEvent(const NFSOCK fd, const NF_NET_EVENT event, NFINet* pNet);
+    void OnTCPEvent(const NFSOCK fd, const NF_NET_EVENT event, NFINet* pNet);
 
-	void OnLoginProcess(const NFSOCK sockIndex, const int msgID, const char* msg, const uint32_t len);
+    void OnLoginProcess(const NFSOCK sockIndex, const int msgID, const char* msg, const uint32_t len);
 
 private:
 
-	NFIClassModule* m_pLogicClassModule;
-	NFIHttpServerModule* m_pHttpNetModule;
-	NFIHttpClientModule* m_pHttpClientModule;
-	NFIWSModule* m_pWSModule;
-	NFIElementModule* m_pElementModule;
-	NFIScheduleModule* m_pScheduleModule;
-	NFINetModule* m_pNetModule;
+    NFIClassModule* m_pLogicClassModule;
+    NFIHttpServerModule* m_pHttpNetModule;
+    NFIHttpClientModule* m_pHttpClientModule;
+    NFIWSModule* m_pWSModule;
+    NFIElementModule* m_pElementModule;
+    NFIScheduleModule* m_pScheduleModule;
+    NFINetModule* m_pNetModule;
 };
 
 #endif

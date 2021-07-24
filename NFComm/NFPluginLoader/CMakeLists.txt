@@ -42,6 +42,9 @@ target_link_libraries(NFPluginLoader NFMasterServerPlugin)
 target_link_libraries(NFPluginLoader NFMasterNet_ServerPlugin)
 target_link_libraries(NFPluginLoader NFMasterNet_HttpServerPlugin)
 
+target_link_libraries(NFPluginLoader ModelServerPlugin)
+target_link_libraries(NFPluginLoader ModelNet_HttpServerPlugin)
+
 target_link_libraries(NFPluginLoader NFProxyLogicPlugin)
 target_link_libraries(NFPluginLoader NFProxyServerNet_ClientPlugin)
 target_link_libraries(NFPluginLoader NFProxyServerNet_ServerPlugin)

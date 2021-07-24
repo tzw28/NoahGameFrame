@@ -1,12 +1,12 @@
-/*
-            This file is part of: 
+﻿/*
+            This file is part of:
                 NoahFrame
             https://github.com/ketoo/NoahGameFrame
 
    Copyright 2009 - 2021 NoahFrame(NoahGameFrame)
 
    File creator: lvsheng.huang
-   
+
    NoahFrame is open-source software and you can redistribute it and/or modify
    it under the terms of the License; besides, anyone who use this file/software must include this copyright announcement.
 
@@ -43,16 +43,16 @@
 
 enum NF_SERVER_TYPES
 {
-    NF_ST_NONE          = 0,    // NONE
-    NF_ST_REDIS         = 1,    //
-    NF_ST_MYSQL         = 2,    //
-    NF_ST_MASTER        = 3,    //
-    NF_ST_LOGIN         = 4,    //
-    NF_ST_PROXY         = 5,    //
-    NF_ST_GAME          = 6,    //
-	NF_ST_WORLD			= 7,    //
-	NF_ST_DB			= 8,    //
-	NF_ST_MAX			= 9,    //
+    NF_ST_NONE = 0,    // NONE
+    NF_ST_REDIS = 1,    //
+    NF_ST_MYSQL = 2,    //
+    NF_ST_MASTER = 3,    //
+    NF_ST_LOGIN = 4,    //
+    NF_ST_PROXY = 5,    //
+    NF_ST_GAME = 6,    //
+    NF_ST_WORLD = 7,    //
+    NF_ST_DB = 8,    //
+    NF_ST_MAX = 9,    //
 
 };
 
@@ -107,7 +107,7 @@ struct ServerData
         pData = NULL;
     }
 
-	NFSOCK nFD;
+    NFSOCK nFD;
     NF_SHARE_PTR<NFMsg::ServerInfoReport> pData;
 };
 
@@ -115,194 +115,195 @@ class NFINetModule
     : public NFIModule
 {
 public:
-	static NFGUID PBToNF(NFMsg::Ident xID)
-	{
-		NFGUID  xIdent;
-		xIdent.nHead64 = xID.svrid();
-		xIdent.nData64 = xID.index();
+    static NFGUID PBToNF(NFMsg::Ident xID)
+    {
+        NFGUID  xIdent;
+        xIdent.nHead64 = xID.svrid();
+        xIdent.nData64 = xID.index();
 
-		return xIdent;
-	}
+        return xIdent;
+    }
 
-	static NFVector2 PBToNF(NFMsg::Vector2 value)
-	{
-		NFVector2  vector;
-		vector.SetX(value.x());
-		vector.SetY(value.y());
-		return vector;
-	}
+    static NFVector2 PBToNF(NFMsg::Vector2 value)
+    {
+        NFVector2  vector;
+        vector.SetX(value.x());
+        vector.SetY(value.y());
+        return vector;
+    }
 
-	static NFVector3 PBToNF(NFMsg::Vector3 value)
-	{
-		NFVector3  vector;
-		vector.SetX(value.x());
-		vector.SetY(value.y());
-		vector.SetZ(value.z());
-		return vector;
-	}
+    static NFVector3 PBToNF(NFMsg::Vector3 value)
+    {
+        NFVector3  vector;
+        vector.SetX(value.x());
+        vector.SetY(value.y());
+        vector.SetZ(value.z());
+        return vector;
+    }
 
-	static NFMsg::Ident NFToPB(NFGUID xID)
-	{
-		NFMsg::Ident  xIdent;
-		xIdent.set_svrid(xID.nHead64);
-		xIdent.set_index(xID.nData64);
+    static NFMsg::Ident NFToPB(NFGUID xID)
+    {
+        NFMsg::Ident  xIdent;
+        xIdent.set_svrid(xID.nHead64);
+        xIdent.set_index(xID.nData64);
 
-		return xIdent;
-	}
+        return xIdent;
+    }
 
-	static NFMsg::Vector2 NFToPB(NFVector2 value)
-	{
-		NFMsg::Vector2  vector;
-		vector.set_x(value.X());
-		vector.set_y(value.Y());
-		return vector;
-	}
+    static NFMsg::Vector2 NFToPB(NFVector2 value)
+    {
+        NFMsg::Vector2  vector;
+        vector.set_x(value.X());
+        vector.set_y(value.Y());
+        return vector;
+    }
 
-	static NFMsg::Vector3 NFToPB(NFVector3 value)
-	{
-		NFMsg::Vector3  vector;
-		vector.set_x(value.X());
-		vector.set_y(value.Y());
-		vector.set_z(value.Z());
-		return vector;
-	}
+    static NFMsg::Vector3 NFToPB(NFVector3 value)
+    {
+        NFMsg::Vector3  vector;
+        vector.set_x(value.X());
+        vector.set_y(value.Y());
+        vector.set_z(value.Z());
+        return vector;
+    }
 
-	template<typename BaseType>
-	bool AddReceiveCallBack(const int msgID, BaseType* pBase, void (BaseType::*handleReceiver)(const NFSOCK, const int, const char*, const uint32_t))
-	{
-		NET_RECEIVE_FUNCTOR functor = std::bind(handleReceiver, pBase, std::placeholders::_1, std::placeholders::_2, std::placeholders::_3, std::placeholders::_4);
-		NET_RECEIVE_FUNCTOR_PTR functorPtr(new NET_RECEIVE_FUNCTOR(functor));
+    template<typename BaseType>
+    bool AddReceiveCallBack(const int msgID, BaseType* pBase, void (BaseType::* handleReceiver)(const NFSOCK, const int, const char*, const uint32_t))
+    {
+        NET_RECEIVE_FUNCTOR functor = std::bind(handleReceiver, pBase, std::placeholders::_1, std::placeholders::_2, std::placeholders::_3, std::placeholders::_4);
+        NET_RECEIVE_FUNCTOR_PTR functorPtr(new NET_RECEIVE_FUNCTOR(functor));
 
-		return AddReceiveCallBack(msgID, functorPtr);
-	}
+        return AddReceiveCallBack(msgID, functorPtr);
+    }
 
-	template<typename BaseType>
-	bool AddReceiveCallBack(BaseType* pBase, void (BaseType::*handleReceiver)(const NFSOCK, const int, const char*, const uint32_t))
-	{
-		NET_RECEIVE_FUNCTOR functor = std::bind(handleReceiver, pBase, std::placeholders::_1, std::placeholders::_2, std::placeholders::_3, std::placeholders::_4);
-		NET_RECEIVE_FUNCTOR_PTR functorPtr(new NET_RECEIVE_FUNCTOR(functor));
+    template<typename BaseType>
+    bool AddReceiveCallBack(BaseType* pBase, void (BaseType::* handleReceiver)(const NFSOCK, const int, const char*, const uint32_t))
+    {
+        NET_RECEIVE_FUNCTOR functor = std::bind(handleReceiver, pBase, std::placeholders::_1, std::placeholders::_2, std::placeholders::_3, std::placeholders::_4);
+        NET_RECEIVE_FUNCTOR_PTR functorPtr(new NET_RECEIVE_FUNCTOR(functor));
 
-		return AddReceiveCallBack(functorPtr);
-	}
+        return AddReceiveCallBack(functorPtr);
+    }
 
-	template<typename BaseType>
-	bool AddEventCallBack(BaseType* pBase, void (BaseType::*handler)(const NFSOCK, const NF_NET_EVENT, NFINet*))
-	{
-		NET_EVENT_FUNCTOR functor = std::bind(handler, pBase, std::placeholders::_1, std::placeholders::_2, std::placeholders::_3);
-		NET_EVENT_FUNCTOR_PTR functorPtr(new NET_EVENT_FUNCTOR(functor));
+    template<typename BaseType>
+    bool AddEventCallBack(BaseType* pBase, void (BaseType::* handler)(const NFSOCK, const NF_NET_EVENT, NFINet*))
+    {
+        NET_EVENT_FUNCTOR functor = std::bind(handler, pBase, std::placeholders::_1, std::placeholders::_2, std::placeholders::_3);
+        NET_EVENT_FUNCTOR_PTR functorPtr(new NET_EVENT_FUNCTOR(functor));
 
-		return AddEventCallBack(functorPtr);
-	}
+        return AddEventCallBack(functorPtr);
+    }
 
-	static bool ReceivePB(const int msgID, const char * msg, const uint32_t len, NFGUID & nPlayer)
-	{
-		NFMsg::MsgBase xMsg;
-		if (!xMsg.ParseFromArray(msg, len))
-		{
-			char szData[MAX_PATH] = { 0 };
-			NFSPRINTF(szData, MAX_PATH, "Parse Message Failed from Packet to MsgBase, MessageID: %d\n", msgID);
+    static bool ReceivePB(const int msgID, const char* msg, const uint32_t len, NFGUID& nPlayer)
+    {
+        NFMsg::MsgBase xMsg;
+        if (!xMsg.ParseFromArray(msg, len))
+        {
+            char szData[MAX_PATH] = { 0 };
+            NFSPRINTF(szData, MAX_PATH, "Parse Message Failed from Packet to MsgBase, MessageID: %d\n", msgID);
 #ifdef DEBUG
-			std::cout << "--------------------" << szData << __FUNCTION__ << " " << __LINE__ << std::endl;
+            std::cout << "--------------------" << szData << __FUNCTION__ << " " << __LINE__ << std::endl;
 #endif // DEBUG
 
-			return false;
-		}
+            return false;
+        }
 
-		nPlayer = PBToNF(xMsg.player_id());
+        nPlayer = PBToNF(xMsg.player_id());
 
-		return true;
-	}
+        return true;
+    }
 
-	static bool ReceivePB(const int msgID, const char * msg, const uint32_t len, std::string & msgData, NFGUID & nPlayer)
-	{
-		NFMsg::MsgBase xMsg;
-		if (!xMsg.ParseFromArray(msg, len))
-		{
-			char szData[MAX_PATH] = { 0 };
-			NFSPRINTF(szData, MAX_PATH, "Parse Message Failed from Packet to MsgBase, MessageID: %d\n", msgID);
+    static bool ReceivePB(const int msgID, const char* msg, const uint32_t len, std::string& msgData, NFGUID& nPlayer)
+    {
+        NFMsg::MsgBase xMsg;
+        if (!xMsg.ParseFromArray(msg, len))
+        {
+            char szData[MAX_PATH] = { 0 };
+            NFSPRINTF(szData, MAX_PATH, "Parse Message Failed from Packet to MsgBase, MessageID: %d\n", msgID);
 #ifdef DEBUG
-			std::cout << "--------------------" << szData << __FUNCTION__ << " " << __LINE__ << std::endl;
+            std::cout << "--------------------" << szData << __FUNCTION__ << " " << __LINE__ << std::endl;
 #endif // DEBUG
 
-			return false;
-		}
+            return false;
+        }
 
-		msgData.assign(xMsg.msg_data().data(), xMsg.msg_data().length());
+        msgData.assign(xMsg.msg_data().data(), xMsg.msg_data().length());
 
-		nPlayer = PBToNF(xMsg.player_id());
+        nPlayer = PBToNF(xMsg.player_id());
 
-		return true;
-	}
+        return true;
+    }
 
-	static bool ReceivePB(const int msgID, const std::string& strMsgData, google::protobuf::Message & xData, NFGUID & nPlayer)
-	{
-		return ReceivePB(msgID, strMsgData.c_str(), (uint32_t) strMsgData.length(), xData, nPlayer);
-	}
+    static bool ReceivePB(const int msgID, const std::string& strMsgData, google::protobuf::Message& xData, NFGUID& nPlayer)
+    {
+        return ReceivePB(msgID, strMsgData.c_str(), (uint32_t)strMsgData.length(), xData, nPlayer);
+    }
 
-	static bool ReceivePB(const int msgID, const char * msg, const uint32_t len, google::protobuf::Message & xData, NFGUID & nPlayer)
-	{
-		NFMsg::MsgBase xMsg;
-		if (!xMsg.ParseFromArray(msg, len))
-		{
-			char szData[MAX_PATH] = { 0 };
-			NFSPRINTF(szData, MAX_PATH, "Parse Message Failed from Packet to MsgBase, MessageID: %d\n", msgID);
+    static bool ReceivePB(const int msgID, const char* msg, const uint32_t len, google::protobuf::Message& xData, NFGUID& nPlayer)
+    {
+        NFMsg::MsgBase xMsg;
+        if (!xMsg.ParseFromArray(msg, len))
+        {
+            char szData[MAX_PATH] = { 0 };
+            NFSPRINTF(szData, MAX_PATH, "Parse Message Failed from Packet to MsgBase, MessageID: %d\n", msgID);
 #ifdef DEBUG
-			std::cout << "--------------------" << szData << __FUNCTION__ << " " << __LINE__ << std::endl;
+            std::cout << "--------------------" << szData << __FUNCTION__ << " " << __LINE__ << std::endl;
 #endif // DEBUG
 
-			return false;
-		}
+            return false;
+        }
 
-		if (!xData.ParseFromString(xMsg.msg_data()))
-		{
-			char szData[MAX_PATH] = { 0 };
-			NFSPRINTF(szData, MAX_PATH, "Parse Message Failed from MsgData to ProtocolData, MessageID: %d\n", msgID);
+        if (!xData.ParseFromString(xMsg.msg_data()))
+        {
+            char szData[MAX_PATH] = { 0 };
+            NFSPRINTF(szData, MAX_PATH, "Parse Message Failed from MsgData to ProtocolData, MessageID: %d\n", msgID);
 #ifdef DEBUG
-			std::cout << "--------------------" << szData << __FUNCTION__ << " " << __LINE__ << std::endl;
+            std::cout << "--------------------" << szData << __FUNCTION__ << " " << __LINE__ << std::endl;
 #endif // DEBUG
 
-			return false;
-		}
+            return false;
+        }
 
-		nPlayer = PBToNF(xMsg.player_id());
+        nPlayer = PBToNF(xMsg.player_id());
 
-		return true;
-	}
+        return true;
+    }
 
-	/////////////////
-	//as client
-	virtual void Initialization(const char* ip, const unsigned short nPort) = 0;
+    /////////////////
+    //as client
+    virtual void Initialization(const char* ip, const unsigned short nPort) = 0;
 
-	//as server
-	virtual int Initialization(const unsigned int nMaxClient, const unsigned short nPort, const int nCpuCount = 4) = 0;
-	virtual unsigned int ExpandBufferSize(const unsigned int size = 1024 * 1024 * 20) = 0;
+    //as server
+    virtual int Initialization(const unsigned int nMaxClient, const unsigned short nPort, const int nCpuCount = 4) = 0;
+    virtual unsigned int ExpandBufferSize(const unsigned int size = 1024 * 1024 * 20) = 0;
 
-	virtual void RemoveReceiveCallBack(const int msgID) = 0;
+    virtual void RemoveReceiveCallBack(const int msgID) = 0;
 
-	virtual bool AddReceiveCallBack(const int msgID, const NET_RECEIVE_FUNCTOR_PTR& cb) = 0;
+    virtual bool AddReceiveCallBack(const int msgID, const NET_RECEIVE_FUNCTOR_PTR& cb) = 0;
 
-	virtual bool AddReceiveCallBack(const NET_RECEIVE_FUNCTOR_PTR& cb) = 0;
+    virtual bool AddReceiveCallBack(const NET_RECEIVE_FUNCTOR_PTR& cb) = 0;
 
-	virtual bool AddEventCallBack(const NET_EVENT_FUNCTOR_PTR& cb) = 0;
+    virtual bool AddEventCallBack(const NET_EVENT_FUNCTOR_PTR& cb) = 0;
 
-	virtual bool Execute() = 0;
+    virtual bool Execute() = 0;
 
 
-	virtual bool SendMsgWithOutHead(const int msgID, const std::string& msg, const NFSOCK sockIndex) = 0;
+    virtual bool SendMsgWithOutHead(const int msgID, const std::string& msg, const NFSOCK sockIndex) = 0;
 
-	virtual bool SendMsgToAllClientWithOutHead(const int msgID, const std::string& msg) = 0;
+    virtual bool SendMsgToAllClientWithOutHead(const int msgID, const std::string& msg) = 0;
 
-	virtual bool SendMsgPB(const uint16_t msgID, const google::protobuf::Message& xData, const NFSOCK sockIndex) = 0;
-	virtual bool SendMsgPB(const uint16_t msgID, const google::protobuf::Message& xData, const NFSOCK sockIndex, const NFGUID nPlayer) = 0;
-	virtual bool SendMsg(const uint16_t msgID, const std::string& xData, const NFSOCK sockIndex) = 0;
-	virtual bool SendMsg(const uint16_t msgID, const std::string& xData, const NFSOCK sockIndex, const NFGUID id) = 0;
+    virtual bool SendMsgPB(const uint16_t msgID, const google::protobuf::Message& xData, const NFSOCK sockIndex) = 0;
+    virtual bool SendMsgPB(const uint16_t msgID, const google::protobuf::Message& xData, const NFSOCK sockIndex, const NFGUID nPlayer) = 0;
+    virtual bool SendMsgPB(const uint16_t msgID, const google::protobuf::Message& xData, const NFSOCK sockIndex, const NFGUID nPlayer, bool isPrint) = 0;
+    virtual bool SendMsg(const uint16_t msgID, const std::string& xData, const NFSOCK sockIndex) = 0;
+    virtual bool SendMsg(const uint16_t msgID, const std::string& xData, const NFSOCK sockIndex, const NFGUID id) = 0;
 
-	virtual bool SendMsgPBToAllClient(const uint16_t msgID, const google::protobuf::Message& xData) = 0;
+    virtual bool SendMsgPBToAllClient(const uint16_t msgID, const google::protobuf::Message& xData) = 0;
 
-	virtual bool SendMsgPB(const uint16_t msgID, const google::protobuf::Message& xData, const NFSOCK sockIndex, const std::vector<NFGUID>* pClientIDList) = 0;
-	virtual bool SendMsgPB(const uint16_t msgID, const std::string& strData, const NFSOCK sockIndex,  const std::vector<NFGUID>* pClientIDList) = 0;
+    virtual bool SendMsgPB(const uint16_t msgID, const google::protobuf::Message& xData, const NFSOCK sockIndex, const std::vector<NFGUID>* pClientIDList) = 0;
+    virtual bool SendMsgPB(const uint16_t msgID, const std::string& strData, const NFSOCK sockIndex, const std::vector<NFGUID>* pClientIDList) = 0;
 
-	virtual NFINet* GetNet() = 0;
+    virtual NFINet* GetNet() = 0;
 };
 
 #endif

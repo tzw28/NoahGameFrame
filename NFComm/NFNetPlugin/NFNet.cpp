@@ -1,12 +1,12 @@
-/*
-            This file is part of: 
+﻿/*
+            This file is part of:
                 NoahFrame
             https://github.com/ketoo/NoahGameFrame
 
    Copyright 2009 - 2021 NoahFrame(NoahGameFrame)
 
    File creator: lvsheng.huang
-   
+
    NoahFrame is open-source software and you can redistribute it and/or modify
    it under the terms of the License; besides, anyone who use this file/software must include this copyright announcement.
 
@@ -46,13 +46,13 @@
 /*
 Any one who want to upgrade the networking library(libEvent), please change the size of evbuffer showed below:
 *MODIFY--libevent/buffer.c
-#define EVBUFFER_MAX_READ	4096
+#define EVBUFFER_MAX_READ   4096
 TO
-#define EVBUFFER_MAX_READ	65536
+#define EVBUFFER_MAX_READ   65536
 */
 
 //1048576 = 1024 * 1024
-#define NF_BUFFER_MAX_READ	1048576
+#define NF_BUFFER_MAX_READ  1048576
 
 void NFNet::event_fatal_cb(int err)
 {
@@ -61,7 +61,7 @@ void NFNet::event_fatal_cb(int err)
 }
 void NFNet::conn_writecb(struct bufferevent* bev, void* user_data)
 {
-    
+
     //  struct evbuffer *output = bufferevent_get_output(bev);
 }
 
@@ -69,7 +69,7 @@ void NFNet::conn_eventcb(struct bufferevent* bev, short events, void* user_data)
 {
     NetObject* pObject = (NetObject*)user_data;
     NFNet* pNet = (NFNet*)pObject->GetNet();
-	std::cout << "Thread ID = " << std::this_thread::get_id() << " FD = " << pObject->GetRealFD() << " Event ID =" << events <<std::endl;
+    std::cout << "Thread ID = " << std::this_thread::get_id() << " FD = " << pObject->GetRealFD() << " Event ID =" << events << std::endl;
 
     if (events & BEV_EVENT_CONNECTED)
     {
@@ -91,13 +91,13 @@ void NFNet::conn_eventcb(struct bufferevent* bev, short events, void* user_data)
 
     if (events & BEV_EVENT_CONNECTED)
     {
-		struct evbuffer* input = bufferevent_get_input(bev);
-		struct evbuffer* output = bufferevent_get_output(bev);
-		if (pNet->mnBufferSize > 0)
-		{
-			evbuffer_expand(input, pNet->mnBufferSize);
-			evbuffer_expand(output, pNet->mnBufferSize);
-		}
+        struct evbuffer* input = bufferevent_get_input(bev);
+        struct evbuffer* output = bufferevent_get_output(bev);
+        if (pNet->mnBufferSize > 0)
+        {
+            evbuffer_expand(input, pNet->mnBufferSize);
+            evbuffer_expand(output, pNet->mnBufferSize);
+        }
         //printf("%d Connection successed\n", pObject->GetFd());/*XXX win32*/
     }
     else
@@ -108,7 +108,7 @@ void NFNet::conn_eventcb(struct bufferevent* bev, short events, void* user_data)
 
 void NFNet::listener_cb(struct evconnlistener* listener, evutil_socket_t fd, struct sockaddr* sa, int socklen, void* user_data)
 {
-    
+
     NFNet* pNet = (NFNet*)user_data;
     bool bClose = pNet->CloseNetObject(fd);
     if (bClose)
@@ -118,12 +118,12 @@ void NFNet::listener_cb(struct evconnlistener* listener, evutil_socket_t fd, str
 
     if (pNet->mmObject.size() >= pNet->mnMaxConnect)
     {
-        
+
         return;
     }
 
     struct event_base* mxBase = pNet->mxBase;
-    
+
     struct bufferevent* bev = bufferevent_socket_new(mxBase, fd, BEV_OPT_CLOSE_ON_FREE);
     if (!bev)
     {
@@ -147,7 +147,7 @@ void NFNet::listener_cb(struct evconnlistener* listener, evutil_socket_t fd, str
     }
 
     int nRecvBufLen = NF_BUFFER_MAX_READ;
-	setsockopt( fd, SOL_SOCKET, SO_RCVBUF, ( const char* )&nRecvBufLen, sizeof( int ) );
+    setsockopt(fd, SOL_SOCKET, SO_RCVBUF, (const char*)&nRecvBufLen, sizeof(int));
 #endif
 
     bufferevent_setcb(bev, conn_readcb, conn_writecb, conn_eventcb, (void*)pObject);
@@ -155,9 +155,9 @@ void NFNet::listener_cb(struct evconnlistener* listener, evutil_socket_t fd, str
     bufferevent_enable(bev, EV_READ | EV_WRITE | EV_CLOSED | EV_TIMEOUT | EV_PERSIST);
 
     event_set_fatal_callback(event_fatal_cb);
-    
+
     conn_eventcb(bev, BEV_EVENT_CONNECTED, (void*)pObject);
-	
+
     bufferevent_set_max_single_read(bev, NF_BUFFER_MAX_READ);
     bufferevent_set_max_single_write(bev, NF_BUFFER_MAX_READ);
 }
@@ -180,7 +180,7 @@ void NFNet::conn_readcb(struct bufferevent* bev, void* user_data)
     if (pObject->NeedRemove())
     {
         return;
-	}
+    }
 
     struct evbuffer* input = bufferevent_get_input(bev);
     if (!input)
@@ -189,8 +189,8 @@ void NFNet::conn_readcb(struct bufferevent* bev, void* user_data)
     }
 
     size_t len = evbuffer_get_length(input);
-    unsigned char *pData = evbuffer_pullup(input, len);
-    pObject->AddBuff((const char *)pData, len);
+    unsigned char* pData = evbuffer_pullup(input, len);
+    pObject->AddBuff((const char*)pData, len);
     evbuffer_drain(input, len);
 
     if (pNet->mbTCPStream)
@@ -254,11 +254,11 @@ int NFNet::Initialization(const unsigned int nMaxClient, const unsigned short nP
 
 unsigned int NFNet::ExpandBufferSize(const unsigned int size)
 {
-	if (size > 0)
-	{
-		mnBufferSize = size;
-	}
-	return mnBufferSize;
+    if (size > 0)
+    {
+        mnBufferSize = size;
+    }
+    return mnBufferSize;
 }
 
 bool NFNet::Final()
@@ -288,12 +288,12 @@ bool NFNet::SendMsgToAllClient(const char* msg, const size_t len)
         return false;
     }
 
-	if (!mbWorking)
-	{
-		return false;
-	}
+    if (!mbWorking)
+    {
+        return false;
+    }
 
-	auto it = mmObject.begin();
+    auto it = mmObject.begin();
     for (; it != mmObject.end(); ++it)
     {
         NetObject* pNetObject = (NetObject*)it->second;
@@ -320,12 +320,12 @@ bool NFNet::SendMsg(const char* msg, const size_t len, const NFSOCK sockIndex)
         return false;
     }
 
-	if (!mbWorking)
-	{
-		return false;
-	}
+    if (!mbWorking)
+    {
+        return false;
+    }
 
-	auto it = mmObject.find(sockIndex);
+    auto it = mmObject.find(sockIndex);
     if (it != mmObject.end())
     {
         NetObject* pNetObject = (NetObject*)it->second;
@@ -347,7 +347,7 @@ bool NFNet::SendMsg(const char* msg, const size_t len, const NFSOCK sockIndex)
 
 bool NFNet::SendMsg(const char* msg, const size_t len, const std::list<NFSOCK>& fdList)
 {
-	auto it = fdList.begin();
+    auto it = fdList.begin();
     for (; it != fdList.end(); ++it)
     {
         SendMsg(msg, len, *it);
@@ -358,7 +358,7 @@ bool NFNet::SendMsg(const char* msg, const size_t len, const std::list<NFSOCK>& 
 
 bool NFNet::CloseNetObject(const NFSOCK sockIndex)
 {
-	auto it = mmObject.find(sockIndex);
+    auto it = mmObject.find(sockIndex);
     if (it != mmObject.end())
     {
         NetObject* pObject = it->second;
@@ -390,12 +390,12 @@ bool NFNet::Dismantle(NetObject* pObject)
                 try
                 {
 #endif
-                
+
                     mRecvCB(pObject->GetRealFD(), xHead.GetMsgID(), pObject->GetBuff() + NFIMsgHead::NF_Head::NF_HEAD_LENGTH, nMsgBodyLength);
-                
+
 #if NF_PLATFORM != NF_PLATFORM_WIN
                 }
-                catch (const std::exception & e)
+                catch (const std::exception& e)
                 {
                     NFException::StackTrace(xHead.GetMsgID());
                 }
@@ -408,19 +408,19 @@ bool NFNet::Dismantle(NetObject* pObject)
                 mnReceiveMsgTotal++;
             }
 
-			pObject->RemoveBuff(0, nMsgBodyLength + NFIMsgHead::NF_Head::NF_HEAD_LENGTH);
+            pObject->RemoveBuff(0, nMsgBodyLength + NFIMsgHead::NF_Head::NF_HEAD_LENGTH);
 
             bNeedDismantle = true;
         }
         else if (0 == nMsgBodyLength)
         {
-            
+
 
             bNeedDismantle = false;
         }
         else
         {
-            
+
             //pObject->IncreaseError();
 
             bNeedDismantle = false;
@@ -500,8 +500,8 @@ int NFNet::InitClientNet()
     {
         std::cout << "setsockopt TCP_NODELAY ERROR !!!" << std::endl;
     }
-	int nRecvBufLen = NF_BUFFER_MAX_READ;
-	setsockopt( sockfd, SOL_SOCKET, SO_RCVBUF, ( const char* )&nRecvBufLen, sizeof( int ) );
+    int nRecvBufLen = NF_BUFFER_MAX_READ;
+    setsockopt(sockfd, SOL_SOCKET, SO_RCVBUF, (const char*)&nRecvBufLen, sizeof(int));
 #endif
 
     bufferevent_setcb(bev, conn_readcb, conn_writecb, conn_eventcb, (void*)pObject);
@@ -540,20 +540,20 @@ int NFNet::InitServerNet()
 
 #if NF_PLATFORM == NF_PLATFORM_WIN
 
-	//it is only on Windows, and only when IOCP is in use.
-	/*
+    //it is only on Windows, and only when IOCP is in use.
+    /*
     if (event_config_set_num_cpus_hint(cfg, nCpuCount) < 0)
     {
         return -1;
     }
-	*/
+    */
     mxBase = event_base_new_with_config(cfg);
 #else
 
     //event_config_avoid_method(cfg, "epoll");
     if (event_config_set_flag(cfg, EVENT_BASE_FLAG_EPOLL_USE_CHANGELIST) < 0)
     {
-        
+
         return -1;
     }
 
@@ -579,9 +579,9 @@ int NFNet::InitServerNet()
     printf("server started with %d\n", nPort);
 
     listener = evconnlistener_new_bind(mxBase, listener_cb, (void*)this,
-                                       LEV_OPT_REUSEABLE | LEV_OPT_CLOSE_ON_FREE, -1,
-                                       (struct sockaddr*)&sin,
-                                       sizeof(sin));
+        LEV_OPT_REUSEABLE | LEV_OPT_CLOSE_ON_FREE, -1,
+        (struct sockaddr*)&sin,
+        sizeof(sin));
 
     if (!listener)
     {
@@ -600,10 +600,10 @@ int NFNet::InitServerNet()
 
 bool NFNet::CloseSocketAll()
 {
-	auto it = mmObject.begin();
+    auto it = mmObject.begin();
     for (; it != mmObject.end(); ++it)
     {
-		NFSOCK nFD = it->first;
+        NFSOCK nFD = it->first;
         mvRemoveObject.push_back(nFD);
     }
 
@@ -616,7 +616,7 @@ bool NFNet::CloseSocketAll()
 
 NetObject* NFNet::GetNetObject(const NFSOCK sockIndex)
 {
-	auto it = mmObject.find(sockIndex);
+    auto it = mmObject.find(sockIndex);
     if (it != mmObject.end())
     {
         return it->second;
@@ -627,7 +627,7 @@ NetObject* NFNet::GetNetObject(const NFSOCK sockIndex)
 
 void NFNet::CloseObject(const NFSOCK sockIndex)
 {
-	auto it = mmObject.find(sockIndex);
+    auto it = mmObject.find(sockIndex);
     if (it != mmObject.end())
     {
         NetObject* pObject = it->second;
@@ -647,7 +647,7 @@ void NFNet::ExecuteClose()
 {
     for (int i = 0; i < mvRemoveObject.size(); ++i)
     {
-		NFSOCK nSocketIndex = mvRemoveObject[i];
+        NFSOCK nSocketIndex = mvRemoveObject[i];
         CloseObject(nSocketIndex);
     }
 
@@ -676,7 +676,7 @@ bool NFNet::SendMsgWithOutHead(const int16_t msgID, const char* msg, const size_
     int nAllLen = EnCode(msgID, msg, len, strOutData);
     if (nAllLen == len + NFIMsgHead::NF_Head::NF_HEAD_LENGTH)
     {
-        
+
         return SendMsg(strOutData.c_str(), strOutData.length(), sockIndex);
     }
 
@@ -701,7 +701,7 @@ bool NFNet::SendMsgToAllClientWithOutHead(const int16_t msgID, const char* msg, 
     int nAllLen = EnCode(msgID, msg, len, strOutData);
     if (nAllLen == len + NFIMsgHead::NF_Head::NF_HEAD_LENGTH)
     {
-        return SendMsgToAllClient(strOutData.c_str(), (uint32_t) strOutData.length());
+        return SendMsgToAllClient(strOutData.c_str(), (uint32_t)strOutData.length());
     }
 
     return false;
@@ -725,24 +725,24 @@ int NFNet::EnCode(const uint16_t umsgID, const char* strData, const uint32_t unD
 
 int NFNet::DeCode(const char* strData, const uint32_t unAllLen, NFMsgHead& xHead)
 {
-    
+
     if (unAllLen < NFIMsgHead::NF_Head::NF_HEAD_LENGTH)
     {
-        
+
         return -1;
     }
 
     if (NFIMsgHead::NF_Head::NF_HEAD_LENGTH != xHead.DeCode(strData))
     {
-        
+
         return -2;
     }
 
     if (xHead.GetBodyLength() > (unAllLen - NFIMsgHead::NF_Head::NF_HEAD_LENGTH))
     {
-        
+
         return -3;
     }
-    
+
     return xHead.GetBodyLength();
 }

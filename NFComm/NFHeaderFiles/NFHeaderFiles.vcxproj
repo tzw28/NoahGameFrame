@@ -89,6 +89,8 @@
     <ClInclude Include="..\NFPluginModule\NFIMapModule.h" />
     <ClInclude Include="..\NFPluginModule\NFIMasterNet_HttpServerModule.h" />
     <ClInclude Include="..\NFPluginModule\NFIMasterNet_ServerModule.h" />
+    <ClInclude Include="..\NFPluginModule\NFIModelNet_HttpServerModule.h" />
+    <ClInclude Include="..\NFPluginModule\NFIModelNet_ServerModule.h" />
     <ClInclude Include="..\NFPluginModule\NFIModule.h" />
     <ClInclude Include="..\NFPluginModule\NFIMoveModule.h" />
     <ClInclude Include="..\NFPluginModule\NFINavigationModule.h" />
